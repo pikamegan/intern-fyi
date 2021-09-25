@@ -1,5 +1,5 @@
 --
--- Database: `lt2`
+-- Database: `intern`
 --
 DROP DATABASE IF EXISTS `intern`;
 CREATE DATABASE `intern`;
@@ -14,12 +14,12 @@ DROP TABLE IF EXISTS `company`;
 CREATE TABLE `company` (
   `companyID` MEDIUMINT NOT NULL AUTO_INCREMENT,
   `companyName` varchar(50) NOT NULL,
-  `companyDescription` varchar(50),
-  `companyLinkedinLink` varchar(50),
-  `companyWebsite` varchar(50),
+  `companyDescription` varchar(255),
+  `companyLinkedinLink` varchar(255),
+  `companyWebsite` varchar(255),
   `industry` varchar(50),
-  `imageLink` varchar(50),
-  `location` varchar(50),
+  `imageLink` varchar(255),
+  `location` varchar(255),
   -- google map api needs longitude and latitude, may need to store an attribute for each, or generate them dynamically 
 
   `numberOfClicks` int,
