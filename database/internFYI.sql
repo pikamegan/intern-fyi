@@ -8,7 +8,7 @@ USE `intern`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
+-- Table structure for table `company`
 --
 DROP TABLE IF EXISTS `company`;
 CREATE TABLE `company` (
@@ -34,15 +34,52 @@ CREATE TABLE `company` (
   PRIMARY KEY (`companyID`)
 );
 
--- DROP TABLE IF EXISTS `company`;
--- CREATE TABLE `company` (
---   `id` MEDIUMINT NOT NULL AUTO_INCREMENT,
---   `sector` varchar NOT NULL,
---   `description` varchar(100) NOT NULL,
---   `status`varchar(11) NOT NULL,
---   `type` varchar(11) NOT NULL,
---   PRIMARY KEY (`id`)
--- );
+--
+-- Table structure for table `reveiw`
+--
+
+DROP TABLE IF EXISTS `review`;
+CREATE TABLE `review` (
+   `companyID` int NOT NULL, 
+   `reviewID` MEDIUMINT NOT NULL AUTO_INCREMENT,
+   `jobTitle` varchar(100) NOT NULL,
+
+   `reviewDescription` varchar(500), 
+
+   `overallRating` int NOT NULL, 
+   `criteria1Rating` int NOT NULL, 
+   `criteria2Rating` int NOT NULL, 
+   `criteria3Rating` int NOT NULL, 
+   `criteria4Rating` int NOT NULL, 
+   `criteria5Rating` int NOT NULL, 
+   `criteria6Rating` int NOT NULL, 
+
+   `totalUpvotesNo` int, 
+   `totalDownvotesNo` int, 
+
+   `checkSFW` boolean NOT NULL, 
+   `postDateTime` datetime DEFAULT ON UPDATE NOT NULL, 
+  
+  FOREIGN KEY (`companyID`), 
+  PRIMARY KEY (`companyID`, `reviewID`),
+  
+);
+
+DROP TABLE IF EXISTS `vote`
+CREATE TABLE `vote` (
+  `companyID` int NOT NULL, 
+  `reviewID` int NOT NULL, 
+  `voteID` MEDIUMINT NOT NULL AUTO_INCREMENT, 
+
+  `upvote` boolean NOT NULL, 
+  `downvote` boolean NOT NULL,
+
+  FOREIGN KEY (`companyID`), 
+  FOREIGN KEY (`reviewID`), 
+  PRIMARY KEY (`companyID`, `reviewID`, `voteID`)
+
+);
+
 
 
 
