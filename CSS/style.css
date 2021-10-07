@@ -14,7 +14,7 @@
 }
 
 h1,
-h2 {
+h2, h3{
     text-align: center;
 }
 
@@ -27,11 +27,5 @@ h2 {
 }
 
 #aboutUsDiv {
-    width: 727px;
     background: rgba(26, 169, 250, 0.12);
-}
-
-#smuImg {
-    width: 863px;
-    height: 671px;
 }
