@@ -14,7 +14,8 @@
 }
 
 h1,
-h2, h3{
+h2,
+h3 {
     text-align: center;
 }
 
@@ -28,4 +29,61 @@ h2, h3{
 
 #aboutUsDiv {
     background: rgba(26, 169, 250, 0.12);
+    line-height: 1.6;
+}
+
+
+.parent {
+    position: relative;
+    /* **************************************************************************************
+    //     *    CITING
+    //     *    Author: HUBSPOT
+    //     *    Availability: https://blog.hubspot.com/website/center-div-css
+    //     ***************************************************************************************/
+}
+
+
+.child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#aboutUsH1 {
+    text-align: left;
+    font-weight: bold;
+    line-height: 26pt;
+}
+
+.pageTitle {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 130%;
+    /* or 62px */
+
+    text-align: center;
+    letter-spacing: 0.25px;
+
+    color: #4E6AF0;
+}
+
+.secondaryTitle {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 180.5%;
+    /* or 45px */
+    color: #222222;
+    text-align: left;
+}
+
+.greybox {
+    width: 295px;
+    height: 241.47px;
+    background: #F5F5F5;
+    border-radius: 20px;
 }
