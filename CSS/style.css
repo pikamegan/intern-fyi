@@ -1,9 +1,37 @@
 @font-face {
     font-family: poppins;
     src: url(../FONTS/Poppins-Regular.ttf);
-    
+
 }
 
-*{
+* {
+    padding: 0;
+    margin: 0;
+}
+
+* {
     font-family: poppins;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+#internetFail {
+    margin: auto;
+}
+
+#lostConnection {
+    margin: 50px;
+}
+
+#aboutUsDiv {
+    width: 727px;
+    background: rgba(26, 169, 250, 0.12);
+}
+
+#smuImg {
+    width: 863px;
+    height: 671px;
 }
