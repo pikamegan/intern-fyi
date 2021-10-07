@@ -21,6 +21,7 @@
 
 
   <!-- start of navigation bar -->
+  <!-- to be discussed -->
 
   <!-- 
   to be done:
@@ -44,14 +45,74 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
+            <a class="nav-link me-2" style='min-width:121px;' href="#">Write a Review</a>
+          </li>
+        </ul>
+
+        <!-- <input class="form-control me-2" type="text" maxlength="100"
+          placeholder="🔍 Search for Industy, Company or Role" aria-label="Search">
+        <button class="btn btn-primary my-2">
+          Search
+        </button>
+        <button class="btn btn-primary m-2">
+          Login
+        </button> -->
+        <div class="input-group">
+          <input type="search" class="form-control rounded" placeholder="Search for Industy, Company or Role"
+            aria-label="Search" aria-describedby="search-addon" />
+          <button type="button" class="btn btn-success">
+            search
+          </button>
+        </div>
+        <button class="btn btn-primary my-2 mx-4">
+          Login
+        </button>
+        <button class="btn btn-secondary me-2">
+          Signup
+        </button>
+
+      </div>
+    </div>
+  </nav>
+  <!-- end of navigation bar -->
+
+  <br><br>
+
+
+
+
+  <!-- start of navigation bar for logged in -->
+
+  <!-- 
+      to be done:
+      1. add our own css to style it
+      2. replace ./img/logoPlaceholder.svg, and fix the size
+      3. add all the links in href
+      4. functionality of search bar with js codes
+      -->
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">
+        <img src="./img/logoPlaceholder.svg" style="height:40px;">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
             <a class="nav-link" style='min-width:82px;' href="#">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Register</a>
+            <a class="nav-link" href="#">Account</a>
           </li>
-          <li class="nav-item me-2">
-            <a class="nav-link" style='min-width:61px;' href="#">Log In</a>
-          </li>
+          <!-- <li class="nav-item me-2">
+            <a class="nav-link" style='min-width:74px;' href="#">Log Out</a>
+          </li> -->
         </ul>
 
         <input class="form-control me-2" type="text" maxlength="100"
@@ -59,11 +120,14 @@
         <button class="btn btn-primary my-2">
           Search
         </button>
+        <button class="btn btn-primary m-2" style='min-width:84px;'>
+          Log Out
+        </button>
       </div>
+
     </div>
   </nav>
   <!-- end of navigation bar -->
-
 
   <!-- to test footer -->
   <div>
@@ -81,7 +145,7 @@
 
   <!-- tmp styling for footer -->
   <style>
-    a.footer-links{
+    a.footer-links {
       color: inherit;
       text-decoration: none;
     }
