@@ -32,24 +32,6 @@ h3 {
     line-height: 1.6;
 }
 
-
-.parent {
-    position: relative;
-    /* **************************************************************************************
-    //     *    CITING
-    //     *    Author: HUBSPOT
-    //     *    Availability: https://blog.hubspot.com/website/center-div-css
-    //     ***************************************************************************************/
-}
-
-
-.child {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 #aboutUsH1 {
     text-align: left;
     font-weight: bold;
