@@ -66,7 +66,6 @@ h3 {
 
     text-align: center;
     letter-spacing: 0.25px;
-
     color: #4E6AF0;
 }
 
@@ -86,4 +85,74 @@ h3 {
     height: 241.47px;
     background: #F5F5F5;
     border-radius: 20px;
+}
+
+.whiteBox {
+    width: 378px;
+    height: 348px;
+    left: 128px;
+    top: 447px;
+    border-radius: 20px;
+}
+
+.bigGreyBox {
+    width: 378px;
+    height: 348px;
+    background: #F5F5F5;
+    border-radius: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+
+.smallBox {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 300%;
+    width: 140px;
+    height: 39px;
+    border-radius: 8px;
+}
+
+.smallPurpleBox {
+    background: rgba(176, 0, 220, 0.11);
+    color: #B000DC;
+}
+
+.smallOrangeBox {
+    background: rgba(220, 66, 0, 0.11);
+    color: #DC1A00;
+
+}
+
+.smallGreenBox {
+    background: rgba(0, 220, 141, 0.11);
+    color: #00DC72;
+}
+
+#careerDiv {
+    background: rgba(26, 169, 250, 0.12);
+    line-height: 1.6;
+}
+
+.blueTitle {
+    width: 106.02px;
+    height: 32px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 202.5%;
+    /* or 32px */
+    color: #4E6AF0;
+}
+
+.ourOffice {
+    width: 500px;
+    height: 100px;
+
 }
