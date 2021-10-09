@@ -2,8 +2,39 @@
 -- Database: `intern`
 --
 DROP DATABASE IF EXISTS `intern`;
-CREATE DATABASE `intern`;
+CREATE DATABASE `intern` ( 
+  `firstName` varchar(50) NOT NULL, 
+  `lastName` varchar(50) NOT NULL, 
+  `genderId` varchar(1) NOT NULL, 
+
+  `country` varchar(100) NOT NULL, 
+  `school` varchar(100) NOT NULL, 
+
+  `schoolEmail` nvarchar(255) NOT NULL, 
+  `password` nvarchar(50) NOT NULL, 
+
+  `profilePictureUrl` varchar(2083) NOT NULL, 
+
+  `reviewsNo` int NOT NULL, 
+
+  FOREIGN KEY (`genderId`),
+  PRIMARY KEY (`schoolEmail`), 
+
+);
 USE `intern`;
+
+--
+-- Database: `gender`
+--
+DROP DATABASE IF EXISTS `gender`; -- male (M), female (F), other (O)
+CREATE DATABASE `gender` (
+  `genderId` varchar(1) NOT NULL, 
+  `genderName` varchar(20) NOT NULL, 
+
+  PRIMARY KEY `genderId`
+); 
+USE `gender`;
+
 
 -- --------------------------------------------------------
 
@@ -33,6 +64,7 @@ CREATE TABLE `company` (
   `averageCriteria6` float(5),
   PRIMARY KEY (`companyID`)
 );
+USE `company`;
 
 --
 -- Table structure for table `reveiw`
@@ -59,11 +91,12 @@ CREATE TABLE `review` (
 
    `checkSFW` boolean NOT NULL, 
    `postDateTime` datetime DEFAULT ON UPDATE NOT NULL, 
-  
-  FOREIGN KEY (`companyID`), 
-  PRIMARY KEY (`companyID`, `reviewID`),
+
+    FOREIGN KEY (`companyID`), 
+    PRIMARY KEY (`companyID`, `reviewID`),
   
 );
+USE `review`;
 
 DROP TABLE IF EXISTS `vote`
 CREATE TABLE `vote` (
@@ -79,6 +112,9 @@ CREATE TABLE `vote` (
   PRIMARY KEY (`companyID`, `reviewID`, `voteID`)
 
 );
+USE `review`;
+
+
 
 
 
