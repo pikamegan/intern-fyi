@@ -1,11 +1,22 @@
 --
--- Database: `intern`
+-- Table structure for table `gender`
 --
-DROP DATABASE IF EXISTS `intern`;
-CREATE DATABASE `intern` ( 
+DROP TABLE IF EXISTS `gender`; -- male (M), female (F), other (O)
+CREATE TABLE `gender` (
+  `genderID` varchar(1) NOT NULL, 
+  `genderName` varchar(20) NOT NULL, 
+
+  PRIMARY KEY (`genderID`)
+); 
+
+--
+-- Table structure for table `intern`
+--
+DROP TABLE IF EXISTS `intern`;
+CREATE TABLE `intern` (
   `firstName` varchar(50) NOT NULL, 
   `lastName` varchar(50) NOT NULL, 
-  `genderId` varchar(1) NOT NULL, 
+  `genderID` varchar(1) NOT NULL, 
 
   `country` varchar(100) NOT NULL, 
   `school` varchar(100) NOT NULL, 
@@ -17,26 +28,10 @@ CREATE DATABASE `intern` (
 
   `reviewsNo` int NOT NULL, 
 
-  FOREIGN KEY (`genderId`),
-  PRIMARY KEY (`schoolEmail`), 
+  FOREIGN KEY (`genderID`) REFERENCES `gender`(`genderID`),
+  PRIMARY KEY (`schoolEmail`)
 
 );
-USE `intern`;
-
---
--- Database: `gender`
---
-DROP DATABASE IF EXISTS `gender`; -- male (M), female (F), other (O)
-CREATE DATABASE `gender` (
-  `genderId` varchar(1) NOT NULL, 
-  `genderName` varchar(20) NOT NULL, 
-
-  PRIMARY KEY `genderId`
-); 
-USE `gender`;
-
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `company`
@@ -64,7 +59,6 @@ CREATE TABLE `company` (
   `averageCriteria6` float(5),
   PRIMARY KEY (`companyID`)
 );
-USE `company`;
 
 --
 -- Table structure for table `reveiw`
@@ -72,12 +66,11 @@ USE `company`;
 
 DROP TABLE IF EXISTS `review`;
 CREATE TABLE `review` (
-   `companyID` int NOT NULL, 
-   `reviewID` MEDIUMINT NOT NULL AUTO_INCREMENT,
+   `companyID` mediumint NOT NULL, 
+   `reviewID` mediumint NOT NULL AUTO_INCREMENT,
    `jobTitle` varchar(100) NOT NULL,
-
+   `schoolEmail` nvarchar(255) NOT NULL,
    `reviewDescription` varchar(500), 
-
    `overallRating` int NOT NULL, 
    `criteria1Rating` int NOT NULL, 
    `criteria2Rating` int NOT NULL, 
@@ -90,29 +83,32 @@ CREATE TABLE `review` (
    `totalDownvotesNo` int, 
 
    `checkSFW` boolean NOT NULL, 
-   `postDateTime` datetime DEFAULT ON UPDATE NOT NULL, 
+   `postDateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, 
 
-    FOREIGN KEY (`companyID`), 
-    PRIMARY KEY (`companyID`, `reviewID`),
+    FOREIGN KEY (`companyID`) REFERENCES `company`(`companyID`), 
+    FOREIGN KEY (`schoolEmail`) REFERENCES `intern`(`schoolEmail`),
+    PRIMARY KEY (`reviewID`)
   
 );
-USE `review`;
 
-DROP TABLE IF EXISTS `vote`
+--
+-- Table structure for table `vote`
+--
+DROP TABLE IF EXISTS `vote`;
 CREATE TABLE `vote` (
-  `companyID` int NOT NULL, 
-  `reviewID` int NOT NULL, 
-  `voteID` MEDIUMINT NOT NULL AUTO_INCREMENT, 
+  `companyID` mediumint NOT NULL, 
+  `reviewID` mediumint NOT NULL, 
+  `voteID` mediumint NOT NULL AUTO_INCREMENT, 
 
-  `upvote` boolean NOT NULL, 
-  `downvote` boolean NOT NULL,
+  `isUpvote` boolean NOT NULL, 
+  `isDownvote` boolean NOT NULL,
 
-  FOREIGN KEY (`companyID`), 
-  FOREIGN KEY (`reviewID`), 
-  PRIMARY KEY (`companyID`, `reviewID`, `voteID`)
+  FOREIGN KEY (`companyID`) REFERENCES `company`(`companyID`), 
+  FOREIGN KEY (`reviewID`) REFERENCES `review`(`reviewID`), 
+  PRIMARY KEY (`voteID`)
 
 );
-USE `review`;
+
 
 
 

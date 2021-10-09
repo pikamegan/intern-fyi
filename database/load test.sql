@@ -1,5 +1,89 @@
-use intern;
+--
+-- Data for table `gender`
+--
+INSERT INTO 
+  gender(
+    `genderID`, 
+    `genderName`
+  )
+values
+  (
+    "M",
+    "Male"
+  ),
+  (
+    "F", 
+    "Female"
+  ), 
+  (
+    "O", 
+    "Others"
+  ); 
 
+--
+-- Data for table `intern`
+--
+INSERT INTO 
+  intern(
+    `firstName`, 
+    `lastName`, 
+    `genderID`, 
+    `country`, 
+    `school`, 
+    `schoolEmail`, 
+    `password`, 
+    `profilePictureUrl`, 
+    `reviewsNo`
+  )
+values
+  (
+    "Esther", 
+    "Kim", 
+    "F", 
+    "Singapore", 
+    "Singapore Management University", 
+    "esther.2020@scis.smu.edu.sg", 
+    "Esther@123", 
+    "https://icon-library.com/images/woman-profile-icon/woman-profile-icon-3.jpg", 
+    321
+  ),
+  (
+    "Megan", 
+    "Thong", 
+    "F", 
+    "Singapore", 
+    "Singapore Management University", 
+    "megan.2020@scis.smu.edu.sg", 
+    "Megan@45", 
+    "https://icon-library.com/images/woman-profile-icon/woman-profile-icon-3.jpg", 
+    54
+  ), 
+  (
+    "Patricia", 
+    "Loi", 
+    "O", 
+    "Singapore", 
+    "Singapore Management University", 
+    "patricia.2020@scis.smu.edu.sg", 
+    "Patricia@67", 
+    "https://icon-library.com/images/woman-profile-icon/woman-profile-icon-3.jpg", 
+    76
+  ), 
+  (
+    "Tianyu", 
+    "Chen", 
+    "M", 
+    "Singapore", 
+    "Singapore Management University", 
+    "tianyu.2020@scis.smu.edu.sg", 
+    "Tianyu@90", 
+    "https://cdn5.vectorstock.com/i/1000x1000/13/04/male-profile-picture-vector-2041304.jpg", 
+    9
+); 
+
+--
+-- Data for table `company`
+--
 insert into
   company(
     -- `companyID`,
@@ -200,4 +284,123 @@ values
     0.0,
     0.0,
     0.0
+  ); 
+
+--
+-- Data for table `review`
+--
+INSERT INTO 
+	review(
+    `companyID`, 
+    `reviewID`,
+	  `jobTitle`,
+    `schoolEmail`,
+	  `reviewDescription`, 
+	  `overallRating`, 
+	  `criteria1Rating`, 
+	  `criteria2Rating`, 
+	  `criteria3Rating`, 
+	  `criteria4Rating`, 
+	  `criteria5Rating`, 
+	  `criteria6Rating`, 
+	  `totalUpvotesNo`, 
+	  `totalDownvotesNo`, 
+	  `checkSFW`
   )
+  values(
+  1,
+  1, 
+  "Marketing Intern",
+  "esther.2020@scis.smu.edu.sg",
+  "I learnt about Search Engine Optimisation (SEO) and Google Ads, which align with my Business Analysis specialisation perfectly!",
+  5, 
+  5, 
+  4.9, 
+  5, 
+  4.9, 
+  5, 
+  4.9, 
+  34, 
+  5, 
+  1
+  ), 
+  (
+  1,
+  2,
+  "Policy Analyst",
+  "patricia.2020@scis.smu.edu.sg",
+  "The best internship I've had.",
+  5, 
+  5, 
+  4.9, 
+  5, 
+  4.9, 
+  4.8, 
+  4.9, 
+  12, 
+  2, 
+  0
+  ); 
+
+--
+-- Data for table `vote`
+--
+
+INSERT INTO
+vote(
+  `companyID`, 
+  `reviewID`, 
+  `voteID`, 
+  `isUpvote`, 
+  `isDownvote`
+)
+VALUES(
+  1,
+  1, 
+  1,
+  1,
+  0
+), 
+(
+  1, 
+  1,
+  2, 
+  1,
+  0
+), 
+(
+  1, 
+  1,
+  3, 
+  0,
+  1
+), 
+(
+  1,
+  2,
+  4,
+  1,
+  0
+), 
+(
+  1,
+  1,
+  5, 
+  0,
+  1
+), 
+(
+  1,
+  2, 
+  6,
+  1,
+  0
+), 
+(
+  1,
+  1,
+  7, 
+  1,
+  0
+); 
+
