@@ -8,7 +8,7 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="../CSS/style.css">
   <title>Template</title>
 </head>
 
@@ -45,7 +45,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link me-2" style='min-width:121px;' href="#">Write a Review</a>
+            <a class="nav-link me-2" style='min-width:121px;' href="#" id="writeReviewBtn">Write a Review</a>
           </li>
         </ul>
 
@@ -60,14 +60,14 @@
         <div class="input-group">
           <input type="search" class="form-control rounded" placeholder="Search for Industy, Company or Role"
             aria-label="Search" aria-describedby="search-addon" />
-          <button type="button" class="btn btn-success">
+          <button type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
           </button>
         </div>
         <button class="btn btn-primary my-2 mx-4">
           Login
         </button>
-        <button class="btn btn-secondary me-2">
+        <button class="btn btn-secondary me-2" id= "signUpBtn">
           Signup
         </button>
 
@@ -117,7 +117,7 @@
 
         <input class="form-control me-2" type="text" maxlength="100"
           placeholder="🔍 Search for Industy, Company or Role" aria-label="Search">
-        <button class="btn btn-primary my-2">
+        <button class="btn btn-primary my-2" id="searchButton">
           Search
         </button>
         <button class="btn btn-primary m-2" style='min-width:84px;'>
@@ -207,7 +207,7 @@
             And have a better experience.
           </p>
         </div>
-  
+
         <div class="col-md-4 my-2">
           <h4>Company</h4>
           <div>
@@ -217,7 +217,7 @@
             <a class="footer-links" href="#">Careers</a>
           </div>
         </div>
-  
+
         <div class="col-md-4 my-2">
           <h4>Contact</h4>
           <div>
@@ -228,7 +228,7 @@
           </div>
         </div>
       </div>
-  
+
       <div class="row my-3">
         <div class="col" style="text-align:center;">
           All rights Intern.FYI.contact@gmail.com

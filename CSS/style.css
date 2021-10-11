@@ -147,3 +147,10 @@ h3 {
     border-radius: 26px;
 }
 
+
+#searchButton {
+    background: #2DDF89;
+    border-color: #2DDF89;
+    color: white;
+}
+
