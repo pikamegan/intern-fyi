@@ -12,7 +12,8 @@
   <title>Template</title>
 </head>
 
-<body>
+<!-- body bg color to be changed -->
+<body class="bg-light">
 
   <!-- my css -->
   <!-- <link href='myCss.css' rel="stylesheet"></link> -->
@@ -21,17 +22,14 @@
 
 
   <!-- start of navigation bar -->
-  <!-- to be discussed -->
 
   <!-- 
   to be done:
-  1. add our own css to style it
-  2. replace ./img/logoPlaceholder.svg, and fix the size
-  3. add all the links in href
-  4. functionality of search bar with js codes
+  1. add all the links in href
+  2. functionality of search bar with js codes
   -->
 
-  <nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Navbar">
+  <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="./index.html">
         <img src="../IMG/Website-Logo.svg" style="height:40px;">
@@ -43,31 +41,17 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link me-2" style='min-width:121px;' href="#" id="writeReviewBtn">Write a Review</a>
-          </li>
-        </ul>
-
-        <!-- <input class="form-control me-2" type="text" maxlength="100"
-          placeholder="🔍 Search for Industy, Company or Role" aria-label="Search">
-        <button class="btn btn-primary my-2">
-          Search
-        </button>
-        <button class="btn btn-primary m-2">
-          Login
-        </button> -->
-        <div class="input-group">
+        <div class="input-group my-2">
           <input type="search" class="form-control rounded" placeholder="Search for Industy, Company or Role"
             aria-label="Search" aria-describedby="search-addon" />
           <button type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
           </button>
         </div>
-        <button class="btn btn-primary my-2 mx-4">
+        <button class="btn btn-secondary my-2 mx-4" id="loginBtn">
           Login
         </button>
-        <button class="btn btn-secondary me-2" id= "signUpBtn">
+        <button class="btn btn-primary me-2" id="signUpBtn">
           Signup
         </button>
 
@@ -84,14 +68,12 @@
   <!-- start of navigation bar for logged in -->
 
   <!-- 
-      to be done:
-      1. add our own css to style it
-      2. replace ./img/logoPlaceholder.svg, and fix the size
-      3. add all the links in href
-      4. functionality of search bar with js codes
-      -->
+    to be done:
+    1. add all the links in href
+    2. functionality of search bar with js codes
+    -->
 
-  <nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Navbar">
+  <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="./index.html">
         <img src="../IMG/Website-Logo.svg" style="height:40px;">
@@ -103,28 +85,21 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link" style='min-width:82px;' href="#">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Account</a>
-          </li>
-          <!-- <li class="nav-item me-2">
-            <a class="nav-link" style='min-width:74px;' href="#">Log Out</a>
-          </li> -->
-        </ul>
+        <div class="input-group my-2">
+          <input type="search" class="form-control rounded" placeholder="Search for Industy, Company or Role"
+            aria-label="Search" aria-describedby="search-addon" />
+          <button type="button" class="btn btn-success" id="searchButton">
+            <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
+          </button>
+        </div>
+        <button class="btn btn-primary my-2 mx-4" style="width:170px;" id="reviewBtn">
+          Write review
+        </button>
+        <button class="btn border-secondary rounded-circle me-2" id="userBtn">
+          ZT
+        </button>
 
-        <input class="form-control me-2" type="text" maxlength="100"
-          placeholder="🔍 Search for Industy, Company or Role" aria-label="Search">
-        <button class="btn btn-primary my-2" id="searchButton">
-          Search
-        </button>
-        <button class="btn btn-primary m-2" style='min-width:84px;'>
-          Log Out
-        </button>
       </div>
-
     </div>
   </nav>
   <!-- end of navigation bar -->
@@ -139,8 +114,7 @@
 
   <!-- 
   to be done:
-  1. add our own css to style it
-  2. add all the links in href
+  1. add all the links in href
   -->
 
   <!-- tmp styling for footer -->
@@ -150,110 +124,19 @@
       text-decoration: none;
     }
   </style>
-  <br>
-  <pre>original:   col-md-6   col-md-3   col-md-3</pre>
-  <br>
-  <footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h2>Intern.FYI</h2>
-          <p>
-            Intern at better companies. <br>
-            And have a better experience.
-          </p>
-        </div>
 
-        <div class="col-md my-2">
-          <h4>Company</h4>
-          <div>
-            <a class="footer-links" href="#">About</a>
-          </div>
-          <div>
-            <a class="footer-links" href="#">Careers</a>
-          </div>
-        </div>
-
-        <div class="col-md my-2">
-          <h4>Contact</h4>
-          <div>
-            <a class="footer-links" href="#">Help/FAQ</a>
-          </div>
-          <div>
-            <a class="footer-links" href="#">Leave Feedback</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="row my-3">
-        <div class="col" style="text-align:center;">
-          All rights Intern.FYI.contact@gmail.com
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <br>
-  <pre>spread it out evenly? : col-md-4   col-md-4   col-md-4</pre>
-  <br>
-
-  <footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Intern.FYI</h2>
-          <p>
-            Intern at better companies. <br>
-            And have a better experience.
-          </p>
-        </div>
-
-        <div class="col-md-4 my-2">
-          <h4>Company</h4>
-          <div>
-            <a class="footer-links" href="#">About</a>
-          </div>
-          <div>
-            <a class="footer-links" href="#">Careers</a>
-          </div>
-        </div>
-
-        <div class="col-md-4 my-2">
-          <h4>Contact</h4>
-          <div>
-            <a class="footer-links" href="#">Help/FAQ</a>
-          </div>
-          <div>
-            <a class="footer-links" href="#">Leave Feedback</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="row my-3">
-        <div class="col" style="text-align:center;">
-          All rights Intern.FYI.contact@gmail.com
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-  <br>
-  <pre>as close to figma as i can manage:   col-md-4   col-md-2   col-md-2   with row py-5</pre>
-  <br>
-
-  <footer class="footer mt-auto py-3 bg-light">
+  <footer class="footer mt-auto py-3 bg-white">
     <div class="container">
       <div class="row py-5">
-        <div class="col-md-4">
-          <h2>Intern.FYI</h2>
+        <div class="col-lg-4 col-md-5">
+          <h2 style="text-align:left;">Intern.FYI</h2>
           <p>
             Intern at better companies. <br>
             And have a better experience.
           </p>
         </div>
 
-        <div class="col-md-2 my-2">
+        <div class="col-lg-2 col-md-3 my-2">
           <h4>Company</h4>
           <div>
             <a class="footer-links" href="#">About</a>
@@ -263,7 +146,7 @@
           </div>
         </div>
 
-        <div class="col-md-2 my-2">
+        <div class="col-lg-2 col-md-3 my-2">
           <h4>Contact</h4>
           <div>
             <a class="footer-links" href="#">Help/FAQ</a>
