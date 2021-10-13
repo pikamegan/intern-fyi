@@ -176,3 +176,27 @@ img.preventSelect {
     text-align: center;
     color: rgba(0, 0, 0, 0.53);
 }
+
+.pay{
+    background-color: #2D9CDB;
+}
+
+.skillsLearned{
+    background-color: #7879F1;
+}
+
+.companyCulture{
+    background-color: #9E66FF;
+}
+
+.food{
+    background-color: #FF725C;
+}
+
+.mentorship{
+    background-color: #F54960;
+}
+
+.flatHierarchy{
+    background-color: #49D673;
+}
