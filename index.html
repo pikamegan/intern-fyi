@@ -69,6 +69,8 @@
                 <h4>Rank by Category</h4>
             </div>
         </div>
+
+
         <!-- WIP -->
         <div class="row shadow mb-5 pt-3">
             <style>
@@ -77,15 +79,42 @@
                     margin-top: 20px;
                     margin-bottom: 10px;
                 }
-                div.cardBold{
-                    font-weight:900;
+
+                div.cardBold {
+                    font-weight: 900;
+                }
+
+                .criteriaTooltip .criteriaTooltipText {
+                    visibility: hidden;
+                    width: 140px;
+                    background-color: rgba(0, 0, 0, 0.8);
+                    color: #fff;
+                    text-align: center;
+                    padding: 2px;
+                    border-radius: 8px;
+
+                    position: absolute;
+                    z-index: 1;
+                }
+
+                .criteriaTooltip:hover .criteriaTooltipText {
+                    visibility: visible;
                 }
             </style>
+            
+
+
+
+
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
                 <div class="mx-auto pay"
                     style="width: 168px;height: 222px; border-radius: 10px; text-align: center; position: relative;">
-                    <img src="./img/help.svg" class="preventSelect" style="position: absolute; left: 3px; top: 3px;">
-
+                    <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
+                        <img src="./img/help.svg" class="preventSelect">
+                        <span class="criteriaTooltipText">
+                            5 stars for good pay, relative to your job role
+                        </span>
+                    </div>
                     <div>
                         <img src="./img/PayRatingCategoryIcon.svg" class="preventSelect positionCard">
                         <!-- 
@@ -110,7 +139,12 @@
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
                 <div class="mx-auto skillsLearned"
                     style="width: 168px;height: 222px; border-radius: 10px; text-align: center; position: relative;">
-                    <img src="./img/help.svg" class="preventSelect" style="position: absolute; left: 3px; top: 3px;">
+                    <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
+                        <img src="./img/help.svg" class="preventSelect">
+                        <span class="criteriaTooltipText">
+                            5 stars for learning useful work reated skills
+                        </span>
+                    </div>
 
                     <div>
                         <img class="preventSelect positionCard" src="./img/SkillEarnedRatingCategoryIcon.svg">
@@ -128,7 +162,12 @@
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
                 <div class="mx-auto companyCulture"
                     style="width: 168px;height: 222px; border-radius: 10px; text-align: center; position: relative;">
-                    <img src="./img/help.svg" class="preventSelect" style="position: absolute; left: 3px; top: 3px;">
+                    <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
+                        <img src="./img/help.svg" class="preventSelect">
+                        <span class="criteriaTooltipText">
+                            5 stars for friendliness and cohesion
+                        </span>
+                    </div>
 
                     <div>
                         <img src="./img/CompanyCultureRatingCategoryIcon.svg" class="preventSelect positionCard">
@@ -147,7 +186,12 @@
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
                 <div class="mx-auto food"
                     style="width: 168px;height: 222px; border-radius: 10px; text-align: center; position: relative;">
-                    <img src="./img/help.svg" class="preventSelect" style="position: absolute; left: 3px; top: 3px;">
+                    <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
+                        <img src="./img/help.svg" class="preventSelect">
+                        <span class="criteriaTooltipText">
+                            5 stars for reasonable food prices in the area
+                        </span>
+                    </div>
 
                     <div>
                         <img src="./img/FoodRatingCategoryIcon.svg" class="preventSelect positionCard">
@@ -165,7 +209,12 @@
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
                 <div class="mx-auto mentorship"
                     style="width: 168px;height: 222px; border-radius: 10px; text-align: center; position: relative;">
-                    <img src="./img/help.svg" class="preventSelect" style="position: absolute; left: 3px; top: 3px;">
+                    <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
+                        <img src="./img/help.svg" class="preventSelect">
+                        <span class="criteriaTooltipText">
+                            5 stars for good guidance and superiors
+                        </span>
+                    </div>
 
                     <div>
                         <img src="./img/MentorshipRatingCategoryIcon.svg" class="preventSelect positionCard">
@@ -183,7 +232,12 @@
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
                 <div class="mx-auto flatHierarchy"
                     style="width: 168px;height: 222px; border-radius: 10px; text-align: center; position: relative;">
-                    <img src="./img/help.svg" class="preventSelect" style="position: absolute; left: 3px; top: 3px;">
+                    <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
+                        <img src="./img/help.svg" class="preventSelect">
+                        <span class="criteriaTooltipText">
+                            5 stars for respecting job roles and your internship role
+                        </span>
+                    </div>
 
                     <div>
                         <img src="./img/FlatHeirarchyRatingCategoryIcon.svg" class="preventSelect positionCard">
