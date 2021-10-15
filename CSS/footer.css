@@ -9,6 +9,10 @@
     padding-bottom: 20px;
 }
 
+.footerHeader{
+    margin-bottom: 15px;
+}
+
 .footerLink{
     color: #5E6282; 
     text-decoration: none; 
