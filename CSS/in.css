@@ -1,3 +1,4 @@
+/* Shared */
 .form-signin{
     margin-left:25%; 
     margin-right: 25%;
@@ -23,6 +24,7 @@
     margin-top: 10%;
 }
 
+/* Login */
 .loginField{
     margin-top: 2%;
     margin-bottom: 2%; 
@@ -37,4 +39,9 @@
     background-color: #1565D8; 
     
     width: 100%; 
+}
+
+/* Sign Up */
+.signupField{
+    width: 100%;
 }

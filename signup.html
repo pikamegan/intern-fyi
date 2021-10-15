@@ -24,31 +24,48 @@
         </div>
 
         <div class="inBodyDiv">
-
-            <!-- Inputs-->
-            <div class="logininBodyInputs">
-                <!-- Email -->
-                <label class="sr-only " for="loginEmail">School email address</label>
-                <input id="loginEmail" class="form-control loginField" type="email" placeholder="School email address" required="" autofocus="">
-                <!-- Password -->
-                <label class="sr-only" for="loginPw">Password</label>
-                <input id="loginPw" class="form-control loginField" type="email" placeholder="Password" required="" autofocus="">
-            </div>
-            
-            <!-- Extras -->
-            <div class="row loginBodyExtras">
-                <!-- Remember me--> 
-                <div class="col checkbox mb-3 loginBodyExtra">
-                    <input id="loginRemCheck" type="checkbox" value="rememberCheck">
-                    <label for="loginRemCheck">Remember me</label>
+            <div id="signupName" class="row signupRow">
+                <div class="col col-2">
+                    <label class="sr-only" for="signupFirstName">First name</label>
+                    <input id="signupFirstName" class="form-control signupField" type="text" placeholder="First name" required="" autofocus="">
                 </div>
 
-                <div class="col" id="ResetPw">
-                    <a id="resetPwLink"  href="resetPw.html" class="loginBodyExtra">Forgot password?</a>
+                <div class="col col-1">                   
+                    <label class="sr-only " for="signupLastName">Last name</label>
+                    <input id="signupLastName" class="form-control signupField" type="text" placeholder="Last name" required="" autofocus="">
+         
                 </div>
-                
+
+                <div class="col col-1">
+                    <label class="sr-only " for="signupGender">Gender</label>
+
+                    <div id="signupGender" class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Gender
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Male</a>
+                          <a class="dropdown-item" href="#">Female</a>
+                          <a class="dropdown-item" href="#">Other</a>
+                        </div>
+                      </div>
+                </div>
 
             </div>
+
+            <div id="signupSchool" class="row signupRow">
+
+            </div>
+
+            <div id="pw1" class="row signupRow">
+
+            </div>
+
+            <div id="pw2" class="row signupRow">
+
+            </div>
+
+
 
 
             <!-- Remember me-->
