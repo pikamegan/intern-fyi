@@ -1,0 +1,25 @@
+.footerRow{
+    margin-left: 2%; 
+    margin-right: 2%; 
+}
+.footerCol{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.footerLink{
+    color: #5E6282; 
+    text-decoration: none; 
+}
+.footerLink:hover{
+    color: #080809;
+    text-decoration: underline; 
+    text-decoration-color: #080809; 
+}
+
+.copyright{
+    text-align: center;
+    color: #5E6282; 
+}
