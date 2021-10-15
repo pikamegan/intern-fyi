@@ -6,7 +6,6 @@
 // }
 //Above code is not working as expected... need more working
 
-
 function gotoWriteAReview() {
     window.location = "../HTML/WriteAReview.html"
 }
@@ -27,6 +26,10 @@ function gotoHomePage() {
 
 function gotoMyProfile() {
     window.location = "../HTML/myProfile.html"
+}
+
+function gotoSearch() {
+    window.location = "../HTML/search.html"
 }
 
 
