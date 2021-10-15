@@ -24,18 +24,34 @@
         </div>
 
         <div class="inBodyDiv">
-            <!-- Email -->
-            <label class="sr-only " for="loginEmail">School email address</label>
-            <input id="loginEmail" class="form-control loginField" type="email" placeholder="School email address" required="" autofocus="">
-            <!-- Password -->
-            <label class="sr-only" for="loginPw">Password</label>
-            <input id="loginPw" class="form-control loginField" type="email" placeholder="Password" required="" autofocus="">
 
-            <!-- Remember me-->
-            <div class="checkbox mb-3">
-                <input id="loginRemCheck" type="checkbox" value="rememberCheck">
-                <label for="loginRemCheck">Remember me</label>
+            <!-- Inputs-->
+            <div class="logininBodyInputs">
+                <!-- Email -->
+                <label class="sr-only " for="loginEmail">School email address</label>
+                <input id="loginEmail" class="form-control loginField" type="email" placeholder="School email address" required="" autofocus="">
+                <!-- Password -->
+                <label class="sr-only" for="loginPw">Password</label>
+                <input id="loginPw" class="form-control loginField" type="email" placeholder="Password" required="" autofocus="">
             </div>
+            
+            <!-- Extras -->
+            <div class="row loginBodyExtras">
+                <!-- Remember me--> 
+                <div class="col checkbox mb-3 loginBodyExtra">
+                    <input id="loginRemCheck" type="checkbox" value="rememberCheck">
+                    <label for="loginRemCheck">Remember me</label>
+                </div>
+
+                <div class="col" id="ResetPw">
+                    <a id="resetPwLink"  href="resetPw.html" class="loginBodyExtra">Forgot password?</a>
+                </div>
+                
+
+            </div>
+
+        
+
 
             <!-- Remember me-->
             <button id="loginBtn" class="btn btn-primary" type="submit">Log in</button>

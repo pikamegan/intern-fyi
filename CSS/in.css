@@ -28,6 +28,11 @@
     margin-bottom: 2%; 
 }
 
+#resetPw{
+    justify-content: end;
+    text-align: right;
+}
+
 #loginBtn{
     background-color: #1565D8; 
     
