@@ -200,3 +200,30 @@ img.preventSelect {
 .flatHierarchy{
     background-color: #49D673;
 }
+
+img.positionCard {
+    height: 80px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+div.cardBold {
+    font-weight: 900;
+}
+
+.criteriaTooltip .criteriaTooltipText {
+    visibility: hidden;
+    width: 140px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 2px;
+    border-radius: 10px;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.criteriaTooltip:hover .criteriaTooltipText {
+    visibility: visible;
+}
