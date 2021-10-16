@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <img src= '../IMG/Group4274.svg' height = '' width = ''>
 
     <div style="height: 70px; margin: auto; background-color: rgb(233, 233, 233); text-align: center;">
         NAVBAR PLACEHOLDER
@@ -150,7 +151,7 @@
                 return {
                     // add properties here
                     currentImgSrc: "../img/AtoZ.svg",
-                    currentFilterImg: "../img/fi_filter.svg"
+                    currentFilterImg: "../img/filter.svg"
                 }
             },
             methods: {
@@ -161,12 +162,11 @@
                         this.currentImgSrc = "../img/AtoZ.svg";
                     }
                 },
-
                 changeFilterImg() {
-                    if (this.currentFilterImg === "../img/fi_filter.svg") {
-                        this.currentFilterImg = "../img/filter_off_outline.svg";
+                    if (this.currentFilterImg === "../img/filter.svg") {
+                        this.currentFilterImg = "../img/clearfilter.svg";
                     } else {
-                        this.currentFilterImg = "../img/fi_filter.svg";
+                        this.currentFilterImg = "../img/filter.svg";
                     }
                 }
             }
