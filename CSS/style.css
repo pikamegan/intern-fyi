@@ -133,7 +133,9 @@ h3 {
     font-family: Poppins;
     font-style: normal;
     font-weight: 900;
-    font-size: 96px;
+    /* font-size: 96px; */
+    /* font-size: max(6vw, 50px); */
+    font-size: clamp(64px, 6vw, 96px);
     line-height: 150%;
     /* or 32px */
     color: #4E6AF0;
