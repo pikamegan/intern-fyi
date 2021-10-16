@@ -12,7 +12,7 @@
 .form-signin{
     margin-left:25%; 
     margin-right: 25%;
-    margin-bottom: 12%; 
+    margin-bottom: 3%; 
 }
 
 .inHead{
@@ -34,12 +34,29 @@
     margin-top: 10%;
 }
 
+.pwToggle{
+    position: relative; 
+    float: right; 
+
+    margin-top: -30px;
+    margin-right: 20px;
+
+    z-index: 100;
+    cursor: pointer;
+
+    color: #5E6282;
+}
+
 /* Login */
 .loginField{
     margin-top: 2%;
     margin-bottom: 2%; 
 }
 
+#loginToggle{
+    margin-top: -10px;
+
+}
 #resetPw{
     justify-content: end;
     text-align: right;
@@ -51,6 +68,28 @@
 }
 
 /* Sign Up */
-.signupField{
+.signupRow{
+    margin-bottom: 20px;
+}
+#signinGenderBtn{
     width: 100%;
+}
+
+
+#loginMailingLabel{
+    color: #5E6282;
+}
+
+#signupBtn{
+    width: 100%;
+    margin-bottom: 12px; 
+}
+
+#signupDisclaimer{
+    color: #5E6282;
+}
+
+#signupToLogin{
+    text-align: center; 
+    margin-bottom: 5%; 
 }
