@@ -12,6 +12,8 @@
     <script src="../js/actions.js"></script>
     <!-- vue -->
     <script src="https://unpkg.com/vue@next"></script>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Intern FYI</title>
 </head>
 
@@ -20,7 +22,7 @@
         NAVBAR PLACEHOLDER
     </div>
 
-    <div class="container mt-5" id= "searchVue">
+    <div class="container mt-5" id="searchVue">
         <div class="row">
             <div class="col-lg-3 col-md-4 shadow">
                 <!-- sticky? -->
@@ -28,8 +30,10 @@
                     <div class="row my-2">
                         <div class="col">
                             Filter by:
-                            <img class="preventSelect" :src="currentFilterImg" style="width: 20px;" @click = "changeFilterImg()">
-                            <img class="preventSelect" :src="currentImgSrc" style="width: 20px;" @click = "changeLetterSortImg()">
+                            <img class="preventSelect" :src="currentFilterImg" style="width: 20px;"
+                                @click="changeFilterImg()">
+                            <img class="preventSelect" :src="currentImgSrc" style="width: 20px;"
+                                @click="changeLetterSortImg()">
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -134,8 +138,16 @@
         </div>
     </div>
 
-
-
+    <!-- WIP -->
+    <!-- cannot mount appSearch within searchVue -->
+    <div class="container">
+        <div id="appSearch">
+            <company-row v-for="company in allCompanies" :companyinfo="searchCompanyRelavantInfo(company)">
+            </company-row>
+        </div>
+    </div>
+    <script src="../js/appSearch.js"></script>
+    <!-- WIP -->
 
     <div style="height: 50px;">
     </div>
@@ -172,12 +184,13 @@
         const vm = app.mount('#searchVue')
     </script>
 
-    <!-- axios -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <!-- JavaScript for CSS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
+
+
 
 
 </body>
