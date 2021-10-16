@@ -8,6 +8,7 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <link rel="stylesheet" href="../CSS/in.css">
         <link rel="stylesheet" href="../CSS/footer.css">
 
@@ -24,61 +25,84 @@
         </div>
 
         <div class="inBodyDiv">
-            <div id="signupName" class="row signupRow">
-                <div class="col col-2">
+            <div id="signupName" class="form-row signupRow">
+                <div class="col col-6">
                     <label class="sr-only" for="signupFirstName">First name</label>
                     <input id="signupFirstName" class="form-control signupField" type="text" placeholder="First name" required="" autofocus="">
                 </div>
 
-                <div class="col col-1">                   
+                <div class="col col-3">                   
                     <label class="sr-only " for="signupLastName">Last name</label>
                     <input id="signupLastName" class="form-control signupField" type="text" placeholder="Last name" required="" autofocus="">
-         
+            
                 </div>
 
-                <div class="col col-1">
+                <div class="col col-3">
                     <label class="sr-only " for="signupGender">Gender</label>
 
                     <div id="signupGender" class="dropdown">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Gender
+                        <button class="btn btn-light dropdown-toggle" type="button" id="signupGenderBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Gender
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Male</a>
-                          <a class="dropdown-item" href="#">Female</a>
-                          <a class="dropdown-item" href="#">Other</a>
+                        <div class="dropdown-menu" aria-labelledby="signupGenderBtn">
+                            <a class="dropdown-item" href="#">Male</a>
+                            <a class="dropdown-item" href="#">Female</a>
+                            <a class="dropdown-item" href="#">Other</a>
                         </div>
-                      </div>
+                        </div>
                 </div>
 
             </div>
 
-            <div id="signupSchool" class="row signupRow">
+            <div id="signupSchool" class="form-row signupRow">
+                <div class="col">
+                    <label class="sr-only " for="signupSchoolName">School name</label>
+                    <input id="signupSchoolName" class="form-control signupField" type="text" placeholder="School" required="" autofocus="">
+                </div>
+                <div class="col">
+                    <label class="sr-only " for="signupLastName">Last name</label>
+                    <input id="signupLastName" class="form-control signupField" type="email" placeholder="School email" required="" autofocus="">
 
+                </div>
             </div>
 
-            <div id="pw1" class="row signupRow">
-
+            <div id="signupPw1" class="form-row signupRow">
+                <div class="col">
+                    <label class="sr-only " for="signupPw1Input">Password</label>
+                    <input id="signupPw1Input" class="form-control signupField" type="text" placeholder="Password" required="" autofocus="">
+                    <i id="signupPw1Toggle" class="bi bi-eye-fill signupPwToggle"></i>
+                </div>
             </div>
 
-            <div id="pw2" class="row signupRow">
-
+            <div id="signupPw2" class="form-row signupRow">
+                <div class="col">
+                    <label class="sr-only " for="signupPw2Input">Confirm password</label>
+                    <input id="signupPw1Input" class="form-control signupField" type="text" placeholder="Confirm password" required="" autofocus="">
+                    <i id="signupPw2Toggle" class="bi bi-eye-fill signupPwToggle"></i>
+                </div>
             </div>
 
+                <!-- Extras -->
+            <div class="form-row signupBodyExtras">
+                <!-- Mailing list --> 
+                <div class="col checkbox mb-3 loginBodyExtra">
+                    <input id="loginMailingCheck" type="checkbox" value="rememberCheck">
+                    <label id="loginMailingLabel" for="loginMailingCheck">I'd like to receive emails on new reviews and companies</label>
+                </div>
+            </div>
 
-
-
-            <!-- Remember me-->
-            <button id="loginBtn" class="btn btn-primary" type="submit">Log in</button>
-            
-
-
+            <!-- Submit -->
+            <div class="form-row">
+                <button id="signupBtn" class="btn btn-primary d-block" type="submit">Sign up</button>
+                <p id="signupDisclaimer">
+                    <small>By signing up, you agree to our <strong>Terms</strong>, <strong>Data Policy</strong> and <strong>Cookies Policy</strong>.</small>
+                </p>
+        
+            </div>
         </div>
-
-
-
     </form>
 
+    <p id="signupToLogin">Already have an account? <a href="./login.html">Sign in</a></p>
 
 
     <!-- jQuery first, Popper.js, Bootstrap JS -->
