@@ -177,27 +177,32 @@ img.preventSelect {
     color: rgba(0, 0, 0, 0.53);
 }
 
-.pay{
+.homeHeader {
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.pay {
     background-color: #2D9CDB;
 }
 
-.skillsLearned{
+.skillsLearned {
     background-color: #7879F1;
 }
 
-.companyCulture{
+.companyCulture {
     background-color: #9E66FF;
 }
 
-.food{
+.food {
     background-color: #FF725C;
 }
 
-.mentorship{
+.mentorship {
     background-color: #F54960;
 }
 
-.flatHierarchy{
+.flatHierarchy {
     background-color: #49D673;
 }
 
@@ -219,7 +224,6 @@ div.cardBold {
     text-align: center;
     padding: 2px;
     border-radius: 10px;
-
     position: absolute;
     z-index: 1;
 }
