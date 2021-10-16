@@ -133,7 +133,9 @@ h3 {
     font-family: Poppins;
     font-style: normal;
     font-weight: 900;
-    font-size: 96px;
+    /* font-size: 96px; */
+    /* font-size: max(6vw, 50px); */
+    font-size: clamp(64px, 6vw, 96px);
     line-height: 150%;
     /* or 32px */
     color: #4E6AF0;
@@ -145,7 +147,7 @@ h3 {
 }
 
 .aboutCompany {
-    height: 569px;
+    height: auto;
     margin-top: 15px;
     background: #FFFFFF;
     box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.02), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0151852), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0121481), 0px 20px 13px rgba(0, 0, 0, 0.01), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00481481);
@@ -177,27 +179,32 @@ img.preventSelect {
     color: rgba(0, 0, 0, 0.53);
 }
 
-.pay{
+.homeHeader {
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.pay {
     background-color: #2D9CDB;
 }
 
-.skillsLearned{
+.skillsLearned {
     background-color: #7879F1;
 }
 
-.companyCulture{
+.companyCulture {
     background-color: #9E66FF;
 }
 
-.food{
+.food {
     background-color: #FF725C;
 }
 
-.mentorship{
+.mentorship {
     background-color: #F54960;
 }
 
-.flatHierarchy{
+.flatHierarchy {
     background-color: #49D673;
 }
 
@@ -219,7 +226,6 @@ div.cardBold {
     text-align: center;
     padding: 2px;
     border-radius: 10px;
-
     position: absolute;
     z-index: 1;
 }

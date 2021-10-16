@@ -33,6 +33,14 @@ function gotoSearch() {
 }
 
 
+function openForm() {
+    document.getElementById("feedbackPopUp").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("feedbackPopUp").style.display = "none";
+}
+
 
 
 
