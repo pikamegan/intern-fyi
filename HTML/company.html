@@ -30,7 +30,7 @@
                
                 <div class="d-flex bd-highlight">
                     <div class="p-2 bd-highlight">Company Name</div>
-                    <div class="p-2 flex-grow-1 bd-highlight"><img src="../IMG/linkedin.svg" alt="LinkedIn logo"></div>
+                    <div class="p-2 flex-grow-1 bd-highlight"><a href="#"><img src="../IMG/linkedin.svg" alt="LinkedIn logo"></a></div>
                     <div class="p-2 bd-highlight"><img src="../IMG/location_icon.svg" alt="LinkedIn logo"> Distance 2.5km</div>
                 </div>
 
@@ -45,7 +45,7 @@
                     typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                 </p>
 
-                <div class="d-flex bd-highlight pt-3 mt-3 mb-2">
+                <div class="d-flex bd-highlight pt-2 mt-3 mb-2">
                     <div class="p-2 bd-highlight flex-grow-1"><img src="../IMG/review_icon.svg" alt="Review icon"> 500 people reviewed</div>
                     <div class="p-2 bd-highlight"><a href="#" class="text-decoration-none text-muted">Read More ></a></div>
                 </div>
@@ -54,173 +54,322 @@
             <!-- Criteria card -->
             <div class="col-10 col-sm-10 col-md-6 col-lg-6 aboutCompany">
                 <h3 class="py-2 text-center">Average Rating</h3>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 mt-4 mb-4 d-flex justify-content-around">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 mt-4 mb-3 d-flex justify-content-around">
 
                     <!-- Criteria 1 -->
-                    <div class="pay px-0 py-3"
-                        style="border-radius: 10px; text-align: center; position: relative">
-                        <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                            <img src="../img/help.svg" class="preventSelect">
-                            <span class="criteriaTooltipText">
-                                5 stars for good pay, relative to your job role
-                            </span>
-                        </div>
-                        <div>
-                            <img src="../img/PayRatingCategoryIcon.svg" class="preventSelect positionCard">
-                        </div>
-    
-                        <h6 style="color: white;">Pay</h6>
-    
-                        <div class="d-flex align-items-center justify-content-center" style="background-color:white; margin-top:10px; height:70px;">
-                            <img src="../IMG/star.svg" alt="star">
-                            <p class="text-center m-0 px-2">4.8</p>
+                    <div class="col mt-1 mb-3">
+                        <div class="pay px-0 py-3 mb-2"
+                            style="border-radius: 10px; text-align: center; position: relative;">
+                            <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
+                                <img src="../img/help.svg" class="preventSelect">
+                                <span class="criteriaTooltipText">
+                                    5 stars for good pay, relative to your job role
+                                </span>
+                            </div>
+                            <div>
+                                <img src="../img/PayRatingCategoryIcon.svg" class="preventSelect positionCard">
+                            </div>
+        
+                            <h6 style="color: white;">Pay</h6>
+        
+                            <div class="d-flex align-items-center justify-content-center" style="background-color:#FBFCF7; margin-top:10px; height:70px;">
+                                <img src="../IMG/star.svg" alt="star">
+                                <p class="text-center m-0 px-2">4.8</p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Criteria 2 -->
-                    <div class="skillsLearned px-0 py-3"
-                        style="border-radius: 10px; text-align: center; position: relative;">
-                        <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                            <img src="../img/help.svg" class="preventSelect">
-                            <span class="criteriaTooltipText">
-                                5 stars for learning useful work-related skills
-                            </span>
-                        </div>
-    
-                        <div>
-                            <img class="preventSelect positionCard" src="../img/SkillEarnedRatingCategoryIcon.svg">
-                        </div>
-    
-                        <h6 style="color: white;">Skills Learned</h6>
-    
-                        <div class="d-flex align-items-center justify-content-center" style="background-color:white; margin-top:10px; height:70px;">
-                            <img src="../IMG/star.svg" alt="star">
-                            <p class="text-center m-0 px-2">4.8</p>
+                    <div class="col mt-1 mb-3">
+                        <div class="skillsLearned px-0 py-3"
+                            style="border-radius: 10px; text-align: center; position: relative;">
+                            <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
+                                <img src="../img/help.svg" class="preventSelect">
+                                <span class="criteriaTooltipText">
+                                    5 stars for learning useful work-related skills
+                                </span>
+                            </div>
+        
+                            <div>
+                                <img class="preventSelect positionCard" src="../img/SkillEarnedRatingCategoryIcon.svg">
+                            </div>
+        
+                            <h6 style="color: white;">Skills Learned</h6>
+        
+                            <div class="d-flex align-items-center justify-content-center" style="background-color:#FBFCF7; margin-top:10px; height:70px;">
+                                <img src="../IMG/star.svg" alt="star">
+                                <p class="text-center m-0 px-2">4.8</p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Criteria 3 -->
-                    <div class="companyCulture px-0 py-3"
-                        style="border-radius: 10px; text-align: center; position: relative;">
-                        <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                            <img src="../img/help.svg" class="preventSelect">
-                            <span class="criteriaTooltipText">
-                                5 stars for friendliness and cohesion
-                            </span>
-                        </div>
-    
-                        <div>
-                            <img src="../img/CompanyCultureRatingCategoryIcon.svg" class="preventSelect positionCard">
-                        </div>
-    
-                        <h6 style="color: white;">Company Culture</h6>
-    
-                        <div class="d-flex align-items-center justify-content-center" style="background-color:white; margin-top:10px; height:70px;">
-                            <img src="../IMG/star.svg" alt="star">
-                            <p class="text-center m-0 px-2">4.8</p>
+                    <div class="col mt-1 mb-3">
+                        <div class="companyCulture px-0 py-3"
+                            style="border-radius: 10px; text-align: center; position: relative;">
+                            <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
+                                <img src="../img/help.svg" class="preventSelect">
+                                <span class="criteriaTooltipText">
+                                    5 stars for friendliness and cohesion
+                                </span>
+                            </div>
+        
+                            <div>
+                                <img src="../img/CompanyCultureRatingCategoryIcon.svg" class="preventSelect positionCard">
+                            </div>
+        
+                            <h6 style="color: white;">Company Culture</h6>
+        
+                            <div class="d-flex align-items-center justify-content-center" style="background-color:#FBFCF7; margin-top:10px; height:70px;">
+                                <img src="../IMG/star.svg" alt="star">
+                                <p class="text-center m-0 px-2">4.8</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 mb-4 d-flex justify-content-around">
-
+                    
                     <!-- Criteria 4 -->
-                    <div class="food px-0 py-3"
+                    <div class="col mt-1 mb-3">
+                        <div class="food px-0 py-3"
                         style="border-radius: 10px; text-align: center; position: relative;">
-                        <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                            <img src="../img/help.svg" class="preventSelect">
-                            <span class="criteriaTooltipText">
-                                5 stars for reasonable food prices in the area
-                            </span>
-                        </div>
+                            <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
+                                <img src="../img/help.svg" class="preventSelect">
+                                <span class="criteriaTooltipText">
+                                    5 stars for reasonable food prices in the area
+                                </span>
+                            </div>
 
-                        <div>
-                            <img src="../img/FoodRatingCategoryIcon.svg" class="preventSelect positionCard">
-                        </div>
+                            <div>
+                                <img src="../img/FoodRatingCategoryIcon.svg" class="preventSelect positionCard">
+                            </div>
 
-                        <h6 style="color: white;">Food</h6>
+                            <h6 style="color: white;">Food</h6>
 
-                        <div class="d-flex align-items-center justify-content-center" style="background-color:white; margin-top:10px; height:70px;">
-                            <img src="../IMG/star.svg" alt="star">
-                            <p class="text-center m-0 px-2">4.8</p>
+                            <div class="d-flex align-items-center justify-content-center" style="background-color:#FBFCF7; margin-top:10px; height:70px;">
+                                <img src="../IMG/star.svg" alt="star">
+                                <p class="text-center m-0 px-2">4.8</p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Criteria 5 -->
-                    <div class="mentorship px-0 py-3"
-                        style="border-radius: 10px; text-align: center; position: relative;">
-                        <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                            <img src="../img/help.svg" class="preventSelect">
-                            <span class="criteriaTooltipText">
-                                5 stars for good guidance and superiors
-                            </span>
-                        </div>
+                    <div class="col mt-1 mb-3">
+                        <div class="mentorship px-0 py-3"
+                            style="border-radius: 10px; text-align: center; position: relative;">
+                            <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
+                                <img src="../img/help.svg" class="preventSelect">
+                                <span class="criteriaTooltipText">
+                                    5 stars for good guidance and superiors
+                                </span>
+                            </div>
 
-                        <div>
-                            <img src="../img/MentorshipRatingCategoryIcon.svg" class="preventSelect positionCard">
-                        </div>
+                            <div>
+                                <img src="../img/MentorshipRatingCategoryIcon.svg" class="preventSelect positionCard">
+                            </div>
 
-                        <h6 style="color: white;">Mentorship</h6>
+                            <h6 style="color: white;">Mentorship</h6>
 
-                        <div class="d-flex align-items-center justify-content-center" style="background-color:white; margin-top:10px; height:70px;">
-                            <img src="../IMG/star.svg" alt="star">
-                            <p class="text-center m-0 px-2">4.8</p>
+                            <div class="d-flex align-items-center justify-content-center" style="background-color:#FBFCF7; margin-top:10px; height:70px;">
+                                <img src="../IMG/star.svg" alt="star">
+                                <p class="text-center m-0 px-2">4.8</p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Criteria 6 -->
-                    <div class="flatHierarchy px-0 py-3"
+                    <div class="col mt-1 mb-3">
+                        <div class="flatHierarchy px-0 py-3"
                         style="border-radius: 10px; text-align: center; position: relative;">
-                        <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                            <img src="../img/help.svg" class="preventSelect">
-                            <span class="criteriaTooltipText">
-                                5 stars for respecting job roles and your internship role
-                            </span>
-                        </div>
+                            <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
+                                <img src="../img/help.svg" class="preventSelect">
+                                <span class="criteriaTooltipText">
+                                    5 stars for respecting job roles and your internship role
+                                </span>
+                            </div>
 
-                        <div>
-                            <img src="../img/FlatHeirarchyRatingCategoryIcon.svg" class="preventSelect positionCard">
-                        </div>
+                            <div>
+                                <img src="../img/FlatHeirarchyRatingCategoryIcon.svg" class="preventSelect positionCard">
+                            </div>
 
-                        <h6 style="color: white;">Flat Hierarchy</h6>
+                            <h6 style="color: white;">Flat Hierarchy</h6>
 
-                        <div class="d-flex align-items-center justify-content-center" style="background-color:white; margin-top:10px; height:70px;">
-                            <img src="../IMG/star.svg" alt="star">
-                            <p class="text-center m-0 px-2">4.8</p>
+                            <div class="d-flex align-items-center justify-content-center" style="background-color:#FBFCF7; margin-top:10px; height:70px;">
+                                <img src="../IMG/star.svg" alt="star">
+                                <p class="text-center m-0 px-2">4.8</p>
+                            </div>
                         </div>
                     </div>
 
+                
+                
                 </div>
             </div>
         </div>
     </div>
     <br>
     <br>
-    <div class="container-fluid mt-5 mb-5" id="careerDiv">
-        <div class="row"> 
-            <div class="col-sm-12 col-lg-5">
-                <img class = "img-fluid p-5" src='../IMG/ouroffice_Career.svg' height='' width=''>
-            </div>
-            <div class="col-sm-12 col-lg-7 text-start mt-lg-5 mt-sm-1">
-                <div class="container">
-                    <p class="text-start mt-lg-5 ms-sm-1 blueTitle">
-                        Our Office
-                    </p>
-                    <h3 class="text-start secondaryTitle ">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-                    <p class="text-start mb-sm-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                        and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
-                        <br>
+    <div class="container px-5">
+        <div class="row">
+            <div class="d-flex bd-highlight pt-2 mt-3 mb-2">
+                <div class="p-2 bd-highlight flex-grow-1"><h2 class="text-start display-5">Reviews</h2></div>
+                <div class="p-2 bd-highlight"><a href="#" class="text-decoration-none text-muted">
+                    <button class="btn text-white customBtn"><h4 class="mb-0">Write a Review Now</h4></button></a>
                 </div>
             </div>
         </div>
+        <div class="container mt-5 mb-5 p-5 shadow-lg rounded-3">
+            <!-- review one -->
+            <div class="row mb-5">
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+                    <div class="d-lg-flex flex-lg-row flex-fill bd-highlight mb-3">
+                        <div class="p-1 bd-highlight"><img src="../IMG/avatar1.svg" alt="User profile image"></div>
+                        <div class="p-1 bd-highlight"><p><strong>Anonymous Intern</strong></p></div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi delectus itaque incidunt culpa quis tempora voluptas. Quidem illo hic eligendi error quia? Odit porro, neque ipsum ea laudantium excepturi est.</p>
+                </div>
+
+                <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                    <div class="row row-cols-2">
+                        <div class="col-6">
+                            <figure class="figure">
+                                <img src="../IMG/thumbsup.svg" alt="thumbs up" class="figure-img img-fluid">
+                                <figcaption class="figure-caption">492</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6">
+                            <figure class="figure">
+                                <img src="../IMG/thumbsdown-2.svg" alt="thumbs up" class="figure-img img-fluid">
+                                <figcaption class="figure-caption">130</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+                    <div class="d-lg-flex flex-lg-row flex-fill bd-highlight mb-3">
+                        <div class="p-1 bd-highlight"><img src="../IMG/avatar1.svg" alt="User profile image"></div>
+                        <div class="p-1 bd-highlight"><p><strong>Anonymous Intern</strong></p></div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi delectus itaque incidunt culpa quis tempora voluptas. Quidem illo hic eligendi error quia? Odit porro, neque ipsum ea laudantium excepturi est.</p>
+                </div>
+
+                <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                    <div class="row row-cols-2">
+                        <div class="col-6">
+                            <figure class="figure">
+                                <img src="../IMG/thumbsup.svg" alt="thumbs up" class="figure-img img-fluid">
+                                <figcaption class="figure-caption">492</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6">
+                            <figure class="figure">
+                                <img src="../IMG/thumbsdown-2.svg" alt="thumbs up" class="figure-img img-fluid">
+                                <figcaption class="figure-caption">130</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+                    <div class="d-lg-flex flex-lg-row flex-fill bd-highlight mb-3">
+                        <div class="p-1 bd-highlight"><img src="../IMG/avatar1.svg" alt="User profile image"></div>
+                        <div class="p-1 bd-highlight"><p><strong>Anonymous Intern</strong></p></div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi delectus itaque incidunt culpa quis tempora voluptas. Quidem illo hic eligendi error quia? Odit porro, neque ipsum ea laudantium excepturi est.</p>
+                </div>
+
+                <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                    <div class="row row-cols-2">
+                        <div class="col-6">
+                            <figure class="figure">
+                                <img src="../IMG/thumbsup.svg" alt="thumbs up" class="figure-img img-fluid">
+                                <figcaption class="figure-caption">492</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6">
+                            <figure class="figure">
+                                <img src="../IMG/thumbsdown-2.svg" alt="thumbs up" class="figure-img img-fluid">
+                                <figcaption class="figure-caption">130</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+                    <div class="d-lg-flex flex-lg-row flex-fill bd-highlight mb-3">
+                        <div class="p-1 bd-highlight"><img src="../IMG/avatar1.svg" alt="User profile image"></div>
+                        <div class="p-1 bd-highlight"><p><strong>Anonymous Intern</strong></p></div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi delectus itaque incidunt culpa quis tempora voluptas. Quidem illo hic eligendi error quia? Odit porro, neque ipsum ea laudantium excepturi est.</p>
+                </div>
+
+                <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                    <div class="row row-cols-2">
+                        <div class="col-6">
+                            <figure class="figure">
+                                <img src="../IMG/thumbsup.svg" alt="thumbs up" class="figure-img img-fluid">
+                                <figcaption class="figure-caption">492</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6">
+                            <figure class="figure">
+                                <img src="../IMG/thumbsdown-2.svg" alt="thumbs up" class="figure-img img-fluid">
+                                <figcaption class="figure-caption">130</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- still need to make this part responsive -->
+            <div class="row">
+                <div class="d-flex justify-content-around align-items-center">
+                    <div class="p-2 pb-4 text-muted">300 reviews</div>
+
+                    <div class="p-2">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item"><p><strong>Previous</strong></p></li>
+                            <li class="list-inline-item">1</li>
+                            <li class="list-inline-item">2</li>
+                            <li class="list-inline-item">...</li>
+                            <li class="list-inline-item">5</li>
+                            <li class="list-inline-item"><p><strong>Next</strong></p></li>
+                          </ul>
+                    </div>
+
+                    <div class="p-2 pb-3">
+                        <a><img src="../IMG/previous.svg" alt="previous page" style="width: 25px; height: 25px; padding-bottom: 10px;"></a>
+                        <a><img src="../IMG/next_right.svg" alt="next page" style="width: 60px; height: 60px;"></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
     </div>
-    <div>
-        <br>
-        <br>
-        <br>
-    </div>
+
 
 
 </body>
