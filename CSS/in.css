@@ -34,12 +34,29 @@
     margin-top: 10%;
 }
 
+.pwToggle{
+    position: relative; 
+    float: right; 
+
+    margin-top: -30px;
+    margin-right: 20px;
+
+    z-index: 100;
+    cursor: pointer;
+
+    color: #5E6282;
+}
+
 /* Login */
 .loginField{
     margin-top: 2%;
     margin-bottom: 2%; 
 }
 
+#loginToggle{
+    margin-top: -10px;
+
+}
 #resetPw{
     justify-content: end;
     text-align: right;
@@ -58,18 +75,6 @@
     width: 100%;
 }
 
-.signupPwToggle{
-    position: relative; 
-    float: right; 
-
-    margin-top: -30px;
-    margin-right: 20px;
-
-    z-index: 100;
-    cursor:pointer;
-
-    color: #5E6282;
-}
 
 #loginMailingLabel{
     color: #5E6282;
