@@ -1,4 +1,14 @@
 /* Shared */
+
+@font-face {
+    font-family: poppins;
+    src: url(../FONTS/Poppins-Regular.ttf);
+}
+
+* {
+    font-family: poppins;
+}
+
 .form-signin{
     margin-left:25%; 
     margin-right: 25%;
@@ -37,7 +47,6 @@
 
 #loginBtn{
     background-color: #1565D8; 
-    
     width: 100%; 
 }
 

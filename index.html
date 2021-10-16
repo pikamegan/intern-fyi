@@ -9,6 +9,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="./CSS/style.css">
+    <!-- vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- JavaScript for CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
     <script src="./js/actions.js" defer></script>
     <title>Intern FYI</title>
 </head>
@@ -99,7 +108,7 @@
                     /* option 1: without anything */
 
                     /* i think option 2 looks the best tbh, maybe yall want to change the color */
-                    
+
                     /* option 2: cover the whole card */
                     /* width: 168px;
                     height: 222px; 
@@ -117,7 +126,7 @@
                     visibility: visible;
                 }
             </style>
-            
+
 
 
 
@@ -283,12 +292,24 @@
             </div>
         </div>
 
-        <div class="row mb-5 shadow">
-            companies cards
+        <div id="appHome">
+            <div class="row mb-5 shadow">
+                <company-card v-for="company in rand4companies" :companyinfo="homeCompanyCardsRelavantInfo(company)">
+                </company-card>
+            </div>
         </div>
     </div>
 
 
+
+    <!-- rand 1 not working for some reason -->
+    <!-- <company-card :companyinfo="one()"></company-card> -->
+    <!-- <company-card :companyinfo="homeCompanyCardsRelavantInfo(rand1company())"></company-card> -->
+
+
+
+    <!-- company cards -->
+    <script src='./js/appHome.js'></script>
 
     <div style="height: 50px;">
     </div>
@@ -297,12 +318,7 @@
         FOOTER PLACEHOLDER
     </div>
 
-    <!-- axios -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- JavaScript for CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script>
+
 
 
 </body>
