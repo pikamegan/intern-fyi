@@ -29,13 +29,13 @@
                     <div class="row my-2">
                         <div class="col">
                             Filter by:
-                            <img class="preventSelect" src="../img/fi_filter.svg" style="width: 20px;">
-                            <img class="preventSelect" :src="currentImgSrc" style="width: 20px;" @click = "changeLetterSortImg">
+                            <img class="preventSelect" :src="currentFilterImg" style="width: 20px;" @click = "changeFilterImg()">
+                            <img class="preventSelect" :src="currentImgSrc" style="width: 20px;" @click = "changeLetterSortImg()">
                         </div>
                     </div>
                     <div class="row mb-2">
                         <div style="width: 500px; height: 100px; background-color: violet;">
-                            what am i suppose to put here? and whats the functionalaty?
+                            what am i suppose to put here? and whats the functionality?
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -149,7 +149,8 @@
             data() {
                 return {
                     // add properties here
-                    currentImgSrc: "../img/AtoZ.svg"
+                    currentImgSrc: "../img/AtoZ.svg",
+                    currentFilterImg: "../img/fi_filter.svg"
                 }
             },
             methods: {
@@ -158,6 +159,14 @@
                         this.currentImgSrc = "../img/ZtoA.svg";
                     } else {
                         this.currentImgSrc = "../img/AtoZ.svg";
+                    }
+                },
+
+                changeFilterImg() {
+                    if (this.currentFilterImg === "../img/fi_filter.svg") {
+                        this.currentFilterImg = "../img/filter_off_outline.svg";
+                    } else {
+                        this.currentFilterImg = "../img/fi_filter.svg";
                     }
                 }
             }
