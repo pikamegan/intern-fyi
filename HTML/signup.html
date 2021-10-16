@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 
 <html lang="en">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <link rel="stylesheet" href="../CSS/in.css">
-        <link rel="stylesheet" href="../CSS/footer.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/jquery.passwordRequirements.css" />
+
     <link rel="stylesheet" href="../CSS/in.css">
     <link rel="stylesheet" href="../CSS/footer.css">
 
@@ -72,7 +73,7 @@
                 <div class="col">
                     <label class="sr-only " for="signupPw1Input">Password</label>
                     <input id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password" required="" autofocus="">
-                    <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle" onclick=pwToggle(signupPw1Input)></i>
+                    <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle" onclick=pwToggle(signupPw1Input,signupPw1Toggle)></i>
                 </div>
             </div>
 
@@ -80,7 +81,7 @@
                 <div class="col">
                     <label class="sr-only " for="signupPw2Input">Confirm password</label>
                     <input id="signupPw2Input" class="form-control signupField" type="password" placeholder="Confirm password" required="" autofocus="">
-                    <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle" onclick=pwToggle(signupPw2Input)></i>
+                    <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle" onclick=pwToggle(signupPw2Input,signupPw2Toggle)></i>
                 </div>
             </div>
 
@@ -121,15 +122,20 @@
         crossorigin="anonymous">
     </script>
 
+    <!-- jQuery password requirements -->
+    <script src="/path/to/cdn/jquery.min.js"></script>
+
+	<script src="js/jquery.passwordRequirements.min.js"></script> 
+
     <!--Changing between password input types-->
     <script>
-        function pwToggle(pwInput) {
-            console.log(signupPw1Input);
-
+        function pwToggle(pwInput, pwToggleBtn) {
             if (pwInput.type === "password") {
                 pwInput.type = "text";    
+                $(pwToggleBtn).toggleClass("bi-eye-fill bi-eye-slash-fill");
             } else {
                 pwInput.type = "password";
+                $(pwToggleBtn).toggleClass("bi-eye-slash-fill bi-eye-fill");
             }
         } 
     </script>
