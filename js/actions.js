@@ -15,7 +15,7 @@ function gotoSignUpPage() {
 }
 
 function gotoSignInPage() {
-    window.location = "../HTML/signin.html"
+    window.location = "../HTML/login.html"
 }
 
 
