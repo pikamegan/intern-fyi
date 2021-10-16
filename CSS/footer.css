@@ -1,3 +1,12 @@
+@font-face {
+    font-family: poppins;
+    src: url(../FONTS/Poppins-Regular.ttf);
+}
+
+* {
+    font-family: poppins;
+}
+
 footer{
     border-top: #5E6282; 
     border-radius: 1px;
