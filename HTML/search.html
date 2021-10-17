@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA"
         async defer>
-    </script>
+        </script>
     <title>Intern FYI</title>
 </head>
 
@@ -145,9 +145,9 @@
                         </ul>
                     </div>
                     <div class="row mb-2">
-                    
-                    
-                    <div id="map" style="height: 200px; width: 200px;" class="m-auto rounded-2 mb-4" ></div>
+
+
+                        <div id="map" style="height: 200px; width: 200px;" class="m-auto rounded-2 mb-4"></div>
                         <script>
                             var map;
                             function initMap() {
@@ -157,7 +157,9 @@
                                 });
                             }
                         </script>
-                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&callback=initMap" async defer></script>
+                        <script
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&callback=initMap"
+                            async defer></script>
                     </div>
                 </div>
             </div>
@@ -171,6 +173,14 @@
     <!-- cannot mount appSearch within searchVue -->
     <div class="container">
         <div id="appSearch">
+
+            <!-- <div class="row py-3 shadow">
+                <div class="col">
+                    <img style="height: 200px; width: 200px; float: left" src="https://media-exp1.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_200_200/0/1519856215226?e=2159024400&v=beta&t=r--a5-Dl4gvVE-xIkq8QyBzZ8mQ-OYwBOrixNzR95H0" alt="">
+                    <div> hello </div>
+                </div>
+            </div> -->
+
             <company-row v-for="company in allCompanies" :companyinfo="searchCompanyRelavantInfo(company)">
             </company-row>
         </div>
@@ -191,7 +201,7 @@
                     // add properties here
                     currentImgSrc: "../img/AtoZ.svg",
                     currentFilterImg: "../img/filter.svg"
-                    
+
                 }
             },
             methods: {
