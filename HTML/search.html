@@ -14,6 +14,9 @@
     <script src="https://unpkg.com/vue@next"></script>
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA"
+        async defer>
+    </script>
     <title>Intern FYI</title>
 </head>
 
@@ -130,13 +133,31 @@
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox">
-                                    <input style="width: 100px; display: inline;" type="text" class="form-control"
-                                        placeholder="Zip Code" maxlength="6"> <button
-                                        class="btn btn-primary"><img src= '../IMG/search-magnifiying-glass.svg' height = '' width = ''></button>
+                                    <input type="checkbox" class="me-1">
+                                    <input style="width: 100px; height: 25px; display: inline;" type="text"
+                                        class="form-control" class="m-0 p-0" placeholder="Zip Code" maxlength="6">
+                                    <button class="btn btn-primary m-0 p-0"
+                                        style="width: 25px; height: 25px; display: inline;"><img
+                                            src='../IMG/search-magnifiying-glass.svg' height='20' width='20'
+                                            class="m-0 p-0"></button>
                                 </label>
                             </li>
                         </ul>
+                    </div>
+                    <div class="row mb-2">
+                    
+                    
+                    <div id="map" style="height: 200px; width: 200px;" class="m-auto rounded-2 mb-4" ></div>
+                        <script>
+                            var map;
+                            function initMap() {
+                                map = new google.maps.Map(document.getElementById('map'), {
+                                    center: { lat: -34.397, lng: 150.644 },
+                                    zoom: 8
+                                });
+                            }
+                        </script>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&callback=initMap" async defer></script>
                     </div>
                 </div>
             </div>
@@ -170,6 +191,7 @@
                     // add properties here
                     currentImgSrc: "../img/AtoZ.svg",
                     currentFilterImg: "../img/filter.svg"
+                    
                 }
             },
             methods: {
