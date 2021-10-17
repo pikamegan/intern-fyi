@@ -18,6 +18,20 @@ h3 {
     text-align: center;
 }
 
+
+@keyframes bounce {
+	0% {transform: scale(1);}
+	50% {transform: scale(1.1);}
+	100% {transform: scale(1);}
+}
+
+.animated.bounce {
+	-webkit-animation-name: bounce;
+	-moz-animation-name: bounce;
+	-o-animation-name: bounce;
+	animation-name: bounce;
+}
+
 #internetFail {
     margin: auto;
 }
@@ -228,6 +242,10 @@ div.cardBold {
     border-radius: 10px;
     position: absolute;
     z-index: 1;
+    border-radius: 10px;
+    top: -3px;
+    left: -3px;
+    padding: 10px;
 }
 
 .criteriaTooltip:hover .criteriaTooltipText {
@@ -247,4 +265,12 @@ div.cardBold {
 
 .customBtn {
     background-color: #4E6AF0;
+}
+
+.hoverCard:hover {
+    transform: scale(1.1)
+}
+
+.attentionSeeking {
+    animation: 2s ease 0s infinite normal none running bounce;
 }
