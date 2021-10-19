@@ -20,16 +20,24 @@ h3 {
 
 
 @keyframes bounce {
-	0% {transform: scale(1);}
-	50% {transform: scale(1.1);}
-	100% {transform: scale(1);}
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .animated.bounce {
-	-webkit-animation-name: bounce;
-	-moz-animation-name: bounce;
-	-o-animation-name: bounce;
-	animation-name: bounce;
+    -webkit-animation-name: bounce;
+    -moz-animation-name: bounce;
+    -o-animation-name: bounce;
+    animation-name: bounce;
 }
 
 #internetFail {
@@ -274,3 +282,44 @@ div.cardBold {
 .attentionSeeking {
     animation: 2s ease 0s infinite normal none running bounce;
 }
+
+/* different cursors */
+
+.copy {
+    cursor: copy;
+}
+
+.help {
+    cursor: help;
+}
+
+.no-drop {
+    cursor: no-drop;
+}
+
+
+.not-allowed {
+    cursor: not-allowed;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.progress {
+    cursor: progress;
+}
+
+.write {
+    cursor: text;
+}
+
+.url {
+    cursor: url(myBall.cur), auto;
+}
+
+
+.wait {
+    cursor: wait;
+}
+
