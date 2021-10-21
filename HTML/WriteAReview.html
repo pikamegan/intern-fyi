@@ -10,25 +10,52 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- Bootstrap Bundle with Popper -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-    -->
     <link rel="stylesheet" href="../CSS/style.css">
     <script src="../js/actions.js" defer></script>
     <title>Write a Company Review</title>
 </head>
 
 <body>
-    <h1>Write a Company Review</h1>
+    <h1 class="pageTitle mt-5">Write a Company Review</h1>
+
+    <div class="container">
+
+        <div class="p-5 mb-4 bg-light shadow-lg feedbackBg">
+            <div class="container-fluid py-5">
+                <form action="">
+                    <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 40px;">
+                        <div class="bd-highlight">
+                            <img src="../IMG/deletebutton.svg" alt="Clear draft" class="img-fluid" style="width: 50px; height: 50px;">
+                        </div>
+                    </div>
+                    <div class="row justify-content-start">
+                        <div class="col-3">
+                            <label for="company" class="form-label">Company<span
+                                style="color:red">*</span></label>
+                            <select id="company" name="company" class="form-select" aria-describedby="company">
+                                <option value="complaint"></option>
+                                <option value="bug">Website Bug/Malfunction</option>
+                                <option value="uob" selected>UOB</option>
+                                <option value="suggestion">General Suggestion</option>
+                                <option value="feature">New Feature Suggestion</option>
+                            </select>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-3">
+                            <label for="role" class="form-label">Role/Title<span style="color:red">*</span></label>
+                            <input type="role" class="form-control" id="role">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
 
 </body>
 
