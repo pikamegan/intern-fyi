@@ -14,6 +14,7 @@
 </head>
 
 <!-- body bg color to be changed -->
+
 <body class="bg-light">
 
   <!-- my css -->
@@ -29,6 +30,67 @@
   1. add all the links in href
   2. functionality of search bar with js codes
   -->
+
+  <!-- SMALL navigation bar for width smaller or = to 767  (USER LOGOUTed)-->
+
+  <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
+    <div class="container-fluid d-inline-block">
+
+      <div class="input-group my-2">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
+        </a>
+        <input type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
+          aria-describedby="search-addon" />
+        <button type="button" class="btn btn-success" id="searchButton">
+          <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse text-center" id="navbarCollapse">
+      <a href="../HTML/signup.html">Register</a><br>
+      <a href="../HTML/lgin.html">Login</a><br>
+      <a href="../HTML/WriteAReview.html">Write a Review &#9998;</a><br>
+
+    </div>
+  </nav>
+  <!-- end of small navigation bar -->
+
+  <!-- SMALL navigation bar for width smaller or = to 767  (USER LOGINed)-->
+
+  <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
+    <div class="container-fluid d-inline-block">
+
+      <div class="input-group my-2">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
+        </a>
+        <input type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
+          aria-describedby="search-addon" />
+        <button type="button" class="btn btn-success" id="searchButton">
+          <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse text-center" id="navbarCollapse">
+      <a href="">Logout</a><br>
+      <a href="../HTML/myProfile.html">My Profile</a><br>
+      <a href="../HTML/WriteAReview.html">Write a Review &#9998;</a><br>
+    </div>
+  </nav>
+  <!-- end of small navigation bar -->
+
+
 
   <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
     <div class="container-fluid">
@@ -49,10 +111,10 @@
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
           </button>
         </div>
-        <button class="btn btn-secondary my-2 mx-4" id="loginBtn" onclick= "gotoSignInPage()">
+        <button class="btn btn-secondary my-2 mx-4" id="loginBtn" onclick="gotoSignInPage()">
           Login
         </button>
-        <button class="btn btn-primary me-2" id="signUpBtn" onclick= "gotoSignUpPage()">
+        <button class="btn btn-primary me-2" id="signUpBtn" onclick="gotoSignUpPage()">
           Signup
         </button>
 
@@ -93,7 +155,7 @@
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
           </button>
         </div>
-        <button class="btn btn-primary my-2 mx-4" style="width:170px;" id="reviewBtn" onclick="gotoWriteAReview()">
+        <button class="btn btn-primary my-2 mx-4 p-1" style="width:170px;" id="reviewBtn" onclick="gotoWriteAReview()">
           Write review
         </button>
         <button class="btn border-secondary rounded-circle me-2" id="userBtn" onclick="gotoMyProfile()">
