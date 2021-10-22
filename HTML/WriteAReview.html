@@ -16,11 +16,11 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../CSS/style.css">
-    <script src="../js/actions.js" defer></script>
+    <script src="../js/actions.js"></script>
     <title>Write a Company Review</title>
 </head>
 
-<body>
+<body onload="showCriteria()">
     <h1 class="pageTitle mt-5">Write a Company Review</h1>
 
     <div class="container">
@@ -33,8 +33,8 @@
                             <img src="../IMG/deletebutton.svg" alt="Clear draft" class="img-fluid" style="width: 50px; height: 50px;">
                         </div>
                     </div>
-                    <div class="row justify-content-start">
-                        <div class="col-3">
+                    <div class="row justify-content-start mb-5">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-3">
                             <label for="company" class="form-label">Company<span
                                 style="color:red">*</span></label>
                             <select id="company" name="company" class="form-select" aria-describedby="company">
@@ -45,17 +45,118 @@
                                 <option value="feature">New Feature Suggestion</option>
                             </select>
                         </div>
-                        <div class="col-2"></div>
-                        <div class="col-3">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                             <label for="role" class="form-label">Role/Title<span style="color:red">*</span></label>
                             <input type="role" class="form-control" id="role">
                         </div>
                     </div>
+                    <div class="row mb-5">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                            <label for="role" class="form-label">Department</label>
+                            <input type="role" class="form-control" id="role">
+                        </div>
+                    </div>
+
+                    <!-- criteria ratings -->
+                    <label for="button" class="form-label">Category Rating (1 Low, 5 Very High)</label>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" id="btn1" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="row mb-1">
+                                    <div class="col-6"><img src="../img/pay_companyreview.svg" alt=""></div>
+                                    <div class="col-6">
+                                        <div class="d-flex bd-highlight flex-column mb-3">
+                                            <div class="p-2 bd-highlight text-center" id="body1"></div>
+                                            <div class="p-2 bd-highlight">
+
+                                                <img src="../IMG/1bad.svg" alt="sad face" style="width: 40px; height: 40px;">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                                    <label class="form-check-label" for="inlineCheckbox1">1</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                                    <label class="form-check-label" for="inlineCheckbox2">2</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                                    <label class="form-check-label" for="inlineCheckbox3">3</label>
+                                                </div>
+                                                <img src="../IMG/5happy.svg" alt="happy face" style="width: 40px; height: 40px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" id="btn2" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            </button>
+                          </h2>
+                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body" id="body2">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" id="btn3" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            </button>
+                          </h2>
+                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body" id="body3">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                              <button class="accordion-button collapsed" type="button" id="btn4" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                              </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                              <div class="accordion-body" id="body4">
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                          <button class="accordion-button collapsed" type="button" id="btn5" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                          </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                          <div class="accordion-body" id="body5">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                          <button class="accordion-button collapsed" type="button" id="btn6" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                          </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                          <div class="accordion-body" id="body6">
+                          </div>
+                        </div>
+                      </div>
                 </form>
             </div>
 
         </div>
     </div>
+
+        <!-- JavaScript for CSS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
 
 </body>
 
