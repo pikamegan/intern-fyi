@@ -24,13 +24,13 @@
         NAVBAR PLACEHOLDER
     </div>
 
-    <div class="container mt-5" id="searchVue">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-lg-3 col-md-4 shadow">
                 <!-- sticky? -->
                 <div class="container">
                     <div class="row my-2">
-                        <div class="col">
+                        <div class="col" id="searchVue">
                             Filter by:
                             <img class="preventSelect" :src="currentFilterImg" style="width: 20px;"
                                 @click="changeFilterImg()">
@@ -164,15 +164,14 @@
                                         userLong = response.data.results[0].geometry.location.lng
                                         userLat = response.data.results[0].geometry.location.lat
                                         // console.log(userLat);
-
+                                        initMap()
                                     })
                                     .catch((error) => {
                                         // process error object
                                         console.log(error.message);
-                                        document.getElementById("displayString").innerText = "Something went wrong";
+                                        // document.getElementById("displayString").innerText = "Something went wrong";
                                     });
-
-                                    initMap()
+                                    
                             }
 
                             var map;
