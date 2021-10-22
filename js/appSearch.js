@@ -98,6 +98,10 @@ appSearch.component('company-row', {
                 this.showInfomation();
             }
         },
+        companyPage() {
+            // return encodeURI("./company.html?cid=" + this.company.companyID)
+            return encodeURI("./company.html?cname=" + this.company.companyName)
+        }
 
     },
 
@@ -136,24 +140,24 @@ appSearch.component('company-row', {
                 </div>
             </div>
             <div class="row justify-content-start">
-                <div class="col-2">
+                <div class="col-xl-2 col-lg-3 col-md-5">
                     company.location
                 </div>
-                <div class="col-2">
+                <div class="col">
                     <img src="../img/mapMarkIcon_black.svg" style="height: 20px; width: 20px;">
                     company.distance
                 </div>
             </div>
             <div class="row justify-content-start">
-                <div class="col-2">
+                <div class="col-xl-2 col-lg-3 col-md-5">
                     <img src="../img/pen_write_review.svg" style="height: 20px; width: 20px;">
                     <a href="#">
                         Write a Review
                     </a>
                 </div>
-                <div class="col-2">
+                <div class="col">
                     <img src="../img/eyeSeeCompanyReview.svg" style="height: 20px; width: 20px;">
-                    <a href="#">
+                    <a :href="companyPage">
                         View Company Profile
                     </a>
                 </div>
