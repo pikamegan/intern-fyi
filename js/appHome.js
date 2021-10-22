@@ -87,8 +87,9 @@ app.component('company-card', {
     props: ['companyinfo'],
     template:
         `<div class="col-xl-3 col-sm-6 my-3">
-            <div class="card mx-auto" style="width: 259px;">
-                <img class="card-img-top" :src="companyinfo.imgUrl" alt="Card image cap">
+            <div class="card mx-auto border border-white" style="">
+                <img class="card-img-top rounded-4 img-fluid" style="width: 259px;
+                height: 160px;" :src="companyinfo.imgUrl" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">
                         {{ companyinfo.name }}

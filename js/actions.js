@@ -64,12 +64,13 @@ function showCriteria() {
 const navigationBar = Vue.createApp({
     data() {
         return {
-            
+
         }
     },
     methods: {
         isLogined() {
             return true
+            //later can put axios to php, https://phpforever.com/vuejs/login-example-in-vuejs-and-php/
         }
     },
 })
