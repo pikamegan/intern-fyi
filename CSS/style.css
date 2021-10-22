@@ -331,3 +331,15 @@ div.cardBold {
 .inlineLabel {
     display: inline-block;
 }
+
+@media only screen and (max-width: 767px) {
+    #smallNavBar{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #bigNavBar{
+        display: none;
+    }
+}

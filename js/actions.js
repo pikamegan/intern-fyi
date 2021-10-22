@@ -5,6 +5,7 @@
 //     window.location = "../HTML/internetstopped.html"
 // }
 //Above code is not working as expected... need more working
+console.log(window.innerWidth);
 
 function gotoWriteAReview() {
     window.location = "../HTML/WriteAReview.html"
@@ -59,26 +60,19 @@ function showCriteria() {
     }
 }
 
-
 // Vue instance
 const navigationBar = Vue.createApp({
     data() {
         return {
+            
         }
     },
     methods: {
-        checkNavWidth() {
-            if (window.screen.width >= 767) {
-                // small
-                return true
-            } else {
-                // big
-                return false
-            }
+        isLogined() {
+            return true
         }
     },
 })
-
 
 //Components
 navigationBar.component('navigation-bar-small-login', {
@@ -116,7 +110,7 @@ navigationBar.component('navigation-bar-small-login', {
     <!-- end of small navigation bar -->`
 })
 
-navigationBar.component('navigationBarSmallLogout', {
+navigationBar.component('navigation-bar-small-logout', {
     data() {  // data option of the component
         return {
         }
@@ -152,7 +146,7 @@ navigationBar.component('navigationBarSmallLogout', {
     <!-- end of small navigation bar -->`
 })
 
-navigationBar.component('navigationBarBigLogin', {
+navigationBar.component('navigation-bar-big-login', {
     data() {  // data option of the component
         return {
         }
@@ -190,7 +184,7 @@ navigationBar.component('navigationBarBigLogin', {
     </nav>`
 })
 
-navigationBar.component('navigationBarBigLogout', {
+navigationBar.component('navigation-bar-big-logout', {
     data() {  // data option of the component
         return {
         }
@@ -230,6 +224,7 @@ navigationBar.component('navigationBarBigLogout', {
     </nav>
     <!-- end of navigation bar -->`
 })
+
 
 navigationBar.mount('#navbarTemplate')
 

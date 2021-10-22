@@ -31,9 +31,18 @@
 </head>
 
 <body>
-    <div id="navbarTemplate">
-        <navigation-bar-small-login></navigation-bar-small-login>
+    <div id="navbarTemplate" >
+        <div id="bigNavBar">
+            <navigation-bar-small-login v-if="isLogined()" ></navigation-bar-small-login>
+            <navigation-bar-small-logout v-else></navigation-bar-small-logout>
+        </div>
+
+        <div id="smallNavBar">
+            <navigation-bar-big-login v-if="isLogined()"></navigation-bar-big-login>
+            <navigation-bar-big-logout v-else></navigation-bar-big-logout>
+        </div>
     </div>
+
     <h1 class="pageTitle mt-5">Careers</h1>
 
     <div class="container mt-5 m-auto center">
