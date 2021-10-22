@@ -87,20 +87,21 @@ app.component('company-card', {
     props: ['companyinfo'],
     template:
         `<div class="col-xl-3 col-sm-6 my-3">
-            <div class="card mx-auto border border-white" style="">
-                <img class="card-img-top rounded-4 img-fluid" style="width: 259px;
-                height: 160px;" :src="companyinfo.imgUrl" alt="Card image cap">
+            <div class="card mx-auto border border-white rounded-3" style="width: 250px;">
+            <div class = "text-center">
+            <img class="card-img-top rounded-4 img-fluid" :src="companyinfo.imgUrl" alt="Card image cap" style="width: 100px;">
+            </div>
                 <div class="card-body">
-                    <h5 class="card-title">
+                    <h5 class="card-title text-center">
                         {{ companyinfo.name }}
                     </h5>
-                    <div class="card-text">
+                    <div class="card-text text-center">
                         {{ companyinfo.desc }}
                     </div>
-                    <div class="card-text">
+                    <div class="card-text text-center">
                         {{ companyinfo.reviewNum }} Reviews
                     </div>
-                    <div class="card-text">
+                    <div class="card-text text-center">
                         {{ companyinfo.overallRating }} Stars
                     </div>
                 </div>
