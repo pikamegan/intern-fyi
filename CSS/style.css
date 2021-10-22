@@ -323,3 +323,11 @@ div.cardBold {
     cursor: wait;
 }
 
+.inlineRadio {
+    display: block;
+    margin: 0 auto;
+}
+
+.inlineLabel {
+    display: inline-block;
+}
