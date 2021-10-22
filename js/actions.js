@@ -41,6 +41,22 @@ function closeForm() {
     document.getElementById("feedbackPopUp").style.display = "none";
 }
 
+function showCriteria() {
+    let criteria = {"Pay": "This job pays well", 
+        "Skills Learned": "The company helped me learn new skills", 
+        "Company Culture": "The company's level of cohesion and friendliness", 
+        "Food": "The price of nearby food", 
+        "Mentorship": "The company provides in-person training or mentorship", 
+        "Flat Hierarchy": "The company maintains little hierarchy"}
+    
+    let counter = 1
+    for (criterion in criteria) {
+        document.getElementById('btn'+counter).innerHTML += `<strong>${criterion}</strong>`
+        document.getElementById('body'+counter).innerHTML += `${criteria[criterion]}`
+        counter += 1
+    }
+}
+
 
 // Vue instance
 const navigationBar = Vue.createApp({
