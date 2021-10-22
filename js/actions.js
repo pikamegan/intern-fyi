@@ -42,16 +42,69 @@ function closeForm() {
 }
 
 
-// function navBar() {
-//     var x = document.getElementById("myLinks");
-//     if (x.style.display === "block") {
-//         x.style.display = "none";
-//     } else {
-//         x.style.display = "block";
-//     }
-// }
+// Vue instance
+const navigationBar = Vue.createApp({
+    data() {
+        return {
+        }
+    },
+    methods: {
+        checkNavWidth() {
+            if (window.screen.width >= 767) {
+                // small
+                return true
+            } else {
+                // big
+                return false
+            }
+        }
+    },
+})
 
 
+//Components
+navigationBar.component('navigationBarSmallLogin', {
+    data() {  // data option of the component
+        return {
+        }
+    },
+    methods: {
+    },
+    template: ``
+})
+
+navigationBar.component('navigationBarSmallLogout', {
+    data() {  // data option of the component
+        return {
+        }
+    },
+    methods: {
+    },
+    template: ``
+})
+
+navigationBar.component('navigationBarBigLogin', {
+    data() {  // data option of the component
+        return {
+        }
+    },
+    methods: {
+    },
+    template: ``
+})
+
+
+navigationBar.component('navigationBarBigLogout', {
+    data() {  // data option of the component
+        return {
+        }
+    },
+    methods: {
+    },
+    template: ``
+})
+
+navigationBar.mount('#navbarTemplate')
 
 
 
