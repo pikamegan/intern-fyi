@@ -9,14 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/style.css">
-    <script src="../js/actions.js"></script>
     <!-- vue -->
     <script src="https://unpkg.com/vue@next"></script>
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA"
-        async defer>
+    async defer>
         </script>
+    <script src="../js/actions.js"></script>
     <title>Intern FYI</title>
 </head>
 
@@ -171,20 +171,11 @@
 
     <!-- WIP -->
     <!-- cannot mount appSearch within searchVue -->
-    <div class="container">
+
         <div id="appSearch">
-
-            <!-- <div class="row py-3 shadow">
-                <div class="col">
-                    <img style="height: 200px; width: 200px; float: left" src="https://media-exp1.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_200_200/0/1519856215226?e=2159024400&v=beta&t=r--a5-Dl4gvVE-xIkq8QyBzZ8mQ-OYwBOrixNzR95H0" alt="">
-                    <div> hello </div>
-                </div>
-            </div> -->
-
-            <company-row v-for="company in allCompanies" :companyinfo="searchCompanyRelavantInfo(company)">
-            </company-row>
+            <company-row-list :companylist="allCompanies"></company-row-list>
         </div>
-    </div>
+
     <script src="../js/appSearch.js"></script>
     <!-- WIP -->
 

@@ -25,7 +25,7 @@
 
     <!-- https://www.w3schools.com/howto/howto_js_collapsible.asp -->
     <style>
-        .collapsible {
+        .collapsibleSearch {
             /* background-color: #777; */
             /* color: white; */
             cursor: pointer;
@@ -38,13 +38,8 @@
             height:auto;
             border-radius: 10px;
         }
-
-        /* .active,
-        .collapsible:hover {
-            background-color: #555;
-        } */
-
-        .content {
+        
+        .collapsibleContentSearch {
             padding: 0 18px;
             max-height: 0;
             overflow: hidden;
@@ -52,11 +47,16 @@
             background-color: #f1f1f1;
             border-radius: 10px;
         }
+
+        /* .active,
+        .collapsibleSearch:hover {
+            background-color: #555;
+        } */
     </style>
 
     <!-- <p>Collapsible Set:</p>
-    <div class="collapsible">Open Section 1</div>
-    <div class="content">
+    <div class="collapsibleSearch">Open Section 1</div>
+    <div class="collapsibleContentSearch">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
             ex
@@ -64,15 +64,15 @@
         <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_200_200/0/1519856215226?e=2159024400&v=beta&t=r--a5-Dl4gvVE-xIkq8QyBzZ8mQ-OYwBOrixNzR95H0"
             alt="">
     </div>
-    <button class="collapsible">Open Section 2</button>
-    <div class="content">
+    <button class="collapsibleSearch">Open Section 2</button>
+    <div class="collapsibleContentSearch">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
             ex
             ea commodo consequat.</p>
     </div>
-    <button class="collapsible">Open Section 3</button>
-    <div class="content">
+    <button class="collapsibleSearch">Open Section 3</button>
+    <div class="collapsibleContentSearch">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
             ex
@@ -109,7 +109,6 @@
                 return {
                     myMaxHeight: null,
                     maxScrollHeight: '',
-                    isActive: '',
                     isSelected: false
                 };
             },
@@ -133,12 +132,11 @@
                     if (this.myMaxHeight) {
                         this.myMaxHeight = null;
                     } else {
-                        // myMaxHeight = content.scrollHeight + "px"; proably need do dom outside to get the scrollHeight
+                        // myMaxHeight = collapsibleContentSearch.scrollHeight + "px"; proably need do dom outside to get the scrollHeight
                         this.myMaxHeight = "70px";
                     }
                 },
                 select() {
-                    // this.showInfomation();
                     if (this.isSelected) {
                         this.$emit('select', null);
                     } else  {
@@ -151,7 +149,7 @@
             template:`
     
 <div class="row">
-    <div class="collapsible shadow" @click='select' @select='changeState'>
+    <div class="collapsibleSearch shadow" @click='select' @select='changeState'>
         <img :src="company.companyInfo.imageLink" style="height: 100px; width: 100px; float: left; border-radius: 10px">
         <div class="container">
             <div class="row justify-content-between">
@@ -189,7 +187,7 @@
         </div>
     </div>
 
-    <div class="content" :style="{'max-height':myMaxHeight}" :scrollHeight='maxScrollHeight'>
+    <div class="collapsibleContentSearch" :style="{'max-height':myMaxHeight}" :scrollHeight='maxScrollHeight'>
         <p>
             {{company.companyID}} <br>
             {{company.companyInfo.companyDescription}} <br>
@@ -304,6 +302,9 @@
 
         const vm2 = app2.mount("#app2")
     </script>
+
+
+
 </body>
 
 </html>

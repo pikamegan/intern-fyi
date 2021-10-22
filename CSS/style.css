@@ -18,16 +18,13 @@ h3 {
     text-align: center;
 }
 
-
 @keyframes bounce {
     0% {
         transform: scale(1);
     }
-
     50% {
         transform: scale(1.1);
     }
-
     100% {
         transform: scale(1);
     }
@@ -283,6 +280,7 @@ div.cardBold {
     animation: 2s ease 0s infinite normal none running bounce;
 }
 
+
 /* different cursors */
 
 .copy {
@@ -296,7 +294,6 @@ div.cardBold {
 .no-drop {
     cursor: no-drop;
 }
-
 
 .not-allowed {
     cursor: not-allowed;
@@ -318,7 +315,6 @@ div.cardBold {
     cursor: url(myBall.cur), auto;
 }
 
-
 .wait {
     cursor: wait;
 }
@@ -333,13 +329,36 @@ div.cardBold {
 }
 
 @media only screen and (max-width: 767px) {
-    #smallNavBar{
+    #smallNavBar {
         display: none;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    #bigNavBar{
+    #bigNavBar {
         display: none;
     }
+}
+
+.collapsibleSearch {
+    /* background-color: #777; */
+    /* color: white; */
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.collapsibleContentSearch {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    border-radius: 10px;
 }
