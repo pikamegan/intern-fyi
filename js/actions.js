@@ -229,5 +229,3 @@ navigationBar.component('navigation-bar-big-logout', {
 
 navigationBar.mount('#navbarTemplate')
 
-
-

@@ -13,10 +13,9 @@
     <script src="https://unpkg.com/vue@next"></script>
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA"
-    async defer>
-        </script>
     <script src="../js/actions.js"></script>
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Intern FYI</title>
 </head>
 
@@ -132,35 +131,67 @@
                                 </label>
                             </li>
                             <li>
-                                <label>
+                                <label class="map">
                                     <input type="checkbox" class="me-1">
-                                    <input style="width: 100px; height: 25px; display: inline;" type="text"
-                                        class="form-control" class="m-0 p-0" placeholder="Zip Code" maxlength="6">
+                                    <input id="userZipCode" style="width: 100px; height: 25px; display: inline;"
+                                        type="text" class="form-control" class="m-0 p-0" placeholder="Zip Code"
+                                        maxlength="6" onclick="showYourLocation()">
                                     <button class="btn btn-primary m-0 p-0"
                                         style="width: 25px; height: 25px; display: inline;"><img
-                                            src='../IMG/search-magnifiying-glass.svg' height='20' width='20'
-                                            class="m-0 p-0"></button>
+                                            src='../IMG/search-magnifiying-glass.svg' class="m-0 p-0"
+                                            onclick="showYourLocation()"></button>
                                 </label>
                             </li>
                         </ul>
                     </div>
                     <div class="row mb-2">
 
-
-                        <div id="map" style="height: 200px; width: 200px;" class="m-auto rounded-2 mb-4"></div>
+                        <div class = "mb-4" id="map" style="height: 400px; width: 400px;"></div>
                         <script>
+                            var userLat = -34.397;
+                            var userLong = 150.644;
+                            function showYourLocation() {
+                                let zipCode = document.getElementById("userZipCode").value
+                                console.log(zipCode);
+                                const url = `https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&components=postal_code:${zipCode}`;
+                                axios
+                                    .get(url)
+                                    .then((response) => {
+                                        // process response.data object
+                                        // console.log(response.data);
+                                        const myJSON = JSON.stringify(response.data);
+                                        console.log(myJSON);
+                                        userLong = response.data.results[0].geometry.location.lng
+                                        userLat = response.data.results[0].geometry.location.lat
+                                        // console.log(userLat);
+
+                                    })
+                                    .catch((error) => {
+                                        // process error object
+                                        console.log(error.message);
+                                        document.getElementById("displayString").innerText = "Something went wrong";
+                                    });
+
+                                    initMap()
+                            }
+
                             var map;
+                            console.log(userLat);
                             function initMap() {
                                 map = new google.maps.Map(document.getElementById('map'), {
-                                    center: { lat: -34.397, lng: 150.644 },
-                                    zoom: 8
+                                    center: { lat: userLat, lng: userLong },
+                                    zoom: 15
                                 });
                             }
+                        
                         </script>
                         <script
                             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&callback=initMap"
                             async defer></script>
+
                     </div>
+
+                
                 </div>
             </div>
             <div class="col">
@@ -172,9 +203,9 @@
     <!-- WIP -->
     <!-- cannot mount appSearch within searchVue -->
 
-        <div id="appSearch">
-            <company-row-list :companylist="allCompanies"></company-row-list>
-        </div>
+    <div id="appSearch">
+        <company-row-list :companylist="allCompanies"></company-row-list>
+    </div>
 
     <script src="../js/appSearch.js"></script>
     <!-- WIP -->
@@ -186,7 +217,7 @@
         FOOTER PLACEHOLDER
     </div>
     <script>
-        const app = Vue.createApp({
+        const appMap = Vue.createApp({
             data() {
                 return {
                     // add properties here
@@ -212,9 +243,8 @@
                 }
             }
         })
-        const vm = app.mount('#searchVue')
+        const vm = appMap.mount('#searchVue');
     </script>
-
 
     <!-- JavaScript for CSS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
