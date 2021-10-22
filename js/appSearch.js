@@ -83,7 +83,9 @@ appSearch.component('company-row', {
         return {
             myMaxHeight: null,
             maxScrollHeight: '', //to be done
-            isSelected: false
+            isSelected: false,
+            companyPage: encodeURI("./company.html?cname=" + this.company.companyName),
+            // companyPage: encodeURI("./company.html?cid=" + this.company.companyID), // do this?
         };
     },
     props: ['company', 'selectedCompanyID'],
@@ -98,11 +100,6 @@ appSearch.component('company-row', {
                 this.showInfomation();
             }
         },
-        companyPage() {
-            // return encodeURI("./company.html?cid=" + this.company.companyID)
-            return encodeURI("./company.html?cname=" + this.company.companyName)
-        }
-
     },
 
     methods: {
@@ -140,7 +137,7 @@ appSearch.component('company-row', {
                 </div>
             </div>
             <div class="row justify-content-start">
-                <div class="col-xl-2 col-lg-3 col-md-5">
+                <div class="col-xl-3 col-lg-4">
                     company.location
                 </div>
                 <div class="col">
@@ -149,7 +146,7 @@ appSearch.component('company-row', {
                 </div>
             </div>
             <div class="row justify-content-start">
-                <div class="col-xl-2 col-lg-3 col-md-5">
+                <div class="col-xl-3 col-lg-4">
                     <img src="../img/pen_write_review.svg" style="height: 20px; width: 20px;">
                     <a href="#">
                         Write a Review
@@ -167,40 +164,52 @@ appSearch.component('company-row', {
     <div class="collapsibleContentSearch" :style="{'max-height':myMaxHeight}" :scrollHeight='maxScrollHeight'>
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col-2">
                     {{company.companyRatings.numberOfClicks}} clicks <br>
                     {{company.companyRatings.totalNumReviews}} reviews
                 </div>
                 <div class="col">
                     <img src="../img/pay_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
-                    Good Pay:
+                    <div class="d-none d-xl-inline">
+                        Good Pay:
+                    </div>
                     {{company.companyRatings.averageCriteria1}}
                     <img src="../img/star.svg" style="height: 20px; width: 20px;"><br>
 
                     <img src="../img/skills_companyReview.svg" style="width: 40px; height: 40px; padding: 0px;">
-                    New Skills:
+                    <div class="d-none d-xl-inline">
+                        New Skills:
+                    </div>
                     {{company.companyRatings.averageCriteria2}}
                     <img src="../img/star.svg" style="height: 20px; width: 20px;">
                 </div>
                 <div class="col">
                     <img src="../img/companyculture_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
-                    Friendly:
+                    <div class="d-none d-xl-inline">
+                        Friendly:
+                    </div>
                     {{company.companyRatings.averageCriteria3}}
                     <img src="../img/star.svg" style="height: 20px; width: 20px;"><br>
 
                     <img src="../img/food_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
-                    Food Price:
+                    <div class="d-none d-xl-inline">
+                        Food Price:
+                    </div>
                     {{company.companyRatings.averageCriteria4}}
                     <img src="../img/star.svg" style="height: 20px; width: 20px;">
                 </div>
                 <div class="col">
                     <img src="../img/mentorship_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
-                    Mentorship:
+                    <div class="d-none d-xl-inline">
+                        Mentorship:
+                    </div>
                     {{company.companyRatings.averageCriteria5}}
                     <img src="../img/star.svg" style="height: 20px; width: 20px;"><br>
 
                     <img src="../img/flatheirachy_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
-                    Flat Hierarchy:
+                    <div class="d-none d-xl-inline">
+                        Flat Hierarchy:
+                    </div>
                     {{company.companyRatings.averageCriteria6}}
                     <img src="../img/star.svg" style="height: 20px; width: 20px;"><br>
                 </div>
