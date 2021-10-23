@@ -97,7 +97,7 @@ const navigationBar = Vue.createApp({
     },
     methods: {
         isLogined() {
-            return true
+            return false
             //later can put axios to php, https://phpforever.com/vuejs/login-example-in-vuejs-and-php/
         }
     },
