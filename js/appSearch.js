@@ -1,8 +1,49 @@
+//map functions start==========================
+var userLat = -34.397;
+var userLong = 150.644;
+function showYourLocation() {
+    let zipCode = document.getElementById("userZipCode").value
+    console.log(zipCode);
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&components=postal_code:${zipCode}`;
+    axios
+        .get(url)
+        .then((response) => {
+            // process response.data object
+            // console.log(response.data);
+            const myJSON = JSON.stringify(response.data);
+            console.log(myJSON);
+            userLong = response.data.results[0].geometry.location.lng
+            userLat = response.data.results[0].geometry.location.lat
+            // console.log(userLat);
+            initMap()
+        })
+        .catch((error) => {
+            // process error object
+            console.log(error.message);
+            //document.getElementById("displayString").innerText = "Something went wrong";
+        });
+
+}
+
+var map;
+console.log(userLat);
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: userLat, lng: userLong },
+        zoom: 15
+    });
+}
+//map functions end==========================
+
+
 const appSearch = Vue.createApp({
     data() {
         return {
             allCompanies: null,
-            errorMessage: null
+            errorMessage: null,
+            currentImgSrc: "../img/AtoZ.svg",
+            currentFilterImg: "../img/filter.svg"
+
         }
     },
     methods: {
@@ -22,28 +63,21 @@ const appSearch = Vue.createApp({
                     this.errorMessage = error.message;
                 });
         },
-        // homeCompanyCardsRelavantInfo(company) {
-        //     if (company != null) {
-        //         relevantInfo = {
-        //             name: company.companyName,
-        //             desc: company.companyInfo.companyDescription,
-        //             reviewNum: company.companyRatings.totalNumReviews,
-        //             overallRating: company.companyRatings.overallRating,
-        //             imgUrl: company.companyInfo.imageLink
-        //         };
-        //         return relevantInfo;
-        //     }
-        // },
-        searchCompanyRelavantInfo(company) {
-            if (company != null) {
-                relevantInfo = {
-                    name: company.companyName,
-                    id: company.companyID,
-                    imgUrl: company.companyInfo.imageLink
-                };
-                return relevantInfo;
+        changeLetterSortImg() {
+            if (this.currentImgSrc === "../img/AtoZ.svg") {
+                this.currentImgSrc = "../img/ZtoA.svg";
+            } else {
+                this.currentImgSrc = "../img/AtoZ.svg";
+            }
+        },
+        changeFilterImg() {
+            if (this.currentFilterImg === "../img/filter.svg") {
+                this.currentFilterImg = "../img/clearfilter.svg";
+            } else {
+                this.currentFilterImg = "../img/filter.svg";
             }
         }
+
     },
     created() {
         this.getAllCompanies();
