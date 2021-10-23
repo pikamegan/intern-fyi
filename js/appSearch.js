@@ -84,8 +84,7 @@ appSearch.component('company-row', {
             myMaxHeight: null,
             maxScrollHeight: '', //to be done
             isSelected: false,
-            companyPage: encodeURI("./company.html?cname=" + this.company.companyName),
-            // companyPage: encodeURI("./company.html?cid=" + this.company.companyID), // do this?
+            companyPage: encodeURI("./company.html?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
         };
     },
     props: ['company', 'selectedCompanyID'],
@@ -162,22 +161,31 @@ appSearch.component('company-row', {
         </div>
     </div>
     <div class="collapsibleContentSearch" :style="{'max-height':myMaxHeight}" :scrollHeight='maxScrollHeight'>
-        <div class="container">
+        <div>
             <div class="row">
-                <div class="col-2">
-                    {{company.companyRatings.numberOfClicks}} clicks <br>
-                    {{company.companyRatings.totalNumReviews}} reviews
+                <div class="col-xxl-2 col-xl-3 col-2 align-self-center">
+                    <img src="../img/click.svg" style="width: 25px; height: 25px; padding: 1px;">
+                    {{company.companyRatings.numberOfClicks}}
+                    <div class="d-none d-xl-inline">
+                        clicks 
+                    </div><br>
+                    
+                    <img src="../img/review.svg" style="width: 25px; height: 25px; padding: 1px;">
+                    {{company.companyRatings.totalNumReviews}}
+                    <div class="d-none d-xl-inline">
+                        reviews
+                    </div>
                 </div>
                 <div class="col">
                     <img src="../img/pay_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
-                    <div class="d-none d-xl-inline">
+                    <div class="d-none d-xxl-inline">
                         Good Pay:
                     </div>
                     {{company.companyRatings.averageCriteria1}}
                     <img src="../img/star.svg" style="height: 20px; width: 20px;"><br>
 
                     <img src="../img/skills_companyReview.svg" style="width: 40px; height: 40px; padding: 0px;">
-                    <div class="d-none d-xl-inline">
+                    <div class="d-none d-xxl-inline">
                         New Skills:
                     </div>
                     {{company.companyRatings.averageCriteria2}}
@@ -185,14 +193,14 @@ appSearch.component('company-row', {
                 </div>
                 <div class="col">
                     <img src="../img/companyculture_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
-                    <div class="d-none d-xl-inline">
+                    <div class="d-none d-xxl-inline">
                         Friendly:
                     </div>
                     {{company.companyRatings.averageCriteria3}}
                     <img src="../img/star.svg" style="height: 20px; width: 20px;"><br>
 
                     <img src="../img/food_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
-                    <div class="d-none d-xl-inline">
+                    <div class="d-none d-xxl-inline">
                         Food Price:
                     </div>
                     {{company.companyRatings.averageCriteria4}}
@@ -200,14 +208,14 @@ appSearch.component('company-row', {
                 </div>
                 <div class="col">
                     <img src="../img/mentorship_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
-                    <div class="d-none d-xl-inline">
+                    <div class="d-none d-xxl-inline">
                         Mentorship:
                     </div>
                     {{company.companyRatings.averageCriteria5}}
                     <img src="../img/star.svg" style="height: 20px; width: 20px;"><br>
 
                     <img src="../img/flatheirachy_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
-                    <div class="d-none d-xl-inline">
+                    <div class="d-none d-xxl-inline">
                         Flat Hierarchy:
                     </div>
                     {{company.companyRatings.averageCriteria6}}
