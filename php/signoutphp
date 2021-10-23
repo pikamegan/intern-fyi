@@ -1,0 +1,12 @@
+<?php
+
+session_start(); #start session
+
+session_unset(); // removes all the variables from the RAM. Array becomes empty.But keeps information
+
+session_destroy();//destroy sessions. Remove info from the disk. 
+
+// header("Location: .php");
+// exit;
+
+?>

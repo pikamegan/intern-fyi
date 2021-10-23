@@ -5,7 +5,7 @@
 //     window.location = "../HTML/internetstopped.html"
 // }
 //Above code is not working as expected... need more working
-console.log(window.innerWidth);
+
 
 function gotoWriteAReview() {
     window.location = "../HTML/WriteAReview.html"
