@@ -76,16 +76,21 @@ function scrollToTop() {
 }
 
 function resetDraft() {
-    let draft = document.getElementById("reviewForm")
+    
     let clearReview = document.getElementById("clearReview")
+    clearReview.style.display = "block"
+}
 
-    if (clearReview.style.display === "none") {
-        clearReview.style.display = "block";
-    } else {
-        clearReview.style.display = "none";
-    }
-
+function clearReview() {
+    let draft = document.getElementById("reviewForm")
     draft.reset()
+    closePopup()
+}
+
+function closePopup() {
+    let clearReview = document.getElementById("clearReview")
+    clearReview.style.display = "none"
+
 }
 
 // Vue instance
