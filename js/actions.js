@@ -60,7 +60,7 @@ function showCriteria() {
     }
 }
 
-// the 2 scroll functions are adapted from: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+// the 2 scroll functions below are adapted from: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
 function scrollFunction() {
     let scrollBtn = document.getElementById("scrollTop")
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
@@ -76,21 +76,60 @@ function scrollToTop() {
 }
 
 function resetDraft() {
-    
     let clearReview = document.getElementById("clearReview")
+    let bodyScroll = document.getElementsByClassName("onPopup")
+    let selectBtn = document.getElementsByClassName("form-select")
+    let inputs = document.getElementsByClassName("form-control")
+    let radioBtns = document.getElementsByClassName("inlineRadio")
+    let accordions = document.getElementsByClassName("accordion-button")
+
     clearReview.style.display = "block"
+    bodyScroll[0].style.overflow = "hidden"
+    selectBtn[0].disabled = true
+
+    for (input of inputs) {
+        input.disabled = true
+    }
+
+    for (radioBtn of radioBtns) {
+        radioBtn.disabled = true
+    }
+
+    for (accordion of accordions) {
+        accordion.disabled = true
+    }
 }
 
 function clearReview() {
     let draft = document.getElementById("reviewForm")
+
     draft.reset()
     closePopup()
 }
 
 function closePopup() {
     let clearReview = document.getElementById("clearReview")
-    clearReview.style.display = "none"
+    let bodyScroll = document.getElementsByClassName("onPopup")
+    let selectBtn = document.getElementsByClassName("form-select")
+    let inputs = document.getElementsByClassName("form-control")
+    let radioBtns = document.getElementsByClassName("inlineRadio")
+    let accordions = document.getElementsByClassName("accordion-button")
 
+    clearReview.style.display = "none"
+    bodyScroll[0].style.overflow = "auto"
+    selectBtn[0].disabled = false
+
+    for (input of inputs) {
+        input.disabled = false
+    }
+
+    for (radioBtn of radioBtns) {
+        radioBtn.disabled = false
+    }
+
+    for (accordion of accordions) {
+        accordion.disabled = false
+    }
 }
 
 // Vue instance

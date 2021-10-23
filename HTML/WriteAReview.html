@@ -20,7 +20,7 @@
     <title>Write a Company Review</title>
 </head>
 
-<body onload="showCriteria()">
+<body onload="showCriteria()" class="onPopup">
     <h1 class="pageTitle mt-5">Write a Company Review</h1>
 
     <div class="container">
@@ -29,14 +29,14 @@
             <div class="container-fluid px-sm-5 py-5">
                 <form action="" id="reviewForm">
                     <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 40px;">
-                        <div class="bd-highlight" onclick="resetDraft()">
-                            <img src="../IMG/deletebutton.svg" alt="Clear draft" class="img-fluid" style="width: 50px; height: 50px;">
+                        <div class="bd-highlight">
+                            <img src="../IMG/deletebutton.svg" onclick="resetDraft()" alt="Clear draft" class="img-fluid pointer" style="width: 50px; height: 50px;">
                         </div>
                     </div>
                     <div class="row justify-content-start mb-5">
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-3" id="appHome">
                             <label for="company" class="form-label">Company<span style="color:red">*</span></label>
-                            <select id="company" name="company" class="form-select" aria-describedby="company">
+                            <select id="company" name="company" class="form-select pointer" aria-describedby="company">
                                 <option value="uob" selected>UOB</option>
                             </select>
                         </div>
@@ -47,8 +47,8 @@
                     </div>
                     <div class="row mb-5 justify-content-start">
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                            <label for="role" class="form-label">Department</label>
-                            <input type="role" class="form-control" id="role">
+                            <label for="dept" class="form-label">Department</label>
+                            <input type="dept" class="form-control" id="dept">
                         </div>
                     </div>
 
@@ -70,11 +70,11 @@
                                             <div class="p-2 bd-highlight d-flex justify-content-around">  
 
                                                 <img src="../IMG/1bad.svg" alt="sad face" style="width: 40px; height: 40px;">
-                                                <label class="inlineLabel"><input type="radio" name="radio" class="inlineRadio" id="1"/>1</label>
-                                                <label class="inlineLabel"><input type="radio" name="radio" class="inlineRadio" id="2"/>2</label>
-                                                <label class="inlineLabel"><input type="radio" name="radio" class="inlineRadio" id="3"/>3</label>
-                                                <label class="inlineLabel"><input type="radio" name="radio" class="inlineRadio" id="4"/>4</label>
-                                                <label class="inlineLabel"><input type="radio" name="radio" class="inlineRadio" id="5"/>5</label>
+                                                <label class="inlineLabel"><input type="radio" name="radio" class="inlineRadio pointer" id="1"/>1</label>
+                                                <label class="inlineLabel"><input type="radio" name="radio" class="inlineRadio pointer" id="2"/>2</label>
+                                                <label class="inlineLabel"><input type="radio" name="radio" class="inlineRadio pointer" id="3"/>3</label>
+                                                <label class="inlineLabel"><input type="radio" name="radio" class="inlineRadio pointer" id="4"/>4</label>
+                                                <label class="inlineLabel"><input type="radio" name="radio" class="inlineRadio pointer" id="5"/>5</label>
                                                 <img src="../IMG/5happy.svg" alt="happy face" style="width: 40px; height: 40px;">
                                             
                                             </div>
@@ -100,11 +100,11 @@
                                             <div class="p-2 bd-highlight d-flex justify-content-around">  
 
                                                 <img src="../IMG/1bad.svg" alt="sad face" style="width: 40px; height: 40px;">
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="1"/>1</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="2"/>2</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="3"/>3</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="4"/>4</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="5"/>5</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="1"/>1</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="2"/>2</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="3"/>3</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="4"/>4</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="5"/>5</label>
                                                 <img src="../IMG/5happy.svg" alt="happy face" style="width: 40px; height: 40px;">
                                             
                                             </div>
@@ -129,11 +129,11 @@
                                             <div class="p-2 bd-highlight d-flex justify-content-around">  
 
                                                 <img src="../IMG/1bad.svg" alt="sad face" style="width: 40px; height: 40px;">
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="1"/>1</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="2"/>2</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="3"/>3</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="4"/>4</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="5"/>5</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="1"/>1</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="2"/>2</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="3"/>3</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="4"/>4</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="5"/>5</label>
                                                 <img src="../IMG/5happy.svg" alt="happy face" style="width: 40px; height: 40px;">
                                             
                                             </div>
@@ -158,11 +158,11 @@
                                             <div class="p-2 bd-highlight d-flex justify-content-around">  
 
                                                 <img src="../IMG/1bad.svg" alt="sad face" style="width: 40px; height: 40px;">
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="1"/>1</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="2"/>2</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="3"/>3</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="4"/>4</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="5"/>5</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="1"/>1</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="2"/>2</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="3"/>3</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="4"/>4</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="5"/>5</label>
                                                 <img src="../IMG/5happy.svg" alt="happy face" style="width: 40px; height: 40px;">
                                             
                                             </div>
@@ -187,11 +187,11 @@
                                             <div class="p-2 bd-highlight d-flex justify-content-around">  
 
                                                 <img src="../IMG/1bad.svg" alt="sad face" style="width: 40px; height: 40px;">
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="1"/>1</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="2"/>2</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="3"/>3</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="4"/>4</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="5"/>5</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="1"/>1</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="2"/>2</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="3"/>3</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="4"/>4</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="5"/>5</label>
                                                 <img src="../IMG/5happy.svg" alt="happy face" style="width: 40px; height: 40px;">
                                             
                                             </div>
@@ -216,11 +216,11 @@
                                             <div class="p-2 bd-highlight d-flex justify-content-around">  
 
                                                 <img src="../IMG/1bad.svg" alt="sad face" style="width: 40px; height: 40px;">
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="1"/>1</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="2"/>2</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="3"/>3</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="4"/>4</label>
-                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio" id="5"/>5</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="1"/>1</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="2"/>2</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="3"/>3</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="4"/>4</label>
+                                                <label class="inlineLabel"><input type="radio" name="radioset" class="inlineRadio pointer" id="5"/>5</label>
                                                 <img src="../IMG/5happy.svg" alt="happy face" style="width: 40px; height: 40px;">
                                             
                                             </div>
