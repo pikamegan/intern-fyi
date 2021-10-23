@@ -85,6 +85,7 @@ appSearch.component('company-row', {
             maxScrollHeight: '', //to be done
             isSelected: false,
             companyPage: encodeURI("./company.html?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
+            writeReviewPage: encodeURI("./WriteAReview.html?cid=" + this.company.companyID + "&cname=" + this.company.companyName)
         };
     },
     props: ['company', 'selectedCompanyID'],
@@ -147,7 +148,7 @@ appSearch.component('company-row', {
             <div class="row justify-content-start">
                 <div class="col-xl-3 col-lg-4">
                     <img src="../img/pen_write_review.svg" style="height: 20px; width: 20px;">
-                    <a href="#">
+                    <a :href="writeReviewPage">
                         Write a Review
                     </a>
                 </div>
