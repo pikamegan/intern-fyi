@@ -254,8 +254,7 @@ navigationBar.component('navigation-bar-big-logout', {
     <!-- end of navigation bar -->`
 })
 
-
-navigationBar.mount('#navbarTemplate')
+navigationBar.mount('.navbarTemplate')
 
 
 function showSpeechBubble(e) {
