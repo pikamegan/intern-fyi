@@ -432,4 +432,8 @@ div.password-desc-required {
 
 .secondImage {
     position: absolute;
+    left: 30%;
+    width: 5%;
+    top: 65%;
+    z-index: 1;
 }
