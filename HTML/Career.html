@@ -32,9 +32,9 @@
 
 <body>
     <!-- copy this part -->
-    <div id="navbarTemplate" >
+    <div id="navbarTemplate">
         <div id="bigNavBar">
-            <navigation-bar-small-login v-if="isLogined()" ></navigation-bar-small-login>
+            <navigation-bar-small-login v-if="isLogined()"></navigation-bar-small-login>
             <navigation-bar-small-logout v-else></navigation-bar-small-logout>
         </div>
 
@@ -75,7 +75,7 @@
     </div>
     <br>
     <br>
-    <div class="container-fluid mt-3 mb-5" id="careerDiv">
+    <div class="container-fluid mt-3 mb-5 careerDiv">
         <div class="row">
             <div class="col-sm-12 col-lg-5 col-md-12">
                 <img class="img-fluid p-5 mx-auto mx-auto d-block" src='../IMG/ouroffice_Career.svg' height='' width=''>
@@ -97,12 +97,71 @@
             </div>
         </div>
     </div>
-    <div>
-        <br>
-        <br>
-        <br>
+    <!-- Listening to Events, add 'counter' to Vue Object -->
+    <div class="container careerDiv rounded-3 mb-4" id="careerGame">
+        <div class="row">
+            <div class="col mb-4">
+                <h3 class="text-center secondaryTitle">Paid Company Travel</h3>
+                <p class="text-center">Try moving your key board left and right!</p>
+                <div class="text-center">
+                    <button id="guy" @click="changeCharacterImg($event)" type="button" class="btn btn-light m-1"><img
+                            src="../IMG/boyIcon.svg" style="width: 50px; height: 50px;"></button>
+
+                    <button id="girl" @click="changeCharacterImg($event)" type="button" class="btn btn-light m-1"><img
+                            src="../IMG/girlIcon.svg" style="width: 50px; height: 50px;"></button>
+                </div>
+                <div>
+                    <img class="img-fluid mx-auto d-block mb-4" src="../IMG/theFarm.svg">
+                    <img class="img-fluid" id="personImg" :src="imgOfCharacterSrc" style="height: '100'; width: '100';">
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script>
+        const career = Vue.createApp({
+            data() {
+                return {
+                    // add properties here
+                    imgOfCharacterSrc: "../IMG/guyCharacter.svg"
+                }
+            },
+            methods: {
+                changeCharacterImg(buttonInfo) {
+                    // console.log(buttonInfo.currentTarget.id);
+                    this.imgOfCharacterSrc = "../IMG/" + buttonInfo.currentTarget.id + "Character.svg"
+                    // console.log(this.imgOfCharacterSrc);
+                }
+            }
+        }).mount('#careerGame')
+
+        function leftKeyPressed() {
+            var element = document.getElementById("personImg");
+            element.style.left = parseInt(element.style.left) - 5 + 'px';
+        }
+
+        function rightKeyPressed() {
+            var element = document.getElementById("personImg");
+            element.style.left = parseInt(element.style.left) + 5 + 'px';
+
+        }
+
+        function upKeyPressed() {
+            var element = document.getElementById("personImg");
+            element.style.top = parseInt(element.style.top) - 5 + 'px';
+        }
+
+        function downKeyPressed() {
+            var element = document.getElementById("personImg");
+            element.style.top = parseInt(element.style.top) + 5 + 'px';
+        }
+
+        /***************************************************************************************
+            *    CITING
+            *    Author: StackOverFlow
+            *    Availability: https://stackoverflow.com/questions/21790295/move-an-image-with-the-arrow-keys-using-javascript
+            ***************************************************************************************/
+    </script>
 
 </body>
 

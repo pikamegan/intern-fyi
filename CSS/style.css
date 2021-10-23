@@ -133,7 +133,7 @@ h3 {
     color: #00DC72;
 }
 
-#careerDiv {
+.careerDiv {
     background: rgba(26, 169, 250, 0.12);
     line-height: 1.6;
 }
