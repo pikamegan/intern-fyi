@@ -387,9 +387,8 @@ div.password-desc-required {
     background-color: transparent;
 }
 
-.clearPopup {
+#clearReview {
     display: none;
-    margin: 0 auto;
     position: fixed;
     z-index: 99;
     top: 25%;
@@ -397,6 +396,26 @@ div.password-desc-required {
     left: 0;
     padding: 30px;
 
+}
+
+.warningPopup {
+    background-color: #FF8787;
+    box-shadow: 5.06527px 5.06527px 18.9948px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.clearBtn {
+    color: white;
+    background-color: #269AFF;
+    border-radius: 10px;
+    box-shadow: 5.06527px 5.06527px 18.9948px rgba(0, 0, 0, 0.25);
+}
+
+.keepBtn {
+    color: #EB6B24;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5.06527px 5.06527px 18.9948px rgba(0, 0, 0, 0.25);
 }
 
 .mx-6 {
