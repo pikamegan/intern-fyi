@@ -128,7 +128,7 @@ appSearch.component('company-row', {
         <img :src="company.companyInfo.imageLink" style="height: 100px; width: 100px; float: left; border-radius: 10px">
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col">
+                <div class="col searchRowTitle">
                     {{company.companyName}}
                 </div>
                 <div class="col-auto align-items-end">
