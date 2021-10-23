@@ -22,9 +22,11 @@ h3 {
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.1);
     }
+
     100% {
         transform: scale(1);
     }
@@ -385,7 +387,22 @@ div.password-desc-required {
     background-color: transparent;
 }
 
-.speech{
-    margin-left: 60px;
-    margin-bottom: 50px;
+.speech {
+    margin-left: 50px;
+
+}
+
+.mx-6 {
+    margin-left: 6rem;
+}
+
+
+
+
+.hide {
+    display: none;
+}
+
+.ourFaces:hover+ .hide{
+    display: block;
 }
