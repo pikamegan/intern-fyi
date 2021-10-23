@@ -43,7 +43,32 @@ const appSearch = Vue.createApp({
             errorMessage: null,
             currentImgSrc: "../img/AtoZ.svg",
             currentFilterImg: "../img/filter.svg",
-            sortCompanies: '0'
+            sortCompanies: '0',
+            sortCompaniesValues: {
+                "Overall": 0,
+                "Good Pay": 1,
+                "New Skills": 2,
+                "Friendly": 3,
+                "Food Price": 4,
+                "Mentorship": 5,
+                "Flat Hierarchy": 6
+            },
+            filterLocation: [],
+            filterLocationValues: {
+                // "Nearest to you": 00,
+                "CBD": 1000,
+                "North": 2000,
+                "East": 3000,
+                "West": 4000
+            },
+            filterIndustry: [],
+            filterIndustryValues: [
+                "Internet",
+                "Computer Software",
+                "Consumer Electronics",
+                "Entertainment",
+                "Banking"
+            ]
         }
     },
     methods: {
@@ -95,22 +120,6 @@ const appSearch = Vue.createApp({
     //     },
     // }
 })
-
-// appSearch.component('company-row', {
-//     props: ['companyinfo'],
-//     template:
-//         `<div class="row py-3 shadow">
-//             <div class="col">
-//                 <img :src="companyinfo.imgUrl" style="height: 100px; width: 100px; float: left">
-//                 <div>
-//                     {{ companyinfo.id }}
-//                 </div>
-//                 <div>
-//                     {{ companyinfo.name }}
-//                 </div>
-//             </div>
-//         </div>`
-// })
 
 appSearch.component('company-row', {
     data() {

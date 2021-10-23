@@ -29,114 +29,51 @@
             <div class="col-lg-3 shadow mb-5">
                 <!-- sticky? -->
                 <div class="container">
-                    <div class="row my-2">
-                        <div class="col">
-                            Filter by:
-                            <img class="preventSelect" :src="currentFilterImg" style="width: 20px;"
-                                @click="changeFilterImg()">
-                            <img class="preventSelect" :src="currentImgSrc" style="width: 20px;"
-                                @click="changeLetterSortImg()">
+
+                    <div class="row mb-2">
+                        <div>
+                            Sort by:
                         </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div style="width: 500px; height: 100px; background-color: violet;">
-                            what am i suppose to put here? and whats the functionality?
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div>Industry:</div>
-                        <select name="Select Industry" id="industry">
-                            <option value="" selected disabled hidden>Select Industry</option>
-                            <option value="Manufacturing ">Manufacturing</option>
-                            <option value="Finance">Finance</option>
-                            <option value="Telecom">Telecom</option>
-                            <option value="Law">Law</option>
-                            <option value="Business">Business</option>
-                            <option value="SocialScience">Social Science</option>
-                            <option value="Healthcare">Healthcare</option>
-                        </select>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="mb-2">Criteria:</div>
-                        <ul style="list-style: none;" class="ms-4">
-                            <li>
+                        <ul style="list-style: none;" class="ms-1">
+                            <li v-for="(value, name) in sortCompaniesValues">
                                 <label>
-                                    <input checked v-model="sortCompanies" value="0" type="radio">
-                                    Overall
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input v-model="sortCompanies" value="1" type="radio">
-                                    Good Pay
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input v-model="sortCompanies" value="2" type="radio">
-                                    New Skills
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input v-model="sortCompanies" value="3" type="radio">
-                                    Friendly
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input v-model="sortCompanies" value="4" type="radio">
-                                    Food Price
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input v-model="sortCompanies" value="5" type="radio">
-                                    Mentorship
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input v-model="sortCompanies" value="6" type="radio">
-                                    Flat Hierarchy
+                                    <input v-model="sortCompanies" :value="value" type="radio">
+                                    {{name}}
                                 </label>
                             </li>
                         </ul>
                         {{sortCompanies}}
                     </div>
+
                     <div class="row mb-2">
-                        <div class="mb-2">Location:</div>
-                        <ul style="list-style: none;" class="ms-4">
-                            <li>
+                        <div>
+                            Industry:
+                        </div>
+                        <ul style="list-style: none;" class="ms-1">
+                            <li v-for="industry in filterIndustryValues">
                                 <label>
-                                    <input type="checkbox">
-                                    Nearest to you
+                                    <input type="checkbox" v-model="filterIndustry" :value="industry">
+                                    {{industry}}
                                 </label>
                             </li>
-                            <li>
+                        </ul>
+                        {{filterIndustry}}
+                    </div>
+
+                    <div class="row mb-2">
+                        <div>
+                            Location:
+                        </div>
+                        <ul style="list-style: none;" class="ms-1">
+
+                            <li v-for="(value, name) in filterLocationValues">
                                 <label>
-                                    <input type="checkbox">
-                                    CBD
-                                </label>
-                            </li>vu
-                            <li>
-                                <label>
-                                    <input type="checkbox">
-                                    North
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox">
-                                    East
+                                    <input type="checkbox" v-model="filterLocation" :value="value">
+                                    {{name}}
                                 </label>
                             </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox">
-                                    West
-                                </label>
-                            </li>
+
+                            {{filterLocation}}
                             <li>
                                 <label class="map">
                                     <input type="checkbox" class="me-1">
@@ -151,11 +88,10 @@
                             </li>
                         </ul>
                     </div>
+
                     <div class="row mb-2">
 
                         <div class="mb-4" id="map" style="height: 400px; width: 400px;"></div>
-
-
 
                     </div>
 
