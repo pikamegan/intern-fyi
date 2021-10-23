@@ -229,3 +229,18 @@ navigationBar.component('navigation-bar-big-logout', {
 
 navigationBar.mount('#navbarTemplate')
 
+
+function showSpeechBubble(e) {
+    if (window.innerWidth > 767) {
+        let id = e.id + "SpeechBox"
+        // console.log(id);
+        let speechBubble = document.getElementById(id)
+        
+        if (speechBubble.classList.contains("hide")) {
+            speechBubble.classList.remove("hide");
+        } else {
+            speechBubble.classList.add("hide");
+        }
+    }
+}
+

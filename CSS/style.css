@@ -381,22 +381,11 @@ div.password-desc-required {
     transform: rotate(-90deg);
 }
 
-.speech {
-    margin-left: 50px;
-
-}
-
 .mx-6 {
     margin-left: 6rem;
 }
 
 
-
-
 .hide {
     display: none;
-}
-
-.ourFaces:hover+ .hide{
-    display: block;
 }
