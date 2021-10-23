@@ -42,8 +42,8 @@ const appSearch = Vue.createApp({
             allCompanies: null,
             errorMessage: null,
             currentImgSrc: "../img/AtoZ.svg",
-            currentFilterImg: "../img/filter.svg"
-
+            currentFilterImg: "../img/filter.svg",
+            sortCompanies: '0'
         }
     },
     methods: {

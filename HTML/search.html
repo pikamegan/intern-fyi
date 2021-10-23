@@ -61,41 +61,48 @@
                         <ul style="list-style: none;" class="ms-4">
                             <li>
                                 <label>
-                                    <input type="checkbox">
+                                    <input checked v-model="sortCompanies" value="0" type="radio">
+                                    Overall
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input v-model="sortCompanies" value="1" type="radio">
                                     Good Pay
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox">
+                                    <input v-model="sortCompanies" value="2" type="radio">
                                     New Skills
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox">
+                                    <input v-model="sortCompanies" value="3" type="radio">
                                     Friendly
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox">
+                                    <input v-model="sortCompanies" value="4" type="radio">
                                     Food Price
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox">
+                                    <input v-model="sortCompanies" value="5" type="radio">
                                     Mentorship
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox">
+                                    <input v-model="sortCompanies" value="6" type="radio">
                                     Flat Hierarchy
                                 </label>
                             </li>
                         </ul>
+                        {{sortCompanies}}
                     </div>
                     <div class="row mb-2">
                         <div class="mb-2">Location:</div>
@@ -146,13 +153,13 @@
                     </div>
                     <div class="row mb-2">
 
-                        <div class = "mb-4" id="map" style="height: 400px; width: 400px;"></div>
+                        <div class="mb-4" id="map" style="height: 400px; width: 400px;"></div>
 
 
 
                     </div>
 
-                
+
                 </div>
             </div>
 
@@ -162,8 +169,8 @@
         </div>
     </div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&callback=initMap" async
-    defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&callback=initMap"
+        async defer></script>
 
     <script src="../js/appSearch.js"></script>
 
