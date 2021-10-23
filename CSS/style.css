@@ -378,3 +378,8 @@ div.password-desc-required {
     float: right;
     transform: rotate(-90deg);
 }
+
+.speech{
+    margin-left: 60px;
+    margin-bottom: 50px;
+}
