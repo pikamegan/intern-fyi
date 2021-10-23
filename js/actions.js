@@ -64,11 +64,11 @@ function showCriteria() {
 function scrollFunction() {
     let scrollBtn = document.getElementById("scrollTop")
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      scrollBtn.style.display = "block";
+        scrollBtn.style.display = "block";
     } else {
-      scrollBtn.style.display = "none";
+        scrollBtn.style.display = "none";
     }
-  }
+}
 
 function scrollToTop() {
     document.body.scrollTop = 0; // For Safari
@@ -259,16 +259,18 @@ navigationBar.mount('#navbarTemplate')
 
 
 function showSpeechBubble(e) {
-    if (window.innerWidth > 767) {
-        let id = e.id + "SpeechBox"
-        // console.log(id);
-        let speechBubble = document.getElementById(id)
-        
-        if (speechBubble.classList.contains("hide")) {
-            speechBubble.classList.remove("hide");
-        } else {
-            speechBubble.classList.add("hide");
-        }
+    let id = e.id + "SpeechBox"
+    // console.log(id);
+    let speechBubble = document.getElementById(id)
+
+    if (speechBubble.classList.contains("hide")) {
+
+        speechBubble.classList.remove("hide");
+
+
+    } else {
+        speechBubble.classList.add("hide");
     }
+
 }
 
