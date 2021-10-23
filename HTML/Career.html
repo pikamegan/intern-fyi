@@ -110,10 +110,10 @@
                     <button id="girl" @click="changeCharacterImg($event)" type="button" class="btn btn-light m-1"><img
                             src="../IMG/girlIcon.svg" style="width: 50px; height: 50px;"></button>
                 </div>
-                <div>
-                    <img class="img-fluid mx-auto d-block mb-4 firstImage" src="../IMG/theFarm.svg">
+                <div style="position:relative;">
                     <img class="img-fluid secondImage" id="personImg" :src="imgOfCharacterSrc"
-                        style="height: '80'; width: '80';">
+                        style="height: '50'; width: '50';">
+                    <img class="img-fluid mx-auto d-block mb-4 firstImage" src="../IMG/theFarm.svg">
                 </div>
             </div>
         </div>
@@ -149,36 +149,26 @@
             else if (buttonPressed == "ArrowLeft") {
                 leftKeyPressed()  
             }
-            else if (buttonPressed == "ArrowUp") {
-                upKeyPressed()
-            }
-            else if (buttonPressed == "ArrowDown") {
-                downKeyPressed()
-            }
         });
 
-
+        var element = document.getElementById("personImg");
+        element.style.left = '30%';
 
         function leftKeyPressed() {
             var element = document.getElementById("personImg");
-            element.style.left = parseInt(element.style.left) - 5 + 'px';
+            if (element.style.left > "25%") {
+                element.style.left = parseInt(element.style.left) - 5 + '%';
+                console.log(element.style.left );
+            }
         }
 
         function rightKeyPressed() {
             var element = document.getElementById("personImg");
-            element.style.left = parseInt(element.style.left) + 5 + 'px';
-            console.log(element);
+            if (element.style.left < "70%") {
+                element.style.left = parseInt(element.style.left) + 5 + '%';
+                console.log(element.style.left );
+            }
 
-        }
-
-        function upKeyPressed() {
-            var element = document.getElementById("personImg");
-            element.style.top = parseInt(element.style.top) - 5 + 'px';
-        }
-
-        function downKeyPressed() {
-            var element = document.getElementById("personImg");
-            element.style.top = parseInt(element.style.top) + 5 + 'px';
         }
 
         /***************************************************************************************
