@@ -16,6 +16,7 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../CSS/style.css">
+    <script src="https://unpkg.com/vue@next"></script>
     <script src="../js/actions.js"></script>
     <title>Write a Company Review</title>
 </head>
@@ -34,15 +35,10 @@
                         </div>
                     </div>
                     <div class="row justify-content-start mb-5">
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-3">
-                            <label for="company" class="form-label">Company<span
-                                style="color:red">*</span></label>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-3" id="appHome">
+                            <label for="company" class="form-label">Company<span style="color:red">*</span></label>
                             <select id="company" name="company" class="form-select" aria-describedby="company">
-                                <option value="complaint"></option>
-                                <option value="bug">Website Bug/Malfunction</option>
                                 <option value="uob" selected>UOB</option>
-                                <option value="suggestion">General Suggestion</option>
-                                <option value="feature">New Feature Suggestion</option>
                             </select>
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
