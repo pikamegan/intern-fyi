@@ -374,11 +374,17 @@ div.password-desc-required {
     color: #aaaaaa;
 }
 
-.scrollTop {
+#scrollTop {
+    display: none;
     position: fixed;
-    bottom: 0;
-    float: right;
+    bottom: 20px;
+    right: 10px;
+    z-index: 99;
+    cursor: pointer;
+    padding: 15px;
     transform: rotate(-90deg);
+    border: none;
+    background-color: transparent;
 }
 
 .mx-6 {

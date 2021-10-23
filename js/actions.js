@@ -60,6 +60,21 @@ function showCriteria() {
     }
 }
 
+// the 2 scroll functions are adapted from: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+function scrollFunction() {
+    let scrollBtn = document.getElementById("scrollTop")
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  }
+
+function scrollToTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 // Vue instance
 const navigationBar = Vue.createApp({
     data() {
