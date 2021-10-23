@@ -24,13 +24,13 @@
         NAVBAR PLACEHOLDER
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5" id="appSearch">
         <div class="row">
             <div class="col-lg-3 shadow mb-5">
                 <!-- sticky? -->
                 <div class="container">
                     <div class="row my-2">
-                        <div class="col" id="searchVue">
+                        <div class="col">
                             Filter by:
                             <img class="preventSelect" :src="currentFilterImg" style="width: 20px;"
                                 @click="changeFilterImg()">
@@ -147,46 +147,8 @@
                     <div class="row mb-2">
 
                         <div class = "mb-4" id="map" style="height: 400px; width: 400px;"></div>
-                        <script>
-                            var userLat = -34.397;
-                            var userLong = 150.644;
-                            function showYourLocation() {
-                                let zipCode = document.getElementById("userZipCode").value
-                                console.log(zipCode);
-                                const url = `https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&components=postal_code:${zipCode}`;
-                                axios
-                                    .get(url)
-                                    .then((response) => {
-                                        // process response.data object
-                                        // console.log(response.data);
-                                        const myJSON = JSON.stringify(response.data);
-                                        console.log(myJSON);
-                                        userLong = response.data.results[0].geometry.location.lng
-                                        userLat = response.data.results[0].geometry.location.lat
-                                        // console.log(userLat);
-                                        initMap()
-                                    })
-                                    .catch((error) => {
-                                        // process error object
-                                        console.log(error.message);
-                                        //document.getElementById("displayString").innerText = "Something went wrong";
-                                    });
-                                    
-                            }
 
-                            var map;
-                            console.log(userLat);
-                            function initMap() {
-                                map = new google.maps.Map(document.getElementById('map'), {
-                                    center: { lat: userLat, lng: userLong },
-                                    zoom: 15
-                                });
-                            }
-                        
-                        </script>
-                        <script
-                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&callback=initMap"
-                            async defer></script>
+
 
                     </div>
 
@@ -195,20 +157,20 @@
             </div>
 
             <div class="col mb-5">
-                <div id="appSearch">
-                    <company-row-list :companylist="allCompanies"></company-row-list>
-                </div>
+                <company-row-list :companylist="allCompanies"></company-row-list>
             </div>
         </div>
     </div>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&callback=initMap" async
+    defer></script>
 
     <script src="../js/appSearch.js"></script>
 
     <div style="height: 292px; margin: auto; background-color: rgb(233, 233, 233); text-align: center;">
         FOOTER PLACEHOLDER
     </div>
-    <script>
+    <!-- <script>
         const appMap = Vue.createApp({
             data() {
                 return {
@@ -235,8 +197,8 @@
                 }
             }
         })
-        const vm = appMap.mount('#searchVue');
-    </script>
+        // const vm = appMap.mount('#searchVue');
+    </script> -->
 
     <!-- JavaScript for CSS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"

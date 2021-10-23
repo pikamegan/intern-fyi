@@ -374,6 +374,12 @@ div.password-desc-required {
     color: #aaaaaa;
 }
 
+.scrollTop {
+    position: fixed;
+    bottom: 0;
+    float: right;
+    transform: rotate(-90deg);
+}
 
 .speech {
     margin-left: 50px;
