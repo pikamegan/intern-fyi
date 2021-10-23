@@ -77,12 +77,12 @@ function scrollToTop() {
 
 function resetDraft() {
     let draft = document.getElementById("reviewForm")
-    let clearForm = document.getElementById("clearForm")
+    let clearReview = document.getElementById("clearReview")
 
-    if (clearForm.style.display === "none") {
-        clearForm.style.display = "block";
+    if (clearReview.style.display === "none") {
+        clearReview.style.display = "block";
     } else {
-        clearForm.style.display = "none";
+        clearReview.style.display = "none";
     }
 
     draft.reset()
