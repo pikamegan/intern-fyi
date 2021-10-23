@@ -387,6 +387,18 @@ div.password-desc-required {
     background-color: transparent;
 }
 
+.clearPopup {
+    display: none;
+    margin: 0 auto;
+    position: fixed; 
+    z-index: 99;
+    top: 25%;
+    right: 0;
+    left: 0;
+    padding: 30px; 
+
+}
+
 .mx-6 {
     margin-left: 6rem;
 }

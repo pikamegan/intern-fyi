@@ -75,6 +75,19 @@ function scrollToTop() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+function resetDraft() {
+    let draft = document.getElementById("reviewForm")
+    let clearForm = document.getElementById("clearForm")
+
+    if (clearForm.style.display === "none") {
+        clearForm.style.display = "block";
+    } else {
+        clearForm.style.display = "none";
+    }
+
+    draft.reset()
+}
+
 // Vue instance
 const navigationBar = Vue.createApp({
     data() {
