@@ -200,7 +200,7 @@ navigationBar.component('navigation-bar-big-login', {
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="input-group my-2">
-            <input type="search" class="form-control rounded" placeholder="Search for Industy, Company or Role"
+            <input type="search" class="form-control rounded" placeholder="Search for Industry, Company or Role"
             aria-label="Search" aria-describedby="search-addon" />
             <button type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
@@ -240,7 +240,7 @@ navigationBar.component('navigation-bar-big-logout', {
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="input-group my-2">
-            <input type="search" class="form-control rounded" placeholder="Search for Industy, Company or Role"
+            <input type="search" class="form-control rounded" placeholder="Search for Industry, Company or Role"
             aria-label="Search" aria-describedby="search-addon" />
             <button type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
