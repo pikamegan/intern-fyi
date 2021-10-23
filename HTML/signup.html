@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 
 <html lang="en">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <link rel="stylesheet" href="../CSS/in.css">
-        <link rel="stylesheet" href="../CSS/footer.css">
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/in.css">
     <link rel="stylesheet" href="../CSS/footer.css">
-
     <title>Sign Up</title>
-
 </head>
 
 <body>
@@ -73,17 +69,18 @@
                 <div class="col">
                     <label class="sr-only" for="signupPw1Input">Password</label>
                     <input id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password" required="" autofocus="">
-                    <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle" onclick=pwToggle(signupPw1Input,signupPw1Toggle)></i>
+                    <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
                 </div>
             </div>
+            <!-- Remove password-desc-required class when requirement is met & the reverse -->
             <div class="passwordrequirements mb-2">
-                <div id="password-req-length" class="password-desc-fulfilled"><img src="../IMG/tick_success.svg" class="password-desc">MUST contain eight (8) characters or more</div>
+                <div id="password-req-length" class=""><img src="../IMG/tick_success.svg" class="password-desc">MUST contain eight (8) characters or more</div>
                 <div id="password-req-ucase" class="password-desc-required"><img src="../IMG/tick_success.svg" class="password-desc">Uppercase alphabet characters (A-Z)</div>
-                <div id="password-req-lcase" class="password-desc-fulfilled"><img src="../IMG/tick_success.svg" class="password-desc">Lowercase alphabet characters (a-z)</div>
+                <div id="password-req-lcase" class=""><img src="../IMG/tick_success.svg" class="password-desc">Lowercase alphabet characters (a-z)</div>
                 <div id="password-req-numerals" class="password-desc-required"><img src="../IMG/tick_success.svg" class="password-desc">Arabic numerals (0-9)</div>
                 <div id="password-req-nonalpha" class="password-desc-required"><img src="../IMG/tick_success.svg" class="password-desc">Non-alphanumeric characters (for example: ~`!@#$%^%&amp;*-+?)</div>
-                <div id="password-req-username" class="password-desc-fulfilled"><img src="../IMG/tick_success.svg" class="password-desc">Password cannot contain part of (or full) Username (...)</div>
-                <div id="password-req-displayname" class="password-desc-fulfilled"><img src="../IMG/tick_success.svg" class="password-desc">Password cannot contain part of (or full) displayed name in Profile ()</div>
+                <div id="password-req-username" class=""><img src="../IMG/tick_success.svg" class="password-desc">Password cannot contain part of (or full) Username (...)</div>
+                <div id="password-req-displayname" class=""><img src="../IMG/tick_success.svg" class="password-desc">Password cannot contain part of (or full) displayed name in Profile ()</div>
             <!-- /***************************************************************************************
             *    CITING
             *    Author: SMU
@@ -98,6 +95,8 @@
                     <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw2Input,signupPw2Toggle)"></i>
                 </div>
             </div>
+            <!-- Remove password-desc-required class when requirement is met & the reverse -->
+            <div id="confirm-password-same" class="password-desc-required mb-4"><img src="../IMG/tick_success.svg" class="password-desc">New Password and Confirm New Password match</div>
 
                 <!-- Extras -->
             <div class="form-row signupBodyExtras">

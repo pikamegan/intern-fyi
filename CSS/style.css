@@ -366,3 +366,8 @@ div.cardBold {
     font-size: 17px;
     font-weight: bold;
 }
+
+
+div.password-desc-required {
+    color: #aaaaaa;
+}
