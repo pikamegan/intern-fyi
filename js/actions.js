@@ -75,15 +75,15 @@ function scrollToTop() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-function resetDraft() {
-    let clearReview = document.getElementById("clearReview")
+function resetDraft(id) {
+    let popup = document.getElementById(id)
     let bodyScroll = document.getElementsByClassName("onPopup")
     let selectBtn = document.getElementsByClassName("form-select")
     let inputs = document.getElementsByClassName("form-control")
     let radioBtns = document.getElementsByClassName("inlineRadio")
     let accordions = document.getElementsByClassName("accordion-button")
 
-    clearReview.style.display = "block"
+    popup.style.display = "block"
     bodyScroll[0].style.overflow = "hidden"
     selectBtn[0].disabled = true
 
@@ -110,6 +110,7 @@ function clearReview() {
 function submitReview() {
     let submit = document.getElementById("submitReview")
     submit.style.display = "block"
+    resetDraft("submitReview")
 }
 
 function closePopup(id) {
@@ -136,6 +137,8 @@ function closePopup(id) {
     for (accordion of accordions) {
         accordion.disabled = false
     }
+
+    scrollToTop()
 }
 
 
