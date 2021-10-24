@@ -427,7 +427,7 @@ div.password-desc-required {
     box-shadow: 5.06527px 5.06527px 18.9948px rgba(0, 0, 0, 0.25);
 }
 
-/* .submitPopup {
+.submitPopup {
     background-color: #4EC33D;
     border-radius: 32px;
 }
@@ -435,7 +435,7 @@ div.password-desc-required {
 .successBtn {
     background-color: #2DDF89;
     border-radius: 4px;
-} */
+}
 
 .mx-6 {
     margin-left: 6rem;

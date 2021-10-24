@@ -108,18 +108,20 @@ function clearReview() {
 }
 
 function submitReview() {
-    
+    let submit = document.getElementById("submitReview")
+    submit.style.display = "block"
 }
 
-function closePopup() {
-    let clearReview = document.getElementById("clearReview")
+function closePopup(id) {
+    let popup = document.getElementById(id)
+    console.log(popup)
     let bodyScroll = document.getElementsByClassName("onPopup")
     let selectBtn = document.getElementsByClassName("form-select")
     let inputs = document.getElementsByClassName("form-control")
     let radioBtns = document.getElementsByClassName("inlineRadio")
     let accordions = document.getElementsByClassName("accordion-button")
 
-    clearReview.style.display = "none"
+    popup.style.display = "none"
     bodyScroll[0].style.overflow = "auto"
     selectBtn[0].disabled = false
 
@@ -135,6 +137,7 @@ function closePopup() {
         accordion.disabled = false
     }
 }
+
 
 // Vue instance
 const navigationBar = Vue.createApp({
