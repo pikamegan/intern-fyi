@@ -104,7 +104,7 @@ function clearReview() {
     let draft = document.getElementById("reviewForm")
 
     draft.reset()
-    closePopup()
+    closePopup("clearReview")
 }
 
 function submitReview() {
@@ -115,7 +115,6 @@ function submitReview() {
 
 function closePopup(id) {
     let popup = document.getElementById(id)
-    console.log(popup)
     let bodyScroll = document.getElementsByClassName("onPopup")
     let selectBtn = document.getElementsByClassName("form-select")
     let inputs = document.getElementsByClassName("form-control")
