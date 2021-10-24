@@ -107,6 +107,10 @@ function clearReview() {
     closePopup()
 }
 
+function submitReview() {
+    
+}
+
 function closePopup() {
     let clearReview = document.getElementById("clearReview")
     let bodyScroll = document.getElementsByClassName("onPopup")

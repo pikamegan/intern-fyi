@@ -395,7 +395,16 @@ div.password-desc-required {
     right: 0;
     left: 0;
     padding: 30px;
+}
 
+#submitReview {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top: 25%;
+    right: 0;
+    left: 0;
+    padding: 30px;
 }
 
 .warningPopup {
@@ -417,6 +426,16 @@ div.password-desc-required {
     border-radius: 10px;
     box-shadow: 5.06527px 5.06527px 18.9948px rgba(0, 0, 0, 0.25);
 }
+
+/* .submitPopup {
+    background-color: #4EC33D;
+    border-radius: 32px;
+}
+
+.successBtn {
+    background-color: #2DDF89;
+    border-radius: 4px;
+} */
 
 .mx-6 {
     margin-left: 6rem;
