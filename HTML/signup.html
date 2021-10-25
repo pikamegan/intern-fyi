@@ -107,7 +107,7 @@
                 <div class="col">
                     <label class="sr-only " for="signupPw2Input">Confirm password</label>
                     <input id="signupPw2Input" class="form-control signupField" type="password"
-                        placeholder="Confirm password" required="" autofocus="">
+                        placeholder="Confirm password" oninput="isPasswordMatch()" required="" autofocus="">
                     <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle"
                         onclick="pwToggle(signupPw2Input,signupPw2Toggle)"></i>
                 </div>
@@ -175,16 +175,16 @@
             let criteriaNum = document.getElementById("password-req-numerals")
             let criteriaNonAlpha = document.getElementById("password-req-nonalpha")
             let criteriaNoProfileName = document.getElementById("password-req-displayname")
-            
+
 
             if (userPWInput.length >= 8) {
                 criteriaLength.classList.remove("password-desc-required");
-    
-            }else{
+
+            } else {
                 criteriaLength.classList.add("password-desc-required")
             }
 
-            if ( hasUpperC(userPWInput)) {
+            if (hasUpperC(userPWInput)) {
                 criteriaUC.classList.remove("password-desc-required");
             } else {
                 criteriaUC.classList.add("password-desc-required");
@@ -211,9 +211,9 @@
             }
 
             if (hasProfileName(userPWInput, fName + '.' + lName)) {
-                criteriaNoProfileName.classList.remove("password-desc-required");
-            } else {
                 criteriaNoProfileName.classList.add("password-desc-required");
+            } else {
+                criteriaNoProfileName.classList.remove("password-desc-required");
             }
 
 
@@ -227,7 +227,7 @@
                 }
             }
             return false;
-            
+
         }
 
         function hasUpperC(input) {
@@ -235,7 +235,7 @@
                 if ((string === string.toUpperCase()) && isNaN(string)) {
                     console.log(string);
                     return true;
-                    
+
                 }
             }
             return false;
@@ -251,7 +251,7 @@
         }
 
         function hasNonAlpha(input) {
-            let nonAlphaList = ["~","`","!","@","#","$","%","^","%","&","*","-","+","?"]
+            let nonAlphaList = ["~", "`", "!", "@", "#", "$", "%", "^", "%", "&", "*", "-", "+", "?"]
             for (let nonAlpha of nonAlphaList) {
                 if (input.indexOf(nonAlpha) !== -1) {
                     console.log(nonAlpha);
@@ -264,10 +264,26 @@
         function hasProfileName(input, fullName) {
             const nameArray = fullName.split('.');
 
-            if (input.indexOf(nameArray[0]) == -1 && input.indexOf(nameArray[1]) == -1 ) {
+            if (input.indexOf(nameArray[0]) == -1 && input.indexOf(nameArray[1]) == -1) {
+                // returns -1 when the name is not in the fname or lname
+                return false;
+            }else{
+                console.log(fullName);
                 return true;
             }
-            return false;
+
+        }
+
+        function isPasswordMatch() {
+            let userPWInput = document.getElementById("signupPw1Input").value
+            let userPWInput2 = document.getElementById("signupPw2Input").value
+            let criteriaPasswordMatch = document.getElementById("confirm-password-same")
+
+            if (userPWInput === userPWInput2) {
+                criteriaPasswordMatch.classList.remove("password-desc-required");
+            } else {
+                criteriaPasswordMatch.classList.add("password-desc-required");
+            }
 
         }
 
