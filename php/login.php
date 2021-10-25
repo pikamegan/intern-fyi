@@ -13,10 +13,13 @@ if (count($_POST) > 0) {
     }
 }
 if (isset($_SESSION["id"])) {
-    header("Location:index.php");
+    header("Location: index.html");
+    echo "true";
+}else{
+    echo "false";
 }
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,4 +30,4 @@ if (isset($_SESSION["id"])) {
 <body>
 
 </body>
-</html>
+</html> -->
