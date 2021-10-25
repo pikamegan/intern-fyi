@@ -40,6 +40,7 @@ const appSearch = Vue.createApp({
     data() {
         return {
             allCompanies: null,
+            displayCompanies: null,
             errorMessage: null,
             currentImgSrc: "../img/AtoZ.svg",
             currentFilterImg: "../img/filter.svg",
@@ -83,15 +84,38 @@ const appSearch = Vue.createApp({
             })
                 .then(response => {
                     this.allCompanies = response.data;
+                    this.displayCompanies = response.data;
                     this.sortCompaniesMethod();
                 })
                 .catch(error => {
                     this.errorMessage = error.message;
                 });
+        },
+        filterMethod() {
+            console.log("filter");
+            this.displayCompanies = [];
+            for (index in this.allCompanies) {
+                company = this.allCompanies[index];
+                if(this.filterIndustry.includes(company.companyInfo.industry)) {
+                    this.displayCompanies.push(company);
+                };
+            }
+            this.sortCompaniesMethod()
+        },
+        sortCompaniesMethod() {
+            console.log("sort");
+            sortBy = this.sortCompanies;
+            if (this.displayCompanies != null) {
+                this.displayCompanies.sort((a, b) => {
+                    return parseFloat(b.companyRatings[sortBy]) - parseFloat(a.companyRatings[sortBy]);
+                });
+            }
         }
     },
     created() {
         this.getAllCompanies();
+        //deep copy
+        this.filterIndustry = JSON.parse(JSON.stringify(this.filterIndustryValues))
     },
     computed: {
         //     companyNames() {
@@ -104,16 +128,7 @@ const appSearch = Vue.createApp({
         //             return companyNames;
         //         }
         //     },
-        sortCompaniesMethod() {
-            sortBy = this.sortCompanies;
-            if (this.allCompanies != null) {
-                console.log("sort")
-                this.allCompanies.sort((a, b) => {
-                    return parseFloat(b.companyRatings[sortBy]) - parseFloat(a.companyRatings[sortBy]);
-                });
-            }
-            return null;
-        }
+
     }
 })
 
@@ -279,7 +294,6 @@ appSearch.component('company-row-list', {
     methods: {
         selectCompany(companyID) {
             this.selectedCompanyID = companyID;
-            // console.log(this.selectedCompanyID);
         }
     },
     template:

@@ -34,7 +34,7 @@
                         <div>
                             Sort by:
                         </div>
-                        <ul  style="list-style: none;" class="ms-1">
+                        <ul v-on:change="sortCompaniesMethod" style="list-style: none;" class="ms-1">
                             <li v-for="(value, name) in sortCompaniesValues">
                                 <label>
                                     <input v-model="sortCompanies" :value="value" type="radio">
@@ -50,7 +50,7 @@
                         <div>
                             Industry:
                         </div>
-                        <ul style="list-style: none;" class="ms-1">
+                        <ul v-on:change="filterMethod" style="list-style: none;" class="ms-1">
                             <li v-for="industry in filterIndustryValues">
                                 <label>
                                     <input type="checkbox" v-model="filterIndustry" :value="industry">
@@ -58,7 +58,8 @@
                                 </label>
                             </li>
                         </ul>
-                        {{filterIndustry}}
+                        <!-- {{filterIndustry}} -->
+                        <!-- <button @click="filterMethod()">filter</button> -->
                     </div>
 
                     <div class="row mb-2">
@@ -101,7 +102,16 @@
             </div>
 
             <div class="col mb-5">
-                <company-row-list :companylist="allCompanies"></company-row-list>
+
+                <company-row-list :companylist="displayCompanies"></company-row-list>
+
+                <div v-if="displayCompanies.length == 0" class="text-center">
+                    <img class="my-5" src="../img/noCompanyFound.svg">
+                    <div>
+                        Oops, no company found!
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
