@@ -88,30 +88,33 @@ const appSearch = Vue.createApp({
                 .catch(error => {
                     this.errorMessage = error.message;
                 });
-        },
-        sortCompaniesMethod() { //wip
-            sortBy = this.sortCompanies;
-            this.allCompanies.sort((a, b) => {
-                return b.companyRatings[sortBy] - a.companyRatings[sortBy];
-            });
         }
-
     },
     created() {
         this.getAllCompanies();
+    },
+    computed: {
+        //     companyNames() {
+        //         if (this.allCompanies != null) {
+        //             companyNames = [];
+        //             for (index in this.allCompanies) {
+        //                 companyName = this.allCompanies[index].companyName;
+        //                 companyNames.push(companyName);
+        //             }
+        //             return companyNames;
+        //         }
+        //     },
+        sortCompaniesMethod() {
+            sortBy = this.sortCompanies;
+            if (this.allCompanies != null) {
+                console.log("sort")
+                this.allCompanies.sort((a, b) => {
+                    return parseFloat(b.companyRatings[sortBy]) - parseFloat(a.companyRatings[sortBy]);
+                });
+            }
+            return null;
+        }
     }
-    // computed: {
-    //     companyNames() {
-    //         if (this.allCompanies != null) {
-    //             companyNames = [];
-    //             for (index in this.allCompanies) {
-    //                 companyName = this.allCompanies[index].companyName;
-    //                 companyNames.push(companyName);
-    //             }
-    //             return companyNames;
-    //         }
-    //     },
-    // }
 })
 
 appSearch.component('company-row', {
