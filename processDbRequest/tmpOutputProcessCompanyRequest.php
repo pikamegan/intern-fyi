@@ -130,10 +130,10 @@
             "overallRating": "0",
             "averageCriteria1": "0",
             "averageCriteria2": "0",
-            "averageCriteria3": "0",
-            "averageCriteria4": "0",
+            "averageCriteria3": "3.5",
+            "averageCriteria4": "4.5",
             "averageCriteria5": "0",
-            "averageCriteria6": "0"
+            "averageCriteria6": "2.5"
         }
     },
     {
@@ -150,10 +150,10 @@
         "companyRatings": {
             "numberOfClicks": "0",
             "totalNumReviews": "0",
-            "overallRating": "0",
-            "averageCriteria1": "0",
-            "averageCriteria2": "0",
-            "averageCriteria3": "0",
+            "overallRating": "2",
+            "averageCriteria1": "3",
+            "averageCriteria2": "4",
+            "averageCriteria3": "5",
             "averageCriteria4": "0",
             "averageCriteria5": "0",
             "averageCriteria6": "0"
@@ -173,11 +173,11 @@
         "companyRatings": {
             "numberOfClicks": "0",
             "totalNumReviews": "0",
-            "overallRating": "0",
-            "averageCriteria1": "0",
-            "averageCriteria2": "0",
-            "averageCriteria3": "0",
-            "averageCriteria4": "0",
+            "overallRating": "1",
+            "averageCriteria1": "2",
+            "averageCriteria2": "3",
+            "averageCriteria3": "4",
+            "averageCriteria4": "5",
             "averageCriteria5": "0",
             "averageCriteria6": "0"
         }
@@ -197,11 +197,11 @@
             "numberOfClicks": "0",
             "totalNumReviews": "0",
             "overallRating": "0",
-            "averageCriteria1": "0",
-            "averageCriteria2": "0",
-            "averageCriteria3": "0",
-            "averageCriteria4": "0",
-            "averageCriteria5": "0",
+            "averageCriteria1": "1",
+            "averageCriteria2": "2",
+            "averageCriteria3": "3",
+            "averageCriteria4": "4",
+            "averageCriteria5": "5",
             "averageCriteria6": "0"
         }
     },
@@ -221,11 +221,11 @@
             "totalNumReviews": "0",
             "overallRating": "0",
             "averageCriteria1": "0",
-            "averageCriteria2": "0",
-            "averageCriteria3": "0",
-            "averageCriteria4": "0",
-            "averageCriteria5": "0",
-            "averageCriteria6": "0"
+            "averageCriteria2": "1",
+            "averageCriteria3": "2",
+            "averageCriteria4": "3",
+            "averageCriteria5": "4",
+            "averageCriteria6": "5"
         }
     }
 ]

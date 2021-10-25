@@ -43,15 +43,15 @@ const appSearch = Vue.createApp({
             errorMessage: null,
             currentImgSrc: "../img/AtoZ.svg",
             currentFilterImg: "../img/filter.svg",
-            sortCompanies: '0',
+            sortCompanies: "overallRating",
             sortCompaniesValues: {
-                "Overall": 0,
-                "Good Pay": 1,
-                "New Skills": 2,
-                "Friendly": 3,
-                "Food Price": 4,
-                "Mentorship": 5,
-                "Flat Hierarchy": 6
+                "Overall": "overallRating",
+                "Good Pay": "averageCriteria1",
+                "New Skills": "averageCriteria2",
+                "Friendly": "averageCriteria3",
+                "Food Price": "averageCriteria4",
+                "Mentorship": "averageCriteria5",
+                "Flat Hierarchy": "averageCriteria6"
             },
             filterLocation: [],
             filterLocationValues: {
@@ -83,24 +83,17 @@ const appSearch = Vue.createApp({
             })
                 .then(response => {
                     this.allCompanies = response.data;
+                    this.sortCompaniesMethod();
                 })
                 .catch(error => {
                     this.errorMessage = error.message;
                 });
         },
-        changeLetterSortImg() {
-            if (this.currentImgSrc === "../img/AtoZ.svg") {
-                this.currentImgSrc = "../img/ZtoA.svg";
-            } else {
-                this.currentImgSrc = "../img/AtoZ.svg";
-            }
-        },
-        changeFilterImg() {
-            if (this.currentFilterImg === "../img/filter.svg") {
-                this.currentFilterImg = "../img/clearfilter.svg";
-            } else {
-                this.currentFilterImg = "../img/filter.svg";
-            }
+        sortCompaniesMethod() { //wip
+            sortBy = this.sortCompanies;
+            this.allCompanies.sort((a, b) => {
+                return b.companyRatings[sortBy] - a.companyRatings[sortBy];
+            });
         }
 
     },

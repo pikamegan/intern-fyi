@@ -36,13 +36,14 @@
                         </div>
                         <ul style="list-style: none;" class="ms-1">
                             <li v-for="(value, name) in sortCompaniesValues">
-                                <label>
+                                <label @click="sortCompaniesMethod">
                                     <input v-model="sortCompanies" :value="value" type="radio">
                                     {{name}}
                                 </label>
                             </li>
                         </ul>
-                        {{sortCompanies}}
+                        <!-- {{sortCompanies}} -->
+                        <!-- <button @click="sortCompaniesMethod">sort</button> -->
                     </div>
 
                     <div class="row mb-2">
