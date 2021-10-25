@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,17 +31,19 @@
                         required="" autofocus="">
                 </div>
 
-                <div class="col col-3">                   
+                <div class="col col-3">
                     <label class="sr-only " for="signupLastName">Last name</label>
-                    <input id="signupLastName" class="form-control signupField" type="text" placeholder="Last name" required="" autofocus="">
-            
+                    <input id="signupLastName" class="form-control signupField" type="text" placeholder="Last name"
+                        required="" autofocus="">
+
                 </div>
 
                 <div class="col col-3">
                     <label class="sr-only " for="signupGender">Gender</label>
 
                     <div id="signupGender" class="dropdown">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="signupGenderBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="signupGenderBtn"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Gender
                         </button>
                         <div class="dropdown-menu" aria-labelledby="signupGenderBtn">
@@ -48,7 +51,7 @@
                             <a class="dropdown-item" href="#">Female &#128103;</a>
                             <a class="dropdown-item" href="#">Other 😺</a>
                         </div>
-                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -56,11 +59,13 @@
             <div id="signupSchool" class="form-row signupRow">
                 <div class="col">
                     <label class="sr-only " for="signupSchoolName">School name</label>
-                    <input id="signupSchoolName" class="form-control signupField" type="text" placeholder="School" required="" autofocus="">
+                    <input id="signupSchoolName" class="form-control signupField" type="text" placeholder="School"
+                        required="" autofocus="">
                 </div>
                 <div class="col">
-                    <label class="sr-only " for="signupLastName">Last name</label>
-                    <input id="signupLastName" class="form-control signupField" type="email" placeholder="School email" required="" autofocus="">
+                    <label class="sr-only " for="schoolEmail">School Email</label>
+                    <input id="schoolEmail" class="form-control signupField" type="email" placeholder="School email"
+                        required="" autofocus="">
 
                 </div>
             </div>
@@ -68,42 +73,56 @@
             <div id="signupPw1" class="form-row signupRow">
                 <div class="col">
                     <label class="sr-only" for="signupPw1Input">Password</label>
-                    <input id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password" required="" autofocus="">
-                    <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
+                    <input id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password"
+                        required="" autofocus="" oninput="checkPasswordRequirement()">
+                    <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle"
+                        onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
                 </div>
             </div>
             <!-- Remove password-desc-required class when requirement is met  & add when NOT met -->
             <div class="passwordrequirements mb-2">
-                <div id="password-req-length" class=""><img src="../IMG/tick_success.svg" class="password-desc">MUST contain eight (8) characters or more</div>
-                <div id="password-req-ucase" class="password-desc-required"><img src="../IMG/tick_success.svg" class="password-desc">Uppercase alphabet characters (A-Z)</div>
-                <div id="password-req-lcase" class=""><img src="../IMG/tick_success.svg" class="password-desc">Lowercase alphabet characters (a-z)</div>
-                <div id="password-req-numerals" class="password-desc-required"><img src="../IMG/tick_success.svg" class="password-desc">Arabic numerals (0-9)</div>
-                <div id="password-req-nonalpha" class="password-desc-required"><img src="../IMG/tick_success.svg" class="password-desc">Non-alphanumeric characters (for example: ~`!@#$%^%&amp;*-+?)</div>
-                <div id="password-req-username" class=""><img src="../IMG/tick_success.svg" class="password-desc">Password cannot contain part of (or full) Username (...)</div>
-                <div id="password-req-displayname" class=""><img src="../IMG/tick_success.svg" class="password-desc">Password cannot contain part of (or full) displayed name in Profile ()</div>
-            <!-- /***************************************************************************************
+                <div id="password-req-length" class="password-desc-required"><img src="../IMG/tick_success.svg"
+                        class="password-desc">MUST
+                    contain eight (8) characters or more</div>
+                <div id="password-req-ucase" class="password-desc-required"><img src="../IMG/tick_success.svg"
+                        class="password-desc">Uppercase alphabet characters (A-Z)</div>
+                <div id="password-req-lcase" class="password-desc-required"><img src="../IMG/tick_success.svg"
+                        class="password-desc">Lowercase
+                    alphabet characters (a-z)</div>
+                <div id="password-req-numerals" class="password-desc-required"><img src="../IMG/tick_success.svg"
+                        class="password-desc">Arabic numerals (0-9)</div>
+                <div id="password-req-nonalpha" class="password-desc-required"><img src="../IMG/tick_success.svg"
+                        class="password-desc">Non-alphanumeric characters (for example: ~`!@#$%^%&amp;*-+?)</div>
+                <div id="password-req-displayname" class="password-desc-required"><img src="../IMG/tick_success.svg"
+                        class="password-desc">Password cannot contain part of (or full) displayed name in Profile ()
+                </div>
+                <!-- /***************************************************************************************
             *    CITING
             *    Author: SMU
             *    Availability: https://live.smu.edu.sg/Account/ChangePassword
-            ***************************************************************************************/ --> 
+            ***************************************************************************************/ -->
             </div>
 
             <div id="signupPw2" class="form-row signupRow">
                 <div class="col">
                     <label class="sr-only " for="signupPw2Input">Confirm password</label>
-                    <input id="signupPw2Input" class="form-control signupField" type="password" placeholder="Confirm password" required="" autofocus="">
-                    <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw2Input,signupPw2Toggle)"></i>
+                    <input id="signupPw2Input" class="form-control signupField" type="password"
+                        placeholder="Confirm password" required="" autofocus="">
+                    <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle"
+                        onclick="pwToggle(signupPw2Input,signupPw2Toggle)"></i>
                 </div>
             </div>
             <!-- Remove password-desc-required class when requirement is met & the reverse -->
-            <div id="confirm-password-same" class="password-desc-required mb-4"><img src="../IMG/tick_success.svg" class="password-desc">New Password and Confirm New Password match</div>
+            <div id="confirm-password-same" class="password-desc-required mb-4"><img src="../IMG/tick_success.svg"
+                    class="password-desc">New Password and Confirm New Password match</div>
 
-                <!-- Extras -->
+            <!-- Extras -->
             <div class="form-row signupBodyExtras">
-                <!-- Mailing list --> 
+                <!-- Mailing list -->
                 <div class="col checkbox mb-3 loginBodyExtra">
                     <input id="loginMailingCheck" type="checkbox" value="rememberCheck">
-                    <label id="loginMailingLabel" for="loginMailingCheck">I'd like to receive emails on new reviews and companies</label>
+                    <label id="loginMailingLabel" for="loginMailingCheck">I'd like to receive emails on new reviews and
+                        companies</label>
                 </div>
             </div>
 
@@ -111,9 +130,10 @@
             <div class="form-row">
                 <button id="signupBtn" class="btn btn-primary d-block" type="submit">Sign up</button>
                 <p id="signupDisclaimer">
-                    <small>By signing up, you agree to our <strong>Terms</strong>, <strong>Data Policy</strong> and <strong>Cookies Policy</strong>.</small>
+                    <small>By signing up, you agree to our <strong>Terms</strong>, <strong>Data Policy</strong> and
+                        <strong>Cookies Policy</strong>.</small>
                 </p>
-        
+
             </div>
         </div>
     </form>
@@ -123,30 +143,134 @@
 
     <!-- jQuery first, Popper.js, Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous">
-    </script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous">
-    </script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous">
-    </script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
 
 
     <!-- Changing between password input types-->
     <script>
         function pwToggle(pwInput, pwToggleBtn) {
             if (pwInput.type === "password") {
-                pwInput.type = "text";    
+                pwInput.type = "text";
                 $(pwToggleBtn).toggleClass("bi-eye-fill bi-eye-slash-fill");
             } else {
                 pwInput.type = "password";
                 $(pwToggleBtn).toggleClass("bi-eye-slash-fill bi-eye-fill");
             }
-        } 
+        }
+
+        function checkPasswordRequirement(inputField) {
+            let fName = document.getElementById("signupFirstName").value
+            let lName = document.getElementById("signupLastName").value
+            let userPWInput = document.getElementById("signupPw1Input").value
+            let criteriaLength = document.getElementById("password-req-length")
+            let criteriaUC = document.getElementById("password-req-ucase")
+            let criteriaLC = document.getElementById("password-req-lcase")
+            let criteriaNum = document.getElementById("password-req-numerals")
+            let criteriaNonAlpha = document.getElementById("password-req-nonalpha")
+            let criteriaNoProfileName = document.getElementById("password-req-displayname")
+            
+
+            if (userPWInput.length >= 8) {
+                criteriaLength.classList.remove("password-desc-required");
+    
+            }else{
+                criteriaLength.classList.add("password-desc-required")
+            }
+
+            if ( hasUpperC(userPWInput)) {
+                criteriaUC.classList.remove("password-desc-required");
+            } else {
+                criteriaUC.classList.add("password-desc-required");
+            }
+
+            if (hasLowerC(userPWInput)) {
+                criteriaLC.classList.remove("password-desc-required");
+            } else {
+                criteriaLC.classList.add("password-desc-required");
+            }
+
+
+            if (hasNum(userPWInput)) {
+                criteriaNum.classList.remove("password-desc-required");
+            } else {
+                criteriaNum.classList.add("password-desc-required");
+            }
+
+
+            if (hasNonAlpha(userPWInput)) {
+                criteriaNonAlpha.classList.remove("password-desc-required");
+            } else {
+                criteriaNonAlpha.classList.add("password-desc-required");
+            }
+
+            if (hasProfileName(userPWInput, fName + '.' + lName)) {
+                criteriaNoProfileName.classList.remove("password-desc-required");
+            } else {
+                criteriaNoProfileName.classList.add("password-desc-required");
+            }
+
+
+        }
+
+        function hasLowerC(input) {
+            console.log(input);
+            for (let string of input) {
+                if ((string === string.toLowerCase()) && isNaN(string)) {
+                    return true;
+                }
+            }
+            return false;
+            
+        }
+
+        function hasUpperC(input) {
+            for (let string of input) {
+                if ((string === string.toUpperCase()) && isNaN(string)) {
+                    console.log(string);
+                    return true;
+                    
+                }
+            }
+            return false;
+        }
+
+        function hasNum(input) {
+            for (let str of input) {
+                if (isNaN(str) === false) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function hasNonAlpha(input) {
+            let nonAlphaList = ["~","`","!","@","#","$","%","^","%","&","*","-","+","?"]
+            for (let nonAlpha of nonAlphaList) {
+                if (input.indexOf(nonAlpha) !== -1) {
+                    console.log(nonAlpha);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function hasProfileName(input, fullName) {
+            const nameArray = fullName.split('.');
+
+            if (input.indexOf(nameArray[0]) == -1 && input.indexOf(nameArray[1]) == -1 ) {
+                return true;
+            }
+            return false;
+
+        }
+
     </script>
 
 
