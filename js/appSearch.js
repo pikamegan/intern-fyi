@@ -40,7 +40,7 @@ const appSearch = Vue.createApp({
     data() {
         return {
             allCompanies: null,
-            displayCompanies: null,
+            displayCompanies: [],
             errorMessage: null,
             currentImgSrc: "../img/AtoZ.svg",
             currentFilterImg: "../img/filter.svg",
@@ -173,6 +173,12 @@ appSearch.component('company-row', {
                 this.$emit('select', this.company.companyID);
             }
         },
+        // showAll() {
+        //     console.log("clicked")
+        //     if (this.isSelected == false){
+        //         changeState()
+        //     }
+        // }
 
 
     },
