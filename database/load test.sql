@@ -419,6 +419,40 @@ values
     0.0,
     0.0,
     0.0
+  ),(
+    'Schneider Electric Singapore',
+    'We believe access to energy and digital is a basic human right. Our generation is facing a tectonic shift in energy transition and industrial revolution catalysed by accelerated digitisation in a more electric world. Electricity is the most efficient and best vector for decarbonisation; combined with a circular economy approach, we will achieve a climate-positive impact as part of the United Nations Sustainable Development Goals.',
+    'https://sg.linkedin.com/company/schneider-electric',
+    'https://www.se.com/sg/en/',
+    'Energy',
+    '../IMG/SchneiderElectric.jfif',
+    '-',
+    0,
+    0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ),(
+    'Shell Singapore',
+    'We are a global group of energy and petrochemicals companies with an average of 86,000 employees in more than 70 countries. We use advanced technologies and take an innovative approach to help build a sustainable energy future.',
+    'https://www.linkedin.com/company/shell',
+    'https://www.shell.com.sg/',
+    'Energy and Petrochemical',
+    '../IMG/shell.jfif',
+    '-',
+    0,
+    0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
   ); 
 
 --
