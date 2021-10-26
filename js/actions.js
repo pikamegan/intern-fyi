@@ -154,14 +154,14 @@ function loadCompanyPage() {
         .then(response => {
             this.allCompanies = response.data
             let companyName = document.getElementsByClassName("companyName")
-            let str = ""
+            let nameStr = "Company Name"
             for (company of this.allCompanies) {
                 if (getCompanyNameFromURL() == company.companyName.toLowerCase()) {
-                    str += `${company.companyName}`
+                    nameStr = `${company.companyName}`
                 } 
             }
             for (input of companyName) {
-                input.innerHTML = str
+                input.innerHTML = nameStr
             }
             
         })
