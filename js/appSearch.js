@@ -65,10 +65,11 @@ const appSearch = Vue.createApp({
             filterIndustry: [],
             filterIndustryValues: [
                 "Internet",
-                "Computer Software",
-                "Consumer Electronics",
-                "Entertainment",
-                "Banking"
+                "Technology",
+                "Electronics",
+                "Banking",
+                "Energy",
+                "Others"
             ]
         }
     },
