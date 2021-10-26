@@ -43,7 +43,7 @@ DROP TABLE IF EXISTS `company`;
 CREATE TABLE `company` (
   `companyID` MEDIUMINT NOT NULL AUTO_INCREMENT,
   `companyName` varchar(50) NOT NULL,
-  `companyDescription` varchar(255),
+  `companyDescription` varchar(1023),
   `companyLinkedinLink` varchar(255),
   `companyWebsite` varchar(255),
   `industry` varchar(50),

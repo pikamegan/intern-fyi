@@ -75,7 +75,7 @@
          "companyDescription":"top tech giant",
          "companyLinkedinLink":"https:\/\/www.linkedin.com\/company\/microsoft",
          "companyWebsite":"https:\/\/careers.microsoft.com\/professionals\/us\/en\/l-singapore",
-         "industry":"Computer Software",
+         "industry":"Technology",
          "imageLink":"..\/IMG\/microsoft.jfif",
          "location":"-"
       },
@@ -93,167 +93,6 @@
    },
    {
       "companyID":"5",
-      "companyName":"Apple",
-      "companyInfo":{
-         "companyDescription":"top tech giant",
-         "companyLinkedinLink":"https:\/\/www.linkedin.com\/company\/apple",
-         "companyWebsite":"https:\/\/www.apple.com\/careers\/sg\/",
-         "industry":"Consumer Electronics",
-         "imageLink":"..\/IMG\/apple.jpg",
-         "location":"-"
-      },
-      "companyRatings":{
-         "numberOfClicks":"0",
-         "totalNumReviews":"0",
-         "overallRating":"0",
-         "averageCriteria1":"0",
-         "averageCriteria2":"0",
-         "averageCriteria3":"0",
-         "averageCriteria4":"0",
-         "averageCriteria5":"0",
-         "averageCriteria6":"0"
-      }
-   },
-   {
-      "companyID":"6",
-      "companyName":"DBS Bank",
-      "companyInfo":{
-         "companyDescription":"Banking",
-         "companyLinkedinLink":"https:\/\/sg.linkedin.com\/company\/dbs-bank",
-         "companyWebsite":"https:\/\/www.dbs.com\/careers\/default.page",
-         "industry":"Banking",
-         "imageLink":"..\/IMG\/DBS.jpg",
-         "location":"-"
-      },
-      "companyRatings":{
-         "numberOfClicks":"0",
-         "totalNumReviews":"0",
-         "overallRating":"0",
-         "averageCriteria1":"0",
-         "averageCriteria2":"0",
-         "averageCriteria3":"0",
-         "averageCriteria4":"0",
-         "averageCriteria5":"0",
-         "averageCriteria6":"0"
-      }
-   },
-   {
-      "companyID":"7",
-      "companyName":"UOB",
-      "companyInfo":{
-         "companyDescription":"Banking",
-         "companyLinkedinLink":"https:\/\/sg.linkedin.com\/company\/uob",
-         "companyWebsite":"https:\/\/www.uobgroup.com\/uobgroup\/index.page",
-         "industry":"Banking",
-         "imageLink":"..\/IMG\/uob.jfif",
-         "location":"-"
-      },
-      "companyRatings":{
-         "numberOfClicks":"0",
-         "totalNumReviews":"0",
-         "overallRating":"0",
-         "averageCriteria1":"0",
-         "averageCriteria2":"0",
-         "averageCriteria3":"0",
-         "averageCriteria4":"0",
-         "averageCriteria5":"0",
-         "averageCriteria6":"0"
-      }
-   },
-   {
-      "companyID":"8",
-      "companyName":"OCBC Bank",
-      "companyInfo":{
-         "companyDescription":"Banking",
-         "companyLinkedinLink":"https:\/\/sg.linkedin.com\/company\/ocbc-bank",
-         "companyWebsite":"https:\/\/www.ocbc.com\/",
-         "industry":"Banking",
-         "imageLink":"..\/IMG\/ocbc.jfif",
-         "location":"-"
-      },
-      "companyRatings":{
-         "numberOfClicks":"0",
-         "totalNumReviews":"0",
-         "overallRating":"0",
-         "averageCriteria1":"0",
-         "averageCriteria2":"0",
-         "averageCriteria3":"0",
-         "averageCriteria4":"0",
-         "averageCriteria5":"0",
-         "averageCriteria6":"0"
-      }
-   },
-   {
-      "companyID":"9",
-      "companyName":"Standard Chartered Bank",
-      "companyInfo":{
-         "companyDescription":"Banking",
-         "companyLinkedinLink":"https:\/\/www.linkedin.com\/company\/standardchartered",
-         "companyWebsite":"https:\/\/www.sc.com\/en\/",
-         "industry":"Banking",
-         "imageLink":"..\/IMG\/StandardCharteredBank.jpg",
-         "location":"-"
-      },
-      "companyRatings":{
-         "numberOfClicks":"0",
-         "totalNumReviews":"0",
-         "overallRating":"0",
-         "averageCriteria1":"0",
-         "averageCriteria2":"0",
-         "averageCriteria3":"0",
-         "averageCriteria4":"0",
-         "averageCriteria5":"0",
-         "averageCriteria6":"0"
-      }
-   },
-   {
-      "companyID":"10",
-      "companyName":"Food Panda",
-      "companyInfo":{
-         "companyDescription":"Food Delivery Service",
-         "companyLinkedinLink":"https:\/\/sg.linkedin.com\/company\/foodpanda",
-         "companyWebsite":"https:\/\/www.foodpanda.com\/",
-         "industry":"Food Delivery",
-         "imageLink":"..\/IMG\/foodpandaoffice.svg",
-         "location":"-"
-      },
-      "companyRatings":{
-         "numberOfClicks":"0",
-         "totalNumReviews":"0",
-         "overallRating":"0",
-         "averageCriteria1":"0",
-         "averageCriteria2":"0",
-         "averageCriteria3":"0",
-         "averageCriteria4":"0",
-         "averageCriteria5":"0",
-         "averageCriteria6":"0"
-      }
-   },
-   {
-      "companyID":"11",
-      "companyName":"DHL",
-      "companyInfo":{
-         "companyDescription":"Established in over 220 countries, employing over 100,000 people throughout over 3000 facilities, DHL Express serves over 2.6 million customers worldwide, making us the largest international express courier company in the world.",
-         "companyLinkedinLink":"https:\/\/www.linkedin.com\/company\/dhl",
-         "companyWebsite":"https:\/\/dhlexpress.com.sg\/",
-         "industry":"Courier Service",
-         "imageLink":"..\/IMG\/DHLbuilding.svg",
-         "location":"-"
-      },
-      "companyRatings":{
-         "numberOfClicks":"0",
-         "totalNumReviews":"0",
-         "overallRating":"0",
-         "averageCriteria1":"0",
-         "averageCriteria2":"0",
-         "averageCriteria3":"0",
-         "averageCriteria4":"0",
-         "averageCriteria5":"0",
-         "averageCriteria6":"0"
-      }
-   },
-   {
-      "companyID":"12",
       "companyName":"HP",
       "companyInfo":{
          "companyDescription":"HP Inc. (NYSE: HPQ) creates technology that makes life better for everyone, everywhere. Through our product and service portfolio of personal systems, printers and 3D printing solutions, we engineer experiences that amaze.",
@@ -276,79 +115,10 @@
       }
    },
    {
-      "companyID":"13",
-      "companyName":"Procter & Gamble",
-      "companyInfo":{
-         "companyDescription":"The award-winning consumer goods giant is crowned Singapore\u2019s top employer for 2021, and with good reason. Today, Procter & Gamble Singapore is powered by over 2,000 dedicated employees from more than 40 nationalities. An ardent believer in the vast poten",
-         "companyLinkedinLink":"https:\/\/sg.linkedin.com\/company\/procter-and-gamble",
-         "companyWebsite":"https:\/\/www.pgcareers.com\/singapore",
-         "industry":"Consumer Goods",
-         "imageLink":"..\/IMG\/procterAndGamble.jfif",
-         "location":"-"
-      },
-      "companyRatings":{
-         "numberOfClicks":"0",
-         "totalNumReviews":"0",
-         "overallRating":"0",
-         "averageCriteria1":"0",
-         "averageCriteria2":"0",
-         "averageCriteria3":"0",
-         "averageCriteria4":"0",
-         "averageCriteria5":"0",
-         "averageCriteria6":"0"
-      }
-   },
-   {
-      "companyID":"14",
-      "companyName":"Dyson",
-      "companyInfo":{
-         "companyDescription":"The British electric appliance firm employs approximately 1,200 people in Singapore, of whom 350 are engineers and scientists.",
-         "companyLinkedinLink":"https:\/\/sg.linkedin.com\/company\/dyson",
-         "companyWebsite":"https:\/\/www.dyson.com.sg\/",
-         "industry":"Electronic",
-         "imageLink":"..\/IMG\/dyson.jfif",
-         "location":"-"
-      },
-      "companyRatings":{
-         "numberOfClicks":"0",
-         "totalNumReviews":"0",
-         "overallRating":"0",
-         "averageCriteria1":"0",
-         "averageCriteria2":"0",
-         "averageCriteria3":"0",
-         "averageCriteria4":"0",
-         "averageCriteria5":"0",
-         "averageCriteria6":"0"
-      }
-   },
-   {
-      "companyID":"15",
-      "companyName":"Singapore Managment University",
-      "companyInfo":{
-         "companyDescription":"A premier university in Asia, the Singapore Management University (SMU) is internationally recognised for its world-class research and distinguished teaching. Established in 2000, SMU\u2019s mission is to generate leading-edge research with global impact and p",
-         "companyLinkedinLink":"https:\/\/www.linkedin.com\/school\/singapore-management-university\/",
-         "companyWebsite":"https:\/\/www.smu.edu.sg\/",
-         "industry":"Education",
-         "imageLink":"..\/IMG\/smu.jfif",
-         "location":"-"
-      },
-      "companyRatings":{
-         "numberOfClicks":"0",
-         "totalNumReviews":"0",
-         "overallRating":"0",
-         "averageCriteria1":"0",
-         "averageCriteria2":"0",
-         "averageCriteria3":"0",
-         "averageCriteria4":"0",
-         "averageCriteria5":"0",
-         "averageCriteria6":"0"
-      }
-   },
-   {
-      "companyID":"16",
+      "companyID":"6",
       "companyName":"Dell",
       "companyInfo":{
-         "companyDescription":"Dell Inc., formerly PC\u2019s Limited (1984\u201388) and Dell Computer Corporation (1988\u20132003), global company that designs, develops, and manufactures personal computers (PCs) and a variety of computer-related products. The company is one of the world\u2019s leading su",
+         "companyDescription":"Dell Inc., formerly PC\u2019s Limited (1984\u201388) and Dell Computer Corporation (1988\u20132003), global company that designs, develops, and manufactures personal computers (PCs) and a variety of computer-related products. The company is one of the world\u2019s leading suppliers of PCs. Dell is headquartered in Round Rock, Texas.",
          "companyLinkedinLink":"https:\/\/www.linkedin.com\/company\/delltechnologies",
          "companyWebsite":"https:\/\/www.dell.com\/en-sg",
          "industry":"Technology",
@@ -368,14 +138,14 @@
       }
    },
    {
-      "companyID":"17",
-      "companyName":"Disney",
+      "companyID":"7",
+      "companyName":"Apple",
       "companyInfo":{
-         "companyDescription":"The mission of The Walt Disney Company is to entertain, inform and inspire people around the globe through the power of unparalleled storytelling, reflecting the iconic brands, creative minds and innovative technologies that make ours the world\u2019s premier ",
-         "companyLinkedinLink":"https:\/\/www.linkedin.com\/company\/the-walt-disney-company-southeast-asia-pte.-ltd.",
-         "companyWebsite":"https:\/\/www.disney.sg\/",
-         "industry":"Entertainment",
-         "imageLink":"..\/IMG\/disney.jfif",
+         "companyDescription":"top tech giant",
+         "companyLinkedinLink":"https:\/\/www.linkedin.com\/company\/apple",
+         "companyWebsite":"https:\/\/www.apple.com\/careers\/sg\/",
+         "industry":"Electronics",
+         "imageLink":"..\/IMG\/apple.jpg",
          "location":"-"
       },
       "companyRatings":{
@@ -391,14 +161,14 @@
       }
    },
    {
-      "companyID":"18",
-      "companyName":"Lazada Singapore",
+      "companyID":"8",
+      "companyName":"Dyson",
       "companyInfo":{
-         "companyDescription":"Lazada Singapore is the leading online shopping platform in Singapore. We are always striving to keep up with what consumers want and need. We are making every effort to achieve maximum customer satisfaction through seamless transactions and competitive p",
-         "companyLinkedinLink":"https:\/\/www.linkedin.com\/company\/lazada",
-         "companyWebsite":"https:\/\/www.lazada.sg\/",
-         "industry":"Ecommerce",
-         "imageLink":"..\/IMG\/lazada.jfif",
+         "companyDescription":"The British electric appliance firm employs approximately 1,200 people in Singapore, of whom 350 are engineers and scientists.",
+         "companyLinkedinLink":"https:\/\/sg.linkedin.com\/company\/dyson",
+         "companyWebsite":"https:\/\/www.dyson.com.sg\/",
+         "industry":"Electronics",
+         "imageLink":"..\/IMG\/dyson.jfif",
          "location":"-"
       },
       "companyRatings":{
@@ -414,10 +184,102 @@
       }
    },
    {
-      "companyID":"19",
+      "companyID":"9",
+      "companyName":"DBS Bank",
+      "companyInfo":{
+         "companyDescription":"Banking",
+         "companyLinkedinLink":"https:\/\/sg.linkedin.com\/company\/dbs-bank",
+         "companyWebsite":"https:\/\/www.dbs.com\/careers\/default.page",
+         "industry":"Banking",
+         "imageLink":"..\/IMG\/DBS.jpg",
+         "location":"-"
+      },
+      "companyRatings":{
+         "numberOfClicks":"0",
+         "totalNumReviews":"0",
+         "overallRating":"0",
+         "averageCriteria1":"0",
+         "averageCriteria2":"0",
+         "averageCriteria3":"0",
+         "averageCriteria4":"0",
+         "averageCriteria5":"0",
+         "averageCriteria6":"0"
+      }
+   },
+   {
+      "companyID":"10",
+      "companyName":"UOB",
+      "companyInfo":{
+         "companyDescription":"Banking",
+         "companyLinkedinLink":"https:\/\/sg.linkedin.com\/company\/uob",
+         "companyWebsite":"https:\/\/www.uobgroup.com\/uobgroup\/index.page",
+         "industry":"Banking",
+         "imageLink":"..\/IMG\/uob.jfif",
+         "location":"-"
+      },
+      "companyRatings":{
+         "numberOfClicks":"0",
+         "totalNumReviews":"0",
+         "overallRating":"0",
+         "averageCriteria1":"0",
+         "averageCriteria2":"0",
+         "averageCriteria3":"0",
+         "averageCriteria4":"0",
+         "averageCriteria5":"0",
+         "averageCriteria6":"0"
+      }
+   },
+   {
+      "companyID":"11",
+      "companyName":"OCBC Bank",
+      "companyInfo":{
+         "companyDescription":"Banking",
+         "companyLinkedinLink":"https:\/\/sg.linkedin.com\/company\/ocbc-bank",
+         "companyWebsite":"https:\/\/www.ocbc.com\/",
+         "industry":"Banking",
+         "imageLink":"..\/IMG\/ocbc.jfif",
+         "location":"-"
+      },
+      "companyRatings":{
+         "numberOfClicks":"0",
+         "totalNumReviews":"0",
+         "overallRating":"0",
+         "averageCriteria1":"0",
+         "averageCriteria2":"0",
+         "averageCriteria3":"0",
+         "averageCriteria4":"0",
+         "averageCriteria5":"0",
+         "averageCriteria6":"0"
+      }
+   },
+   {
+      "companyID":"12",
+      "companyName":"Standard Chartered Bank",
+      "companyInfo":{
+         "companyDescription":"Banking",
+         "companyLinkedinLink":"https:\/\/www.linkedin.com\/company\/standardchartered",
+         "companyWebsite":"https:\/\/www.sc.com\/en\/",
+         "industry":"Banking",
+         "imageLink":"..\/IMG\/StandardCharteredBank.jpg",
+         "location":"-"
+      },
+      "companyRatings":{
+         "numberOfClicks":"0",
+         "totalNumReviews":"0",
+         "overallRating":"0",
+         "averageCriteria1":"0",
+         "averageCriteria2":"0",
+         "averageCriteria3":"0",
+         "averageCriteria4":"0",
+         "averageCriteria5":"0",
+         "averageCriteria6":"0"
+      }
+   },
+   {
+      "companyID":"13",
       "companyName":"Schneider Electric Singapore",
       "companyInfo":{
-         "companyDescription":"We believe access to energy and digital is a basic human right. Our generation is facing a tectonic shift in energy transition and industrial revolution catalysed by accelerated digitisation in a more electric world. Electricity is the most efficient and ",
+         "companyDescription":"We believe access to energy and digital is a basic human right. Our generation is facing a tectonic shift in energy transition and industrial revolution catalysed by accelerated digitisation in a more electric world. Electricity is the most efficient and best vector for decarbonisation; combined with a circular economy approach, we will achieve a climate-positive impact as part of the United Nations Sustainable Development Goals.",
          "companyLinkedinLink":"https:\/\/sg.linkedin.com\/company\/schneider-electric",
          "companyWebsite":"https:\/\/www.se.com\/sg\/en\/",
          "industry":"Energy",
@@ -437,14 +299,152 @@
       }
    },
    {
-      "companyID":"20",
+      "companyID":"14",
       "companyName":"Shell Singapore",
       "companyInfo":{
          "companyDescription":"We are a global group of energy and petrochemicals companies with an average of 86,000 employees in more than 70 countries. We use advanced technologies and take an innovative approach to help build a sustainable energy future.",
          "companyLinkedinLink":"https:\/\/www.linkedin.com\/company\/shell",
          "companyWebsite":"https:\/\/www.shell.com.sg\/",
-         "industry":"Energy and Petrochemical",
+         "industry":"Energy",
          "imageLink":"..\/IMG\/shell.jfif",
+         "location":"-"
+      },
+      "companyRatings":{
+         "numberOfClicks":"0",
+         "totalNumReviews":"0",
+         "overallRating":"0",
+         "averageCriteria1":"0",
+         "averageCriteria2":"0",
+         "averageCriteria3":"0",
+         "averageCriteria4":"0",
+         "averageCriteria5":"0",
+         "averageCriteria6":"0"
+      }
+   },
+   {
+      "companyID":"15",
+      "companyName":"Food Panda",
+      "companyInfo":{
+         "companyDescription":"Food Delivery Service",
+         "companyLinkedinLink":"https:\/\/sg.linkedin.com\/company\/foodpanda",
+         "companyWebsite":"https:\/\/www.foodpanda.com\/",
+         "industry":"Others",
+         "imageLink":"..\/IMG\/foodpandaoffice.svg",
+         "location":"-"
+      },
+      "companyRatings":{
+         "numberOfClicks":"0",
+         "totalNumReviews":"0",
+         "overallRating":"0",
+         "averageCriteria1":"0",
+         "averageCriteria2":"0",
+         "averageCriteria3":"0",
+         "averageCriteria4":"0",
+         "averageCriteria5":"0",
+         "averageCriteria6":"0"
+      }
+   },
+   {
+      "companyID":"16",
+      "companyName":"DHL",
+      "companyInfo":{
+         "companyDescription":"Established in over 220 countries, employing over 100,000 people throughout over 3000 facilities, DHL Express serves over 2.6 million customers worldwide, making us the largest international express courier company in the world.",
+         "companyLinkedinLink":"https:\/\/www.linkedin.com\/company\/dhl",
+         "companyWebsite":"https:\/\/dhlexpress.com.sg\/",
+         "industry":"Others",
+         "imageLink":"..\/IMG\/DHLbuilding.svg",
+         "location":"-"
+      },
+      "companyRatings":{
+         "numberOfClicks":"0",
+         "totalNumReviews":"0",
+         "overallRating":"0",
+         "averageCriteria1":"0",
+         "averageCriteria2":"0",
+         "averageCriteria3":"0",
+         "averageCriteria4":"0",
+         "averageCriteria5":"0",
+         "averageCriteria6":"0"
+      }
+   },
+   {
+      "companyID":"17",
+      "companyName":"Procter & Gamble",
+      "companyInfo":{
+         "companyDescription":"The award-winning consumer goods giant is crowned Singapore\u2019s top employer for 2021, and with good reason. Today, Procter & Gamble Singapore is powered by over 2,000 dedicated employees from more than 40 nationalities. An ardent believer in the vast potential of cutting-edge technology, Procter & Gamble plans to invest up to $50 million in total business expenditure in Singapore to further advance digital innovation in the country. Furthermore, it has signalled its intention to train at least 50 employees to embark on novel digital roles.",
+         "companyLinkedinLink":"https:\/\/sg.linkedin.com\/company\/procter-and-gamble",
+         "companyWebsite":"https:\/\/www.pgcareers.com\/singapore",
+         "industry":"Others",
+         "imageLink":"..\/IMG\/procterAndGamble.jfif",
+         "location":"-"
+      },
+      "companyRatings":{
+         "numberOfClicks":"0",
+         "totalNumReviews":"0",
+         "overallRating":"0",
+         "averageCriteria1":"0",
+         "averageCriteria2":"0",
+         "averageCriteria3":"0",
+         "averageCriteria4":"0",
+         "averageCriteria5":"0",
+         "averageCriteria6":"0"
+      }
+   },
+   {
+      "companyID":"18",
+      "companyName":"Singapore Managment University",
+      "companyInfo":{
+         "companyDescription":"A premier university in Asia, the Singapore Management University (SMU) is internationally recognised for its world-class research and distinguished teaching. Established in 2000, SMU\u2019s mission is to generate leading-edge research with global impact and produce broad-based, creative and entrepreneurial leaders for the knowledge-based economy.",
+         "companyLinkedinLink":"https:\/\/www.linkedin.com\/school\/singapore-management-university\/",
+         "companyWebsite":"https:\/\/www.smu.edu.sg\/",
+         "industry":"Others",
+         "imageLink":"..\/IMG\/smu.jfif",
+         "location":"-"
+      },
+      "companyRatings":{
+         "numberOfClicks":"0",
+         "totalNumReviews":"0",
+         "overallRating":"0",
+         "averageCriteria1":"0",
+         "averageCriteria2":"0",
+         "averageCriteria3":"0",
+         "averageCriteria4":"0",
+         "averageCriteria5":"0",
+         "averageCriteria6":"0"
+      }
+   },
+   {
+      "companyID":"19",
+      "companyName":"Disney",
+      "companyInfo":{
+         "companyDescription":"The mission of The Walt Disney Company is to entertain, inform and inspire people around the globe through the power of unparalleled storytelling, reflecting the iconic brands, creative minds and innovative technologies that make ours the world\u2019s premier entertainment company.",
+         "companyLinkedinLink":"https:\/\/www.linkedin.com\/company\/the-walt-disney-company-southeast-asia-pte.-ltd.",
+         "companyWebsite":"https:\/\/www.disney.sg\/",
+         "industry":"Others",
+         "imageLink":"..\/IMG\/disney.jfif",
+         "location":"-"
+      },
+      "companyRatings":{
+         "numberOfClicks":"0",
+         "totalNumReviews":"0",
+         "overallRating":"0",
+         "averageCriteria1":"0",
+         "averageCriteria2":"0",
+         "averageCriteria3":"0",
+         "averageCriteria4":"0",
+         "averageCriteria5":"0",
+         "averageCriteria6":"0"
+      }
+   },
+   {
+      "companyID":"20",
+      "companyName":"Lazada Singapore",
+      "companyInfo":{
+         "companyDescription":"Lazada Singapore is the leading online shopping platform in Singapore. We are always striving to keep up with what consumers want and need. We are making every effort to achieve maximum customer satisfaction through seamless transactions and competitive product pricing. We are updating and improving our product selections at the best prices to delight our customers along with great deals and flash sales.",
+         "companyLinkedinLink":"https:\/\/www.linkedin.com\/company\/lazada",
+         "companyWebsite":"https:\/\/www.lazada.sg\/",
+         "industry":"Others",
+         "imageLink":"..\/IMG\/lazada.jfif",
          "location":"-"
       },
       "companyRatings":{
