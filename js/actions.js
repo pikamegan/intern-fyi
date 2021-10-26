@@ -155,16 +155,77 @@ function loadCompanyPage() {
             this.allCompanies = response.data
             let companyName = document.getElementsByClassName("companyName")
             let nameStr = "Company Name"
+            
+            let companyInfo = document.getElementById("companyInfo")
+            let infoStr = ""
+
+            let companyLocation = document.getElementById("companyLocation")
+            let locationStr = ""
+
+            let companyReviewNum = document.getElementById("companyReviewNum")
+            let reviewNumStr = ""
+
+            let companyRating = document.getElementById("companyRating")
+            let overallRatingStr = ""
+
+            let payRating = document.getElementById("payRating")
+            let payRatingStr = ""
+
+            let skillsRating = document.getElementById("skillsRating")
+            let skillsRatingStr = ""
+
+            let cultureRating = document.getElementById("cultureRating")
+            let cultureRatingStr = ""
+
+            let foodRating = document.getElementById("foodRating")
+            let foodRatingStr = ""
+
+            let mentorRating = document.getElementById("mentorRating")
+            let mentorRatingStr = ""
+
+            let hierarchyRating = document.getElementById("hierarchyRating")
+            let hierarchyRatingStr = ""
+
+            let totalReviewNum = document.getElementById("totalReviewNum")
+            let totalReviewStr = ""
+
             for (company of this.allCompanies) {
                 if (getCompanyNameFromURL() == company.companyName.toLowerCase()) {
                     nameStr = `${company.companyName}`
+                    infoStr = `${company.companyInfo.companyDescription}`
+                    locationStr = `${company.companyInfo.location}`
+                    reviewNumStr = ` ${company.companyRatings.totalNumReviews} people reviewed`
+                    overallRatingStr = ` ${company.companyRatings.overallRating}`
+                    payRatingStr = `${company.companyRatings.averageCriteria1}`
+                    skillsRatingStr = `${company.companyRatings.averageCriteria2}`
+                    cultureRatingStr = `${company.companyRatings.averageCriteria3}`
+                    foodRatingStr = `${company.companyRatings.averageCriteria4}`
+                    mentorRatingStr = `${company.companyRatings.averageCriteria5}`
+                    hierarchyRatingStr = `${company.companyRatings.averageCriteria6}`
+                    totalReviewStr = `(${company.companyRatings.totalNumReviews})`
                 } 
             }
             for (input of companyName) {
                 input.innerHTML = nameStr
             }
-            
+
+            companyInfo.innerHTML = infoStr
+            companyLocation.innerHTML = locationStr
+            companyReviewNum.innerHTML += reviewNumStr
+
+            companyRating.innerHTML += overallRatingStr
+
+            payRating.innerHTML = payRatingStr
+            skillsRating.innerHTML = skillsRatingStr
+            cultureRating.innerHTML = cultureRatingStr
+            foodRating.innerHTML = foodRatingStr
+            mentorRating.innerHTML = mentorRatingStr
+            hierarchyRating.innerHTML = hierarchyRatingStr
+
+            totalReviewNum.innerHTML += totalReviewStr
+
         })
+
         .catch(error => {
             this.errorMessage = error.message
         });
@@ -173,7 +234,9 @@ function loadCompanyPage() {
 function getCompanyNameFromURL() {
     let link = decodeURI(window.location.href)
     let firstNum = link.search("cname=")
-    return link.slice(firstNum+6).toLowerCase()
+    let cleanLink = link.slice(firstNum+6).toLowerCase()
+    cleanLink = cleanLink.replace("#", "")
+    return cleanLink
 }
 
 function getAllCompanies() {
