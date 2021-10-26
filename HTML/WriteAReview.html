@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="../CSS/style.css">
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Write a Company Review</title>
 </head>
 
@@ -30,14 +31,14 @@
                 <form action="" id="reviewForm">
                     <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 40px;">
                         <div class="bd-highlight">
-                            <img src="../IMG/deletebutton.svg" onclick="resetDraft()" alt="Clear draft" class="img-fluid pointer" style="width: 50px; height: 50px;">
+                            <img src="../IMG/deletebutton.svg" onclick="resetDraft('clearReview')" alt="Clear draft" class="img-fluid pointer" style="width: 50px; height: 50px;">
                         </div>
                     </div>
                     <div class="row justify-content-start mb-5">
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-3" id="appHome">
                             <label for="company" class="form-label">Company<span style="color:red">*</span></label>
                             <select id="company" name="company" class="form-select pointer" aria-describedby="company">
-                                <option value="uob" selected>UOB</option>
+                                <!-- filled in with js -->
                             </select>
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
@@ -255,8 +256,8 @@
                     <div class="card-body text-white text-center">
                         <h5 class="card-title">Review Cancellation</h5>
                         <p class="card-text">Are you sure you want to clear this draft?</p>
-                        <button type="button" class="btn clearBtn mx-2 mb-1" onclick="clearReview('clearReview')">Yes, clear draft</button>
-                        <button type="button" class="btn keepBtn mx-2 mb-1" onclick="closePopup()">No, keep editing</button>
+                        <button type="button" class="btn clearBtn mx-2 mb-1" onclick="clearReview()">Yes, clear draft</button>
+                        <button type="button" class="btn keepBtn mx-2 mb-1" onclick="closePopup('clearReview')">No, keep editing</button>
                     </div>
                 </div>
             </div>
@@ -284,7 +285,6 @@
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
 
-   
         <script src="../js/actions.js"></script>
 </body>
 
