@@ -385,6 +385,40 @@ values
     0.0,
     0.0,
     0.0
+  ),(
+    'Disney',
+    'The mission of The Walt Disney Company is to entertain, inform and inspire people around the globe through the power of unparalleled storytelling, reflecting the iconic brands, creative minds and innovative technologies that make ours the world’s premier entertainment company.',
+    'https://www.linkedin.com/company/the-walt-disney-company-southeast-asia-pte.-ltd.',
+    'https://www.disney.sg/',
+    'Entertainment',
+    '../IMG/disney.jfif',
+    '-',
+    0,
+    0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ),(
+    'Lazada Singapore',
+    'Lazada Singapore is the leading online shopping platform in Singapore. We are always striving to keep up with what consumers want and need. We are making every effort to achieve maximum customer satisfaction through seamless transactions and competitive product pricing. We are updating and improving our product selections at the best prices to delight our customers along with great deals and flash sales.',
+    'https://www.linkedin.com/company/lazada',
+    'https://www.lazada.sg/',
+    'Ecommerce',
+    '../IMG/lazada.jfif',
+    '-',
+    0,
+    0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
   ); 
 
 --
