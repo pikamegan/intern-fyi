@@ -293,6 +293,13 @@
         crossorigin="anonymous"></script>
 
         <script src="../js/actions.js"></script>
+        <script>
+            window.addEventListener('beforeunload', (event) => {
+                event.preventDefault()
+               // Google Chrome requires returnValue to be set
+                event.returnValue = ''
+            })
+        </script>
 </body>
 
 </html>

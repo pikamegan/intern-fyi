@@ -16,24 +16,13 @@
 
     <link rel="stylesheet" href="../CSS/style.css">
     <script src="../js/actions.js" defer></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Feedback</title>
 </head>
 
 <body>
     <h1 class="pageTitle mt-5 mb-5">Your Feedback is Valued</h1>
-
-    <div class="container" id="feedbackPopUp" style=""> 
-        <div class="row">
-            <div class="col">
-                <img src='../IMG/successInSpeechBubble.svg' height='100' width='100'>
-            </div>
-            <div class="col-8">
-                <h4>Thank you for your feedback</h4>
-                <p>Your Feedback has been delivered!</p>
-                <button onclick="gotoHomePage()">Back to Home</button>
-            </div>
-        </div>
-    </div>
 
     <div class="container">
         <div class="p-5 mb-4 bg-light feedbackBg shadow-lg">
@@ -81,7 +70,7 @@
                     </div>
                     <div class="row">
                         <div class="d-flex justify-content-center">
-                            <button class="btn text-white top-50 start-50 customBtn" onclick="openForm()">Submit</button>
+                            <button type="button" class="btn text-white top-50 start-50 customBtn" id="submitBtn" onclick="submitFeedback()">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -89,7 +78,35 @@
         </div>
     </div>
 
+    <div id="submitFeedback" class="container">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="card submitPopup">
+                    <div class="card-header text-end"><img src="../IMG/X_close.svg" alt="close" class="w-10 pointer" onclick="enableForm()"></div>
+                    <div class="card-body text-white text-center">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="../IMG/successInSpeechBubble.svg" alt="success image" class="d-none d-sm-block">
+                            </div>
+                            <div class="col-7">
+                                <h5 class="card-title">Thank you!</h5>
+                                <p class="card-text">Your feedback has been submitted!</p>
+                            </div>
+                        </div>
+                        <a href="../index.html"><button type="button" class="btn successBtn mx-2 mb-1">Back to Home</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
 
+    <script>
+        window.addEventListener('beforeunload', (event) => {
+            event.preventDefault()
+           // Google Chrome requires returnValue to be set
+            event.returnValue = ''
+        })
+    </script>
 
 </body>
 

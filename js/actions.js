@@ -115,6 +115,48 @@ function submitReview() {
     resetDraft("submitReview")
 }
 
+function submitFeedback() {
+    let submit = document.getElementById("submitFeedback")
+    submit.style.display = "block"
+
+    disableForm()
+}
+
+function disableForm() {
+    let body = document.getElementsByTagName("body")[0]
+    body.style.overflow = "hidden"
+
+    let inputs = document.getElementsByClassName("form-control")
+    for (input of inputs) {
+        input.disabled = true
+    }
+    let selectBtn = document.getElementsByClassName("form-select")
+    selectBtn[0].disabled = true
+
+    let submitBtn = document.getElementById("submitBtn")
+    submitBtn.disabled = true
+}
+
+function enableForm() {
+    let submit = document.getElementById("submitFeedback")
+    submit.style.display = "none"
+
+    let body = document.getElementsByTagName("body")[0]
+    body.style.overflow = "auto"
+
+    let inputs = document.getElementsByClassName("form-control")
+    for (input of inputs) {
+        input.disabled = false
+    }
+    let selectBtn = document.getElementsByClassName("form-select")
+    selectBtn[0].disabled = false
+
+    let submitBtn = document.getElementById("submitBtn")
+    submitBtn.disabled = false
+
+    scrollToTop()
+}
+
 function closePopup(id) {
     let popup = document.getElementById(id)
     let bodyScroll = document.getElementsByClassName("onPopup")
