@@ -13,18 +13,28 @@
     <script src="https://unpkg.com/vue@next"></script>
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../js/actions.js"></script>
+    <script src="../js/actions.js" defer></script>
     <!-- axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Intern FYI</title>
 </head>
 
 <body>
-    <div style="height: 70px; margin: auto; background-color: rgb(233, 233, 233); text-align: center;">
-        NAVBAR PLACEHOLDER
-    </div>
+    <!-- copy this part -->
+    <div class="navbarTemplate">
+        <div id="bigNavBar">
+            <navigation-bar-small-login v-if="isLogined()"></navigation-bar-small-login>
+            <navigation-bar-small-logout v-else></navigation-bar-small-logout>
+        </div>
 
-    <div class="container mt-5" id="appSearch">
+        <div id="smallNavBar">
+            <navigation-bar-big-login v-if="isLogined()"></navigation-bar-big-login>
+            <navigation-bar-big-logout v-else></navigation-bar-big-logout>
+        </div>
+    </div>
+    <!-- copy this part -->
+
+    <div class="container mt-4" id="appSearch">
         <div class="row">
             <div class="col-lg-3 shadow mb-5">
                 <!-- sticky? -->
@@ -45,7 +55,7 @@
                         <!-- why does removing this button breaks the function??? -->
                         <!-- <button hidden @click="sortCompaniesMethod">sort</button>  -->
                     </div>
-                    
+
                     <div class="row mb-2">
                         <div>
                             Industry:
@@ -103,7 +113,6 @@
             </div>
 
             <div class="col mb-5">
-                <img src= "../IMG/foodpandaoffice.svg" style="width: 100px; height: 100px;">
 
                 <company-row-list :companylist="displayCompanies"></company-row-list>
 
@@ -160,10 +169,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
-
-
-
-
 </body>
-
 </html>
