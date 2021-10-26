@@ -142,6 +142,40 @@ function closePopup(id) {
     scrollToTop()
 }
 
+function loadCompanyPage() {
+    let url = `../processDbRequest/processCompanyRequest.php`
+    url = `../processDbRequest/tmpOutputProcessCompanyRequest.php`
+    // use the one above when connecting to connect to real db with php
+    axios.get(url, {
+        params: {
+            request: 'getAllCompanies',
+        }
+    })
+        .then(response => {
+            this.allCompanies = response.data
+            let companyName = document.getElementsByClassName("companyName")
+            let str = ""
+            for (company of this.allCompanies) {
+                if (getCompanyNameFromURL() == company.companyName.toLowerCase()) {
+                    str += `${company.companyName}`
+                } 
+            }
+            for (input of companyName) {
+                input.innerHTML = str
+            }
+            
+        })
+        .catch(error => {
+            this.errorMessage = error.message
+        });
+}
+
+function getCompanyNameFromURL() {
+    let link = decodeURI(window.location.href)
+    let firstNum = link.search("cname=")
+    return link.slice(firstNum+6).toLowerCase()
+}
+
 function getAllCompanies() {
     let url = `../processDbRequest/processCompanyRequest.php`
     url = `../processDbRequest/tmpOutputProcessCompanyRequest.php`
