@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS wad2g5t2intern;
+CREATE DATABASE wad2g5t2intern;
+use wad2g5t2intern;
 --
 -- Table structure for table `gender`
 --
