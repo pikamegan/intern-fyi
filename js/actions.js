@@ -349,7 +349,7 @@ navigationBar.component('navigation-bar-small-login', {
             <a class="navbar-brand" href="../index.html">
             <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
         </a>
-        <input type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
+        <input id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
             aria-describedby="search-addon" />
         <button type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
@@ -385,7 +385,7 @@ navigationBar.component('navigation-bar-small-logout', {
             <a class="navbar-brand" href="../index.html">
             <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
             </a>
-            <input type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
+            <input id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
             aria-describedby="search-addon" />
             <button type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
@@ -425,7 +425,7 @@ navigationBar.component('navigation-bar-big-login', {
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="input-group my-2">
-            <input type="search" class="form-control rounded" placeholder="Search for Industry, Company or Role"
+            <input id = "searchBox" type="search" class="form-control rounded" placeholder="Search for Industry, Company or Role"
             aria-label="Search" aria-describedby="search-addon" />
             <button type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
@@ -465,7 +465,7 @@ navigationBar.component('navigation-bar-big-logout', {
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="input-group my-2">
-            <input type="search" class="form-control rounded" placeholder="Search for Industry, Company or Role"
+            <input id = "searchBox" type="search" class="form-control rounded" placeholder="Search for Industry, Company or Role"
             aria-label="Search" aria-describedby="search-addon" />
             <button type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
