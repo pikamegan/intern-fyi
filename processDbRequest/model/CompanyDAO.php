@@ -52,7 +52,7 @@ class CompanyDAO
 
         $searchQuery = '%' . $searchQuery . '%';
 
-        $sql = "SELECT * FROM company WHERE companyName LIKE :query UNION SELECT * FROM company WHERE companyDescription LIKE :query";
+        $sql = "SELECT * FROM company WHERE companyName LIKE :query UNION SELECT * FROM company WHERE industry LIKE :query";
 
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(":query", $searchQuery, PDO::PARAM_STR);
