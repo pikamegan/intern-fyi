@@ -3,8 +3,6 @@ class CompanyDAO
 {
 
     // 1. TO BE DONE update ratings of company upon new review
-
-
     // 2. get all company
     public function retrieveAll()
     {
