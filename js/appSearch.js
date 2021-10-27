@@ -35,15 +35,15 @@ function initMap() {
 }
 //map functions end==========================
 
-
 const appSearch = Vue.createApp({
     data() {
         return {
+            searchQuery: null,
             allCompanies: null,
             displayCompanies: [],
             errorMessage: null,
-            currentImgSrc: "../img/AtoZ.svg",
-            currentFilterImg: "../img/filter.svg",
+            // currentImgSrc: "../img/AtoZ.svg",
+            // currentFilterImg: "../img/filter.svg",
             sortCompanies: "overallRating",
             sortCompaniesValues: {
                 "Overall": "overallRating",
@@ -74,13 +74,41 @@ const appSearch = Vue.createApp({
         }
     },
     methods: {
+        getSearchQuery() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+            let queryName1 = 'sname'
+            if (urlParams.has(queryName1) && urlParams.get(queryName1) != "") {
+                this.searchQuery = urlParams.get(queryName1)
+            }
+        },
         getAllCompanies() {
             let url = `../processDbRequest/processCompanyRequest.php`;
-            url = `../processDbRequest/tmpOutputProcessCompanyRequest.php`;
+            // url = `../processDbRequest/tmpOutputProcessCompanyRequest.php`;
             // use the one above when connecting to connect to real db with php
             axios.get(url, {
                 params: {
                     request: 'getAllCompanies',
+                }
+            })
+                .then(response => {
+                    this.allCompanies = response.data;
+                    this.displayCompanies = response.data;
+                    this.sortCompaniesMethod();
+                })
+                .catch(error => {
+                    this.errorMessage = error.message;
+                });
+        },
+        getSearchedCompanies() {
+            let url = `../processDbRequest/processCompanyRequest.php`;
+            // url = `../processDbRequest/tmpOutputProcessCompanyRequest.php`;
+            // use the one above when connecting to connect to real db with php
+            axios.get(url, {
+                params: {
+                    request: 'search',
+                    sname: this.searchQuery
                 }
             })
                 .then(response => {
@@ -97,7 +125,7 @@ const appSearch = Vue.createApp({
             this.displayCompanies = [];
             for (index in this.allCompanies) {
                 company = this.allCompanies[index];
-                if(this.filterIndustry.includes(company.companyInfo.industry)) {
+                if (this.filterIndustry.includes(company.companyInfo.industry)) {
                     this.displayCompanies.push(company);
                 };
             }
@@ -114,8 +142,13 @@ const appSearch = Vue.createApp({
         }
     },
     created() {
-        this.getAllCompanies();
         //deep copy
+        this.getSearchQuery()
+        if (this.searchQuery == null) {
+            this.getAllCompanies();
+        } else {
+            this.getSearchedCompanies();
+        }
         this.filterIndustry = JSON.parse(JSON.stringify(this.filterIndustryValues))
     },
     computed: {
