@@ -518,3 +518,71 @@ function showSpeechBubble(e) {
     }
 
 }
+
+
+const footer = Vue.createApp({
+    data() {
+        return {
+
+        }
+    }
+});
+
+footer.component('intern-footer', {
+    data() {
+        return {
+        }
+    },
+    methods: {
+    },
+    template: `
+    <footer class="footer mt-auto py-3 bg-white">
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-lg-4 col-md-5">
+            <h2 style="text-align:left;" onclick="gotoHomePage()">Intern.FYI</h2>
+            <p>
+              Intern at better companies. <br>
+              And have a better experience.
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-3 my-2">
+            <h4>Company</h4>
+            <div>
+              <a class="footer-links" href="../HTML/about.html" style="color: inherit;
+            text-decoration: none;">About Us</a>
+            </div>
+            <div>
+              <a class="footer-links" href="../HTML/Career.html" style="color: inherit;
+            text-decoration: none;">Careers</a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 my-2">
+            <h4>Contact</h4>
+            <div>
+              <a class="footer-links" href="../HTML/help.html" style="color: inherit;
+            text-decoration: none;">Help/FAQ</a>
+            </div>
+            <div>
+              <a class="footer-links" href="../HTML/feedback.html" style="color: inherit;
+            text-decoration: none;">Leave Feedback</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row my-3">
+          <div class="col" style="text-align:center;">
+            All rights <a href="mailto:Intern.FYI.contact@gmail.com" style="color: inherit;
+            text-decoration: none;">Intern.FYI.contact@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!-- end of footer -->`
+})
+
+//MUST mount
+const constFooter = footer.mount('.footerComp');
+
