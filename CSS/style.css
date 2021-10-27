@@ -330,6 +330,7 @@ div.cardBold {
     display: inline-block;
 }
 
+
 @media only screen and (max-width: 767px) {
     #smallNavBar {
         display: none;
@@ -468,3 +469,4 @@ div.password-desc-required {
     top: 65%;
     z-index: 1;
 }
+
