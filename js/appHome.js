@@ -89,7 +89,7 @@ app.component('company-card', {
         `<div class="col-xl-3 col-sm-6 my-3">
             <div class="card mx-auto border border-white rounded-3" style="width: 250px;">
             <div class = "text-center">
-            <img class="card-img-top rounded-4 img-fluid" :src="companyinfo.imgUrl" alt="Card image cap" style="width: 259px;
+            <img class="card-img-top rounded rounded-4 img-fluid" :src="companyinfo.imgUrl" alt="Card image cap" style="width: 259px;
             height: 160px;">
             </div>
                 <div class="card-body">
