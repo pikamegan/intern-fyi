@@ -24,6 +24,8 @@
     -->
     <link rel="stylesheet" href="../CSS/style.css">
     <script src="../js/actions.js" defer></script>
+    <!-- vue -->
+    <script src="https://unpkg.com/vue@next"></script>
     <title>Your Profile</title>
 </head>
 
@@ -32,14 +34,15 @@
     <div class="container-fluid m-5">
         <div class="row">
             <div class="col-sm-12 col-lg-6">
-                <div class="personProfile shadow rounded rounded-3 container mb-3" style="width: 658.06ppx; height: 559px;">
+                <div class="personProfile shadow rounded rounded-3 container mb-3"
+                    style="width: 658.06ppx; height: 559px;">
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-6">
                             <img src="../IMG/avatar3.svg" style="width: 230px; height: 230px; border-radius: 50%;"
                                 class="m-3">
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-6">
-                            <div class = "m-5">
+                            <div class="m-5">
                                 <h3 class="text-start mt-5">Name</h3>
                                 <br>
                                 <p>Email: <span id="profileEmailAddress"></span></p>
@@ -71,6 +74,9 @@
 
             </div>
         </div>
+    </div>
+    <div class="footerComp">
+        <intern-footer></intern-footer>
     </div>
 
 </body>
