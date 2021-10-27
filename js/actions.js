@@ -197,7 +197,7 @@ function loadCompanyPage() {
             this.allCompanies = response.data
             let companyName = document.getElementsByClassName("companyName")
             let nameStr = "Company Name"
-            
+
             let companyInfo = document.getElementById("companyInfo")
             let infoStr = ""
 
@@ -245,7 +245,7 @@ function loadCompanyPage() {
                     mentorRatingStr = `${company.companyRatings.averageCriteria5}`
                     hierarchyRatingStr = `${company.companyRatings.averageCriteria6}`
                     totalReviewStr = `(${company.companyRatings.totalNumReviews})`
-                } 
+                }
             }
             for (input of companyName) {
                 input.innerHTML = nameStr
@@ -276,7 +276,7 @@ function loadCompanyPage() {
 function getCompanyNameFromURL() {
     let link = decodeURI(window.location.href)
     let firstNum = link.search("cname=")
-    let cleanLink = link.slice(firstNum+6).toLowerCase()
+    let cleanLink = link.slice(firstNum + 6).toLowerCase()
     cleanLink = cleanLink.replace("#", "")
     return cleanLink
 }
@@ -314,7 +314,7 @@ function getAllCompanies() {
 function getCompanyFromURL() {
     let link = window.location.href
     let firstNum = link.search("company")
-    return link.slice(firstNum+8).toLowerCase()
+    return link.slice(firstNum + 8).toLowerCase()
 }
 
 
@@ -337,9 +337,13 @@ const navigationBar = Vue.createApp({
 navigationBar.component('navigation-bar-small-login', {
     data() {  // data option of the component
         return {
+            searchQuery: ''
         }
     },
     methods: {
+        toSearchPage() {
+            window.location = encodeURI("../HTML/search.html" + "?sname=" + this.searchQuery)
+        }
     },
     template: `<!-- SMALL navigation bar for width smaller or = to 767  (USER LOGINed)-->
 
@@ -349,9 +353,9 @@ navigationBar.component('navigation-bar-small-login', {
             <a class="navbar-brand" href="../index.html">
             <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
         </a>
-        <input id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
+        <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
             aria-describedby="search-addon" />
-        <button type="button" class="btn btn-success" id="searchButton">
+        <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
         </button>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -372,9 +376,13 @@ navigationBar.component('navigation-bar-small-login', {
 navigationBar.component('navigation-bar-small-logout', {
     data() {  // data option of the component
         return {
+            searchQuery: ''
         }
     },
     methods: {
+        toSearchPage() {
+            window.location = encodeURI("../HTML/search.html" + "?sname=" + this.searchQuery)
+        }
     },
     template: `<!-- SMALL navigation bar for width smaller or = to 767  (USER LOGOUTed)-->
 
@@ -385,9 +393,9 @@ navigationBar.component('navigation-bar-small-logout', {
             <a class="navbar-brand" href="../index.html">
             <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
             </a>
-            <input id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
+            <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
             aria-describedby="search-addon" />
-            <button type="button" class="btn btn-success" id="searchButton">
+            <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
             </button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -408,9 +416,13 @@ navigationBar.component('navigation-bar-small-logout', {
 navigationBar.component('navigation-bar-big-login', {
     data() {  // data option of the component
         return {
+            searchQuery: ''
         }
     },
     methods: {
+        toSearchPage() {
+            window.location = encodeURI("../HTML/search.html" + "?sname=" + this.searchQuery)
+        }
     },
     template: `<nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
     <div class="container-fluid">
@@ -425,9 +437,9 @@ navigationBar.component('navigation-bar-big-login', {
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="input-group my-2">
-            <input id = "searchBox" type="search" class="form-control rounded" placeholder="Search for Industry, Company or Role"
+            <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded" placeholder="Search for Company or Industry"
             aria-label="Search" aria-describedby="search-addon" />
-            <button type="button" class="btn btn-success" id="searchButton">
+            <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
             </button>
         </div>
@@ -446,9 +458,13 @@ navigationBar.component('navigation-bar-big-login', {
 navigationBar.component('navigation-bar-big-logout', {
     data() {  // data option of the component
         return {
+            searchQuery: ''
         }
     },
     methods: {
+        toSearchPage() {
+            window.location = encodeURI("../HTML/search.html" + "?sname=" + this.searchQuery)
+        }
     },
     template: `<!-- Big Nav Bar width > 767 and Logout -->
 
@@ -465,9 +481,9 @@ navigationBar.component('navigation-bar-big-logout', {
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="input-group my-2">
-            <input id = "searchBox" type="search" class="form-control rounded" placeholder="Search for Industry, Company or Role"
+            <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded" placeholder="Search for Company or Industry"
             aria-label="Search" aria-describedby="search-addon" />
-            <button type="button" class="btn btn-success" id="searchButton">
+            <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
             </button>
         </div>
@@ -502,4 +518,3 @@ function showSpeechBubble(e) {
     }
 
 }
-
