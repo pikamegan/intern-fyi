@@ -1,12 +1,3 @@
-// if (window.navigator.onLine) {
-//     console.log("you are online");
-// } else {
-//     console.log("you are offline");
-//     window.location = "../HTML/internetstopped.html"
-// }
-//Above code is not working as expected... need more working
-
-
 function gotoWriteAReview() {
     window.location = "../HTML/WriteAReview.html"
 }
@@ -32,7 +23,6 @@ function gotoMyProfile() {
 function gotoSearch() {
     window.location = "../HTML/search.html"
 }
-
 
 function openForm() {
     document.getElementById("feedbackPopUp").style.display = "block";
