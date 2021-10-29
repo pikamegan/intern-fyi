@@ -2,6 +2,7 @@ function gotoWriteAReview() {
     window.location = "../HTML/WriteAReview.html"
 }
 
+
 function gotoSignUpPage() {
     window.location = "../HTML/signup.html"
 }
@@ -515,7 +516,14 @@ const footer = Vue.createApp({
         return {
 
         }
-    }
+    },
+    methods: {
+        goHome(url) {
+            console.log('%c went inside! ', 'background: #222; color: #bada55',
+                        'into function');
+            window.location = url
+        }
+    },
 });
 
 footer.component('intern-footer', {
@@ -524,6 +532,7 @@ footer.component('intern-footer', {
         }
     },
     methods: {
+        
     },
     props: ['home', 'abt', 'career', 'help', 'feedback'], // only lower case
     template: `
@@ -531,7 +540,7 @@ footer.component('intern-footer', {
       <div class="container">
         <div class="row py-5">
           <div class="col-lg-4 col-md-5">
-            <h2 style="text-align:left;" @click="home">Intern.FYI</h2>
+            <h2 style="text-align:left;" v-on:click="$emit('gotohome', home)" >Intern.FYI</h2>
             <p>
               Intern at better companies. <br>
               And have a better experience.
