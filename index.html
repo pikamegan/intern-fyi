@@ -63,7 +63,8 @@
                     </div>
                     <div class="row mb-5">
                         <div class="text-center col">
-                            <button class="btn btn-primary" onclick="gotoWriteAReview()">Write a Review Now</button>
+                            <button class="btn btn-primary" onclick="location.href='./HTML/WriteAReview.html';">Write a
+                                Review Now</button>
                         </div>
                     </div>
                     <div class="row mb-1">
@@ -99,8 +100,6 @@
                 <h4 class="homeHeader">Rank by Category</h4>
             </div>
         </div>
-
-
         <!-- WIP -->
         <div class="row shadow mb-5 pt-3">
             <style>
@@ -279,7 +278,7 @@
                 <div class="mx-auto flatHierarchy"
                     style="width: 168px;height: 222px; border-radius: 10px; text-align: center; position: relative;">
                     <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                        <img class= "help" src="./img/help.svg" class="preventSelect">
+                        <img class="help" src="./img/help.svg" class="preventSelect">
                         <span class="criteriaTooltipText help">
                             5 stars for respecting job roles and your internship role
                         </span>
@@ -322,16 +321,58 @@
     <!-- <company-card :companyinfo="homeCompanyCardsRelavantInfo(rand1company())"></company-card> -->
 
 
-
-    <!-- company cards -->
-    <script src='./js/appHome.js'></script>
-
     <div style="height: 50px;">
     </div>
 
-    <div class="footerComp">
-        <intern-footer></intern-footer>
-    </div>
+    <footer class="footer mt-auto py-3 bg-white">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-lg-4 col-md-5">
+                    <h2 style="text-align:left;">Intern.FYI</h2>
+                    <p>
+                        Intern at better companies. <br>
+                        And have a better experience.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-3 my-2">
+                    <h4>Company</h4>
+                    <div>
+                        <a class="footer-links" href="./HTML/about.html" style="color: inherit;
+              text-decoration: none;">About Us</a>
+                    </div>
+                    <div>
+                        <a class="footer-links" href="./HTML/Career.html" style="color: inherit;
+              text-decoration: none;">Careers</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 my-2">
+                    <h4>Contact</h4>
+                    <div>
+                        <a class="footer-links" href="./HTML/help.html" style="color: inherit;
+              text-decoration: none;">Help/FAQ</a>
+                    </div>
+                    <div>
+                        <a class="footer-links" href="./HTML/feedback.html" style="color: inherit;
+              text-decoration: none;">Leave Feedback</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row my-3">
+                <div class="col" style="text-align:center;">
+                    All rights <a href="mailto:Intern.FYI.contact@gmail.com" style="color: inherit;
+              text-decoration: none;">Intern.FYI.contact@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end of footer -->
+
+    <!-- company cards -->
+    <script src="./js/appHome.js"></script>
+
 
 
 </body>
