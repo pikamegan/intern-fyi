@@ -525,12 +525,13 @@ footer.component('intern-footer', {
     },
     methods: {
     },
+    props: ['home', 'abt', 'career', 'help', 'feedback'], // only lower case
     template: `
     <footer class="footer mt-auto py-3 bg-white">
       <div class="container">
         <div class="row py-5">
           <div class="col-lg-4 col-md-5">
-            <h2 style="text-align:left;" onclick="gotoHomePage()">Intern.FYI</h2>
+            <h2 style="text-align:left;" @click="home">Intern.FYI</h2>
             <p>
               Intern at better companies. <br>
               And have a better experience.
@@ -540,11 +541,11 @@ footer.component('intern-footer', {
           <div class="col-lg-2 col-md-3 my-2">
             <h4>Company</h4>
             <div>
-              <a class="footer-links" href="../HTML/about.html" style="color: inherit;
+              <a class="footer-links" :href="abt" style="color: inherit;
             text-decoration: none;">About Us</a>
             </div>
             <div>
-              <a class="footer-links" href="../HTML/Career.html" style="color: inherit;
+              <a class="footer-links" :href="career" style="color: inherit;
             text-decoration: none;">Careers</a>
             </div>
           </div>
@@ -552,11 +553,11 @@ footer.component('intern-footer', {
           <div class="col-lg-2 col-md-3 my-2">
             <h4>Contact</h4>
             <div>
-              <a class="footer-links" href="../HTML/help.html" style="color: inherit;
+              <a class="footer-links" :href="help" style="color: inherit;
             text-decoration: none;">Help/FAQ</a>
             </div>
             <div>
-              <a class="footer-links" href="../HTML/feedback.html" style="color: inherit;
+              <a class="footer-links" :href="feedback" style="color: inherit;
             text-decoration: none;">Leave Feedback</a>
             </div>
           </div>

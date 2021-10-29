@@ -9,8 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="./CSS/style.css">
-    <!-- vue -->
-    <script src="https://unpkg.com/vue@next"></script>
+
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- JavaScript for CSS -->
@@ -18,16 +17,71 @@
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./CSS/style.css">
-
+    <!-- vue -->
+    <script src="https://unpkg.com/vue@next"></script>
     <script src="./js/actions.js" defer></script>
     <title>Intern FYI</title>
+    <style>
+        img.positionCard {
+            height: 80px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        div.cardBold {
+            font-weight: 900;
+        }
+
+        .criteriaTooltip .criteriaTooltipText {
+            visibility: hidden;
+            width: 140px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 2px;
+            border-radius: 10px;
+
+            position: absolute;
+            z-index: 1;
+
+            /* option 1: without anything */
+
+            /* i think option 2 looks the best tbh, maybe yall want to change the color */
+
+            /* option 2: cover the whole card */
+            width: 168px;
+            height: 222px;
+            border-radius: 10px;
+            top: -3px;
+            left: -3px;
+            padding: 10px;
+
+            /* option 3: top of the card */
+            /* bottom: 105%;
+            left: 50%; */
+        }
+
+        .criteriaTooltip:hover .criteriaTooltipText {
+            visibility: visible;
+        }
+    </style>
 </head>
 
 <body>
 
-    <div style="height: 70px; margin: auto; background-color: rgb(233, 233, 233); text-align: center;">
-        NAVBAR PLACEHOLDER
+    <!-- copy this part -->
+    <div class="navbarTemplate">
+        <div id="bigNavBar">
+            <navigation-bar-small-login v-if="isLogined()"></navigation-bar-small-login>
+            <navigation-bar-small-logout v-else></navigation-bar-small-logout>
+        </div>
+
+        <div id="smallNavBar">
+            <navigation-bar-big-login v-if="isLogined()"></navigation-bar-big-login>
+            <navigation-bar-big-logout v-else></navigation-bar-big-logout>
+        </div>
     </div>
+    <!-- copy this part -->
 
     <div class="container">
 
@@ -102,50 +156,7 @@
         </div>
         <!-- WIP -->
         <div class="row shadow mb-5 pt-3">
-            <style>
-                img.positionCard {
-                    height: 80px;
-                    margin-top: 20px;
-                    margin-bottom: 10px;
-                }
 
-                div.cardBold {
-                    font-weight: 900;
-                }
-
-                .criteriaTooltip .criteriaTooltipText {
-                    visibility: hidden;
-                    width: 140px;
-                    background-color: rgba(0, 0, 0, 0.8);
-                    color: #fff;
-                    text-align: center;
-                    padding: 2px;
-                    border-radius: 10px;
-
-                    position: absolute;
-                    z-index: 1;
-
-                    /* option 1: without anything */
-
-                    /* i think option 2 looks the best tbh, maybe yall want to change the color */
-
-                    /* option 2: cover the whole card */
-                    width: 168px;
-                    height: 222px;
-                    border-radius: 10px;
-                    top: -3px;
-                    left: -3px;
-                    padding: 10px;
-
-                    /* option 3: top of the card */
-                    /* bottom: 105%;
-                    left: 50%; */
-                }
-
-                .criteriaTooltip:hover .criteriaTooltipText {
-                    visibility: visible;
-                }
-            </style>
 
 
 
@@ -324,7 +335,9 @@
     <div style="height: 50px;">
     </div>
 
-    <footer class="footer mt-auto py-3 bg-white">
+    <!-- DO NOT DELETE I NEED FOR TESTING (below) -->
+
+    <!-- <footer class="footer mt-auto py-3 bg-white">
         <div class="container">
             <div class="row py-5">
                 <div class="col-lg-4 col-md-5">
@@ -367,12 +380,16 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!-- end of footer -->
+    <div class="footerComp">
+        <intern-footer home = "" abt = "../WAD-grpproject/HTML/about.html" career="../WAD-grpproject/HTML/career.html" help= "../WAD-grpproject/HTML/help.html"  feedback= "../WAD-grpproject/HTML/feedback.html" ></intern-footer>
+    </div>
+
+    <!-- props: ['home', 'abt', 'career', 'help', 'feedback'] -->
 
     <!-- company cards -->
     <script src="./js/appHome.js"></script>
-
 
 
 </body>
