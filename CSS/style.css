@@ -371,8 +371,8 @@ div.cardBold {
 }
 
 
-div.password-desc-required {
-    color: #aaaaaa;
+.errorMsg{
+    margin-left: 10px;
 }
 
 #scrollTop {
