@@ -114,8 +114,9 @@
 
             <div class="col mb-5">
                 <!-- <img src= "../IMG/foodpandaoffice.svg" style="width: 100px; height: 100px;"> -->
-
-                <company-row-list :companylist="displayCompanies"></company-row-list>
+                <div v-if="displayCompanies.length > 0">
+                    <company-row-list :companylist="displayCompanies"></company-row-list>
+                </div>
 
                 <div v-if="displayCompanies.length == 0" class="text-center">
                     <img class="my-5" src="../img/noCompanyFound.svg">
@@ -131,9 +132,10 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&callback=initMap"
         async defer></script>
 
-        <div class="footerComp">
-            <intern-footer home = "../index.html" abt = "about.html" career="career.html" help= "help.html"  feedback="feedback.html" @gotohome="goHome"></intern-footer>
-        </div>
+    <div class="footerComp">
+        <intern-footer home="../index.html" abt="about.html" career="career.html" help="help.html"
+            feedback="feedback.html" @gotohome="goHome"></intern-footer>
+    </div>
 
 
     <script src="../js/appSearch.js"></script>

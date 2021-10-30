@@ -19,7 +19,7 @@ function showYourLocation() {
         })
         .catch((error) => {
             // process error object
-            console.log(error.message);
+            // console.log(error.message);
             //document.getElementById("displayString").innerText = "Something went wrong";
         });
 
@@ -83,6 +83,17 @@ const appSearch = Vue.createApp({
                 this.searchQuery = urlParams.get(queryName1)
             }
         },
+        sortCompaniesMethod() {
+            if (this.displayCompanies.length > 0) {
+                // console.log("sort");
+                sortBy = this.sortCompanies;
+                if (this.displayCompanies != null) {
+                    this.displayCompanies.sort((a, b) => {
+                        return parseFloat(b.companyRatings[sortBy]) - parseFloat(a.companyRatings[sortBy]);
+                    });
+                }
+            }
+        },
         getAllCompanies() {
             let url = `../processDbRequest/processCompanyRequest.php`;
             // url = `../processDbRequest/tmpOutputProcessCompanyRequest.php`;
@@ -95,6 +106,7 @@ const appSearch = Vue.createApp({
                 .then(response => {
                     this.allCompanies = response.data;
                     this.displayCompanies = response.data;
+                    // console.log(this.displayCompanies);
                     this.sortCompaniesMethod();
                 })
                 .catch(error => {
@@ -114,6 +126,7 @@ const appSearch = Vue.createApp({
                 .then(response => {
                     this.allCompanies = response.data;
                     this.displayCompanies = response.data;
+                    // console.log(this.displayCompanies);
                     this.sortCompaniesMethod();
                 })
                 .catch(error => {
@@ -121,25 +134,19 @@ const appSearch = Vue.createApp({
                 });
         },
         filterMethod() {
-            console.log("filter");
-            this.displayCompanies = [];
-            for (index in this.allCompanies) {
-                company = this.allCompanies[index];
-                if (this.filterIndustry.includes(company.companyInfo.industry)) {
-                    this.displayCompanies.push(company);
-                };
-            }
-            this.sortCompaniesMethod()
-        },
-        sortCompaniesMethod() {
-            console.log("sort");
-            sortBy = this.sortCompanies;
-            if (this.displayCompanies != null) {
-                this.displayCompanies.sort((a, b) => {
-                    return parseFloat(b.companyRatings[sortBy]) - parseFloat(a.companyRatings[sortBy]);
-                });
+            if (this.allCompanies.length > 0) {
+                // console.log("filter");
+                this.displayCompanies = [];
+                for (index in this.allCompanies) {
+                    company = this.allCompanies[index];
+                    if (this.filterIndustry.includes(company.companyInfo.industry)) {
+                        this.displayCompanies.push(company);
+                    };
+                }
+                this.sortCompaniesMethod()
             }
         }
+
     },
     created() {
         //deep copy

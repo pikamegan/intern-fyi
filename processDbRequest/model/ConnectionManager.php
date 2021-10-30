@@ -19,6 +19,10 @@
 //         $pdoObject->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //         // if fail, exception will be thrown
 
+//         // this dont work
+//         // $pdoObject->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+
+
 //         // Return connection object
 //         return $pdoObject; // PDO object (containing MySQL connection info)
 //     }
