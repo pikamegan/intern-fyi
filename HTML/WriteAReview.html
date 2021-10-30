@@ -18,6 +18,22 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script language='JavaScript' type='text/javascript'>
+        function validate_form() {
+
+            // There are 3 ways to access a Form Input Field
+            var writtenreview = document.forms['entry_form'].reviewdesc.value;     // This works if input field has NAME attribute
+            //var s = document.forms['entry_form']['my_subject'].value; // This works if input field has ID attribute
+            //var s = document.entry_form.subject.value;                 // This works if input field has NAME attribute
+
+            if( writtenreview.length < 11 ) {
+                alert("Written Review must be contain at least 10 characters");
+                return false;
+
+                // megan write more form validations here!!!!!!!!!!!!!!!!!!!!!!!
+            }
+        }
+    </script>
     <title>Write a Company Review</title>
 </head>
 
@@ -43,7 +59,7 @@
         <div class="p-sm-5 mb-4 bg-light shadow-lg feedbackBg">
             <div class="container-fluid px-sm-5 py-5">
 
-                <form name="review_form" action="add.php" method="POST" id="reviewForm">
+                <form name="review_form" action="add.php" method="POST" id="reviewForm" onsubmit="return validate_form()">
                     <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 40px;">
                         <div class="bd-highlight">
                             <img src="../IMG/deletebutton.svg" onclick="resetDraft('clearReview')" alt="Clear draft"
@@ -324,7 +340,7 @@
 
                         <div class="row mt-5">
                             <div class="mb-3">
-                                <label for="comment" class="form-label">Additional Comments</label>
+                                <label for="comment" class="form-label">Written Review</label>
                                 <textarea name= "reviewdesc" class="form-control" aria-label="comment" style="height:300px;"></textarea>
                             </div>
                         </div>
