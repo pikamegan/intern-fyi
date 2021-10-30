@@ -9,302 +9,37 @@
 </head>
 
 <body>
-    <!-- axios -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- vue -->
-    <script src="https://unpkg.com/vue@next"></script>
 
-    <!-- JavaScript for CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script>
-
-
-    <!-- https://www.w3schools.com/howto/howto_js_collapsible.asp -->
-    <style>
-        .collapsibleSearch {
-            /* background-color: #777; */
-            /* color: white; */
-            cursor: pointer;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-            height:auto;
-            border-radius: 10px;
-        }
-        
-        .collapsibleContentSearch {
-            padding: 0 18px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.2s ease-out;
-            background-color: #f1f1f1;
-            border-radius: 10px;
-        }
-
-        /* .active,
-        .collapsibleSearch:hover {
-            background-color: #555;
-        } */
-    </style>
-
-    <!-- <p>Collapsible Set:</p>
-    <div class="collapsibleSearch">Open Section 1</div>
-    <div class="collapsibleContentSearch">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex
-            ea commodo consequat.</p>
-        <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_200_200/0/1519856215226?e=2159024400&v=beta&t=r--a5-Dl4gvVE-xIkq8QyBzZ8mQ-OYwBOrixNzR95H0"
-            alt="">
-    </div>
-    <button class="collapsibleSearch">Open Section 2</button>
-    <div class="collapsibleContentSearch">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex
-            ea commodo consequat.</p>
-    </div>
-    <button class="collapsibleSearch">Open Section 3</button>
-    <div class="collapsibleContentSearch">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex
-            ea commodo consequat.</p>
-    </div> -->
-
-
-
-
-    <!-- <script src='./appHome.js'></script> -->
-
-
-
-    <div id='app2'>
-        <company-row-list></company-row-list>
-    </div>
 
     <script>
-        const app2 = Vue.createApp({
-            data() {
-                return {
+        // function getSearchQuery() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
 
-                }
-            },
-            methods: {
-                doSomething() {
-                    alert('hi');
-                }
+            let queryName1 = 'cname'
+            let searchQuery1 = ''
+            if (urlParams.has(queryName1) && urlParams.get(queryName1) != "") {
+                searchQuery1 = urlParams.get(queryName1)
             }
-        });
+            // return searchQuery1
 
-        app2.component('company-row', {
-            data() {
-                return {
-                    myMaxHeight: null,
-                    maxScrollHeight: '',
-                    isSelected: false
-                };
-            },
-            props: ['company', 'selectedCompanyID'],
-            computed: {
-                changeState() {
-                    this.selectedCompanyID;
-                    if (this.isSelected) {
-                        this.isSelected = false;
-                        this.showInfomation();
-                    } else if (this.company.companyID == this.selectedCompanyID) {
-                        this.isSelected = true;
-                        this.showInfomation();
-                    }
-                },
-
-            },
-
-            methods: {
-                showInfomation() {
-                    if (this.myMaxHeight) {
-                        this.myMaxHeight = null;
-                    } else {
-                        // myMaxHeight = collapsibleContentSearch.scrollHeight + "px"; proably need do dom outside to get the scrollHeight
-                        this.myMaxHeight = "70px";
-                    }
-                },
-                select() {
-                    if (this.isSelected) {
-                        this.$emit('select', null);
-                    } else  {
-                        this.$emit('select', this.company.companyID);
-                    }
-                },
-
-
-            },
-            template:`
-    
-<div class="row">
-    <div class="collapsibleSearch shadow" @click='select' @select='changeState'>
-        <img :src="company.companyInfo.imageLink" style="height: 100px; width: 100px; float: left; border-radius: 10px">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col">
-                    {{company.companyName}}
-                </div>
-                <div class="col-1">
-                    {{company.companyRatings.overallRating}}
-                    <img src="./star.svg" style="height: 10px; width: 10px;">
-                </div>
-            </div>
-            <div class="row justify-content-start">
-                <div class="col-2">
-                    company.location
-                </div>
-                <div class="col-2">
-                    <img src="./locationMarker.svg" style="height: 10px; width: 10px;">
-                    company.distance
-                </div>
-            </div>
-            <div class="row justify-content-start">
-                <div class="col-2">
-                    <img src="./pen.svg" style="height: 10px; width: 10px;">
-                    <a href="#">
-                        Write a Review
-                    </a>
-                </div>
-                <div class="col-2">
-                    <img src="./eye.svg" style="height: 10px; width: 10px;">
-                    <a href="#">
-                        View Company Profile
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="collapsibleContentSearch" :style="{'max-height':myMaxHeight}" :scrollHeight='maxScrollHeight'>
-        <p>
-            {{company.companyID}} <br>
-            {{company.companyInfo.companyDescription}} <br>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex
-            ea commodo consequat.
-        </p>
-    </div>
-</div>
-    
-    `
-        });
-
-        companyListSetA = [
-            {
-                "companyID": "1",
-                "companyName": "Google Asia Pacific, Singapore",
-                "companyInfo": {
-                    "companyDescription": "top tech giant",
-                    "companyLinkedinLink": "https:\/\/sg.linkedin.com\/company\/google",
-                    "companyWebsite": "https:\/\/careers.google.com\/locations\/sing\/",
-                    "industry": "Internet",
-                    "imageLink": "https:\/\/media-exp1.licdn.com\/dms\/image\/C4D0BAQHiNSL4Or29cg\/company-logo_200_200\/0\/1519856215226?e=2159024400&v=beta&t=r--a5-Dl4gvVE-xIkq8QyBzZ8mQ-OYwBOrixNzR95H0",
-                    "location": "70 Pasir Panjang Rd, #03-71 Mapletree Business City II, Singapore 117371"
-                },
-                "companyRatings": {
-                    "numberOfClicks": "43",
-                    "totalNumReviews": "5",
-                    "overallRating": "4.9",
-                    "averageCriteria1": "4.1",
-                    "averageCriteria2": "4.2",
-                    "averageCriteria3": "4.8",
-                    "averageCriteria4": "4.1",
-                    "averageCriteria5": "4",
-                    "averageCriteria6": "4"
-                }
-            },
-            {
-                "companyID": "2",
-                "companyName": "Amazon, Singapore",
-                "companyInfo": {
-                    "companyDescription": "top tech giant",
-                    "companyLinkedinLink": "https:\/\/sg.linkedin.com\/company\/amazon",
-                    "companyWebsite": "https:\/\/www.amazon.jobs\/en-gb\/location\/singapore-singapore",
-                    "industry": "Internet",
-                    "imageLink": "https:\/\/media-exp1.licdn.com\/dms\/image\/C560BAQHTvZwCx4p2Qg\/company-logo_200_200\/0\/1612205615891?e=2159024400&v=beta&t=J9qbDyzP2uv1lE1Xb_ieBaWwgeT-u52Mf-4ACuHP_p8",
-                    "location": "5B Toh Guan Rd E, Singapore 608829"
-                },
-                "companyRatings": {
-                    "numberOfClicks": "78",
-                    "totalNumReviews": "5",
-                    "overallRating": "3.9",
-                    "averageCriteria1": "3.1",
-                    "averageCriteria2": "3.2",
-                    "averageCriteria3": "3.8",
-                    "averageCriteria4": "3.1",
-                    "averageCriteria5": "3",
-                    "averageCriteria6": "3"
-                }
-            },
-            {
-                "companyID": "3",
-                "companyName": "Facebook APAC HQ",
-                "companyInfo": {
-                    "companyDescription": "top tech giant",
-                    "companyLinkedinLink": "https:\/\/sg.linkedin.com\/company\/facebook",
-                    "companyWebsite": "https:\/\/www.facebook.com\/careers\/v2\/locations\/singapore\/?p[offices][0]=Singapore&offices[0]=Singapore",
-                    "industry": "Internet",
-                    "imageLink": "https:\/\/media-exp1.licdn.com\/dms\/image\/C560BAQGrV5i4K9YdhQ\/company-logo_200_200\/0\/1621582241755?e=2159024400&v=beta&t=jUSQl6ISH9xb-ll-UEVCanO2SAl_dJIhRViAYn2I-fw",
-                    "location": "-"
-                },
-                "companyRatings": {
-                    "numberOfClicks": "24",
-                    "totalNumReviews": "5",
-                    "overallRating": "2.5",
-                    "averageCriteria1": "2.9",
-                    "averageCriteria2": "2.1",
-                    "averageCriteria3": "2.2",
-                    "averageCriteria4": "2.8",
-                    "averageCriteria5": "2.1",
-                    "averageCriteria6": "2"
-                }
+            let queryName2 = 'cid'
+            let searchQuery2 = ''
+            if (urlParams.has(queryName2) && urlParams.get(queryName2) != "") {
+                searchQuery2 = urlParams.get(queryName2)
             }
-        ]
+            // return searchQuery2
+        // }
 
 
-        app2.component('company-row-list', {
-            data() {
-                return {
-                    companyList: companyListSetA,
-                    selectedCompanyID: null
-                };
-            },
-            // props: ['companyList'],
-            methods: {
-                selectCompany(companyID) {
-                    this.selectedCompanyID = companyID;
-                    // console.log(this.selectedCompanyID);
-                }
-            },
-            template:
-                `<div class="container">
-        <company-row 
-        v-for="company in companyList" 
-        :company="company" 
-        @select="selectCompany"
-        :selectedCompanyID="selectedCompanyID"
-        ></company-row>
-        </div>`
-        });
+        if (searchQuery1 == '') {
+            window.location.assign('tmp2.html' + '?' + 'cname=appleOrSomething' + '&' + 'cid=1')
+        }
 
-        const vm2 = app2.mount("#app2")
+        document.write(searchQuery1)
+        document.write('<br>')
+        document.write(searchQuery2)
     </script>
-
-
-
 </body>
 
 </html>
