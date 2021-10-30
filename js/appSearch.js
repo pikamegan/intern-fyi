@@ -106,7 +106,7 @@ const appSearch = Vue.createApp({
                 .then(response => {
                     this.allCompanies = response.data;
                     this.displayCompanies = response.data;
-                    // console.log(this.displayCompanies);
+                    console.log(this.displayCompanies);
                     this.sortCompaniesMethod();
                 })
                 .catch(error => {
@@ -126,7 +126,7 @@ const appSearch = Vue.createApp({
                 .then(response => {
                     this.allCompanies = response.data;
                     this.displayCompanies = response.data;
-                    // console.log(this.displayCompanies);
+                    console.log(this.displayCompanies);
                     this.sortCompaniesMethod();
                 })
                 .catch(error => {
