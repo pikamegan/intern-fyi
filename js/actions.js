@@ -334,23 +334,20 @@ navigationBar.component('navigation-bar-small-login', {
     methods: {
         toSearchPage() {
             window.location = encodeURI("../HTML/search.html" + "?sname=" + this.searchQuery)
-            
         }
     },
-    props: ['home','logo', 'searchicon', 'searchpage', 'logout', 'profile', 'review'],
-    // background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"
     template: `<!-- SMALL navigation bar for width smaller or = to 767  (USER LOGINed)-->
 
     <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
         <div class="container-fluid d-inline-block">
         <div class="input-group my-2">
-            <a class="navbar-brand" :href="home">
-            <img :src="logo" style="height:40px;" @click="emit('gotoHome', home)">
+            <a class="navbar-brand" href="../index.html">
+            <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
         </a>
         <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
             aria-describedby="search-addon" />
-        <button onclick="searchpage" type="button" class="btn btn-success" id="searchButton">
-            <div :style="searchicon"></div>
+        <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
+            <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
         </button>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -359,9 +356,9 @@ navigationBar.component('navigation-bar-small-login', {
         </div>
     </div>
     <div class="collapse navbar-collapse text-center" id="navbarCollapse">
-        <a :href="logout">Logout</a><br>
-        <a :href="profile">My Profile</a><br>
-        <a :href="review">Write a Review &#9998;</a><br>
+        <a href="">Logout</a><br>
+        <a href="../HTML/myProfile.html">My Profile</a><br>
+        <a href="../HTML/WriteAReview.html">Write a Review &#9998;</a><br>
     </div>
     </nav>
     <!-- end of small navigation bar -->`

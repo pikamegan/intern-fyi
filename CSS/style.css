@@ -332,13 +332,13 @@ div.cardBold {
 
 
 @media only screen and (max-width: 767px) {
-    #smallNavBar {
+    #bigNavBar {
         display: none;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    #bigNavBar {
+    #smallNavBar {
         display: none;
     }
 }
@@ -415,7 +415,7 @@ div.password-desc-required {
     top: 25%;
     right: 0;
     left: 0;
-    padding: 30px; 
+    padding: 30px;
 }
 
 .warningPopup {
@@ -469,4 +469,3 @@ div.password-desc-required {
     top: 65%;
     z-index: 1;
 }
-
