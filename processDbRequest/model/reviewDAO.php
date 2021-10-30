@@ -49,7 +49,7 @@ class reviewDAO {
         return $reviews;
     }
 
-    public function get($id) {
+    public function getCompanyReviewsById($companyid) {
         // STEP 1
         $connMgr = new ConnectionManager();
         $conn = $connMgr->connect();
@@ -57,11 +57,11 @@ class reviewDAO {
         // STEP 2
         $sql = "SELECT
                     *
-                FROM post
+                FROM review
                 WHERE 
-                    id = :id";
+                companyid = :companyid";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':companyid', $id, PDO::PARAM_INT);
 
         // STEP 3
         $stmt->execute();
