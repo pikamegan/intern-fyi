@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 $message = "";
 if (count($_POST) > 0) {
