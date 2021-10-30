@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/in.css">
     <link rel="stylesheet" href="../CSS/footer.css">
@@ -82,29 +84,25 @@
                         onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
                 </div>
             </div>
+            
             <!-- Remove password-desc-required class when requirement is met  & add when NOT met -->
-            <div class="passwordrequirements mb-2">
-                <div id="password-req-length" class="password-desc-required"><img src="../IMG/tick_success.svg"
-                        class="password-desc">MUST
-                    contain eight (8) characters or more</div>
-                <div id="password-req-ucase" class="password-desc-required"><img src="../IMG/tick_success.svg"
-                        class="password-desc">Uppercase alphabet characters (A-Z)</div>
-                <div id="password-req-lcase" class="password-desc-required"><img src="../IMG/tick_success.svg"
-                        class="password-desc">Lowercase
-                    alphabet characters (a-z)</div>
-                <div id="password-req-numerals" class="password-desc-required"><img src="../IMG/tick_success.svg"
-                        class="password-desc">Arabic numerals (0-9)</div>
-                <div id="password-req-nonalpha" class="password-desc-required"><img src="../IMG/tick_success.svg"
-                        class="password-desc">Non-alphanumeric characters (for example: ~`!@#$%^%&amp;*-+?)</div>
-                <div id="password-req-displayname" class="password-desc-required"><img src="../IMG/tick_success.svg"
-                        class="password-desc">Password cannot contain part of (or full) displayed name in Profile ()
+            <div id="pwErrorMsgs">
+                <div class="passwordrequirements mb-2">
+                    <div id="error1"></div>
+                    <div id="error2"></div>
+                    <div id="error3"></div>
+                    <div id="error4"></div>
+                    <div id="error5"></div>
+                    <div id="error6"></div>
+
+                    <!-- /***************************************************************************************
+                *    CITING
+                *    Author: SMU
+                *    Availability: https://live.smu.edu.sg/Account/ChangePassword
+                ***************************************************************************************/ -->
                 </div>
-                <!-- /***************************************************************************************
-            *    CITING
-            *    Author: SMU
-            *    Availability: https://live.smu.edu.sg/Account/ChangePassword
-            ***************************************************************************************/ -->
             </div>
+
 
             <div id="signupPw2" class="form-row signupRow">
                 <div class="col">
@@ -116,8 +114,7 @@
                 </div>
             </div>
             <!-- Remove password-desc-required class when requirement is met & the reverse -->
-            <div id="confirm-password-same" class="password-desc-required mb-4"><img src="../IMG/tick_success.svg"
-                    class="password-desc">New Password and Confirm New Password match</div>
+            <div id="pwConfirmError"></div>
 
             <!-- Extras -->
             <div class="form-row signupBodyExtras">
@@ -186,47 +183,79 @@
             let criteriaNonAlpha = document.getElementById("password-req-nonalpha")
             let criteriaNoProfileName = document.getElementById("password-req-displayname")
 
+            let errorMsg1 = "8 or more characters"; 
+            let errorMsg2 = "At least one uppercase letter";
+            let errorMsg3 = "At least one lowercase letter"; 
+            let errorMsg4 = "At least one number";
+            let errorMsg5 = "At least one non-alphanumeric character (~`!@#$%^%&*-+?)";
+            let errorMsg6 = "Password cannot contain first or last name"; 
 
+            // 0. Empty input
+            if (userPWInput.length <= 0){
+                document.getElementById("error1").innerHTML = ""; 
+                document.getElementById("error2").innerHTML = ""; 
+                document.getElementById("error3").innerHTML = ""; 
+                document.getElementById("error4").innerHTML = ""; 
+                document.getElementById("error5").innerHTML = ""; 
+                document.getElementById("error6").innerHTML = ""; 
+            }
+
+            // 1. Password length
             if (userPWInput.length >= 8) {
-                criteriaLength.classList.remove("password-desc-required");
+                errorMsgSuccess("error1", errorMsg1);
+                
 
             } else {
-                criteriaLength.classList.add("password-desc-required")
+                errorMsgFailure("error1", errorMsg1);
             }
 
+            // 2. Uppercase 
             if (hasUpperC(userPWInput)) {
-                criteriaUC.classList.remove("password-desc-required");
+                errorMsgSuccess("error2", errorMsg2);
             } else {
-                criteriaUC.classList.add("password-desc-required");
+                errorMsgFailure("error2", errorMsg2);
             }
 
+            // 3. Lowercase
             if (hasLowerC(userPWInput)) {
-                criteriaLC.classList.remove("password-desc-required");
+                errorMsgSuccess("error3", errorMsg3);
             } else {
-                criteriaLC.classList.add("password-desc-required");
+                errorMsgFailure("error3", errorMsg3);
             }
 
 
+            // 4. Number
             if (hasNum(userPWInput)) {
-                criteriaNum.classList.remove("password-desc-required");
+                errorMsgSuccess("error4", errorMsg4);
             } else {
-                criteriaNum.classList.add("password-desc-required");
+                errorMsgFailure("error4", errorMsg4);
             }
 
-
+            // 5. Non-alphanumeric
             if (hasNonAlpha(userPWInput)) {
-                criteriaNonAlpha.classList.remove("password-desc-required");
+                errorMsgSuccess("error5", errorMsg5);
             } else {
-                criteriaNonAlpha.classList.add("password-desc-required");
+                errorMsgFailure("error5", errorMsg5);
             }
 
+            // 6. Name 
             if (hasProfileName(userPWInput, fName + '.' + lName)) {
-                criteriaNoProfileName.classList.add("password-desc-required");
+                errorMsgSuccess("error6", errorMsg6);
             } else {
-                criteriaNoProfileName.classList.remove("password-desc-required");
+                errorMsgFailure("error6", errorMsg6);
             }
 
 
+        }
+
+        function errorMsgSuccess(errorID, errorMsgNo){
+            document.getElementById(errorID).innerHTML = "<i class='bi bi-check text-success'></i>"; 
+            document.getElementById(errorID).innerHTML += "<div class='errorMsg d-inline text-success'>" + errorMsgNo + "</div>";
+        }
+
+        function errorMsgFailure(errorID, errorMsgNo){
+            document.getElementById(errorID).innerHTML = "<i class='bi bi-x fa fa-xxl text-danger'</i>";
+            document.getElementById(errorID).innerHTML += "<div class='errorMsg d-inline text-danger'>" + errorMsgNo + "</div>"
         }
 
         function hasLowerC(input) {
@@ -271,10 +300,11 @@
             return false;
         }
 
+        // Does not work, change conditional
         function hasProfileName(input, fullName) {
             const nameArray = fullName.split('.');
 
-            if (input.indexOf(nameArray[0]) == -1 && input.indexOf(nameArray[1]) == -1) {
+            if (input.indexOf(nameArray[0]) == -1 && input.indexOf(nameArray[1]) == -1) { 
                 // returns -1 when the name is not in the fname or lname
                 return false;
             } else {
@@ -285,14 +315,16 @@
         }
 
         function isPasswordMatch() {
-            let userPWInput = document.getElementById("signupPw1Input").value
-            let userPWInput2 = document.getElementById("signupPw2Input").value
-            let criteriaPasswordMatch = document.getElementById("confirm-password-same")
-
+            let userPWInput = document.getElementById("signupPw1Input").value;
+            let userPWInput2 = document.getElementById("signupPw2Input").value;
+            let criteriaPasswordMatch = document.getElementById("confirm-password-same");
+            let pwConfirmMsg = "Passwords match";
+            
             if (userPWInput === userPWInput2) {
-                criteriaPasswordMatch.classList.remove("password-desc-required");
+                errorMsgSuccess("pwConfirmError", pwConfirmMsg);
             } else {
-                criteriaPasswordMatch.classList.add("password-desc-required");
+                errorMsgFailure("pwConfirmError", pwConfirmMsg);
+
             }
 
         }
