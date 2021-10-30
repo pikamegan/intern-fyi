@@ -508,7 +508,8 @@ values
     12,
     2,
     0
-  ),(
+  ),
+  (
     2,
     3,
     "Business Analyst",
@@ -524,7 +525,8 @@ values
     12,
     2,
     0
-  ),(
+  ),
+  (
     2,
     4,
     "Test Engineer",
@@ -540,7 +542,8 @@ values
     12,
     2,
     0
-  ),(
+  ),
+  (
     3,
     5,
     "Data Scientist",
@@ -556,7 +559,8 @@ values
     1,
     1,
     0
-  ),(
+  ),
+  (
     3,
     6,
     "Data Analyst",
@@ -572,7 +576,8 @@ values
     1,
     1,
     0
-  ),(
+  ),
+  (
     4,
     7,
     "Policy Analyst",
@@ -588,7 +593,8 @@ values
     1,
     2,
     0
-  ),(
+  ),
+  (
     4,
     8,
     "Policy Analyst",
@@ -604,7 +610,8 @@ values
     1,
     20,
     0
-  ),(
+  ),
+  (
     5,
     9,
     "Cloud Engineer",
@@ -620,7 +627,8 @@ values
     4,
     2,
     0
-  ),(
+  ),
+  (
     5,
     10,
     "Front-end Developer",
@@ -641,7 +649,7 @@ values
     11,
     "Policy Analyst",
     "patricia.2020@scis.smu.edu.sg",
-    "Meh, nothing good to say. Did not learn much! :(",
+    "Meh, nothing good to say. Did not learn much",
     2,
     2,
     2,
@@ -652,7 +660,8 @@ values
     12,
     25,
     0
-  ),(
+  ),
+  (
     6,
     12,
     "HR intern",
@@ -663,12 +672,13 @@ values
     1,
     1,
     1,
-    1
+    1,
     1,
     120000,
     0,
     0
-  ),(
+  ),
+  (
     7,
     13,
     "Policy Analyst",
