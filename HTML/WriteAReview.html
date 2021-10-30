@@ -22,6 +22,20 @@
 </head>
 
 <body onload="showCriteria()" class="onPopup">
+    <!-- copy this part -->
+    <div class ="navbarTemplate">
+        <div id="smallNavBar">
+            <navigation-bar-small-login v-if="isLogined()"></navigation-bar-small-login>
+            <navigation-bar-small-logout v-else></navigation-bar-small-logout>
+        </div>
+        
+        <div id="bigNavBar">
+            <navigation-bar-big-login v-if="isLogined()"></navigation-bar-big-login>
+            <navigation-bar-big-logout v-else></navigation-bar-big-logout>
+        </div>
+    </div>
+    <!-- copy this part -->
+    
     <h1 class="pageTitle mt-5">Write a Company Review</h1>
 
     <div class="container">

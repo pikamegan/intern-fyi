@@ -396,9 +396,9 @@ navigationBar.component('navigation-bar-small-logout', {
         </div>
         </div>
         <div class="collapse navbar-collapse text-center" id="navbarCollapse">
-        <a href="../HTML/signup.html">Register</a><br>
-        <a href="../HTML/lgin.html">Login</a><br>
-        <a href="../HTML/WriteAReview.html">Write a Review &#9998;</a><br>
+        <a href="./signup.html">Register</a><br>
+        <a href="./login.html">Login</a><br>
+        <a href="./WriteAReview.html">Write a Review &#9998;</a><br>
     </div>
     </nav>
     <!-- end of small navigation bar -->`
@@ -520,7 +520,7 @@ const footer = Vue.createApp({
     methods: {
         goHome(url) {
             console.log('%c went inside! ', 'background: #222; color: #bada55',
-                        'into function');
+                'into function');
             window.location = url
         }
     },
@@ -532,7 +532,7 @@ footer.component('intern-footer', {
         }
     },
     methods: {
-        
+
     },
     props: ['home', 'abt', 'career', 'help', 'feedback'], // only lower case
     template: `

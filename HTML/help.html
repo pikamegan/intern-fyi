@@ -22,6 +22,19 @@
 </head>
 
 <body>
+    <!-- copy this part -->
+    <div class ="navbarTemplate">
+        <div id="smallNavBar">
+            <navigation-bar-small-login v-if="isLogined()"></navigation-bar-small-login>
+            <navigation-bar-small-logout v-else></navigation-bar-small-logout>
+        </div>
+        
+        <div id="bigNavBar">
+            <navigation-bar-big-login v-if="isLogined()"></navigation-bar-big-login>
+            <navigation-bar-big-logout v-else></navigation-bar-big-logout>
+        </div>
+    </div>
+    <!-- copy this part -->
     <div class="p-5 mb-4" style="background-color: #EAF5FF;">
         <div class="container-fluid py-5">
             <div class="row">
