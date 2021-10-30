@@ -7,7 +7,7 @@ class ConnectionManager
         $servername = 'localhost';
         $username = 'root';
         $password = '';
-        $dbname = '';
+        $dbname = 'wad2g5t2intern';
         $port = '3309';
 
         // Create connection
@@ -29,14 +29,9 @@ class ConnectionManager
 
 }
 
-?>
 
 
-
-
-<?php
-
-//works for tim
+// works for tim
 
 // class ConnectionManager
 // {
@@ -46,4 +41,12 @@ class ConnectionManager
 //         return new PDO($dsn, "root", "");
 //     }
 // }
-// ?>
+
+?>
+
+
+
+
+
+
+
