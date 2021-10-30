@@ -1126,6 +1126,22 @@ values
     12,
     2,
     0
+  ),(
+    20,
+    NULL,
+    "Quality Assurance Analyst",
+    "megan.2020@scis.smu.edu.sg",
+    "The people here were very nice to me in ever way!.",
+    5,
+    5,
+    4,
+    5,
+    4,
+    4,
+    4,
+    12,
+    2,
+    0
   );
 
 --

@@ -2,43 +2,44 @@
 
 require_once 'common.php';
 
-class reviewDAO {
+class reviewDAO
+{
 
-    public function getAll() {
+    public function getAll()
+    {
         // STEP 1
         $connMgr = new ConnectionManager();
         $conn = $connMgr->connect();
 
         // STEP 2
         $sql = "SELECT *
-                FROM review"; // SELECT * FROM post; // This will also work
+                FROM review"; // SELECT * FROM review; // This will also work
         $stmt = $conn->prepare($sql);
-
 
         // STEP 3
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
         // STEP 4
-        $posts = []; // Indexed Array of Post objects
-        while( $row = $stmt->fetch() ) {
+        $reviews = []; // Indexed Array of Review objects
+        while ($row = $stmt->fetch()) {
             $reviews[] =
-                new review(
-                    $row['companyID'],
-                    $row['reviewID'],
-                    $row['jobTitle'],
-                    $row['schoolEmail'],
-                    $row['reviewDescription'],
-                    $row['overallRating'],
-                    $row['criteria1Rating'],
-                    $row['criteria2Rating'],
-                    $row['criteria3Rating'],
-                    $row['criteria4Rating'],
-                    $row['criteria5Rating'],
-                    $row['criteria6Rating'],
-                    $row['totalUpvotesNo'],
-                    $row['totalDownvotesNo'],
-                    $row['checkSFW']);
+            new review(
+                $row['companyID'],
+                $row['reviewID'],
+                $row['jobTitle'],
+                $row['schoolEmail'],
+                $row['reviewDescription'],
+                $row['overallRating'],
+                $row['criteria1Rating'],
+                $row['criteria2Rating'],
+                $row['criteria3Rating'],
+                $row['criteria4Rating'],
+                $row['criteria5Rating'],
+                $row['criteria6Rating'],
+                $row['totalUpvotesNo'],
+                $row['totalDownvotesNo'],
+                $row['checkSFW']);
         }
 
         // STEP 5
@@ -49,7 +50,8 @@ class reviewDAO {
         return $reviews;
     }
 
-    public function getCompanyReviewsById($companyid) {
+    public function getCompanyReviewsById($companyid)
+    {
         // STEP 1
         $connMgr = new ConnectionManager();
         $conn = $connMgr->connect();
@@ -58,26 +60,35 @@ class reviewDAO {
         $sql = "SELECT
                     *
                 FROM review
-                WHERE 
-                companyid = :companyid";
+                WHERE
+                companyID = :companyid";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':companyid', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':companyid', $companyid, PDO::PARAM_INT);
 
         // STEP 3
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
         // STEP 4
-        $post_object = null;
-        if( $row = $stmt->fetch() ) {
-            $post_object = 
-                new Post(
-                    $row['id'],
-                    $row['create_timestamp'],
-                    $row['update_timestamp'],
-                    $row['subject'],
-                    $row['entry'],
-                    $row['mood']);
+        $review_object = null;
+        if ($row = $stmt->fetch()) {
+            $review_object =
+            new review(
+                $row['companyID'],
+                $row['reviewID'],
+                $row['jobTitle'],
+                $row['schoolEmail'],
+                $row['reviewDescription'],
+                $row['overallRating'],
+                $row['criteria1Rating'],
+                $row['criteria2Rating'],
+                $row['criteria3Rating'],
+                $row['criteria4Rating'],
+                $row['criteria5Rating'],
+                $row['criteria6Rating'],
+                $row['totalUpvotesNo'],
+                $row['totalDownvotesNo'],
+                $row['checkSFW']);
         }
 
         // STEP 5
@@ -85,96 +96,70 @@ class reviewDAO {
         $conn = null;
 
         // STEP 6
-        return $post_object;
+        return $review_object;
     }
 
-    public function update($id, $subject, $entry, $mood) {
 
-        // STEP 1
+    public function addreview($companyid, $jobtitle, $schoolemail, $reviewdesc, $overallrating,$criteria1,$criteria2, $criteria3, $criteria4, $criteria5, $criteria6)
+    {
+
+    
         $connMgr = new ConnectionManager();
         $conn = $connMgr->connect();
 
         // STEP 2
-        $sql = "UPDATE
-                    post
-                SET
-                    update_timestamp = CURRENT_TIMESTAMP,
-                    subject = :subject,
-                    entry = :entry,
-                    mood = :mood
-                WHERE 
-                    id = :id";
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->bindParam(':subject', $subject, PDO::PARAM_STR);
-        $stmt->bindParam(':entry', $entry, PDO::PARAM_STR);
-        $stmt->bindParam(':mood', $mood, PDO::PARAM_STR);
-
-        //STEP 3
-        $status = $stmt->execute();
-        
-        // STEP 4
-        $stmt = null;
-        $conn = null;
-
-        // STEP 5
-        return $status;
-    }
-
-    public function delete($id) {
-        // STEP 1
-        $connMgr = new ConnectionManager();
-        $conn = $connMgr->connect();
-
-        // STEP 2
-        $sql = "DELETE FROM
-                    post
-                WHERE 
-                    id = :id";
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-
-        //STEP 3
-        $status = $stmt->execute();
-        
-        // STEP 4
-        $stmt = null;
-        $conn = null;
-
-        // STEP 5
-        return $status;
-    }
-
-    public function add($subject, $entry, $mood) {
-        // STEP 1
-        $connMgr = new ConnectionManager();
-        $conn = $connMgr->connect();
-
-        // STEP 2
-        $sql = "INSERT INTO post
+        $sql = "INSERT INTO review
                     (
-                        create_timestamp, 
-                        update_timestamp, 
-                        subject, 
-                        entry, 
-                        mood
+                        companyID,
+                        reviewID,
+                        jobTitle,
+                        schoolEmail,
+                        reviewDescription,
+                        overallRating,
+                        criteria1Rating,
+                        criteria2Rating,
+                        criteria3Rating,
+                        criteria4Rating,
+                        criteria5Rating,
+                        criteria6Rating,
+                        totalUpvotesNo,
+                        totalDownvotesNo,
+                        checkSFW
                     )
                 VALUES
                     (
-                        CURRENT_TIMESTAMP,
-                        CURRENT_TIMESTAMP,
-                        :subject,
-                        :entry,
-                        :mood
+                        :companyid,
+                        NULL,
+                        :jobtitle,
+                        :schoolemail,
+                        :reviewdesc,
+                        :overallrating,
+                        :criteria1,
+                        :criteria2,
+                        :criteria3,
+                        :criteria4,
+                        :criteria5,
+                        :criteria6,
+                        0,
+                        0,
+                        0
                     )";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':subject', $subject, PDO::PARAM_STR);
-        $stmt->bindParam(':entry', $entry, PDO::PARAM_STR);
-        $stmt->bindParam(':mood', $mood, PDO::PARAM_STR);
+        $stmt->bindParam(':companyid', $companyid, PDO::PARAM_STR);
+        $stmt->bindParam(':jobtitle', $jobtitle, PDO::PARAM_STR);
+        $stmt->bindParam(':schoolemail', $schoolemail, PDO::PARAM_STR);
+        $stmt->bindParam(':reviewdesc', $reviewdesc, PDO::PARAM_STR);
+        $stmt->bindParam(':overallrating', $overallrating, PDO::PARAM_STR);
+        $stmt->bindParam(':criteria1', $criteria1, PDO::PARAM_STR);
+        $stmt->bindParam(':criteria2', $criteria2, PDO::PARAM_STR);
+        $stmt->bindParam(':criteria3', $criteria3, PDO::PARAM_STR);
+        $stmt->bindParam(':criteria4', $criteria4, PDO::PARAM_STR);
+        $stmt->bindParam(':criteria5', $criteria5, PDO::PARAM_STR);
+        $stmt->bindParam(':criteria6', $criteria6, PDO::PARAM_STR);
 
         //STEP 3
         $status = $stmt->execute();
-        
+
         // STEP 4
         $stmt = null;
         $conn = null;
@@ -183,5 +168,3 @@ class reviewDAO {
         return $status;
     }
 }
-
-?>
