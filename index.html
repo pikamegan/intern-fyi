@@ -69,19 +69,27 @@
 
 <body>
 
-    <!-- copy this part -->
-    <div class="navbarTemplate">
-        <div id="bigNavBar">
-            <navigation-bar-small-login v-if="isLogined()"></navigation-bar-small-login>
-            <navigation-bar-small-logout v-else></navigation-bar-small-logout>
+    <!-- navbar -->
+
+    <div id="smallNavBar">
+        <div v-if="isLogined()">
+            <!-- <navigation-bar-small-login v-if="isLogined()"></navigation-bar-small-login> -->
+        </div>
+        <div v-else>
+            <!-- <navigation-bar-small-logout v-else></navigation-bar-small-logout> -->
         </div>
 
-        <div id="smallNavBar">
-            <navigation-bar-big-login v-if="isLogined()"></navigation-bar-big-login>
-            <navigation-bar-big-logout v-else></navigation-bar-big-logout>
-        </div>
+
     </div>
-    <!-- copy this part -->
+
+    <div id="bigNavBar">
+        <navigation-bar-big-login v-if="isLogined()"></navigation-bar-big-login>
+        <navigation-bar-big-logout v-else></navigation-bar-big-logout>
+    </div>
+
+
+
+    <!-- end navbar -->
 
     <div class="container">
 
@@ -330,7 +338,8 @@
     <!-- <company-card :companyinfo="homeCompanyCardsRelavantInfo(rand1company())"></company-card> -->
 
     <div class="footerComp" style="margin-top: 50px;">
-        <intern-footer home = "" abt = "./HTML/about.html" career="./HTML/career.html" help= "./HTML/help.html"  feedback= "./HTML/feedback.html" ></intern-footer>
+        <intern-footer home="" abt="./HTML/about.html" career="./HTML/career.html" help="./HTML/help.html"
+            feedback="./HTML/feedback.html"></intern-footer>
     </div>
 
     <!-- company cards -->
