@@ -13,7 +13,7 @@ function gotoSignInPage() {
 
 
 function gotoHomePage() {
-    window.location = "../index.html"
+    window.location = "../HTML/home.html"
 }
 
 
@@ -341,7 +341,7 @@ navigationBar.component('navigation-bar-small-login', {
     <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
         <div class="container-fluid d-inline-block">
         <div class="input-group my-2">
-            <a class="navbar-brand" href="../index.html">
+            <a class="navbar-brand" href="../HTML/home.html">
             <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
         </a>
         <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
@@ -381,7 +381,7 @@ navigationBar.component('navigation-bar-small-logout', {
         <div class="container-fluid d-inline-block">
 
         <div class="input-group my-2">
-            <a class="navbar-brand" href="../index.html">
+            <a class="navbar-brand" href="../HTML/home.html">
             <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
             </a>
             <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
@@ -417,7 +417,7 @@ navigationBar.component('navigation-bar-big-login', {
     },
     template: `<nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">
+        <a class="navbar-brand" href="../HTML/home.html">
         <img src="../IMG/Website-Logo.svg" style="height:40px;">
         </a>
 
@@ -461,7 +461,7 @@ navigationBar.component('navigation-bar-big-logout', {
 
     <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">
+        <a class="navbar-brand" href="../HTML/home.html">
         <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
         </a>
 
