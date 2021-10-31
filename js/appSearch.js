@@ -1,6 +1,7 @@
 //map functions start==========================
 var userLat = -34.397;
 var userLong = 150.644;
+const apiKey = 'AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA';
 function showYourLocation() {
     let zipCode = document.getElementById("userZipCode").value
     console.log(zipCode);
@@ -180,7 +181,16 @@ appSearch.component('company-row', {
             maxScrollHeight: '', //to be done
             isSelected: false,
             companyPage: encodeURI("./company.html?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
-            writeReviewPage: encodeURI("./WriteAReview.html?cid=" + this.company.companyID + "&cname=" + this.company.companyName)
+            writeReviewPage: encodeURI("./WriteAReview.html?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
+
+            //for map related stuff
+            locationNeighborhood: '',
+            country: '',
+            userLng: '',
+            userLat: '',
+            distance: '',
+            postalCode: ''
+
         };
     },
     props: ['company', 'selectedCompanyID'],
@@ -221,8 +231,79 @@ appSearch.component('company-row', {
         //     }
         // }
 
+        //for map related stuff
+        getLocationAndDistance() {
+            let addr = this.company.companyName
+            if (addr != null && addr.length > 0) {
+                let geoUrl = encodeURI(
+                    'https://maps.googleapis.com/maps/api/geocode/json?address=' +
+                    addr + "HQ Singapore" +
+                    '&key=' +
+                    apiKey);
+                axios.get(geoUrl)
+                    .then(response => {
+                        for (obj of response.data.results[0].address_components) {
+                            if (obj.types[0] == 'neighborhood') {
+                                this.locationNeighborhood = obj.short_name
+                            }
+                            if (obj.types[0] == 'country') {
+                                this.country = obj.short_name
+                            }
+                            if (obj.types[0] == 'postal_code') {
+                                this.postalCode = obj.short_name
+                            }
+                        }
+                        if (this.country != 'SG') {
+                            this.locationNeighborhood = ''
+                            this.postalCode = ''
+                        } else {
+                            lat = response.data.results[0].geometry.location.lat;
+                            lng = response.data.results[0].geometry.location.lng;
+                            this.distance = this.getDistance(lng, lat, this.userLng, this.userLat)
+                        }
 
+                        // this.locationAddress = response.data.results[0].formatted_address;
+                        // this.displayall = JSON.stringify(response.data)
+                    })
+                    .catch(error => {
+                        // process error object
+                        // console.log('faied');
+                    });
+            }
+        },
+        getDistance(lng1, lat1, lng2, lat2) {
+            // distance approximate source
+            // https://www.thoughtco.com/degree-of-latitude-and-longitude-distance-4070616
+            // distance at equator: 
+            // Latitude: 1 deg = 110.567 km
+            // Longitude: 1 deg = 111.321 km
+            if (lng1.length != 0 && lat1.length != 0 && lng2.length != 0 && lat2.length != 0) {
+                latDiff = Math.abs(lat1 - lat2)
+                lngDiff = Math.abs(lng1 - lng2)
+                horizontalDist = latDiff * 110.567
+                verticalDist = lngDiff * 111.321
+                straightLineDist = Math.sqrt(horizontalDist ** 2 + verticalDist ** 2)
+                return String(parseFloat(straightLineDist.toFixed(2))) + ' km'
+            } else {
+                return ''
+            }
+        },
+        getUserLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    this.userLng = position.coords.longitude
+                    this.userLat = position.coords.latitude
+                });
+            }
+        }
     },
+
+    created() {
+        this.getUserLocation()
+        this.getLocationAndDistance()
+    },
+
+
     template: `
 <div class="row">
     <div class="collapsibleSearch shadow" @click='select' @select='changeState'>
@@ -239,11 +320,11 @@ appSearch.component('company-row', {
             </div>
             <div class="row justify-content-start">
                 <div class="col-xl-3 col-lg-4">
-                    company.location
+                    {{locationNeighborhood}}
                 </div>
                 <div class="col">
                     <img src="../img/mapMarkIcon_black.svg" style="height: 20px; width: 20px;">
-                    company.distance
+                    {{distance}}
                 </div>
             </div>
             <div class="row justify-content-start">
