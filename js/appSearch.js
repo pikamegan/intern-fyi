@@ -237,7 +237,7 @@ appSearch.component('company-row', {
             if (addr != null && addr.length > 0) {
                 let geoUrl = encodeURI(
                     'https://maps.googleapis.com/maps/api/geocode/json?address=' +
-                    addr + "HQ Singapore" +
+                    addr + " HQ Singapore" +
                     '&key=' +
                     apiKey);
                 axios.get(geoUrl)
@@ -283,7 +283,7 @@ appSearch.component('company-row', {
                 horizontalDist = latDiff * 110.567
                 verticalDist = lngDiff * 111.321
                 straightLineDist = Math.sqrt(horizontalDist ** 2 + verticalDist ** 2)
-                return String(parseFloat(straightLineDist.toFixed(2))) + ' km'
+                return String(parseFloat(straightLineDist.toFixed(2))) + ' km away from you'
             } else {
                 return ''
             }
