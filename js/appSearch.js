@@ -323,7 +323,7 @@ appSearch.component('company-row', {
                     {{locationNeighborhood}}
                 </div>
                 <div class="col">
-                    <img src="../img/mapMarkIcon_black.svg" style="height: 20px; width: 20px;">
+                    <img v-if="distance.length > 0" src="../img/mapMarkIcon_black.svg" style="height: 20px; width: 20px;">
                     {{distance}}
                 </div>
             </div>
