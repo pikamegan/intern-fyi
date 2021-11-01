@@ -59,7 +59,7 @@
         <div class="p-sm-5 mb-4 bg-light shadow-lg feedbackBg">
             <div class="container-fluid px-sm-5 py-5">
 
-                <form name="review_form" action="add.php" method="POST" id="reviewForm" onsubmit="return validate_form()">
+                <form name="review_form" action="../processDbRequest/model/add.php" method="POST" id="reviewForm" role="form" class="needs-validation" data-toggle="validator" onsubmit="return validate_form()">
                     <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 40px;">
                         <div class="bd-highlight">
                             <img src="../IMG/deletebutton.svg" onclick="resetDraft('clearReview')" alt="Clear draft"
@@ -68,23 +68,49 @@
                     </div>
                     <div class="row justify-content-start mb-5">
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-3" id="appHome">
+                             <!-- hidden fields -->
+                             <input type="hidden" id="hiddenCompanyID" name="companyid" value="1">
+                             <input type="hidden" id="hiddenEmail" name="schoolemail" value="patricia.2020@scis.smu.edu.sg">
+
                             <label for="company" class="form-label">Company<span style="color:red">*</span></label>
-                            <select id="company" name="company" class="form-select pointer" aria-describedby="company">
-                                <!-- hidden fields -->
-                            <input type="hidden" id="hiddenCompanyID" name="companyid" value="1">
-                            <input type="hidden" id="hiddenEmail" name="schoolemail" value="patricia.2020@scis.smu.edu.sg">
+                            <select id="company" name="company" class="form-select pointer" aria-describedby="company" required>
                                 <!-- filled in with js -->
                             </select>
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                             <label for="role" class="form-label">Role/Title<span style="color:red">*</span></label>
-                            <input type="role" name="jobtitle" class="form-control" id="role">
+                            <input type="role" name="jobtitle" class="form-control" id="role" required>
                         </div>
                     </div>
-                    <div class="row mb-5 justify-content-start">
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                            <label for="dept" class="form-label">Department</label>
-                            <input type="dept" class="form-control" id="dept">
+
+                    <div class="card text-center mb-5">
+                        <div class="card-header bg-info">
+                            Overall Rating
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text">How would you rate your experience at this company overall?</p>
+                            <div class="row mb-1 text-center">
+
+                                <div class="p-2 bd-highlight d-flex flex-grow-1 justify-content-around">
+
+                                    <img src="../IMG/1bad.svg" alt="sad face"
+                                        style="width: 40px; height: 40px;">
+                                    <label class="inlineLabel"><input type="radio" name="overallrating"
+                                            class="inlineRadio pointer" id="1" value="1" required>1</label>
+                                    <label class="inlineLabel"><input type="radio" name="overallrating"
+                                            class="inlineRadio pointer" id="2" value="2" required>2</label>
+                                    <label class="inlineLabel"><input type="radio" name="overallrating"
+                                            class="inlineRadio pointer" id="3" value="3" required>3</label>
+                                    <label class="inlineLabel"><input type="radio" name="overallrating"
+                                            class="inlineRadio pointer" id="4" value="4" required>4</label>
+                                    <label class="inlineLabel"><input type="radio" name="overallrating"
+                                            class="inlineRadio pointer" id="5" value="5" required>5</label>
+                                    <img src="../IMG/5happy.svg" alt="happy face"
+                                        style="width: 40px; height: 40px;">
+
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -112,15 +138,15 @@
                                                 <img src="../IMG/1bad.svg" alt="sad face"
                                                     style="width: 40px; height: 40px;">
                                                 <label class="inlineLabel"><input type="radio" name="criteria1"
-                                                        class="inlineRadio pointer" id="1" value="1" />1</label>
+                                                        class="inlineRadio pointer" id="1" value="1" required>1</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria1"
-                                                        class="inlineRadio pointer" id="2" value="2" />2</label>
+                                                        class="inlineRadio pointer" id="2" value="2" required>2</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria1"
-                                                        class="inlineRadio pointer" id="3" value="3" />3</label>
+                                                        class="inlineRadio pointer" id="3" value="3" required>3</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria1"
-                                                        class="inlineRadio pointer" id="4" value="4" />4</label>
+                                                        class="inlineRadio pointer" id="4" value="4" required>4</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria1"
-                                                        class="inlineRadio pointer" id="5" value="5" />5</label>
+                                                        class="inlineRadio pointer" id="5" value="5" required>5</label>
                                                 <img src="../IMG/5happy.svg" alt="happy face"
                                                     style="width: 40px; height: 40px;">
 
@@ -154,15 +180,15 @@
                                                 <img src="../IMG/1bad.svg" alt="sad face"
                                                     style="width: 40px; height: 40px;">
                                                 <label class="inlineLabel"><input type="radio" name="criteria2"
-                                                        class="inlineRadio pointer" id="1" value="1" />1</label>
+                                                        class="inlineRadio pointer" id="1" value="1" required>1</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria2"
-                                                        class="inlineRadio pointer" id="2" value="2" />2</label>
+                                                        class="inlineRadio pointer" id="2" value="2" required>2</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria2"
-                                                        class="inlineRadio pointer" id="3" value="3" />3</label>
+                                                        class="inlineRadio pointer" id="3" value="3" required/>3</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria2"
-                                                        class="inlineRadio pointer" id="4" value="4" />4</label>
+                                                        class="inlineRadio pointer" id="4" value="4" required>4</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria2"
-                                                        class="inlineRadio pointer" id="5" value="5" />5</label>
+                                                        class="inlineRadio pointer" id="5" value="5" required>5</label>
                                                 <img src="../IMG/5happy.svg" alt="happy face"
                                                     style="width: 40px; height: 40px;">
 
@@ -196,15 +222,15 @@
                                                 <img src="../IMG/1bad.svg" alt="sad face"
                                                     style="width: 40px; height: 40px;">
                                                 <label class="inlineLabel"><input type="radio" name="criteria3"
-                                                        class="inlineRadio pointer" id="1" value="1" />1</label>
+                                                        class="inlineRadio pointer" id="1" value="1" required>1</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria3"
-                                                        class="inlineRadio pointer" id="2" value="2" />2</label>
+                                                        class="inlineRadio pointer" id="2" value="2" required>2</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria3"
-                                                        class="inlineRadio pointer" id="3" value="3" />3</label>
+                                                        class="inlineRadio pointer" id="3" value="3" required>3</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria3"
-                                                        class="inlineRadio pointer" id="4" value="4" />4</label>
+                                                        class="inlineRadio pointer" id="4" value="4" required>4</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria3"
-                                                        class="inlineRadio pointer" id="5" value="5" />5</label>
+                                                        class="inlineRadio pointer" id="5" value="5" required>5</label>
                                                 <img src="../IMG/5happy.svg" alt="happy face"
                                                     style="width: 40px; height: 40px;">
 
@@ -237,15 +263,15 @@
                                                 <img src="../IMG/1bad.svg" alt="sad face"
                                                     style="width: 40px; height: 40px;">
                                                 <label class="inlineLabel"><input type="radio" name="criteria4"
-                                                        class="inlineRadio pointer" id="1" value="1" />1</label>
+                                                        class="inlineRadio pointer" id="1" value="1" required>1</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria4"
-                                                        class="inlineRadio pointer" id="2" value="2" />2</label>
+                                                        class="inlineRadio pointer" id="2" value="2" required>2</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria4"
-                                                        class="inlineRadio pointer" id="3" value="3" />3</label>
+                                                        class="inlineRadio pointer" id="3" value="3" required>3</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria4"
-                                                        class="inlineRadio pointer" id="4" value="4" />4</label>
+                                                        class="inlineRadio pointer" id="4" value="4" required>4</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria4"
-                                                        class="inlineRadio pointer" id="5" value="5" />5</label>
+                                                        class="inlineRadio pointer" id="5" value="5" required>5</label>
                                                 <img src="../IMG/5happy.svg" alt="happy face"
                                                     style="width: 40px; height: 40px;">
 
@@ -278,15 +304,15 @@
                                                 <img src="../IMG/1bad.svg" alt="sad face"
                                                     style="width: 40px; height: 40px;">
                                                 <label class="inlineLabel"><input type="radio" name="criteria5"
-                                                        class="inlineRadio pointer" id="1" value="1" />1</label>
+                                                        class="inlineRadio pointer" id="1" value="1" required>1</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria5"
-                                                        class="inlineRadio pointer" id="2" value="2" />2</label>
+                                                        class="inlineRadio pointer" id="2" value="2" required>2</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria5"
-                                                        class="inlineRadio pointer" id="3" value="3" />3</label>
+                                                        class="inlineRadio pointer" id="3" value="3" required>3</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria5"
-                                                        class="inlineRadio pointer" id="4" value="4" />4</label>
+                                                        class="inlineRadio pointer" id="4" value="4" required>4</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria5"
-                                                        class="inlineRadio pointer" id="5" value="5" />5</label>
+                                                        class="inlineRadio pointer" id="5" value="5" required>5</label>
                                                 <img src="../IMG/5happy.svg" alt="happy face"
                                                     style="width: 40px; height: 40px;">
 
@@ -319,15 +345,15 @@
                                                 <img src="../IMG/1bad.svg" alt="sad face"
                                                     style="width: 40px; height: 40px;">
                                                 <label class="inlineLabel"><input type="radio" name="criteria6"
-                                                        class="inlineRadio pointer" id="1" value="1" />1</label>
+                                                        class="inlineRadio pointer" id="1" value="1" required>1</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria6"
-                                                        class="inlineRadio pointer" id="2" value="2" />2</label>
+                                                        class="inlineRadio pointer" id="2" value="2" required>2</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria6"
-                                                        class="inlineRadio pointer" id="3" value="3" />3</label>
+                                                        class="inlineRadio pointer" id="3" value="3" required>3</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria6"
-                                                        class="inlineRadio pointer" id="4" value="4" />4</label>
+                                                        class="inlineRadio pointer" id="4" value="4" required>4</label>
                                                 <label class="inlineLabel"><input type="radio" name="criteria6"
-                                                        class="inlineRadio pointer" id="5" value="5" />5</label>
+                                                        class="inlineRadio pointer" id="5" value="5" required>5</label>
                                                 <img src="../IMG/5happy.svg" alt="happy face"
                                                     style="width: 40px; height: 40px;">
 
@@ -341,12 +367,12 @@
                         <div class="row mt-5">
                             <div class="mb-3">
                                 <label for="comment" class="form-label">Written Review</label>
-                                <textarea name= "reviewdesc" class="form-control" aria-label="comment" style="height:300px;" placeholder="Minimum 10 characters"></textarea>
+                                <textarea name= "reviewdesc" class="form-control" aria-label="comment" style="height:300px;" placeholder="Minimum 10 characters" required></textarea>
                             </div>
                         </div>
                         <div class="row">
                             <div class="d-flex justify-content-center">
-                                <button type="button" class="btn text-white top-50 start-50 customBtn"
+                                <button type="submit" class="btn text-white top-50 start-50 customBtn"
                                     onclick="submitReview()">Submit Your Review</button>
                             </div>
                         </div>
@@ -392,7 +418,7 @@
                                 <p class="card-text">Your review has been submitted!</p>
                             </div>
                         </div>
-                        <a href="../index.html"><button type="button" class="btn successBtn mx-2 mb-1">Back to
+                        <a href="home.html"><button type="button" class="btn successBtn mx-2 mb-1">Back to
                                 Home</button></a>
                     </div>
                 </div>
@@ -412,9 +438,12 @@
     <script src="../js/actions.js"></script>
     <script>
         window.addEventListener('beforeunload', (event) => {
-            event.preventDefault()
+            if (!submitted) {
+                event.preventDefault()
             // Google Chrome requires returnValue to be set
             event.returnValue = ''
+            }
+
         })
     </script>
 </body>

@@ -100,10 +100,14 @@ function clearReview() {
     closePopup("clearReview")
 }
 
+var submitted = false
+
 function submitReview() {
     let submit = document.getElementById("submitReview")
     submit.style.display = "block"
     resetDraft("submitReview")
+    
+    submitted = true
 }
 
 function submitFeedback() {
