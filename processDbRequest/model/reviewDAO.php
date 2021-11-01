@@ -107,11 +107,13 @@ class reviewDAO
 
     
         $connMgr = new ConnectionManager();
-        $conn = $connMgr->connect();
+        $conn = $connMgr->getConnection();
 
 
         // INSERT INTO `review`(`companyID`, `reviewID`, `jobTitle`, `schoolEmail`, `reviewDescription`, `overallRating`, `criteria1Rating`, `criteria2Rating`, `criteria3Rating`, `criteria4Rating`, `criteria5Rating`, `criteria6Rating`, `totalUpvotesNo`, `totalDownvotesNo`, `checkSFW`, `postDateTime`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10],[value-11],[value-12],[value-13],[value-14],[value-15],[value-16])
 
+        // $sql = "INSERT INTO `review`(`duedate`, `description`, `status`, `type`) VALUES  (:duedate, :description, :status, :type)";
+        
         // STEP 2
         $sql = "INSERT INTO review
                     (
