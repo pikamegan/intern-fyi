@@ -109,6 +109,9 @@ class reviewDAO
         $connMgr = new ConnectionManager();
         $conn = $connMgr->connect();
 
+
+        // INSERT INTO `review`(`companyID`, `reviewID`, `jobTitle`, `schoolEmail`, `reviewDescription`, `overallRating`, `criteria1Rating`, `criteria2Rating`, `criteria3Rating`, `criteria4Rating`, `criteria5Rating`, `criteria6Rating`, `totalUpvotesNo`, `totalDownvotesNo`, `checkSFW`, `postDateTime`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10],[value-11],[value-12],[value-13],[value-14],[value-15],[value-16])
+
         // STEP 2
         $sql = "INSERT INTO review
                     (
@@ -153,13 +156,13 @@ class reviewDAO
         $stmt->bindParam(':jobtitle', $jobtitle, PDO::PARAM_STR);
         $stmt->bindParam(':schoolemail', $schoolemail, PDO::PARAM_STR);
         $stmt->bindParam(':reviewdesc', $reviewdesc, PDO::PARAM_STR);
-        $stmt->bindParam(':overallrating', $overallrating, PDO::PARAM_STR);
-        $stmt->bindParam(':criteria1', $criteria1, PDO::PARAM_STR);
-        $stmt->bindParam(':criteria2', $criteria2, PDO::PARAM_STR);
-        $stmt->bindParam(':criteria3', $criteria3, PDO::PARAM_STR);
-        $stmt->bindParam(':criteria4', $criteria4, PDO::PARAM_STR);
-        $stmt->bindParam(':criteria5', $criteria5, PDO::PARAM_STR);
-        $stmt->bindParam(':criteria6', $criteria6, PDO::PARAM_STR);
+        $stmt->bindParam(':overallrating', $overallrating, PDO::PARAM_INT);
+        $stmt->bindParam(':criteria1', $criteria1, PDO::PARAM_INT);
+        $stmt->bindParam(':criteria2', $criteria2, PDO::PARAM_INT);
+        $stmt->bindParam(':criteria3', $criteria3, PDO::PARAM_INT);
+        $stmt->bindParam(':criteria4', $criteria4, PDO::PARAM_INT);
+        $stmt->bindParam(':criteria5', $criteria5, PDO::PARAM_INT);
+        $stmt->bindParam(':criteria6', $criteria6, PDO::PARAM_INT);
 
         //STEP 3
         $status = $stmt->execute();

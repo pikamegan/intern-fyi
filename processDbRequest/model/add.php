@@ -32,6 +32,7 @@ if ($status) {
     echo "Click <a href='display.php'>here</a> to return to Main Page";
 } else {
     echo "<h1>Insertion was NOT successful</h1>";
+
 }
 ?>
 </body>
