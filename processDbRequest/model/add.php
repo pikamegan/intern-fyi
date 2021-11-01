@@ -1,6 +1,7 @@
 <?php
 
 require_once 'common.php';
+require_once "./reviewDAO.php";
 
 $status = false;
 //var_dump($_POST);
@@ -34,6 +35,13 @@ if ($status) {
     echo "<h1>Insertion was NOT successful</h1>";
 
 }
+
+
+
+// header("Location: Go to home html");
+// exit;
+
+
 ?>
 </body>
 </html>
