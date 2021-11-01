@@ -469,3 +469,5 @@ div.cardBold {
     top: 65%;
     z-index: 1;
 }
+
+#more {display: none;}

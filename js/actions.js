@@ -40,13 +40,13 @@ function validate_form() {
     //var s = document.forms['entry_form']['my_subject'].value; // This works if input field has ID attribute
     //var s = document.entry_form.subject.value;                 // This works if input field has NAME attribute
     console.log(writtenreview)
-    if( writtenreview.length < 11 ) {
+    if (writtenreview.length < 11) {
         alert("Written Review must be contain at least 10 characters");
         var is_valid = false;
         form.addEventListener('submit', function (event) {
             if (!is_valid) {
-              event.preventDefault()
-              event.stopPropagation()
+                event.preventDefault()
+                event.stopPropagation()
             }
         })
     }
@@ -126,7 +126,7 @@ function submitReview() {
     let submit = document.getElementById("submitReview")
     submit.style.display = "block"
     resetDraft("submitReview")
-    
+
     submitted = true
 }
 
