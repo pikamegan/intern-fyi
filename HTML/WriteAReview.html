@@ -18,22 +18,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script language='JavaScript' type='text/javascript'>
-        function validate_form() {
 
-            // There are 3 ways to access a Form Input Field
-            var writtenreview = document.forms['entry_form'].reviewdesc.value;     // This works if input field has NAME attribute
-            //var s = document.forms['entry_form']['my_subject'].value; // This works if input field has ID attribute
-            //var s = document.entry_form.subject.value;                 // This works if input field has NAME attribute
-
-            if( writtenreview.length < 11 ) {
-                alert("Written Review must be contain at least 10 characters");
-                return false;
-
-                // megan write more form validations here!!!!!!!!!!!!!!!!!!!!!!!
-            }
-        }
-    </script>
     <title>Write a Company Review</title>
 </head>
 
@@ -59,7 +44,7 @@
         <div class="p-sm-5 mb-4 bg-light shadow-lg feedbackBg">
             <div class="container-fluid px-sm-5 py-5">
 
-                <form name="review_form" action="../processDbRequest/model/add.php" method="POST" id="reviewForm" role="form" class="needs-validation" data-toggle="validator" onsubmit="return validate_form()">
+                <form name="review_form" action="" method="POST" id="reviewForm" role="form" class="needs-validation" data-toggle="validator" onsubmit="return validate_form()">
                     <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 40px;">
                         <div class="bd-highlight">
                             <img src="../IMG/deletebutton.svg" onclick="resetDraft('clearReview')" alt="Clear draft"
@@ -372,7 +357,7 @@
                         </div>
                         <div class="row">
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn text-white top-50 start-50 customBtn"
+                                <button class="btn text-white top-50 start-50 customBtn"
                                     onclick="submitReview()">Submit Your Review</button>
                             </div>
                         </div>
