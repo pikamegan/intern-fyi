@@ -2,7 +2,10 @@ const app = Vue.createApp({
     data() {
         return {
             allCompanies: null,
-            errorMessage: null
+            errorMessage: null,
+            theCompanyDict: {},
+            selectedCompany: "",
+            theCompanyId: this.theCompanyDict[this.selectedCompany]
         }
     },
     methods: {
@@ -17,6 +20,7 @@ const app = Vue.createApp({
             })
                 .then(response => {
                     this.allCompanies = response.data;
+                    this.createCompanyDictionary(response.data);
                 })
                 .catch(error => {
                     this.errorMessage = error.message;
@@ -29,6 +33,18 @@ const app = Vue.createApp({
                 if (arr.indexOf(candidateInt) === -1) arr.push(candidateInt);
             }
             return arr;
+        },
+        createCompanyDictionary(data) {
+            // window.console.log(this.allCompanies);
+            let companyDict = {};
+            for (const company of data) {
+
+                let companyNameArray = company.companyName.split(" ")
+                // console.log(company.companyID);
+                // console.log(company.companyName);
+                companyDict[companyNameArray[0]] = company.companyID;
+            }
+            this.theCompanyDict = companyDict;
         },
         homeCompanyCardsRelavantInfo(company) {
             if (company != null) {
@@ -54,6 +70,7 @@ const app = Vue.createApp({
         // }
 
     },
+
     created() {
         this.getAllCompanies();
     },
@@ -77,7 +94,9 @@ const app = Vue.createApp({
                 }
                 return rand4companies;
             }
-        }
+        },
+
+
 
 
     }
@@ -110,4 +129,4 @@ app.component('company-card', {
         </div>`
 })
 
-const vm = app.mount('#appHome');
+const vm = app.mount('.appHome');

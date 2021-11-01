@@ -39,7 +39,7 @@
     
     <h1 class="pageTitle mt-5">Write a Company Review</h1>
 
-    <div class="container">
+    <div class="container appHome">
 
         <div class="p-sm-5 mb-4 bg-light shadow-lg feedbackBg">
             <div class="container-fluid px-sm-5 py-5">
@@ -52,15 +52,21 @@
                         </div>
                     </div>
                     <div class="row justify-content-start mb-5">
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-3" id="appHome">
-                             <!-- hidden fields -->
-                             <input type="hidden" id="hiddenCompanyID" name="companyid" value="1">
-                             <input type="hidden" id="hiddenEmail" name="schoolemail" value="patricia.2020@scis.smu.edu.sg">
-
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-3">
+                            
                             <label for="company" class="form-label">Company<span style="color:red">*</span></label>
-                            <select id="company" name="company" class="form-select pointer" aria-describedby="company" required>
+                            <select id="company" name="company" v-model="selectedCompany" class="form-select pointer" aria-describedby="company" required>
                                 <!-- filled in with js -->
                             </select>
+                            {{selectedCompany}}
+                            <br>
+                            {{theCompanyDict}}
+                            <br>
+                            
+                            {{theCompanyId}}
+                            <!-- hidden fields -->
+                            <input type="hidden" id="hiddenCompanyID" name="companyid" :value = "theCompanyId">
+                            <input type="hidden" id="hiddenEmail" name="schoolemail" value="patricia.2020@scis.smu.edu.sg">
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                             <label for="role" class="form-label">Role/Title<span style="color:red">*</span></label>
@@ -432,6 +438,7 @@
 
         })
     </script>
+    <script src="../js/appHome.js"></script>
 </body>
 
 </html>
