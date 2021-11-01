@@ -78,10 +78,10 @@
                         </div>
                         <ul style="list-style: none;" class="ms-1">
 
-                            <li v-for="(value, name) in filterLocationValues">
+                            <li v-for="value in filterLocationValues">
                                 <label>
                                     <input type="checkbox" v-model="filterLocation" :value="value">
-                                    {{name}}
+                                    {{value}}
                                 </label>
                             </li>
 

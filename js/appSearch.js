@@ -56,13 +56,14 @@ const appSearch = Vue.createApp({
                 "Flat Hierarchy": "averageCriteria6"
             },
             filterLocation: [],
-            filterLocationValues: {
-                // "Nearest to you": 00,
-                "CBD": 1000,
-                "North": 2000,
-                "East": 3000,
-                "West": 4000
-            },
+            filterLocationValues: [
+                "CBD",
+                "Central",
+                "NorthEast",
+                "North",
+                "East",
+                "West"
+            ],
             filterIndustry: [],
             filterIndustryValues: [
                 "Internet",
@@ -144,6 +145,26 @@ const appSearch = Vue.createApp({
                         this.displayCompanies.push(company);
                     };
                 }
+
+                // tmpArr = [];
+                // for (index in this.displayCompanies) { // default true
+                //     company = this.displayCompanies[index];
+                //     if (company.postalCode == '' || this.filterLocation.includes(getRegion(company.postalCode))) { // make get region
+                //         tmpArr.push(company);
+                //     };
+                // }
+                // this.displayCompanies = tmpArr;
+                // if(filterClose) { // default false
+                //     tmpArr = [];
+                //     for (index in this.displayCompanies) {
+                //         company = this.displayCompanies[index];
+                //         if (company.distance < 10) { // change distance to float, str in the template
+                //             tmpArr.push(company);
+                //         };
+                //     }
+                //     this.displayCompanies = tmpArr;
+                // }
+
                 this.sortCompaniesMethod()
             }
         }
