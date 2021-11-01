@@ -39,7 +39,8 @@ class reviewDAO
                 $row['criteria6Rating'],
                 $row['totalUpvotesNo'],
                 $row['totalDownvotesNo'],
-                $row['checkSFW']);
+                $row['checkSFW'],
+                $row['postDateTime']);
         }
 
         // STEP 5
@@ -88,7 +89,8 @@ class reviewDAO
                 $row['criteria6Rating'],
                 $row['totalUpvotesNo'],
                 $row['totalDownvotesNo'],
-                $row['checkSFW']);
+                $row['checkSFW'],
+                $row['postDateTime']);
         }
 
         // STEP 5
@@ -124,7 +126,8 @@ class reviewDAO
                         criteria6Rating,
                         totalUpvotesNo,
                         totalDownvotesNo,
-                        checkSFW
+                        checkSFW,
+                        postDateTime
                     )
                 VALUES
                     (
@@ -142,7 +145,8 @@ class reviewDAO
                         :criteria6,
                         0,
                         0,
-                        0
+                        0,
+                        CURRENT_TIMESTAMP
                     )";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':companyid', $companyid, PDO::PARAM_STR);

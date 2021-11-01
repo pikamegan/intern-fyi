@@ -18,8 +18,9 @@ class review
     private $totalup;
     private $totaldown;
     private $isvulgar;
+    private $postdate;
 
-    public function __construct($companyid, $reviewid, $jobtitle, $schoolemail, $reviewdesc, $overallrating, $criteria1, $criteria2, $criteria3, $criteria4, $criteria5, $criteria6, $totalup, $totaldown, $isvulgar)
+    public function __construct($companyid, $reviewid, $jobtitle, $schoolemail, $reviewdesc, $overallrating, $criteria1, $criteria2, $criteria3, $criteria4, $criteria5, $criteria6, $totalup, $totaldown, $isvulgar, $postdate)
     {
         $this->companyid = $companyid;
         $this->reviewid = $reviewid;
@@ -36,6 +37,7 @@ class review
         $this->totalup = $totalup;
         $this->totaldown = $totaldown;
         $this->isvulgar = $isvulgar;
+        $this->postdate = $postdate;
     }
 
     public function getcompanyid()
@@ -111,6 +113,11 @@ class review
     public function  getisvulgar()
     {
         return $this->isvulgar;
+    }
+
+    public function  getpostdate()
+    {
+        return $this->postdate;
     }
 
 }
