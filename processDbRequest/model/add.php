@@ -17,6 +17,7 @@ if (isset($_POST['companyid']) && isset($_POST['jobtitle'])&& isset($_POST['scho
     $criteria4 = $_POST['criteria4'];
     $criteria5 = $_POST['criteria5'];
     $criteria6 = $_POST['criteria6'];
+    echo $criteria6;
 
     $dao = new reviewDAO();
     $status = $dao->addreview($companyid, $jobtitle, $schoolemail, $reviewdesc, $overallrating,$criteria1,$criteria2, $criteria3, $criteria4, $criteria5, $criteria6);
