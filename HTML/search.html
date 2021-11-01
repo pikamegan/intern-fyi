@@ -20,13 +20,13 @@
 </head>
 
 <body>
-     <!-- copy this part -->
-     <div class ="navbarTemplate">
+    <!-- copy this part -->
+    <div class="navbarTemplate">
         <div id="smallNavBar">
             <navigation-bar-small-login v-if="isLogined()"></navigation-bar-small-login>
             <navigation-bar-small-logout v-else></navigation-bar-small-logout>
         </div>
-        
+
         <div id="bigNavBar">
             <navigation-bar-big-login v-if="isLogined()"></navigation-bar-big-login>
             <navigation-bar-big-logout v-else></navigation-bar-big-logout>
@@ -78,14 +78,20 @@
                         </div>
                         <ul style="list-style: none;" class="ms-1">
 
-                            <li v-for="value in filterLocationValues">
+                            <li v-on:change="filterMethod">
+                                <label>
+                                    <input type="checkbox" class="me-1" v-model="isClose" :value="true">Close to me
+                                </label>
+                            </li>
+
+                            <li v-for="value in filterLocationValues" v-on:change="filterMethod">
                                 <label>
                                     <input type="checkbox" v-model="filterLocation" :value="value">
                                     {{value}}
                                 </label>
                             </li>
 
-                            {{filterLocation}}
+                            <!-- {{filterLocation}} -->
                             <li>
                                 <label class="map">
                                     <input type="checkbox" class="me-1">

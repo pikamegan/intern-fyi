@@ -72,7 +72,8 @@ const appSearch = Vue.createApp({
                 "Banking",
                 "Energy",
                 "Others"
-            ]
+            ],
+            isClose: false
         }
     },
     methods: {
@@ -135,6 +136,35 @@ const appSearch = Vue.createApp({
                     this.errorMessage = error.message;
                 });
         },
+        getRegion(postalCode) {
+            // region estimation from postal code
+            //http://danielchoy.blogspot.com/2017/03/singapore-postal-codes-and-district.html
+            //https://en.wikipedia.org/wiki/Postal_codes_in_Singapore#Postal_districts
+            if (postalCode == null || postalCode.length == 0) {
+                return "All"
+            }
+            sector = parseInt(String(postalCode).substring(0, 2))
+            if (sector >= 1 && sector <= 8) {
+                return "CBD"
+            } else if (sector >= 9 && sector <= 16) {
+                return "Central"
+            } else if (sector >= 17 && sector <= 23) {
+                return "CBD"
+            } else if (sector >= 24 && sector <= 45) {
+                return "Central"
+            } else if ((sector >= 46 && sector <= 52) || sector == 81) {
+                return "East"
+            } else if ((sector >= 53 && sector <= 57) || sector == 82 || (sector >= 79 && sector <= 80)) {
+                return "NorthEast"
+            } else if (sector >= 58 && sector <= 59) {
+                return "Central"
+            } else if (sector >= 60 && sector <= 71) {
+                return "West"
+            } else if ((sector >= 72 && sector <= 73) || (sector >= 75 && sector <= 78)) {
+                return "North"
+            }
+            return "All"
+        },
         filterMethod() {
             if (this.allCompanies.length > 0) {
                 // console.log("filter");
@@ -149,16 +179,18 @@ const appSearch = Vue.createApp({
                 // tmpArr = [];
                 // for (index in this.displayCompanies) { // default true
                 //     company = this.displayCompanies[index];
-                //     if (company.postalCode == '' || this.filterLocation.includes(getRegion(company.postalCode))) { // make get region
+                //     console.log(company)
+                //     if (company.postalCode == '' || this.filterLocation.includes(this.getRegion(company.postalCode))) { // make get region
                 //         tmpArr.push(company);
                 //     };
                 // }
+                // console.log(tmpArr)
                 // this.displayCompanies = tmpArr;
-                // if(filterClose) { // default false
+                // if(this.isClose) { // default false
                 //     tmpArr = [];
                 //     for (index in this.displayCompanies) {
                 //         company = this.displayCompanies[index];
-                //         if (company.distance < 10) { // change distance to float, str in the template
+                //         if (company.distance == '' || company.distance < 10) { // change distance to float, str in the template
                 //             tmpArr.push(company);
                 //         };
                 //     }
@@ -179,6 +211,7 @@ const appSearch = Vue.createApp({
             this.getSearchedCompanies();
         }
         this.filterIndustry = JSON.parse(JSON.stringify(this.filterIndustryValues))
+        this.filterLocation = JSON.parse(JSON.stringify(this.filterLocationValues))
     },
     computed: {
         //     companyNames() {
@@ -255,7 +288,7 @@ appSearch.component('company-row', {
         //for map related stuff
         getLocationAndDistance() {
             let addr = this.company.companyName
-            if (addr != null && addr.length > 0) {
+            if (addr != null && addr.length > 0 && typeof apiKey !== 'undefined') {
                 let geoUrl = encodeURI(
                     'https://maps.googleapis.com/maps/api/geocode/json?address=' +
                     addr + " HQ Singapore" +
@@ -304,7 +337,7 @@ appSearch.component('company-row', {
                 horizontalDist = latDiff * 110.567
                 verticalDist = lngDiff * 111.321
                 straightLineDist = Math.sqrt(horizontalDist ** 2 + verticalDist ** 2)
-                return String(parseFloat(straightLineDist.toFixed(2))) + ' km away from you'
+                return parseFloat(straightLineDist.toFixed(2))
             } else {
                 return ''
             }
@@ -343,9 +376,9 @@ appSearch.component('company-row', {
                 <div class="col-xl-3 col-lg-4">
                     {{locationNeighborhood}}
                 </div>
-                <div class="col">
-                    <img v-if="distance.length > 0" src="../img/mapMarkIcon_black.svg" style="height: 20px; width: 20px;">
-                    {{distance}}
+                <div v-if="distance.length > 0" class="col">
+                    <img src="../img/mapMarkIcon_black.svg" style="height: 20px; width: 20px;">
+                    {{distance}} km away from you
                 </div>
             </div>
             <div class="row justify-content-start">
