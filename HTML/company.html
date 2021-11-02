@@ -408,17 +408,20 @@
     </div>
 
     <script>
-        axios.get('http://localhost/GitHub/WAD-grpproject/processDbRequest/model/getReviews.php')  // <-- edit this
+        let url = 'http://localhost/GitHub/WAD-grpproject/processDbRequest/model/getReviews.php';
+        axios.get(url, {
+                    params: {
+                        companyid: 20,
+                    }
+                })// <-- edit this
             .then(response => {
                 // this gets the data, which is an array
                 this.posts = response.data
                 console.log(response.data);
             })
             .catch(error => {
-                this.posts = [{ entry: 'There was an error: ' + error.message }]
-                console.log(error);
+                console.log("There is an error");
             })
-
 
     </script>
 
