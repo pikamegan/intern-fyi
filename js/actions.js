@@ -290,7 +290,7 @@ function loadCompanyPage() {
             let writeReviewBtn = document.getElementById("writeReviewBtn")
             writeReviewBtn.href = encodeURI("./WriteAReview.html?cid=" + idStr + "&cname=" + nameStr)
 
-            getAllReviews()
+            getAllReviews(idStr)
 
         })
 
@@ -328,10 +328,14 @@ function getAllCompanies() {
 }
 
 
-function getAllReviews() {
+function getAllReviews(companyId) {
     let url = '../processDbRequest/model/getReviews.php';
-    let companyNo = "1";
-    axios.get(url)
+    let companyNo = companyId;
+    axios.get(url, {
+        params: {
+            companyNo: companyNo,
+        }
+    })
         .then(response => {
             this.posts = response.data
             console.log(response.data);
