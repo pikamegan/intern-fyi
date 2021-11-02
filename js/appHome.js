@@ -118,7 +118,7 @@ app.component('company-card', {
                         {{ companyinfo.name }}
                     </h5>
                     <div class="card-text text-center">
-                        <p class="show-read-more">{{ companyinfo.desc }}</p>
+                        {{ companyinfo.industry }}
                     </div>
                     <div class="card-text text-center">
                         {{ companyinfo.reviewNum }} Reviews
