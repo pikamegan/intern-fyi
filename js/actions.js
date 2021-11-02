@@ -328,13 +328,52 @@ function getAllReviews(companyId) {
         .then(response => {
             this.posts = response.data
 
+            let reviewStr = ``
+
             let companyReviewNum = document.getElementById("companyReviewNum")
             companyReviewNum.innerHTML += `${response.data.length} people reviewed`
 
             let totalReviewNum = document.getElementById("totalReviewNum")
             totalReviewNum.innerHTML += `(${response.data.length})`
 
+            for (post of this.posts) {
+                console.log(post)
             
+                let reviewdesc = post.reviewDescription
+                let jobTitle = post.jobTitle
+
+                let overallRating = post.overallRating
+                let criteria1 = post.criteria1
+                let criteria2 = post.criteria2
+                let criteria3 = post.criteria3
+                let criteria4 = post.criteria4
+                let criteria5 = post.criteria5
+                let criteria6 = post.criteria6
+
+                let postDate = post.postDateTime
+
+                reviewStr += `
+
+                <div class="card text-center mb-5">
+                    <div class="card-header">
+                        <p><strong>Overall Rating:  <img src="../IMG/star.svg" alt="star"> ${overallRating}</strong></p>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-start">
+                            <img src="../IMG/avatar1.svg" alt="User profile image">
+                            <strong>${jobTitle}</strong>
+                        </h5>
+                        <p class="card-text text-start ps-1">${reviewdesc}</p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        ${postDate}
+                    </div>
+                </div>
+                `
+
+                let reviewsBox = document.getElementById("reviewsBox")
+                reviewsBox.innerHTML = reviewStr
+            }
         })
         .catch(error => {
             console.log("There is an error")

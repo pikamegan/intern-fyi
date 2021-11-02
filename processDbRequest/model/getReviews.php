@@ -16,6 +16,14 @@ foreach ($post as $post) {
         $review["schoolEmail"] = $post->getschoolemail();
         $review["reviewDescription"] = $post->getreviewdesc();
         $review["overallRating"] = $post->getoverallrating();
+
+        $review["criteria1"] = $post->getcriteria1();
+        $review["criteria2"] = $post->getcriteria2();
+        $review["criteria3"] = $post->getcriteria3();
+        $review["criteria4"] = $post->getcriteria4();
+        $review["criteria5"] = $post->getcriteria5();
+        $review["criteria6"] = $post->getcriteria6();
+
         $review["postDateTime"] = $post->getpostdate();
         $reviews[] = $review;
     }
