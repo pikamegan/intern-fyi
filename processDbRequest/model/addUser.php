@@ -26,14 +26,13 @@ if (isset($_POST['fname']) && isset($_POST['lname'])  && isset($_POST['gender'])
 if ($status) {
     echo "<h1>USER Insertion was successful</h1>";
     echo "Click <a href='display.php'>here</a> to return to Main Page";
+    // header("Location: ../../HTML/login.html?success=success");
+    // exit;
 } else {
     echo "<h1>USER Insertion was NOT successful</h1>";
-
+    // header("Location: ../../HTML/login.html?success=failure");
+    // exit;
 }
-
-// header("Location: Go to home html");
-// exit;
-
 ?>
 </body>
 </html>
