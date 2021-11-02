@@ -50,9 +50,11 @@ const app = Vue.createApp({
                 relevantInfo = {
                     name: company.companyName,
                     desc: company.companyInfo.companyDescription,
+                    industry: company.companyInfo.industry,
                     reviewNum: company.companyRatings.totalNumReviews,
                     overallRating: company.companyRatings.overallRating,
-                    imgUrl: company.companyInfo.imageLink
+                    imgUrl: company.companyInfo.imageLink,
+                    companyPage: encodeURI("../HTML/company.html?cid=" + company.companyID + "&cname=" + company.companyName)
                 };
                 return relevantInfo;
             }
@@ -105,6 +107,7 @@ app.component('company-card', {
     props: ['companyinfo'],
     template:
         `<div class="col-xl-3 col-sm-6 my-3">
+        <a :href="companyinfo.companyPage" style="text-decoration: none; color:inherit">
             <div class="card mx-auto border border-white rounded-3" style="width: 250px;">
             <div class = "text-center">
             <img class="card-img-top rounded rounded-4 img-fluid" :src="companyinfo.imgUrl" alt="Card image cap" style="width: 259px;
@@ -125,6 +128,7 @@ app.component('company-card', {
                     </div>
                 </div>
             </div>
+        </a>
         </div>`
 })
 

@@ -61,7 +61,7 @@ const appSearch = Vue.createApp({
                 "North",
                 "East",
                 "West",
-                "None"
+                "Others"
             ],
             filterIndustry: [],
             filterIndustryValues: [
@@ -142,7 +142,7 @@ const appSearch = Vue.createApp({
             //http://danielchoy.blogspot.com/2017/03/singapore-postal-codes-and-district.html
             //https://en.wikipedia.org/wiki/Postal_codes_in_Singapore#Postal_districts
             if (postalCode == null || postalCode.length == 0) {
-                return "None"
+                return "Others"
             }
             sector = parseInt(String(postalCode).substring(0, 2))
             if (sector >= 1 && sector <= 8) {
@@ -164,7 +164,7 @@ const appSearch = Vue.createApp({
             } else if ((sector >= 72 && sector <= 73) || (sector >= 75 && sector <= 78)) {
                 return "North"
             }
-            return "None"
+            return "Others"
         },
 
         //for map related stuff
@@ -175,7 +175,7 @@ const appSearch = Vue.createApp({
                 country: '',
                 distance: '',
                 postalCode: '',
-                region: "None"
+                region: "Others"
             }
             if (typeof apiKey !== 'undefined') {
                 let geoUrl = encodeURI(
