@@ -1,41 +1,41 @@
 //map functions start==========================
-var userLat = -34.397;
-var userLong = 150.644;
-const apiKey = 'AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA';
-function showYourLocation() {
-    let zipCode = document.getElementById("userZipCode").value
-    console.log(zipCode);
-    const url = `https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&components=postal_code:${zipCode}`;
-    axios
-        .get(url)
-        .then((response) => {
-            // process response.data object
-            // console.log(response.data);
-            const myJSON = JSON.stringify(response.data);
-            // console.log(myJSON);
-            userLong = response.data.results[0].geometry.location.lng
-            userLat = response.data.results[0].geometry.location.lat
-            // console.log(userLat);
-            initMap()
-        })
-        .catch((error) => {
-            // process error object
-            // console.log(error.message);
-            //document.getElementById("displayString").innerText = "Something went wrong";
-        });
+// var userLat = -34.397;
+// var userLong = 150.644;
+// function showYourLocation() {
+//     let zipCode = document.getElementById("userZipCode").value
+//     console.log(zipCode);
+//     const url = `https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&components=postal_code:${zipCode}`;
+//     axios
+//         .get(url)
+//         .then((response) => {
+//             // process response.data object
+//             // console.log(response.data);
+//             const myJSON = JSON.stringify(response.data);
+//             // console.log(myJSON);
+//             userLong = response.data.results[0].geometry.location.lng
+//             userLat = response.data.results[0].geometry.location.lat
+//             // console.log(userLat);
+//             initMap()
+//         })
+//         .catch((error) => {
+//             // process error object
+//             // console.log(error.message);
+//             //document.getElementById("displayString").innerText = "Something went wrong";
+//         });
 
-}
+// }
 
-var map;
-console.log(userLat);
-function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: userLat, lng: userLong },
-        zoom: 15
-    });
-}
+// var map;
+// console.log(userLat);
+// function initMap() {
+//     map = new google.maps.Map(document.getElementById('map'), {
+//         center: { lat: userLat, lng: userLong },
+//         zoom: 15
+//     });
+// }
 //map functions end==========================
 
+const apiKey = 'AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA';
 const appSearch = Vue.createApp({
     data() {
         return {
@@ -177,7 +177,7 @@ const appSearch = Vue.createApp({
                 postalCode: '',
                 region: "None"
             }
-            if (addr != null && addr.length > 0 && typeof apiKey !== 'undefined') {
+            if (typeof apiKey !== 'undefined') {
                 let geoUrl = encodeURI(
                     'https://maps.googleapis.com/maps/api/geocode/json?address=' +
                     addr + " HQ Singapore" +
@@ -208,10 +208,15 @@ const appSearch = Vue.createApp({
                         companyObj.location = locationPlaceholder
                         this.allCompanies.push(companyObj)
                         this.displayCompanies.push(companyObj)
+                        this.sortCompaniesMethod();
                     })
                     .catch(error => {
                         this.errorMessage = error.message;
                     });
+            } else {
+                companyObj.location = locationPlaceholder
+                this.allCompanies.push(companyObj)
+                this.displayCompanies.push(companyObj)
             }
         },
         getDistance(lng1, lat1, lng2, lat2) {
