@@ -33,26 +33,27 @@
                 <div class="col col-6">
                     <label class="sr-only" for="signupFirstName">First name</label>
                     <input id="signupFirstName" name="fname" class="form-control signupField" type="text"
-                        placeholder="First name" required="" autofocus="">
+                        placeholder="First name" required autofocus="">
                 </div>
 
                 <div class="col col-3">
                     <label class="sr-only " for="signupLastName">Last name</label>
                     <input id="signupLastName" name="lname" class="form-control signupField" type="text"
-                        placeholder="Last name" required="" autofocus="">
+                        placeholder="Last name" required autofocus="">
 
                 </div>
 
-                <div class="col col-3">
+                <div class="col col-3 avatar">
                     <label class="sr-only " for="signupGender">Gender</label>
                     <div id="signupGender" class="dropdown">
-                        <select name="cars" id="cars"  class="form-control">
-                            <option value="volvo" selected>Gender</option>
-                            <option value="saab">Male &#128102;</option>
-                            <option value="mercedes">Female &#128103;</option>
-                            <option value="audi">Other 😺</option>
+                        <select name="gender" id="genders" class="form-control" v-model="gender" @click="changeAvatar"
+                            required>
+                            <option value="Gender" selected>Gender</option>
+                            <option value="M">Male &#128102;</option>
+                            <option value="F">Female &#128103;</option>
                         </select>
                     </div>
+                    <input type="hidden" name="avatarURL" :value="avatarImgURL" />
                 </div>
 
             </div>
@@ -60,13 +61,13 @@
             <div id="signupSchool" class="form-row signupRow">
                 <div class="col">
                     <label class="sr-only " for="signupSchoolName">School name</label>
-                    <input id="signupSchoolName" class="form-control signupField" type="text" placeholder="School"
-                        required="" autofocus="">
+                    <input id="signupSchoolName" name="school" class="form-control signupField" type="text"
+                        placeholder="School" required autofocus="">
                 </div>
                 <div class="col">
                     <label class="sr-only " for="schoolEmail">School Email</label>
-                    <input id="schoolEmail" class="form-control signupField" type="email" placeholder="School email"
-                        required autocomplete="email">
+                    <input id="schoolEmail" name="schoolEmail" class="form-control signupField" type="email"
+                        placeholder="School email" required autocomplete="email">
 
                 </div>
             </div>
@@ -75,7 +76,7 @@
                 <div class="col">
                     <label class="sr-only" for="signupPw1Input">Password</label>
                     <input id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password"
-                        required="" autofocus="" oninput="checkPasswordRequirement()">
+                        required autofocus="" oninput="checkPasswordRequirement()">
                     <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle"
                         onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
                 </div>
@@ -103,8 +104,8 @@
             <div id="signupPw2" class="form-row signupRow">
                 <div class="col">
                     <label class="sr-only " for="signupPw2Input">Confirm password</label>
-                    <input id="signupPw2Input" class="form-control signupField" type="password"
-                        placeholder="Confirm password" oninput="isPasswordMatch()" required="" autofocus="">
+                    <input name="pw" id="signupPw2Input" class="form-control signupField" type="password"
+                        placeholder="Confirm password" oninput="isPasswordMatch()" required autofocus="">
                     <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle"
                         onclick="pwToggle(signupPw2Input,signupPw2Toggle)"></i>
                 </div>
@@ -159,6 +160,28 @@
 
     <!-- Changing between password input types-->
     <script>
+
+        const avatar = Vue.createApp({
+            data() {
+                return {
+                    // add properties here
+                    gender: "Gender",
+                    avatarImgURL: "../IMG/avatar1.svg"
+                }
+            },
+            methods: {
+                changeAvatar() {
+
+                    if (this.gender === "M") {
+                        this.avatarImgURL = "../IMG/avatar1.svg"
+                    }
+                    else if (this.gender === "F") {
+                        this.avatarImgURL = "../IMG/avatar3.svg"
+                    }
+                }
+            }
+        }).mount('.avatar')
+
         function pwToggle(pwInput, pwToggleBtn) {
             if (pwInput.type === "password") {
                 pwInput.type = "text";

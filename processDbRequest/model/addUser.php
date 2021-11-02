@@ -7,17 +7,16 @@ $status = false;
 var_dump($_POST);
 
 if (isset($_POST['']) && isset($_POST[''])) {
-    $firstName = $_POST[''];
-    $lastName = $_POST[''];
-    $genderID = $_POST[''];
-    $country = $_POST[''];
-    $school = $_POST[''];
-    $schoolEmail = $_POST[''];
-    $password = $_POST[''];
-    $profilePictureUrl = $_POST[''];
+    $firstName = $_POST['fname'];
+    $lastName = $_POST['lname'];
+    $genderID = $_POST['gender'];
+    $school = $_POST['school'];
+    $schoolEmail = $_POST['schoolEmail'];
+    $password = $_POST['pw'];
+    $profilePictureUrl = $_POST['avatarURL'];
 
     $dao = new userDAO();
-    $status = $dao->addUser($firstName,$lastName,$genderID,$country,$school,$schoolEmail,$password,$profilePictureUrl);
+    $status = $dao->addUser($firstName,$lastName,$genderID,$school,$schoolEmail,$password,$profilePictureUrl);
 }
 
 ?>
