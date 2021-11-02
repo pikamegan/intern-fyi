@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="../CSS/footer.css">
     <!-- vue -->
     <script src="https://unpkg.com/vue@next"></script>
-    <script src="../js/actions.js" defer></script>
+    <!-- <script src="../js/actions.js" defer></script> -->
     <title>Sign Up</title>
 </head>
 
 <body>
-    <form class="form-signin" action="">
+    <form class="form-signin" action="../processDbRequest/model/addUser.php" method = "POST">
         <!-- Form header -->
         <div class="inHeadDiv">
             <div class="display-3 inHead">Sign up</div>
@@ -258,7 +258,7 @@
         }
 
         function hasLowerC(input) {
-            console.log(input);
+            // console.log(input);
             for (let string of input) {
                 if ((string === string.toLowerCase()) && isNaN(string)) {
                     return true;
@@ -271,7 +271,7 @@
         function hasUpperC(input) {
             for (let string of input) {
                 if ((string === string.toUpperCase()) && isNaN(string)) {
-                    console.log(string);
+                    // console.log(string);
                     return true;
 
                 }
@@ -292,7 +292,7 @@
             let nonAlphaList = ["~", "`", "!", "@", "#", "$", "%", "^", "%", "&", "*", "-", "+", "?"]
             for (let nonAlpha of nonAlphaList) {
                 if (input.indexOf(nonAlpha) !== -1) {
-                    console.log(nonAlpha);
+                    // console.log(nonAlpha);
                     return true;
                 }
             }
