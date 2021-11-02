@@ -217,9 +217,6 @@ function loadCompanyPage() {
             let companyLocation = document.getElementById("companyLocation")
             let locationStr = ""
 
-            let companyReviewNum = document.getElementById("companyReviewNum")
-            let reviewNumStr = ""
-
             let companyRating = document.getElementById("companyRating")
             let overallRatingStr = ""
 
@@ -241,9 +238,6 @@ function loadCompanyPage() {
             let hierarchyRating = document.getElementById("hierarchyRating")
             let hierarchyRatingStr = ""
 
-            let totalReviewNum = document.getElementById("totalReviewNum")
-            let totalReviewStr = ""
-
             for (company of this.allCompanies) {
                 if (getCompanyNameFromURL() == company.companyName.toLowerCase()) {
                     var idStr = `${company.companyID}`
@@ -252,8 +246,7 @@ function loadCompanyPage() {
                     infoStr = `${company.companyInfo.companyDescription}`
                     var readMore = `${company.companyInfo.companyWebsite}`
                     var linkedinStr = `${company.companyInfo.companyLinkedinLink}`
-                    locationStr = `Location: ${company.companyInfo.location}`
-                    reviewNumStr = ` ${company.companyRatings.totalNumReviews} people reviewed`
+                    locationStr = `${company.companyInfo.location}`
                     overallRatingStr = ` ${company.companyRatings.overallRating}`
                     payRatingStr = `${company.companyRatings.averageCriteria1}`
                     skillsRatingStr = `${company.companyRatings.averageCriteria2}`
@@ -261,7 +254,6 @@ function loadCompanyPage() {
                     foodRatingStr = `${company.companyRatings.averageCriteria4}`
                     mentorRatingStr = `${company.companyRatings.averageCriteria5}`
                     hierarchyRatingStr = `${company.companyRatings.averageCriteria6}`
-                    totalReviewStr = `(${company.companyRatings.totalNumReviews})`
                 }
             }
             for (input of companyName) {
@@ -274,7 +266,6 @@ function loadCompanyPage() {
 
             companyInfo.innerHTML = infoStr
             companyLocation.innerHTML = locationStr
-            companyReviewNum.innerHTML += reviewNumStr
 
             companyRating.innerHTML += overallRatingStr
 
@@ -284,8 +275,6 @@ function loadCompanyPage() {
             foodRating.innerHTML = foodRatingStr
             mentorRating.innerHTML = mentorRatingStr
             hierarchyRating.innerHTML = hierarchyRatingStr
-
-            totalReviewNum.innerHTML += totalReviewStr
 
             let writeReviewBtn = document.getElementById("writeReviewBtn")
             writeReviewBtn.href = encodeURI("./WriteAReview.html?cid=" + idStr + "&cname=" + nameStr)
@@ -329,8 +318,8 @@ function getAllCompanies() {
 
 
 function getAllReviews(companyId) {
-    let url = '../processDbRequest/model/getReviews.php';
-    let companyNo = companyId;
+    let url = '../processDbRequest/model/getReviews.php'
+    let companyNo = companyId
     axios.get(url, {
         params: {
             companyNo: companyNo,
@@ -338,10 +327,17 @@ function getAllReviews(companyId) {
     })
         .then(response => {
             this.posts = response.data
-            console.log(response.data);
+
+            let companyReviewNum = document.getElementById("companyReviewNum")
+            companyReviewNum.innerHTML += `${response.data.length} people reviewed`
+
+            let totalReviewNum = document.getElementById("totalReviewNum")
+            totalReviewNum.innerHTML += `(${response.data.length})`
+
+            
         })
         .catch(error => {
-            console.log("There is an error");
+            console.log("There is an error")
         })
 }
 
