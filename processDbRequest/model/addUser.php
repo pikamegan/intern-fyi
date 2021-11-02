@@ -6,7 +6,7 @@ require_once "./userDAO.php";
 $status = false;
 var_dump($_POST);
 
-if (isset($_POST['']) && isset($_POST[''])) {
+if (isset($_POST['fname']) && isset($_POST['lname'])  && isset($_POST['gender'])  && isset($_POST['school'])  && isset($_POST['schoolEmail']) && isset($_POST['pw'])  && isset($_POST['avatarURL'])) {
     $firstName = $_POST['fname'];
     $lastName = $_POST['lname'];
     $genderID = $_POST['gender'];
@@ -24,10 +24,10 @@ if (isset($_POST['']) && isset($_POST[''])) {
 <body>
     <?php
 if ($status) {
-    echo "<h1>Insertion was successful (User Created)</h1>";
+    echo "<h1>USER Insertion was successful</h1>";
     echo "Click <a href='display.php'>here</a> to return to Main Page";
 } else {
-    echo "<h1>Insertion was NOT successful</h1>";
+    echo "<h1>USER Insertion was NOT successful</h1>";
 
 }
 
