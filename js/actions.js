@@ -196,7 +196,6 @@ function closePopup(id) {
 
 function loadCompanyPage() {
     let url = `../processDbRequest/processCompanyRequest.php`
-    // use the one above when connecting to connect to real db with php
     axios.get(url, {
         params: {
             request: 'getAllCompanies',
@@ -291,7 +290,7 @@ function loadCompanyPage() {
             let writeReviewBtn = document.getElementById("writeReviewBtn")
             writeReviewBtn.href = encodeURI("./WriteAReview.html?cid=" + idStr + "&cname=" + nameStr)
 
-            getCompanyReviewsById(idStr)
+            getAllReviews()
 
         })
 
@@ -300,18 +299,9 @@ function loadCompanyPage() {
         });
 }
 
-function getCompanyNameFromURL() {
-    let link = decodeURI(window.location.href)
-    let firstNum = link.search("cname=")
-    let cleanLink = link.slice(firstNum + 6).toLowerCase()
-    cleanLink = cleanLink.replace("#", "")
-    return cleanLink
-}
 
 function getAllCompanies() {
     let url = `../processDbRequest/processCompanyRequest.php`
-    url = `../processDbRequest/tmpOutputProcessCompanyRequest.php`
-    // use the one above when connecting to connect to real db with php
     axios.get(url, {
         params: {
             request: 'getAllCompanies',
@@ -322,7 +312,7 @@ function getAllCompanies() {
             var companyList = document.getElementById("company")
             let str = ""
             for (company of this.allCompanies) {
-                if (getCompanyFromURL() == company.companyName.toLowerCase()) {
+                if (getCompanyNameFromURL() == company.companyName.toLowerCase()) {
                     str += `<option value=${company.companyID} selected>${company.companyName}</option>`
                 } else {
                     str += `<option value=${company.companyID}>${company.companyName}</option>`
@@ -335,16 +325,34 @@ function getAllCompanies() {
         .catch(error => {
             this.errorMessage = error.message
         });
-
-
 }
 
-function getCompanyFromURL() {
-    let link = window.location.href
-    let firstNum = link.search("company")
-    return link.slice(firstNum + 8).toLowerCase()
+
+function getAllReviews() {
+    let url = `../processDbRequest/processReviewRequest.php`
+    axios.get(url, {
+        params: {
+            request: 'getAllReviews',
+            companyid: 1,
+        }
+    })
+        .then(response => {
+            this.allReviews = response.data
+            console.log(this.allReviews)            
+            
+        })
+        .catch(error => {
+            this.errorMessage = error.message
+        });
 }
 
+function getCompanyNameFromURL() {
+    let link = decodeURI(window.location.href)
+    let firstNum = link.search("cname=")
+    let cleanLink = link.slice(firstNum + 6).toLowerCase()
+    cleanLink = cleanLink.replace("#", "")
+    return cleanLink
+}
 
 // Vue instance
 const navigationBar = Vue.createApp({

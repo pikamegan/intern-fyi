@@ -13,16 +13,16 @@ header("Access-Control-Allow-Origin: *");
 
 if (isset($_GET['request'])) {
 
-    $requstName = $_GET['request'];
+    $requestName = $_GET['request'];
 
-    if ($requstName == 'getAllCompanies') {
+    if ($requestName == 'getAllCompanies') {
         // localhost ... ... processDbRequest/processCompanyRequest.php?request=getAllCompanies
         // see tmpOutputProcessProcessComapnyRequest.json
         // json output to be used in front end, the json file to be deleted when deploying
         $dao = new CompanyDAO();
         $allCompanies = $dao->retrieveAll();
         echo json_encode($allCompanies);
-    } elseif ($requstName == 'search') {
+    } elseif ($requestName == 'search') {
         if (isset($_GET['sname'])) {
             $searchName = $_GET['sname'];
             $dao = new CompanyDAO();
