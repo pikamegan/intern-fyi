@@ -408,17 +408,32 @@
     </div>
 
     <script>
+        //gets ALL company
         let url = 'http://localhost/GitHub/WAD-grpproject/processDbRequest/model/getReviews.php';
-        let companyNo = "1";
         axios.get(url)// <-- edit this
             .then(response => {
-                // this gets the data, which is an array
-                this.posts = response.data
                 console.log(response.data);
             })
             .catch(error => {
                 console.log("There is an error");
             })
+    </script>
+
+    <script>
+        //gets a specific company
+        //Not working
+        let urlget = 'http://localhost/GitHub/WAD-grpproject/processDbRequest/model/getOneCompanyReview.php';
+        let companyNum = 20;
+        axios.get(urlget, { params: { companyNo: companyNum }})// <-- edit this
+            .then(response => {
+                console.log('%c below is a specific company! ', 'background: #222; color: #bada55',
+                            'that you are tring to find');
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log("There is an error");
+            })
+
 
     </script>
 

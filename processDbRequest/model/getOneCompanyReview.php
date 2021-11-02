@@ -1,22 +1,32 @@
 <?php
 require_once 'common.php';
 
-$dao = new reviewDAO();
-$post = $dao->getAll(); // Get an Indexed Array of Post objects
+$companyNo = "";
 
-$reviews = [];
-foreach ($post as $post) {
+if (isset($_GET['companyNo'])){
+    $companyNo = $_GET['companyNo'];
+    $dao = new reviewDAO();
+    $reviewofcompany = $dao->getCompanyReviewsById($companyNo); // Get an Indexed Array of Post objects
+    
+    $reviews = [];
+    var_dump($reviewofcompany);
+
+    
     $review = [];
-    $review["companyID"] = $post->getcompanyid();
-    $review["reviewID"] = $post->getreviewid();
-    $review["jobTitle"] = $post->getjobtitle();
-    $review["schoolEmail"] = $post->getschoolemail();
-    $review["reviewDescription"] = $post->getreviewdesc();
-    $review["overallRating"] = $post->getoverallrating();
-    $review["postDateTime"] = $post->getpostdate();
+    $review["companyID"] = $reviewofcompany-> getcompanyid();
+    $review["reviewID"] = $reviewofcompany-> getreviewid();
+    $review["jobTitle"] = $post-> etjobtitle();
+    $review["schoolEmail"] = $reviewofcompany-> getschoolemail();
+    $review["reviewDescription"] = $reviewofcompany->getreviewdesc();
+    $review["overallRating"] = $reviewofcompany-> getoverallrating();
+    $review["postDateTime"] = $reviewofcompany-> getpostdate();
     $reviews[] = $review;
+    
+    // make post into json and return json data
+    $postJSON = json_encode($reviews);
+    echo $postJSON;
 }
-// make post into json and return json data
-$postJSON = json_encode($reviews);
-echo $postJSON;
+
+
+
 ?>

@@ -64,7 +64,7 @@ class reviewDAO
                 WHERE
                 companyID = :companyid";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':companyid', $companyid, PDO::PARAM_INT);
+        $stmt->bindParam(':companyid', $companyid, PDO::PARAM_STR);
 
         // STEP 3
         $stmt->execute();
