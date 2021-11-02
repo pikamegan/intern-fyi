@@ -27,12 +27,12 @@
 
 <body onscroll="scrollFunction()" onload="loadCompanyPage()">
     <!-- copy this part -->
-    <div class ="navbarTemplate">
+    <div class="navbarTemplate">
         <div id="smallNavBar">
             <navigation-bar-small-login v-if="isLogined()"></navigation-bar-small-login>
             <navigation-bar-small-logout v-else></navigation-bar-small-logout>
         </div>
-        
+
         <div id="bigNavBar">
             <navigation-bar-big-login v-if="isLogined()"></navigation-bar-big-login>
             <navigation-bar-big-logout v-else></navigation-bar-big-logout>
@@ -51,7 +51,8 @@
 
                 <div class="d-flex bd-highlight">
                     <div class="p-2 flex-grow-1 bd-highlight companyName">Company Name</div> <!-- changed with JS -->
-                    <div class="p-2 bd-highlight"><a href="" id="linkedinLink"><img src="../IMG/linkedin.svg" alt="LinkedIn logo"></a></div>
+                    <div class="p-2 bd-highlight"><a href="" id="linkedinLink"><img src="../IMG/linkedin.svg"
+                                alt="LinkedIn logo"></a></div>
                 </div>
 
                 <div class="d-flex bd-highlight text-muted">
@@ -60,20 +61,24 @@
                 </div>
 
                 <h4 class="mt-3 mx-2">About the Company</h4>
-                <p class="mt-3 mx-2 text-start fw-lighter" id="companyInfo">Lorem Ipsum is simply dummy text of the printing and
+                <p class="mt-3 mx-2 text-start fw-lighter" id="companyInfo">Lorem Ipsum is simply dummy text of the
+                    printing and
                     typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                 </p>
 
                 <div class="d-flex bd-highlight pt-2 mt-3 mb-2">
-                    <div class="p-2 bd-highlight flex-grow-1" id="companyReviewNum"><img src="../IMG/review_icon.svg" alt="Review icon"></div>
-                    <div class="p-2 bd-highlight"><a href="" id="companyWebsite" class="text-decoration-none text-muted">See job openings ></a>
+                    <div class="p-2 bd-highlight flex-grow-1" id="companyReviewNum"><img src="../IMG/review_icon.svg"
+                            alt="Review icon"></div>
+                    <div class="p-2 bd-highlight"><a href="" id="companyWebsite"
+                            class="text-decoration-none text-muted">See job openings ></a>
                     </div>
                 </div>
             </div>
 
             <!-- Criteria card -->
             <div class="col-10 col-sm-10 col-md-6 col-lg-6 aboutCompany">
-                <h3 class="py-2 text-center" id="companyRating">Overall Rating: <img src="../IMG/star.svg" alt="star" class="d-inline-block"></h3>
+                <h3 class="py-2 text-center" id="companyRating">Overall Rating: <img src="../IMG/star.svg" alt="star"
+                        class="d-inline-block"></h3>
                 <div
                     class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 mt-4 mb-3 d-flex justify-content-around">
 
@@ -245,7 +250,7 @@
                 <div class="p-2 bd-highlight">
                     <a href="" id="writeReviewBtn">
                         <button class="btn text-white customBtn attentionSeeking">
-                            <h4 class="mb-0" >Write a Review Now</h4>
+                            <h4 class="mb-0">Write a Review Now</h4>
                         </button>
                     </a>
                 </div>
@@ -396,11 +401,26 @@
             </div>
         </div>
     </div>
-    
+
     <div class="footerComp">
-        <intern-footer home = "../index.html" abt = "about.html" career="career.html" help= "help.html"  feedback="feedback.html" @gotohome="goHome"></intern-footer>
+        <intern-footer home="../index.html" abt="about.html" career="career.html" help="help.html"
+            feedback="feedback.html" @gotohome="goHome"></intern-footer>
     </div>
 
+    <script>
+        axios.get('http://localhost/GitHub/WAD-grpproject/processDbRequest/model/getReviews.php')  // <-- edit this
+            .then(response => {
+                // this gets the data, which is an array
+                this.posts = response.data
+                console.log(response.data);
+            })
+            .catch(error => {
+                this.posts = [{ entry: 'There was an error: ' + error.message }]
+                console.log(error);
+            })
+
+
+    </script>
 
 
 
