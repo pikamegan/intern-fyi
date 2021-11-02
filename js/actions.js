@@ -1,8 +1,3 @@
-function gotoWriteAReview() {
-    window.location = "../HTML/WriteAReview.html"
-}
-
-
 function gotoSignUpPage() {
     window.location = "../HTML/signup.html"
 }
@@ -248,6 +243,7 @@ function loadCompanyPage() {
 
             for (company of this.allCompanies) {
                 if (getCompanyNameFromURL() == company.companyName.toLowerCase()) {
+                    idStr = `${company.companyID}`
                     nameStr = `${company.companyName}`
                     infoStr = `${company.companyInfo.companyDescription}`
                     locationStr = `${company.companyInfo.location}`
@@ -281,6 +277,9 @@ function loadCompanyPage() {
 
             totalReviewNum.innerHTML += totalReviewStr
 
+            let writeReviewBtn = document.getElementById("writeReviewBtn")
+            writeReviewBtn.href = encodeURI("./WriteAReview.html?cid=" + idStr + "&cname=" + nameStr)
+
         })
 
         .catch(error => {
@@ -311,13 +310,14 @@ function getAllCompanies() {
             let str = ""
             for (company of this.allCompanies) {
                 if (getCompanyFromURL() == company.companyName.toLowerCase()) {
-                    str += `<option value=${company.companyName} selected>${company.companyName}</option>`
+                    str += `<option value=${company.companyID} selected>${company.companyName}</option>`
                 } else {
-                    str += `<option value=${company.companyName}>${company.companyName}</option>`
+                    str += `<option value=${company.companyID}>${company.companyName}</option>`
                 }
             }
 
             companyList.innerHTML += str
+            
         })
         .catch(error => {
             this.errorMessage = error.message

@@ -56,16 +56,10 @@
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-3">
                             
                             <label for="company" class="form-label">Company<span style="color:red">*</span></label>
-                            <select id="company" name="company" v-model="selectedCompany" class="form-select pointer" aria-describedby="company" required>
+                            <select id="company" name="companyid" class="form-select pointer" aria-describedby="companyid" required>
                                 <!-- filled in with js -->
                             </select>
-                            {{selectedCompany}}
-                            <br>
-                            {{theCompanyDict}}
-                            <br>
-                            {{theCompanyDict[selectedCompany]}}
                             <!-- hidden fields -->
-                            <input type="hidden" id="hiddenCompanyID" name="companyid" :value = "theCompanyDict[selectedCompany]">
                             <input type="hidden" id="hiddenEmail" name="schoolemail" value="patricia.2020@scis.smu.edu.sg">
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
