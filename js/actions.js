@@ -329,21 +329,16 @@ function getAllCompanies() {
 
 
 function getAllReviews() {
-    let url = `../processDbRequest/processReviewRequest.php`
-    axios.get(url, {
-        params: {
-            request: 'getAllReviews',
-            companyid: 1,
-        }
-    })
+    let url = '../processDbRequest/model/getReviews.php';
+    let companyNo = "1";
+    axios.get(url)
         .then(response => {
-            this.allReviews = response.data
-            console.log(this.allReviews)            
-            
+            this.posts = response.data
+            console.log(response.data);
         })
         .catch(error => {
-            this.errorMessage = error.message
-        });
+            console.log("There is an error");
+        })
 }
 
 function getCompanyNameFromURL() {

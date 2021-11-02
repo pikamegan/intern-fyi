@@ -6,8 +6,8 @@ class ConnectionManager
     {
         $servername = 'localhost';
         $username = 'root';
-        // $password = 'root'; // for Mac
-        $password = '';
+        $password = 'root'; // for Mac
+        // $password = '';
         $dbname = 'wad2g5t2intern';
         $port = '3309';
 
