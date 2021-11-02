@@ -39,7 +39,7 @@ function validate_form() {
     var writtenreview = document.forms['review_form'].reviewdesc.value;     // This works if input field has NAME attribute
     //var s = document.forms['entry_form']['my_subject'].value; // This works if input field has ID attribute
     //var s = document.entry_form.subject.value;                 // This works if input field has NAME attribute
-    console.log(writtenreview)
+    // console.log(writtenreview)
     if (writtenreview.length < 11) {
         alert("Written Review must be contain at least 10 characters");
         var is_valid = false;

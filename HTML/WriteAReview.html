@@ -44,7 +44,8 @@
         <div class="p-sm-5 mb-4 bg-light shadow-lg feedbackBg">
             <div class="container-fluid px-sm-5 py-5">
 
-                <form name="review_form" action="../processDbRequest/model/add.php" method="POST" id="reviewForm" role="form" class="needs-validation" data-toggle="validator" onsubmit="return validate_form()">
+                <form name="review_form" action="../processDbRequest/model/add.php" method="POST" id="reviewForm" class="needs-validation" data-toggle="validator" onsubmit="return validate_form()">
+                    <!-- remove role="form" to test -->
                     <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 40px;">
                         <div class="bd-highlight">
                             <img src="../IMG/deletebutton.svg" onclick="resetDraft('clearReview')" alt="Clear draft"
@@ -62,10 +63,9 @@
                             <br>
                             {{theCompanyDict}}
                             <br>
-                            
-                            {{theCompanyId}}
+                            {{theCompanyDict[selectedCompany]}}
                             <!-- hidden fields -->
-                            <input type="hidden" id="hiddenCompanyID" name="companyid" :value = "theCompanyId">
+                            <input type="hidden" id="hiddenCompanyID" name="companyid" :value = "theCompanyDict[selectedCompany]">
                             <input type="hidden" id="hiddenEmail" name="schoolemail" value="patricia.2020@scis.smu.edu.sg">
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
@@ -364,7 +364,8 @@
                         <div class="row">
                             <div class="d-flex justify-content-center">
                                 <button class="btn text-white top-50 start-50 customBtn"
-                                    onclick="submitReview()">Submit Your Review</button>
+                                    >Submit Your Review</button>
+                                    <!--ESTHER: REMOVED: "onclick="submitReview()" as this code is causing POST to not work -->
                             </div>
                         </div>
                     </div>

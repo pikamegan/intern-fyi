@@ -4,8 +4,7 @@ const app = Vue.createApp({
             allCompanies: null,
             errorMessage: null,
             theCompanyDict: {},
-            selectedCompany: "",
-            theCompanyId: this.theCompanyDict[this.selectedCompany]
+            selectedCompany: "google"
         }
     },
     methods: {
