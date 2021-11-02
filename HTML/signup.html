@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <form class="form-signin" action="../processDbRequest/model/addUser.php" method = "POST">
+    <form class="form-signin" action="../processDbRequest/model/addUser.php" method="POST">
         <!-- Form header -->
         <div class="inHeadDiv">
             <div class="display-3 inHead">Sign up</div>
@@ -32,30 +32,26 @@
             <div id="signupName" class="form-row signupRow">
                 <div class="col col-6">
                     <label class="sr-only" for="signupFirstName">First name</label>
-                    <input id="signupFirstName" class="form-control signupField" type="text" placeholder="First name"
-                        required="" autofocus="">
+                    <input id="signupFirstName" name="fname" class="form-control signupField" type="text"
+                        placeholder="First name" required="" autofocus="">
                 </div>
 
                 <div class="col col-3">
                     <label class="sr-only " for="signupLastName">Last name</label>
-                    <input id="signupLastName" class="form-control signupField" type="text" placeholder="Last name"
-                        required="" autofocus="">
+                    <input id="signupLastName" name="lname" class="form-control signupField" type="text"
+                        placeholder="Last name" required="" autofocus="">
 
                 </div>
 
                 <div class="col col-3">
                     <label class="sr-only " for="signupGender">Gender</label>
-
                     <div id="signupGender" class="dropdown">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="signupGenderBtn"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Gender
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="signupGenderBtn">
-                            <a class="dropdown-item" href="#">Male &#128102;</a>
-                            <a class="dropdown-item" href="#">Female &#128103;</a>
-                            <a class="dropdown-item" href="#">Other 😺</a>
-                        </div>
+                        <select name="cars" id="cars"  class="form-control">
+                            <option value="volvo" selected>Gender</option>
+                            <option value="saab">Male &#128102;</option>
+                            <option value="mercedes">Female &#128103;</option>
+                            <option value="audi">Other 😺</option>
+                        </select>
                     </div>
                 </div>
 
@@ -69,7 +65,8 @@
                 </div>
                 <div class="col">
                     <label class="sr-only " for="schoolEmail">School Email</label>
-                    <input id="schoolEmail" class="form-control signupField" type="email" placeholder="School email" required autocomplete="email">
+                    <input id="schoolEmail" class="form-control signupField" type="email" placeholder="School email"
+                        required autocomplete="email">
 
                 </div>
             </div>
@@ -83,7 +80,7 @@
                         onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
                 </div>
             </div>
-            
+
             <!-- Remove password-desc-required class when requirement is met  & add when NOT met -->
             <div id="pwErrorMsgs">
                 <div class="passwordrequirements mb-2">
@@ -142,7 +139,8 @@
 
 
     <div class="footerComp">
-        <intern-footer home = "../index.html" abt = "about.html" career="career.html" help= "help.html"  feedback="feedback.html" @gotohome="goHome"></intern-footer>
+        <intern-footer home="../index.html" abt="about.html" career="career.html" help="help.html"
+            feedback="feedback.html" @gotohome="goHome"></intern-footer>
     </div>
 
 
@@ -182,27 +180,27 @@
             let criteriaNonAlpha = document.getElementById("password-req-nonalpha")
             let criteriaNoProfileName = document.getElementById("password-req-displayname")
 
-            let errorMsg1 = "8 or more characters"; 
+            let errorMsg1 = "8 or more characters";
             let errorMsg2 = "At least one uppercase letter";
-            let errorMsg3 = "At least one lowercase letter"; 
+            let errorMsg3 = "At least one lowercase letter";
             let errorMsg4 = "At least one number";
             let errorMsg5 = "At least one non-alphanumeric character (~`!@#$%^%&*-+?)";
-            let errorMsg6 = "Password cannot contain first or last name"; 
+            let errorMsg6 = "Password cannot contain first or last name";
 
             // 0. Empty input
-            if (userPWInput.length <= 0){
-                document.getElementById("error1").innerHTML = ""; 
-                document.getElementById("error2").innerHTML = ""; 
-                document.getElementById("error3").innerHTML = ""; 
-                document.getElementById("error4").innerHTML = ""; 
-                document.getElementById("error5").innerHTML = ""; 
-                document.getElementById("error6").innerHTML = ""; 
+            if (userPWInput.length <= 0) {
+                document.getElementById("error1").innerHTML = "";
+                document.getElementById("error2").innerHTML = "";
+                document.getElementById("error3").innerHTML = "";
+                document.getElementById("error4").innerHTML = "";
+                document.getElementById("error5").innerHTML = "";
+                document.getElementById("error6").innerHTML = "";
             }
 
             // 1. Password length
             if (userPWInput.length >= 8) {
                 errorMsgSuccess("error1", errorMsg1);
-                
+
 
             } else {
                 errorMsgFailure("error1", errorMsg1);
@@ -247,12 +245,12 @@
 
         }
 
-        function errorMsgSuccess(errorID, errorMsgNo){
-            document.getElementById(errorID).innerHTML = "<i class='bi bi-check text-success'></i>"; 
+        function errorMsgSuccess(errorID, errorMsgNo) {
+            document.getElementById(errorID).innerHTML = "<i class='bi bi-check text-success'></i>";
             document.getElementById(errorID).innerHTML += "<div class='errorMsg d-inline text-success'>" + errorMsgNo + "</div>";
         }
 
-        function errorMsgFailure(errorID, errorMsgNo){
+        function errorMsgFailure(errorID, errorMsgNo) {
             document.getElementById(errorID).innerHTML = "<i class='bi bi-x fa fa-xxl text-danger'</i>";
             document.getElementById(errorID).innerHTML += "<div class='errorMsg d-inline text-danger'>" + errorMsgNo + "</div>"
         }
@@ -303,7 +301,7 @@
         function hasProfileName(input, fullName) {
             const nameArray = fullName.split('.');
 
-            if (input.indexOf(nameArray[0]) == -1 && input.indexOf(nameArray[1]) == -1) { 
+            if (input.indexOf(nameArray[0]) == -1 && input.indexOf(nameArray[1]) == -1) {
                 // returns -1 when the name is not in the fname or lname
                 return false;
             } else {
@@ -318,7 +316,7 @@
             let userPWInput2 = document.getElementById("signupPw2Input").value;
             let criteriaPasswordMatch = document.getElementById("confirm-password-same");
             let pwConfirmMsg = "Passwords match";
-            
+
             if (userPWInput === userPWInput2) {
                 errorMsgSuccess("pwConfirmError", pwConfirmMsg);
             } else {
