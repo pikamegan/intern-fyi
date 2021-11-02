@@ -196,7 +196,6 @@ function closePopup(id) {
 
 function loadCompanyPage() {
     let url = `../processDbRequest/processCompanyRequest.php`
-    url = `../processDbRequest/tmpOutputProcessCompanyRequest.php`
     // use the one above when connecting to connect to real db with php
     axios.get(url, {
         params: {
@@ -207,6 +206,11 @@ function loadCompanyPage() {
             this.allCompanies = response.data
             let companyName = document.getElementsByClassName("companyName")
             let nameStr = "Company Name"
+
+            let companyPhoto = document.getElementById("companyPhoto")
+
+            let companyWebsite = document.getElementById("companyWebsite")
+            let companyLinkedin = document.getElementById("linkedinLink")
 
             let companyInfo = document.getElementById("companyInfo")
             let infoStr = ""
@@ -243,10 +247,13 @@ function loadCompanyPage() {
 
             for (company of this.allCompanies) {
                 if (getCompanyNameFromURL() == company.companyName.toLowerCase()) {
-                    idStr = `${company.companyID}`
+                    var idStr = `${company.companyID}`
                     nameStr = `${company.companyName}`
+                    var photoStr = `${company.companyInfo.imageLink}`
                     infoStr = `${company.companyInfo.companyDescription}`
-                    locationStr = `${company.companyInfo.location}`
+                    var readMore = `${company.companyInfo.companyWebsite}`
+                    var linkedinStr = `${company.companyInfo.companyLinkedinLink}`
+                    locationStr = `Location: ${company.companyInfo.location}`
                     reviewNumStr = ` ${company.companyRatings.totalNumReviews} people reviewed`
                     overallRatingStr = ` ${company.companyRatings.overallRating}`
                     payRatingStr = `${company.companyRatings.averageCriteria1}`
@@ -261,6 +268,10 @@ function loadCompanyPage() {
             for (input of companyName) {
                 input.innerHTML = nameStr
             }
+
+            companyPhoto.src = photoStr
+            companyWebsite.href = readMore
+            companyLinkedin.href = linkedinStr
 
             companyInfo.innerHTML = infoStr
             companyLocation.innerHTML = locationStr
@@ -279,6 +290,8 @@ function loadCompanyPage() {
 
             let writeReviewBtn = document.getElementById("writeReviewBtn")
             writeReviewBtn.href = encodeURI("./WriteAReview.html?cid=" + idStr + "&cname=" + nameStr)
+
+            getCompanyReviewsById(idStr)
 
         })
 
