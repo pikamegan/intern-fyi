@@ -1,5 +1,3 @@
-
-
 <?php
 require_once 'common.php';
 
@@ -22,6 +20,3 @@ foreach ($post as $post) {
 $postJSON = json_encode($reviews);
 echo $postJSON;
 ?>
-
-
-
