@@ -56,7 +56,7 @@ class userDAO
 
         // INSERT INTO `intern`(`firstName`, `lastName`, `genderID`, `country`, `school`, `schoolEmail`, `password`, `profilePictureUrl`, `reviewsNo`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])
 
-        $sql = "INSERT INTO `intern`(`firstName`, `lastName`, `genderID`, `country`, `school`, `schoolEmail`, `password`, `profilePictureUrl`, `reviewsNo`) VALUES (:firstName,:lastName,:genderID, Singapore,:school,:schoolEmail,:password,:profilePictureUrl,0)";
+        $sql = "INSERT INTO `intern`(`firstName`, `lastName`, `genderID`, `country`, `school`, `schoolEmail`, `password`, `profilePictureUrl`, `reviewsNo`) VALUES (:firstName,:lastName,:genderID, 'Singapore' ,:school,:schoolEmail,:password,:profilePictureUrl,0)";
         
         // STEP 2
         
