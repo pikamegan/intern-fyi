@@ -8,24 +8,49 @@ if (isset($_GET['companyid'])) {
     $id = $_GET['companyid'];
 
     $dao = new reviewDAO();
-    $posts = $dao->getCompanyReviewsById($id); // Get an Indexed Array of Post objects
+    $post = $dao->getCompanyReviewsById($id); // Get an Indexed Array of Post objects
 
-    $reviews = [];
-    foreach ($posts as $post_object) {
-        $review = [];
-        $review["companyID"] = $post_object->getcompanyid();
-        $review["reviewID"] = $post_object->getreviewid();
-        $review["jobTitle"] = $post_object->getjobtitle();
-        $review["schoolEmail"] = $post_object->getschoolemail();
-        $review["reviewDescription"] = $post_object->getreviewdesc();
-        $review["overallRating"] = $post_object->getoverallrating();
-        $review["postDateTime"] = $post_object->getpostdate();
-        $reviews[] = $review;
-    }
-    // make posts into json and return json data
-    $postJSON = json_encode($reviews);
+    $review = [];
+    $review["companyID"] = $post->getcompanyid();
+    $review["reviewID"] = $post->getreviewid();
+    $review["jobTitle"] = $post->getjobtitle();
+    $review["schoolEmail"] = $post->getschoolemail();
+    $review["reviewDescription"] = $post->getreviewdesc();
+    $review["overallRating"] = $post->getoverallrating();
+    $review["postDateTime"] = $post->getpostdate();
+
+    // make post into json and return json data
+    var_dump($_GET['companyid']);
+    $postJSON = json_encode($review);
     echo $postJSON;
 }
 
 ?>
+
+
+
+<?php
+// require_once 'common.php';
+
+// $dao = new reviewDAO();
+// $post = $dao->getAll(); // Get an Indexed Array of Post objects
+
+// $reviews = [];
+// foreach ($post as $post) {
+//     $review = [];
+//     $review["companyID"] = $post->getcompanyid();
+//     $review["reviewID"] = $post->getreviewid();
+//     $review["jobTitle"] = $post->getjobtitle();
+//     $review["schoolEmail"] = $post->getschoolemail();
+//     $review["reviewDescription"] = $post->getreviewdesc();
+//     $review["overallRating"] = $post->getoverallrating();
+//     $review["postDateTime"] = $post->getpostdate();
+//     $reviews[] = $review;
+// }
+// // make post into json and return json data
+// $postJSON = json_encode($reviews);
+// echo $postJSON;
+?>
+
+
 

@@ -409,9 +409,10 @@
 
     <script>
         let url = 'http://localhost/GitHub/WAD-grpproject/processDbRequest/model/getReviews.php';
+        let companyNo = "1";
         axios.get(url, {
                     params: {
-                        companyid: 20,
+                        companyid: companyNo,
                     }
                 })// <-- edit this
             .then(response => {
