@@ -29,15 +29,40 @@ function closeForm() {
 }
 
 function validate_form() {
+    let role = document.forms['review_form'].jobtitle.value
+    let roleMsg = document.getElementById("roleMsg")
+    if (role.length == 0) {
+        roleMsg.style.display = "block"
+    } else {
+        roleMsg.style.display = "none"
+    }
 
-    // There are 3 ways to access a Form Input Field
-    var writtenreview = document.forms['review_form'].reviewdesc.value;     // This works if input field has NAME attribute
-    //var s = document.forms['entry_form']['my_subject'].value; // This works if input field has ID attribute
-    //var s = document.entry_form.subject.value;                 // This works if input field has NAME attribute
-    // console.log(writtenreview)
-    if (writtenreview.length < 11) {
-        alert("Written Review must be contain at least 10 characters");
-        var is_valid = false;
+    let overallRadio = document.forms['review_form'].overallrating.value
+    let overallMsg = document.getElementById("overallMsg")
+    if (overallRadio.length == 0) {
+        overallMsg.style.display = "block"
+    } else {
+        overallMsg.style.display = "none"
+    }
+
+    for (let i = 1; i < 7; i++) {
+        let criteriaRadio = `criteria${i}`
+        let thisRadio = document.forms['review_form'][criteriaRadio]
+        let criteriaMsg = document.getElementById(`criteria${i}Msg`)
+
+        if (thisRadio.value == "") {
+            criteriaMsg.style.display = "block"
+        } else {
+            criteriaMsg.style.display = "none"
+        }
+    }
+
+    let review = document.forms['review_form'].reviewdesc.value
+    let reviewMsg = document.getElementById("reviewMsg")
+    if (review.length < 11) {
+        reviewMsg.style.display = "block"
+    } else {
+        reviewMsg.style.display = "none"
     }
 }
 
@@ -98,6 +123,7 @@ function showCriteria() {
                                 style="width: 40px; height: 40px;">
     
                         </div>
+                        <p class="text-center text-danger" style="display: none;" id="criteria${counter}Msg">Please select a value</p>
                     </div>
                 </div>
     
@@ -159,15 +185,6 @@ function clearReview() {
     closePopup("clearReview")
 }
 
-var submitted = false
-
-function submitReview() {
-    let submit = document.getElementById("submitReview")
-    submit.style.display = "block"
-    resetDraft("submitReview")
-
-    submitted = true
-}
 
 function submitFeedback() {
     let submit = document.getElementById("submitFeedback")
@@ -417,10 +434,10 @@ function getAllReviews(companyId) {
 
                 let timeDifference = date.getTime() - date2compare.getTime()
                 let dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24))
-                var dayStr = "day"
+                var dayStr = "days"
 
-                if (dayDifference > 1) {
-                    dayStr = 'days'
+                if (dayDifference == 1) {
+                    dayStr = 'day'
                 }
 
                 let randomImg = Math.floor(Math.random()*8)+1

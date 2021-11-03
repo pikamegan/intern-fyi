@@ -44,7 +44,7 @@
         <div class="p-sm-5 mb-4 bg-light shadow-lg feedbackBg">
             <div class="container-fluid px-sm-5 py-5">
 
-                <form name="review_form" action="../processDbRequest/model/add.php" method="POST" id="reviewForm" onsubmit="validate_form(); event.preventDefault(); event.stopPropagation()">
+                <form name="review_form" action="../processDbRequest/model/add.php" method="POST" id="reviewForm">
                     <!-- remove role="form" to test -->
                     <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 40px;">
                         <div class="bd-highlight">
@@ -65,10 +65,11 @@
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                             <label for="role" class="form-label">Role/Title<span style="color:red">*</span></label>
                             <input type="role" name="jobtitle" class="form-control" id="role" required>
+                            <p class="text-danger m-1" style="font-size: small; display: none;" id="roleMsg">Fill in what your job position was at the company</p>
                         </div>
                     </div>
 
-                    <div class="card text-center mb-5">
+                    <div class="card text-center">
                         <div class="card-header bg-info">Overall Rating</div>
                         <div class="card-body">
                             <h5 class="card-title"></h5>
@@ -96,21 +97,22 @@
                             </div>
                         </div>
                     </div>
+                    <p class="text-center text-danger m-1" style="display: none;" id="overallMsg">Please rate your overall experience</p>
 
-                    <label for="button" class="form-label">Category Rating (1 Low, 5 Very High)</label>
+
+                    <label for="button" class="form-label mt-5">Category Rating (1 Low, 5 Very High)</label>
                     <div class="accordion" id="accordionExample"></div> 
 
                     <div class="row mt-5">
                         <div class="mb-3">
-                            <label for="comment" class="form-label">Written Review</label>
+                            <label for="comment" class="form-label">Review</label>
                             <textarea name= "reviewdesc" class="form-control" aria-label="comment" style="height:300px;" placeholder="Minimum 10 characters" required></textarea>
+                            <p class="text-center text-danger m-1" style="display: none;" id="reviewMsg">Please enter at least 10 characters</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="d-flex justify-content-center">
-                            <button class="btn text-white top-50 start-50 customBtn"
-                                >Submit Your Review</button>
-                                <!--ESTHER: REMOVED: "onclick="submitReview()" as this code is causing POST to not work -->
+                            <button class="btn text-white top-50 start-50 customBtn" onclick="validate_form()">Submit Your Review</button>
                         </div>
                     </div>
                 </form>
@@ -131,31 +133,6 @@
                             draft</button>
                         <button type="button" class="btn keepBtn mx-2 mb-1" onclick="closePopup('clearReview')">No, keep
                             editing</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="submitReview" class="container">
-        <div class="row justify-content-center">
-            <div class="col-6">
-                <div class="card submitPopup">
-                    <div class="card-header text-end"><img src="../IMG/X_close.svg" alt="close" class="w-10 pointer"
-                            onclick="closePopup('submitReview')"></div>
-                    <div class="card-body text-white text-center">
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="../IMG/successInSpeechBubble.svg" alt="success image"
-                                    class="d-none d-sm-block">
-                            </div>
-                            <div class="col-7">
-                                <h5 class="card-title">Thank you!</h5>
-                                <p class="card-text">Your review has been submitted!</p>
-                            </div>
-                        </div>
-                        <a href="home.html"><button type="button" class="btn successBtn mx-2 mb-1">Back to
-                                Home</button></a>
                     </div>
                 </div>
             </div>
