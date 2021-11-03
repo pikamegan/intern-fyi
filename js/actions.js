@@ -492,6 +492,7 @@ function getCompanyIdFromURL() {
         let lastNum = link.search("&")
         cleanLink = link.slice(firstNum+4, lastNum)
     }
+    cleanLink = cleanLink.replace("#", "")
     return cleanLink
 }
 
