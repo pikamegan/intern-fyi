@@ -331,26 +331,49 @@ function getAllReviews(companyId) {
             let reviewStr = ``
 
             let companyReviewNum = document.getElementById("companyReviewNum")
-            companyReviewNum.innerHTML += `${response.data.length} people reviewed`
+            companyReviewNum.innerHTML += `${posts.length} people reviewed`
 
             let totalReviewNum = document.getElementById("totalReviewNum")
-            totalReviewNum.innerHTML += `(${response.data.length})`
+            totalReviewNum.innerHTML += `(${posts.length})`
 
-            for (post of this.posts) {
-                console.log(post)
             
-                let reviewdesc = post.reviewDescription
-                let jobTitle = post.jobTitle
 
-                let overallRating = post.overallRating
-                let criteria1 = post.criteria1
-                let criteria2 = post.criteria2
-                let criteria3 = post.criteria3
-                let criteria4 = post.criteria4
-                let criteria5 = post.criteria5
-                let criteria6 = post.criteria6
+            for (let i = posts.length - 1; i >= 0; i--) {
+                console.log(posts[i])
 
-                let postDate = post.postDateTime
+                let reviewdesc = posts[i].reviewDescription
+                let jobTitle = posts[i].jobTitle
+
+                let overallRating = posts[i].overallRating
+                let criteria1 = posts[i].criteria1
+                let criteria2 = posts[i].criteria2
+                let criteria3 = posts[i].criteria3
+                let criteria4 = posts[i].criteria4
+                let criteria5 = posts[i].criteria5
+                let criteria6 = posts[i].criteria6
+
+                let postDate = posts[i].postDateTime
+                let postYear = (postDate.slice(0,4))
+                let postMonth =  (postDate.slice(5,7)) - 1 // minus 1 due to months starting from 0
+                let postDay =  (postDate.slice(8,10))
+                let postHour = (postDate.slice(11,13))
+                let postMinute = (postDate.slice(14,16))
+                let postSecond = (postDate.slice(17,19))
+
+                let date2compare = new Date()
+                date2compare.setFullYear(postYear)
+                date2compare.setMonth(postMonth)
+                date2compare.setDate(postDay)
+                date2compare.setHours(postHour)
+                date2compare.setMinutes(postMinute)
+                date2compare.setSeconds(postSecond)
+
+                const date = new Date()
+                const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()]
+                const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()]
+
+                let timeDifference = date.getTime() - date2compare.getTime()
+                let dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24))
 
                 reviewStr += `
 
@@ -359,24 +382,37 @@ function getAllReviews(companyId) {
                         <p><strong>Overall Rating:  <img src="../IMG/star.svg" alt="star"> ${overallRating}</strong></p>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-start">
+                        <h5 class="card-title text-start mb-3">
                             <img src="../IMG/avatar1.svg" alt="User profile image">
                             <strong>${jobTitle}</strong>
                         </h5>
+                        <div class="card-subtitle mb-2 ps-1 text-muted text-start d-flex justify-content-around flex-wrap">
+                            <p>Pay: 💰 ${criteria1} </p>
+                            <p>Skills: 📚 ${criteria2} </p>
+                            <p>Culture: 🎉 ${criteria3} </p>
+                            <p>Food: 🍕 ${criteria4} </p>
+                            <p>Mentorship: 🤝 ${criteria5} </p>
+                            <p>Hierarchy: 📊 ${criteria6} </p>
+                        </div>
                         <p class="card-text text-start ps-1">${reviewdesc}</p>
                     </div>
                     <div class="card-footer text-muted">
-                        ${postDate}
+                        ${dayDifference} day ago
                     </div>
                 </div>
                 `
+                //<img src="../IMG/star.svg" alt="star" class="d-none d-sm-inline-block">
 
                 let reviewsBox = document.getElementById("reviewsBox")
                 reviewsBox.innerHTML = reviewStr
             }
         })
         .catch(error => {
-            console.log("There is an error")
+            console.log(error)
+            let noReviewStr = `No reviews yet. Write one now!`
+
+            let reviewsBox = document.getElementById("reviewsBox")
+            reviewsBox.innerHTML = noReviewStr
         })
 }
 
