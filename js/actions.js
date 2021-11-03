@@ -401,8 +401,7 @@ function getAllReviews(companyId) {
                     </div>
                 </div>
                 `
-                //<img src="../IMG/star.svg" alt="star" class="d-none d-sm-inline-block">
-
+                
                 let reviewsBox = document.getElementById("reviewsBox")
                 reviewsBox.innerHTML = reviewStr
             }
