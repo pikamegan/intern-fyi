@@ -38,12 +38,6 @@ function validate_form() {
     if (writtenreview.length < 11) {
         alert("Written Review must be contain at least 10 characters");
         var is_valid = false;
-        form.addEventListener('submit', function (event) {
-            if (!is_valid) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
-        })
     }
 }
 
@@ -289,7 +283,7 @@ function loadCompanyPage() {
             let hierarchyRatingStr = ""
 
             for (company of this.allCompanies) {
-                if (getCompanyNameFromURL() == company.companyName.toLowerCase()) {
+                if (getCompanyIdFromURL() == company.companyID) {
                     var idStr = `${company.companyID}`
                     nameStr = `${company.companyName}`
                     var photoStr = `${company.companyInfo.imageLink}`
@@ -351,7 +345,7 @@ function getAllCompanies() {
             var companyList = document.getElementById("company")
             let str = ""
             for (company of this.allCompanies) {
-                if (getCompanyNameFromURL() == company.companyName.toLowerCase()) {
+                if (getCompanyIdFromURL() == company.companyID) {
                     str += `<option value=${company.companyID} selected>${company.companyName}</option>`
                 } else {
                     str += `<option value=${company.companyID}>${company.companyName}</option>`
@@ -389,7 +383,6 @@ function getAllReviews(companyId) {
             
 
             for (let i = posts.length - 1; i >= 0; i--) {
-                console.log(posts[i])
 
                 let reviewdesc = posts[i].reviewDescription
                 let jobTitle = posts[i].jobTitle
@@ -472,11 +465,16 @@ function getAllReviews(companyId) {
         })
 }
 
-function getCompanyNameFromURL() {
+function getCompanyIdFromURL() {
     let link = decodeURI(window.location.href)
-    let firstNum = link.search("cname=")
-    let cleanLink = link.slice(firstNum + 6).toLowerCase()
-    cleanLink = cleanLink.replace("#", "")
+    let firstNum = link.search("cid=")
+    var cleanLink = ""
+    if (link.search("&") == -1) {
+        cleanLink = link.slice(firstNum+4)
+    }  else {
+        let lastNum = link.search("&")
+        cleanLink = link.slice(firstNum+4, lastNum)
+    }
     return cleanLink
 }
 
