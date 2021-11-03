@@ -49,23 +49,73 @@ function validate_form() {
 
 
 function showCriteria() {
+    getAllCompanies()
+
     let criteria = {
         "Pay": "This job pays well",
         "Skills Learned": "The company helped me learn new skills",
         "Company Culture": "The company's level of cohesion and friendliness",
-        "Food": "The price of nearby food",
+        "Food": "The price of nearby food is reasonable",
         "Mentorship": "The company provides in-person training or mentorship",
-        "Flat Hierarchy": "The company maintains little hierarchy"
+        "Flat Hierarchy": "The company maintains little hierarchy, leading to better communication between employees"
     }
 
+    let criteriaImg = [
+        'pay_companyreview.svg', 'skills_companyreview.svg', 'companyculture_companyreview.svg', 'food_companyreview.svg',
+        'mentorship_companyreview.svg', 'flathierarchy_companyreview.svg'
+    ]
+
+    let criteriaStr = ``
     let counter = 1
+
     for (criterion in criteria) {
-        document.getElementById('btn' + counter).innerHTML += `<strong>${criterion}</strong>`
-        document.getElementById('body' + counter).innerHTML += `${criteria[criterion]}`
+        criteriaStr += `<div class="accordion-item">
+        <h2 class="accordion-header=" id="heading${counter}">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse${counter}" aria-expanded="true" aria-controls="collapse${counter}">
+                <strong>${criterion}</strong>
+            </button>
+        </h2>
+        <div id="collapse${counter}" class="accordion-collapse collapse show" aria-labelledby="heading${counter}"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body px-5">
+                <div class="row mb-1 align-items-center">
+                    <div class="col-12 col-md-6 justify-content-center"><img
+                            src="../img/${criteriaImg[counter-1]}" alt="${criterion} criteria"
+                            class="img-fluid d-none d-sm-block"></div>
+                    <div class="col-12 col-md-6 d-flex bd-highlight flex-column mb-3">
+    
+                        <div class="p-2 bd-highlight text-center">${criteria[criterion]}</div>
+                        <div class="p-2 bd-highlight d-flex justify-content-around">
+    
+                            <img src="../IMG/1bad.svg" alt="sad face"
+                                style="width: 40px; height: 40px;">
+                            <label class="inlineLabel"><input type="radio" name="criteria${counter}"
+                                    class="inlineRadio pointer" value="1" required>1</label>
+                            <label class="inlineLabel"><input type="radio" name="criteria${counter}"
+                                    class="inlineRadio pointer" value="2" required>2</label>
+                            <label class="inlineLabel"><input type="radio" name="criteria${counter}"
+                                    class="inlineRadio pointer" value="3" required>3</label>
+                            <label class="inlineLabel"><input type="radio" name="criteria${counter}"
+                                    class="inlineRadio pointer"  value="4" required>4</label>
+                            <label class="inlineLabel"><input type="radio" name="criteria${counter}"
+                                    class="inlineRadio pointer" value="5" required>5</label>
+                            <img src="../IMG/5happy.svg" alt="happy face"
+                                style="width: 40px; height: 40px;">
+    
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        </div>`
         counter += 1
     }
 
-    getAllCompanies()
+    document.getElementById("accordionExample").innerHTML += criteriaStr
+
+
 }
 
 // the 2 scroll functions below are adapted from: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
@@ -374,6 +424,13 @@ function getAllReviews(companyId) {
 
                 let timeDifference = date.getTime() - date2compare.getTime()
                 let dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24))
+                var dayStr = "day"
+
+                if (dayDifference > 1) {
+                    dayStr = 'days'
+                }
+
+                let randomImg = Math.floor(Math.random()*8)+1
 
                 reviewStr += `
 
@@ -383,7 +440,7 @@ function getAllReviews(companyId) {
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-start mb-3">
-                            <img src="../IMG/avatar1.svg" alt="User profile image">
+                            <img src="../IMG/avatar${randomImg}.svg" alt="User profile image" style="width: 48px; height: 48px;">
                             <strong>${jobTitle}</strong>
                         </h5>
                         <div class="card-subtitle mb-2 ps-1 text-muted text-start d-flex justify-content-around flex-wrap">
@@ -397,7 +454,7 @@ function getAllReviews(companyId) {
                         <p class="card-text text-start ps-1">${reviewdesc}</p>
                     </div>
                     <div class="card-footer text-muted">
-                        ${dayDifference} day ago
+                        ${dayDifference} ${dayStr} ago
                     </div>
                 </div>
                 `
