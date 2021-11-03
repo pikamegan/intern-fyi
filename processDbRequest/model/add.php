@@ -51,11 +51,11 @@ if (isset($_POST['companyid']) && isset($_POST['jobtitle']) && isset($_POST['sch
 if ($status) {
     echo "<h1>Insertion was successful</h1>";
     echo "Click <a href='display.php'>here</a> to return to Main Page";
-    header("Location: ../../HTML/WriteAReview.html?success=success");
+    header("Location: ../../HTML/company.html?cid=$companyid");
     exit;
 } else {
     echo "<h1>Insertion was NOT successful</h1>";
-    header("Location: ../../HTML/WriteAReview.html?success=failure");
+    header("Location: ../../HTML/company.html?cid=$companyid");
     exit;
 
 }
