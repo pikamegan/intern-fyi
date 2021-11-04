@@ -31,148 +31,171 @@
 
 <body>
     <!-- copy this part -->
-    <div class ="navbarTemplate">
+    <div class="navbarTemplate">
         <div id="smallNavBar">
             <navigation-bar-small-login v-if="isLogined()"></navigation-bar-small-login>
             <navigation-bar-small-logout v-else></navigation-bar-small-logout>
         </div>
-        
+
         <div id="bigNavBar">
             <navigation-bar-big-login v-if="isLogined()"></navigation-bar-big-login>
             <navigation-bar-big-logout v-else></navigation-bar-big-logout>
         </div>
     </div>
     <!-- copy this part -->
-    
+
     <h1 class="pageTitle my-5">Your Profile</h1>
     <div class="container-fluid m-5">
         <div class="row">
             <div class="col col-sm-12 col-lg-6">
-                <div class="row personProfile shadow rounded rounded-3 container mb-3"
-                    style="width: 100%;">
-                    <span style="position:absolute;right:0;top:-15px" ><i class="bi bi-pencil fill-secondary"></i></span>
-                        <div class="col col-sm-12 col-md-12 col-lg-6 text-center align-middle"> <!-- How to vertically align image? -->
-                            <img src="../IMG/avatar3.svg" style="width: 75%; height: 75%; border-radius: 50%;"
-                                class="m-3">
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6">
-                            <span style="position:absolute;right:0;top:-15px" ></span>
-                            <div class="m-5">
-                                <h3 class="text-start my-5">Name</h3> <!-- How to make this centered when small? -->
-                                <p>Gender: <span id="profileGender"></span></p>
-                                <p>Email: <span id="profileEmailAddress"></span></p>
-                                <p>Password: <span id="profilePW"></span></p>
-                            </div>
-
-                        </div>
+                <div class="row personProfile shadow rounded rounded-3 container mb-3" style="width: 100%;">
+                    <span style="position:absolute;right:0;top:-15px"><i class="bi bi-pencil fill-secondary"></i></span>
+                    <div class="col col-sm-12 col-md-12 col-lg-6 text-center align-middle">
+                        <!-- How to vertically align image? -->
+                        <img src="../IMG/avatar3.svg" style="width: 75%; height: 75%; border-radius: 50%;" class="m-3">
                     </div>
-
-                    <div class="row">
-                        <div class="mb-xs-3 mx-1 col mb-sm-3 col col-sm-12 col-lg-6 shadow rounded-2 container" style="width: 45%;">
-                            <img src="../IMG/SMU_Campus.jpeg" class="d-block align-content-center m-3" style="width: 90%;"></img> <!-- How to align image horizontally -->
-                            <p class="text-center">Singapore Management University, <br> Singapore</p>
-                        </div>
-
-                        <div class="mb-xs-3 mx-1 mb-sm-3 col col-sm-12 col-lg-6 m shadow rounded-2 align-middle text-center" style="width: 45%;">
-                            <h1 class="display-1">3</h1>
-                            <p >Reviews</p>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <span style="position:absolute;right:0;top:-15px"></span>
+                        <div class="m-5">
+                            <h3 class="text-start my-5">Name</h3> <!-- How to make this centered when small? -->
+                            <p>Gender: <span id="profileGender"></span></p>
+                            <p>Email: <span id="profileEmailAddress"></span></p>
+                            <p>Password: <span id="profilePW"></span></p>
                         </div>
 
                     </div>
                 </div>
 
-            </div>
-            <div class="col col-sm-12 col-lg-6">
                 <div class="row">
-                    <h3 class="text-start"> Recently viewed companies</h3>
-                        <div class="row my-3">
-                            <div class="collapsibleSearch shadow" @click='select' @select='changeState'>
-                                <img :src="company.companyInfo.imageLink" style="height: 100px; width: 100px; float: left; border-radius: 10px">
-                                <div class="container">
-                                    <div class="row justify-content-between">
-                                        <div class="col searchRowTitle">
-                                            {{company.companyName}}
-                                        </div>
-                                        <div class="col-auto align-items-end">
-                                            {{company.companyRatings.overallRating}}
-                                            <img src="../img/star.svg" style="height: 20px; width: 20px;">
-                                        </div>
-                                    </div>
-                                    <div class="row justify-content-start">
-                                        <div class="col-xl-3 col-lg-4">
-                                            company.location
-                                        </div>
-                                        <div class="col">
-                                            <img src="../img/mapMarkIcon_black.svg" style="height: 20px; width: 20px;">
-                                            company.distance
-                                        </div>
-                                    </div>
-                                    <div class="row justify-content-start">
-                                        <div class="col-xl-3 col-lg-4">
-                                            <img src="../img/pen_write_review.svg" style="height: 20px; width: 20px;">
-                                            <a :href="writeReviewPage">
-                                                Write a Review
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <img src="../img/eyeSeeCompanyReview.svg" style="height: 20px; width: 20px;">
-                                            <a :href="companyPage">
-                                                View Company Profile
-                                            </a>
-                                        </div>
-                                    </div>
+                    <div class="mb-xs-3 mx-1 col mb-sm-3 col col-sm-12 col-lg-6 shadow rounded-2 container"
+                        style="width: 45%;">
+                        <img src="../IMG/SMU_Campus.jpeg" class="d-block align-content-center m-3"
+                            style="width: 90%;"></img> <!-- How to align image horizontally -->
+                        <p class="text-center">Singapore Management University, <br> Singapore</p>
+                    </div>
+
+                    <div class="mb-xs-3 mx-1 mb-sm-3 col col-sm-12 col-lg-6 m shadow rounded-2 align-middle text-center"
+                        style="width: 45%;">
+                        <h1 class="display-1">3</h1>
+                        <p>Reviews</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col col-sm-12 col-lg-6">
+            <div class="row">
+                <h3 class="text-start"> Recently viewed companies</h3>
+                <div class="row my-3">
+                    <div class="collapsibleSearch shadow" @click='select' @select='changeState'>
+                        <img :src="company.companyInfo.imageLink"
+                            style="height: 100px; width: 100px; float: left; border-radius: 10px">
+                        <div class="container">
+                            <div class="row justify-content-between">
+                                <div class="col searchRowTitle">
+                                    {{company.companyName}}
+                                </div>
+                                <div class="col-auto align-items-end">
+                                    {{company.companyRatings.overallRating}}
+                                    <img src="../img/star.svg" style="height: 20px; width: 20px;">
+                                </div>
+                            </div>
+                            <div class="row justify-content-start">
+                                <div class="col-xl-3 col-lg-4">
+                                    company.location
+                                </div>
+                                <div class="col">
+                                    <img src="../img/mapMarkIcon_black.svg" style="height: 20px; width: 20px;">
+                                    company.distance
+                                </div>
+                            </div>
+                            <div class="row justify-content-start">
+                                <div class="col-xl-3 col-lg-4">
+                                    <img src="../img/pen_write_review.svg" style="height: 20px; width: 20px;">
+                                    <a :href="writeReviewPage">
+                                        Write a Review
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <img src="../img/eyeSeeCompanyReview.svg" style="height: 20px; width: 20px;">
+                                    <a :href="companyPage">
+                                        View Company Profile
+                                    </a>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row my-3">
-                            <div class="collapsibleSearch shadow" @click='select' @select='changeState'>
-                                <img :src="company.companyInfo.imageLink" style="height: 100px; width: 100px; float: left; border-radius: 10px">
-                                <div class="container">
-                                    <div class="row justify-content-between">
-                                        <div class="col searchRowTitle">
-                                            {{company.companyName}}
-                                        </div>
-                                        <div class="col-auto align-items-end">
-                                            {{company.companyRatings.overallRating}}
-                                            <img src="../img/star.svg" style="height: 20px; width: 20px;">
-                                        </div>
-                                    </div>
-                                    <div class="row justify-content-start">
-                                        <div class="col-xl-3 col-lg-4">
-                                            company.location
-                                        </div>
-                                        <div class="col">
-                                            <img src="../img/mapMarkIcon_black.svg" style="height: 20px; width: 20px;">
-                                            company.distance
-                                        </div>
-                                    </div>
-                                    <div class="row justify-content-start">
-                                        <div class="col-xl-3 col-lg-4">
-                                            <img src="../img/pen_write_review.svg" style="height: 20px; width: 20px;">
-                                            <a :href="writeReviewPage">
-                                                Write a Review
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <img src="../img/eyeSeeCompanyReview.svg" style="height: 20px; width: 20px;">
-                                            <a :href="companyPage">
-                                                View Company Profile
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>    
                     </div>
                 </div>
 
-
+                <div class="row my-3">
+                    <div class="collapsibleSearch shadow" @click='select' @select='changeState'>
+                        <img :src="company.companyInfo.imageLink"
+                            style="height: 100px; width: 100px; float: left; border-radius: 10px">
+                        <div class="container">
+                            <div class="row justify-content-between">
+                                <div class="col searchRowTitle">
+                                    {{company.companyName}}
+                                </div>
+                                <div class="col-auto align-items-end">
+                                    {{company.companyRatings.overallRating}}
+                                    <img src="../img/star.svg" style="height: 20px; width: 20px;">
+                                </div>
+                            </div>
+                            <div class="row justify-content-start">
+                                <div class="col-xl-3 col-lg-4">
+                                    company.location
+                                </div>
+                                <div class="col">
+                                    <img src="../img/mapMarkIcon_black.svg" style="height: 20px; width: 20px;">
+                                    company.distance
+                                </div>
+                            </div>
+                            <div class="row justify-content-start">
+                                <div class="col-xl-3 col-lg-4">
+                                    <img src="../img/pen_write_review.svg" style="height: 20px; width: 20px;">
+                                    <a :href="writeReviewPage">
+                                        Write a Review
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <img src="../img/eyeSeeCompanyReview.svg" style="height: 20px; width: 20px;">
+                                    <a :href="companyPage">
+                                        View Company Profile
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
         </div>
     </div>
-    <div class="footerComp">
-        <intern-footer home = "../index.html" abt = "about.html" career="career.html" help= "help.html"  feedback="feedback.html" @gotohome="goHome"></intern-footer>
     </div>
+    <div class="footerComp">
+        <intern-footer home="../index.html" abt="about.html" career="career.html" help="help.html"
+            feedback="feedback.html" @gotohome="goHome"></intern-footer>
+    </div>
+    <script>
+        
+
+        let url = 'http://localhost/GitHub/WAD-grpproject/processDbRequest/model/getUser.php?'
+        axios.get(url, {
+            params: {
+                email: 'esther.2020@scis.smu.edu.sg',
+            }
+        })
+            .then(response => {
+                console.log(response.data)
+            })
+
+            .catch(error => {
+                console.log(error)
+            });
+
+    </script>
 
 
 </body>
