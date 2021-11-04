@@ -100,7 +100,7 @@ function showCriteria() {
             <div class="accordion-body px-5">
                 <div class="row mb-1 align-items-center">
                     <div class="col-12 col-md-6 justify-content-center"><img
-                            src="../img/${criteriaImg[counter-1]}" alt="${criterion} criteria"
+                            src="../img/${criteriaImg[counter - 1]}" alt="${criterion} criteria"
                             class="img-fluid d-none d-sm-block"></div>
                     <div class="col-12 col-md-6 d-flex bd-highlight flex-column mb-3">
     
@@ -370,7 +370,7 @@ function getAllCompanies() {
             }
 
             companyList.innerHTML += str
-            
+
         })
         .catch(error => {
             this.errorMessage = error.message
@@ -397,7 +397,7 @@ function getAllReviews(companyId) {
             let totalReviewNum = document.getElementById("totalReviewNum")
             totalReviewNum.innerHTML += `(${posts.length})`
 
-            
+
 
             for (let i = posts.length - 1; i >= 0; i--) {
 
@@ -413,12 +413,12 @@ function getAllReviews(companyId) {
                 let criteria6 = posts[i].criteria6
 
                 let postDate = posts[i].postDateTime
-                let postYear = (postDate.slice(0,4))
-                let postMonth =  (postDate.slice(5,7)) - 1 // minus 1 due to months starting from 0
-                let postDay =  (postDate.slice(8,10))
-                let postHour = (postDate.slice(11,13))
-                let postMinute = (postDate.slice(14,16))
-                let postSecond = (postDate.slice(17,19))
+                let postYear = (postDate.slice(0, 4))
+                let postMonth = (postDate.slice(5, 7)) - 1 // minus 1 due to months starting from 0
+                let postDay = (postDate.slice(8, 10))
+                let postHour = (postDate.slice(11, 13))
+                let postMinute = (postDate.slice(14, 16))
+                let postSecond = (postDate.slice(17, 19))
 
                 let date2compare = new Date()
                 date2compare.setFullYear(postYear)
@@ -440,7 +440,7 @@ function getAllReviews(companyId) {
                     dayStr = 'day'
                 }
 
-                let randomImg = Math.floor(Math.random()*8)+1
+                let randomImg = Math.floor(Math.random() * 8) + 1
 
                 reviewStr += `
 
@@ -468,7 +468,7 @@ function getAllReviews(companyId) {
                     </div>
                 </div>
                 `
-                
+
                 let reviewsBox = document.getElementById("reviewsBox")
                 reviewsBox.innerHTML = reviewStr
             }
@@ -487,10 +487,10 @@ function getCompanyIdFromURL() {
     let firstNum = link.search("cid=")
     var cleanLink = ""
     if (link.search("&") == -1) {
-        cleanLink = link.slice(firstNum+4)
-    }  else {
+        cleanLink = link.slice(firstNum + 4)
+    } else {
         let lastNum = link.search("&")
-        cleanLink = link.slice(firstNum+4, lastNum)
+        cleanLink = link.slice(firstNum + 4, lastNum)
     }
     cleanLink = cleanLink.replace("#", "")
     return cleanLink
@@ -500,13 +500,22 @@ function getCompanyIdFromURL() {
 const navigationBar = Vue.createApp({
     data() {
         return {
-
+            userObj: ''
         }
     },
     methods: {
         isLogined() {
-            return false
-            //later can put axios to php, https://phpforever.com/vuejs/login-example-in-vuejs-and-php/
+            let url = `../processDbRequest/processCompanyRequest.php`; 
+            axios.get(url)
+                .then(response => {
+                    // this gets the data, which is an array
+                    this.userObj = response.data
+                    console.log(response.data);
+                    return true;
+                })
+                .catch(error => {
+                    console.log(error);
+                })
         }
     },
 })

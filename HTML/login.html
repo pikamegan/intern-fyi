@@ -23,8 +23,7 @@
 </head>
 
 <body>
-
-    <form class="form-signin" action="login.php">
+    <form class="form-signin" action="../processDbRequest/model/login.php" method="POST">
         <!-- Form header -->
         <div class="inHeadDiv">
             <div class="display-3 inHead">Log in</div>
@@ -38,12 +37,12 @@
 
                 <!-- Email -->
                 <label class="sr-only">School email address</label>
-                <input id="loginEmail" class="form-control loginField" type="email" placeholder="School email address"
+                <input name= "email" id="loginEmail" class="form-control loginField" type="email" placeholder="School email address"
                     required="" autofocus="">
 
                 <!-- Password -->
                 <label class="sr-only" for="loginPw">Password</label>
-                <input id="loginPw" class="form-control loginField" type="email" placeholder="Password" required=""
+                <input name="pw" id="loginPw" class="form-control loginField" type="email" placeholder="Password" required=""
                     autofocus="">
                 <i id="loginPwToggle" class="bi bi-eye-fill pwToggle"></i>
 
@@ -56,13 +55,10 @@
                     <input id="loginRemCheck" type="checkbox" value="rememberCheck">
                     <label for="loginRemCheck">Remember me</label>
                 </div>
-
-                <div class="col" id="ResetPw">
+                <!-- <div class="col" id="ResetPw">
                     <a id="resetPwLink" href="resetPw.html" class="loginBodyExtra">Forgot password?</a>
-                </div>
-
+                </div> -->
             </div>
-
             <!-- Submit -->
             <button id="loginBtn" class="btn btn-primary" type="submit">Log in</button>
         </div>

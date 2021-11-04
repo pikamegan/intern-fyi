@@ -1,35 +1,25 @@
 <?php
+require_once 'common.php';
 
-session_start();
-$message = "";
-if (count($_POST) > 0) {
-    $con = mysqli_connect('127.0.0.1:3306', 'root', '', 'admin') or die('Unable To connect');
-    $result = mysqli_query($con, "SELECT * FROM login_user WHERE user_name='" . $_POST["user_name"] . "' and password = '" . $_POST["password"] . "'");
-    $row = mysqli_fetch_array($result);
-    if (is_array($row)) {
-        $_SESSION["id"] = $row['id'];
-        $_SESSION["name"] = $row['name'];
+if (isset($_POST['email']) && isset($_POST['pw'])){
+    $email = $_POST['email'];
+    $pw = $_POST['pw'];
+    
+    $userDAO = new userDAO();
+    $userObj = $userDAO->authenticate($email, $pw);
+    
+    if (isset($userObj)) {
+        $_SESSION['email'] = $email;
+        $_SESSION['pw'] = $pw;
+        $postJSON = json_encode($userObj);
+        echo $postJSON;
+        header("Location: ../../HTML/home.html?login=success");
+        exit();
     } else {
-        $message = "Invalid Username or Password!";
+        header("Location: ../../HTML/home.html?login=failed");
+        exit();
     }
-}
-if (isset($_SESSION["id"])) {
-    header("Location: index.html");
-    echo "true";
 }else{
-    echo "false";
+    header("Location: ../../HTML/login.html?login=PlsEnterAllFields");
+    exit();
 }
-
-?>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-</body>
-</html> -->

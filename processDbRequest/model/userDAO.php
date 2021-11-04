@@ -25,10 +25,10 @@ class userDAO
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
         // STEP 4
-        $review_object = null;
+        $user_object = null;
         if ($row = $stmt->fetch()) {
             $user_object =
-            new review(
+            new user(
                 $row['firstName'],
                 $row['lastName'],
                 $row['genderID'],
@@ -39,6 +39,17 @@ class userDAO
                 $row['profilePictureUrl'],
                 $row['reviewsNo']);
         }
+
+        // CREATE TABLE `intern` (
+        //     `firstName` varchar(50) NOT NULL,
+        //     `lastName` varchar(50) NOT NULL,
+        //     `genderID` varchar(1) NOT NULL,
+        //     `country` varchar(100) NOT NULL,
+        //     `school` varchar(100) NOT NULL,
+        //     `schoolEmail` nvarchar(255) NOT NULL,
+        //     `password` nvarchar(50) NOT NULL,
+        //     `profilePictureUrl` varchar(2083) NOT NULL,
+        //     `reviewsNo` int NOT NULL,)
 
         // STEP 5
         $stmt = null;
@@ -53,8 +64,6 @@ class userDAO
 
         $connMgr = new ConnectionManager();
         $conn = $connMgr->getConnection();
-
-        // INSERT INTO `intern`(`firstName`, `lastName`, `genderID`, `country`, `school`, `schoolEmail`, `password`, `profilePictureUrl`, `reviewsNo`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])
 
         $sql = "INSERT INTO `intern`(`firstName`, `lastName`, `genderID`, `country`, `school`, `schoolEmail`, `password`, `profilePictureUrl`, `reviewsNo`) VALUES (:firstName,:lastName,:genderID, 'Singapore' ,:school,:schoolEmail,:password,:profilePictureUrl,0)";
 
@@ -81,26 +90,61 @@ class userDAO
 
     public function authenticate($email, $password)
     {
-        $sql = "SELECT * FROM `intern` WHERE schoolEmail = :email and password=:password";
-
         $connMgr = new ConnectionManager();
         $conn = $connMgr->getConnection();
 
+        $sql = "SELECT * FROM `intern` WHERE schoolEmail = :email and password=:password";
+
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':email', $email, PDO::PARAM_INT);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':password', $password, PDO::PARAM_STR);
 
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $stmt->execute();
 
-        $role = null;
+        $user_object = null;
         if ($row = $stmt->fetch()) {
-            $role = $row['role'];
+            $user_object =
+            new user(
+                $row['firstName'],
+                $row['lastName'],
+                $row['genderID'],
+                $row['country'],
+                $row['school'],
+                $row['schoolEmail'],
+                $row['password'],
+                $row['profilePictureUrl'],
+                $row['reviewsNo']);
         }
 
         $stmt = null;
         $conn = null;
 
-        return $role;
+        return $user_object;
+    }
+
+    public function updatePassword($email, $password)
+    {
+        // Code here
+        $result = true;
+
+        // connect to database
+        $connMgr = new ConnectionManager();
+        $conn = $connMgr->getConnection();
+
+        // prepare update
+        $sql = "UPDATE intern set password =:password where schoolEmail = :email";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+        
+
+        $result = $stmt->execute();
+        // close connections
+        $stmt = null;
+        $conn = null;
+
+        return $result;
+
     }
 }
