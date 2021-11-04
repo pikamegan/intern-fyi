@@ -511,7 +511,11 @@ const navigationBar = Vue.createApp({
                     // this gets the data, which is an array
                     this.userObj = response.data
                     console.log(response.data);
-                    return true;
+                    if (response.data) {
+                        return true;
+                    } else {
+                        return false;
+                    }
                 })
                 .catch(error => {
                     console.log(error);
