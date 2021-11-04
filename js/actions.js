@@ -500,7 +500,7 @@ function getCompanyIdFromURL() {
 const navigationBar = Vue.createApp({
     data() {
         return {
-            userObj: ''
+            userObj: 'dsfa'
         }
     },
     methods: {
