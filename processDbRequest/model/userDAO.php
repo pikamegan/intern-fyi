@@ -48,18 +48,18 @@ class userDAO
         return $user_object;
     }
 
-    public function addUser($firstName,$lastName,$genderID,$school,$schoolEmail,$password,$profilePictureUrl)
+    public function addUser($firstName, $lastName, $genderID, $school, $schoolEmail, $password, $profilePictureUrl)
     {
-    
+
         $connMgr = new ConnectionManager();
         $conn = $connMgr->getConnection();
 
         // INSERT INTO `intern`(`firstName`, `lastName`, `genderID`, `country`, `school`, `schoolEmail`, `password`, `profilePictureUrl`, `reviewsNo`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])
 
         $sql = "INSERT INTO `intern`(`firstName`, `lastName`, `genderID`, `country`, `school`, `schoolEmail`, `password`, `profilePictureUrl`, `reviewsNo`) VALUES (:firstName,:lastName,:genderID, 'Singapore' ,:school,:schoolEmail,:password,:profilePictureUrl,0)";
-        
+
         // STEP 2
-        
+
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
         $stmt->bindParam(':lastName', $lastName, PDO::PARAM_STR);
@@ -77,5 +77,30 @@ class userDAO
 
         // STEP 5
         return $status;
+    }
+
+    public function authenticate($email, $password)
+    {
+        $sql = "SELECT * FROM `intern` WHERE schoolEmail = :email and password=:password";
+
+        $connMgr = new ConnectionManager();
+        $conn = $connMgr->getConnection();
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':email', $email, PDO::PARAM_INT);
+        $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+
+        $role = null;
+        if ($row = $stmt->fetch()) {
+            $role = $row['role'];
+        }
+
+        $stmt = null;
+        $conn = null;
+
+        return $role;
     }
 }
