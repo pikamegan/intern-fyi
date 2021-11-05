@@ -505,21 +505,24 @@ const navigationBar = Vue.createApp({
     },
     methods: {
         isLogined() {
-            let url = `../processDbRequest/processCompanyRequest.php`; 
-            axios.get(url)
-                .then(response => {
-                    // this gets the data, which is an array
-                    this.userObj = response.data
-                    console.log(response.data);
-                    if (response.data) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                })
-                .catch(error => {
-                    console.log(error);
-                })
+            return true;
+            // let url = `../processDbRequest/model/login.php`; 
+            // axios.get(url)
+            //     .then(response => {
+            //         // this gets the data, which is an array
+            //         this.userObj = response.data
+            //         console.log(response.data);
+            //         if (response.data) {
+            //             return true;
+            //         } else {
+            //             return false;
+            //         }
+            //     })
+            //     .catch(error => {
+            //         console.log(error);
+            //     })
+
+            
         }
     },
 })
