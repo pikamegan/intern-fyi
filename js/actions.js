@@ -606,6 +606,7 @@ navigationBar.component('navigation-bar-big-login', {
             window.location = encodeURI("../HTML/search.html" + "?sname=" + this.searchQuery)
         }
     },
+    props: ['imgsrc'],
     template: `<nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
     <div class="container-fluid">
         <a class="navbar-brand" href="../HTML/home.html">
@@ -629,9 +630,8 @@ navigationBar.component('navigation-bar-big-login', {
             Write review
         </button>
         <button class="btn border-secondary rounded-circle me-2" id="userBtn" onclick="gotoMyProfile()">
-            ZT
+            <img class="img-fluid" :src= "imgsrc" style="width: 50px; height: 50px;">
         </button>
-
         </div>
     </div>
     </nav>`

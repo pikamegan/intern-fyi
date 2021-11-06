@@ -77,7 +77,7 @@ if (isset($_POST['email']) && isset($_POST['pw'])) {
         <div id="bigNavBar">
             <?php
                 if ($succesLogin) {
-                    echo "<navigation-bar-big-login></navigation-bar-big-login>";
+                    echo "<navigation-bar-big-login imgsrc = ''></navigation-bar-big-login>";
                 } else {
                     echo "<navigation-bar-big-logout v-else></navigation-bar-big-logout>";
                 }

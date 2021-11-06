@@ -399,7 +399,7 @@ values (
     0.0
   ),
   (
-    'Singapore Managment University',
+    'Singapore Management University',
     'A premier university in Asia, the Singapore Management University (SMU) is internationally recognised for its world-class research and distinguished teaching. Established in 2000, SMU’s mission is to generate leading-edge research with global impact and produce broad-based, creative and entrepreneurial leaders for the knowledge-based economy.',
     'https://www.linkedin.com/school/singapore-management-university/',
     'https://www.smu.edu.sg/',
