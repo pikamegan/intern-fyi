@@ -603,27 +603,27 @@ navigationBar.component('navigation-bar-small-logout', {
 
     <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
         <div class="container-fluid d-inline-block">
-
-        <div class="input-group my-2">
-            <a class="navbar-brand" href="../HTML/home.html">
-            <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
-            </a>
-            <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
-            aria-describedby="search-addon" />
-            <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
-            <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
-            </button>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
+            <div class="input-group my-2">
+                <a class="navbar-brand" href="../HTML/home.html">
+                <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
+                </a>
+                <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
+                aria-describedby="search-addon" />
+                <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
+                <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;">
+                </div>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
         </div>
         <div class="collapse navbar-collapse text-center" id="navbarCollapse">
-        <a href="./signup.html">Register</a><br>
-        <a href="./login.html">Login</a><br>
-        <a href="./WriteAReview.html">Write a Review &#9998;</a><br>
-    </div>
+            <a href="./signup.html">Register</a><br>
+            <a href="./login.html">Login</a><br>
+            <a href="./WriteAReview.html">Write a Review &#9998;</a><br>
+        </div>
     </nav>
     <!-- end of small navigation bar -->`
 })
@@ -697,14 +697,13 @@ navigationBar.component('navigation-bar-big-logout', {
         </button>
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="input-group my-2">
-            <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded" placeholder="Search for Company or Industry"
-            aria-label="Search" aria-describedby="search-addon" />
-            <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
-            <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
-            </button>
-        </div>
-        <div>
+            <div class="input-group my-2">
+                <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded" placeholder="Search for Company or Industry"
+                aria-label="Search" aria-describedby="search-addon" />
+                <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
+                <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
+                </button>
+            </div>
             <button class="btn btn-secondary my-2 mx-4" id="loginBtn" onclick="gotoSignInPage()">
                 Login
             </button>
@@ -712,7 +711,6 @@ navigationBar.component('navigation-bar-big-logout', {
                 Signup
             </button>
         </div>
-    </div>
     </div>
     </nav>
     <!-- end of navigation bar -->`
