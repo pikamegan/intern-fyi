@@ -1,6 +1,8 @@
 <?php
 require_once 'common.php';
 
+session_start();
+
 $_SESSION['loggedin'] = false;
 
 if (isset($_POST['email']) && isset($_POST['pw'])) {
