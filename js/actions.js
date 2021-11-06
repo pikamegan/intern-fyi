@@ -12,7 +12,7 @@ function gotoSignInPage() {
 
 
 function gotoHomePage() {
-    window.location = "../HTML/home.html"
+    window.location = "../HTML/home.php"
 }
 
 
@@ -530,7 +530,7 @@ navigationBar.component('navigation-bar-small-login', {
     <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
         <div class="container-fluid d-inline-block">
         <div class="input-group my-2">
-            <a class="navbar-brand" href="../HTML/home.html">
+            <a class="navbar-brand" href="../HTML/home.php">
             <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
         </a>
         <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
@@ -569,7 +569,7 @@ navigationBar.component('navigation-bar-small-logout', {
     <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
         <div class="container-fluid d-inline-block">
             <div class="input-group my-2">
-                <a class="navbar-brand" href="../HTML/home.html">
+                <a class="navbar-brand" href="../HTML/home.php">
                 <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
                 </a>
                 <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
@@ -606,7 +606,7 @@ navigationBar.component('navigation-bar-big-login', {
     },
     template: `<nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="../HTML/home.html">
+        <a class="navbar-brand" href="../HTML/home.php">
         <img src="../IMG/Website-Logo.svg" style="height:40px;">
         </a>
 
@@ -623,10 +623,10 @@ navigationBar.component('navigation-bar-big-login', {
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
             </button>
         </div>
-        <button class="btn btn-primary my-2 mx-4 p-1" style="width:170px;" id="reviewBtn" onclick="gotoWriteAReview()">
+        <button class="btn btn-primary my-2 mx-1 p-1" style="width:170px;" id="reviewBtn" onclick="gotoWriteAReview()">
             Write review
         </button>
-        <button class="btn btn-secondary my-2 mx-4" onclick="signOut()">
+        <button class="btn btn-secondary my-2 mx-1" style="width:170px;" onclick="signOut()">
             Logout
         </button>
         <button class="btn rounded-circle" id="userBtn" onclick="gotoMyProfile()">
@@ -652,7 +652,7 @@ navigationBar.component('navigation-bar-big-logout', {
 
     <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="../HTML/home.html">
+        <a class="navbar-brand" href="../HTML/home.php">
         <img src="../IMG/Website-Logo.svg" style="height:40px;" onclick="gotoHomePage()">
         </a>
 

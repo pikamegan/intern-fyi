@@ -24,7 +24,7 @@ if (isset($_POST['email']) && isset($_POST['pw'])) {
         $_SESSION['piclink'] =  $userObj->getProfilePictureUrl();
     
 
-        header("Location: ../../HTML/home.php?login=success");
+        header("Location: ../../HTML/home.php");
         exit();
     } else {
         $postJSON = json_encode("false");

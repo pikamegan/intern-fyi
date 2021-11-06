@@ -88,7 +88,7 @@
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     $url = $_SESSION['piclink'];
                     echo "<navigation-bar-big-login>
-                    <img class='img-fluid m-0' src= '$url' style='width: 50px; height: 50px;'>
+                    <img class='img-fluid m-0' src= '$url' style='width: 60px; height: 60px;'>
                     </navigation-bar-big-login>";
                 } else {
                     echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
