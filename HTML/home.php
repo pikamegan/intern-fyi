@@ -70,6 +70,7 @@
     </style>
 </head>
 <body>
+    <!-- copy this part: start-->
     <div class ="navbarTemplate">
         <div id="smallNavBar">
             <?php
@@ -95,6 +96,7 @@
             ?>
         </div>
     </div>
+    <!-- copy this part: end -->
     
     <div class="container">
 
