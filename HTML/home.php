@@ -16,7 +16,6 @@ $email = '';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/style.css">
-
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- JavaScript for CSS -->
@@ -79,7 +78,7 @@ $email = '';
 </head>
 
 <body>
-<?php
+    <?php
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $_SESSION['email'] = $email;
         echo "<input id = 'userEmail' style='display: none;' value='$email'></div>";
@@ -87,8 +86,8 @@ $email = '';
     ?>
     <div class ="navbarTemplate">
         <div id="smallNavBar">
-            {{userUrl}}
             <?php
+            
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     echo "<navigation-bar-small-login></navigation-bar-small-login>";
                 } else {
@@ -98,15 +97,18 @@ $email = '';
         </div>
         <div id="bigNavBar">
             <?php
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                echo "<navigation-bar-big-login>
-                <div>
-                <img class='img-fluid m-0' :src= 'userUrl' style='width: 50px; height: 50px;'>
-                </div>";
-            } else {
-                echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
-            }
-        ?>
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                    echo "<h1>loginned</h1>";
+                    echo "<navigation-bar-big-login>
+                    <div>
+                    <img class='img-fluid m-0' :src= 'userUrl' style='width: 50px; height: 50px;'>
+                    </div>";
+                } else {
+                    echo "<h1>NOT loginned</h1>";
+                    echo $_SESSION['loggedin'];
+                    echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
+                }
+            ?>
         </div>
     </div>
 
