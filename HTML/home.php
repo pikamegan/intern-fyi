@@ -84,6 +84,7 @@ session_start();
         echo "<h1>$email</h1>";
     }
     ?>
+
     <div class ="navbarTemplate">
         <div id="smallNavBar">
             <?php
