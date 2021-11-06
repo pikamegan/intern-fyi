@@ -1,9 +1,7 @@
 <?php
 class CompanyDAO
 {
-
-    // 1. TO BE DONE update ratings of company upon new review
-    // 2. get all company
+    // 1. get all company
     public function retrieveAll()
     {
         $conn_manager = new ConnectionManager();
@@ -27,13 +25,13 @@ class CompanyDAO
                 $row["location"],
                 $row["numberOfClicks"],
                 $row["totalNumReviews"],
-                $row["overallRating"],
-                $row["averageCriteria1"],
-                $row["averageCriteria2"],
-                $row["averageCriteria3"],
-                $row["averageCriteria4"],
-                $row["averageCriteria5"],
-                $row["averageCriteria6"]
+                round(($row["totalOverallRating"] / $row["totalNumReviews"]), 2),
+                round(($row["totalCriteria1"] / $row["totalNumReviews"]), 2),
+                round(($row["totalCriteria2"] / $row["totalNumReviews"]), 2),
+                round(($row["totalCriteria3"] / $row["totalNumReviews"]), 2),
+                round(($row["totalCriteria4"] / $row["totalNumReviews"]), 2),
+                round(($row["totalCriteria5"] / $row["totalNumReviews"]), 2),
+                round(($row["totalCriteria6"] / $row["totalNumReviews"]), 2),
             );
         }
 
@@ -42,7 +40,7 @@ class CompanyDAO
         return $allCompanies;
     }
 
-    // 3. search within companyName and companyDescription
+    // 2. search within companyName and companyDescription
     public function retrieveSearchedCompanies($searchQuery)
     {
         $conn_manager = new ConnectionManager();
@@ -70,13 +68,13 @@ class CompanyDAO
                 $row["location"],
                 $row["numberOfClicks"],
                 $row["totalNumReviews"],
-                $row["overallRating"],
-                $row["averageCriteria1"],
-                $row["averageCriteria2"],
-                $row["averageCriteria3"],
-                $row["averageCriteria4"],
-                $row["averageCriteria5"],
-                $row["averageCriteria6"]
+                round(($row["totalOverallRating"] / $row["totalNumReviews"]), 2),
+                round(($row["totalCriteria1"] / $row["totalNumReviews"]), 2),
+                round(($row["totalCriteria2"] / $row["totalNumReviews"]), 2),
+                round(($row["totalCriteria3"] / $row["totalNumReviews"]), 2),
+                round(($row["totalCriteria4"] / $row["totalNumReviews"]), 2),
+                round(($row["totalCriteria5"] / $row["totalNumReviews"]), 2),
+                round(($row["totalCriteria6"] / $row["totalNumReviews"]), 2),
             );
         }
 

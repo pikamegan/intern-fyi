@@ -51,15 +51,15 @@ CREATE TABLE `company` (
   `location` varchar(255),
   -- google map api needs longitude and latitude, may need to store an attribute for each, or generate them dynamically 
 
-  `numberOfClicks` int,
-  `totalNumReviews` int,
-  `overallRating` float(5),
-  `averageCriteria1` float(5),
-  `averageCriteria2` float(5),
-  `averageCriteria3` float(5),
-  `averageCriteria4` float(5),
-  `averageCriteria5` float(5),
-  `averageCriteria6` float(5),
+  `numberOfClicks` int DEFAULT 0,
+  `totalNumReviews` int DEFAULT 0,
+  `totalOverallRating` int DEFAULT 0,
+  `totalCriteria1` int DEFAULT 0,
+  `totalCriteria2` int DEFAULT 0,
+  `totalCriteria3` int DEFAULT 0,
+  `totalCriteria4` int DEFAULT 0,
+  `totalCriteria5` int DEFAULT 0,
+  `totalCriteria6` int DEFAULT 0,
   PRIMARY KEY (`companyID`)
 );
 
@@ -112,9 +112,40 @@ CREATE TABLE `vote` (
 
 );
 
+--update company table with each review insert
+delimiter $$
+CREATE TRIGGER after_review_insert 
+   AFTER INSERT ON review FOR EACH ROW
+   BEGIN
+    declare total_num_reviews int;
+    declare total_overall_rating int;
+    declare total_criteria1 int;
+    declare total_criteria2 int;
+    declare total_criteria3 int;
+    declare total_criteria4 int;
+    declare total_criteria5 int;
+    declare total_criteria6 int;
 
+    set total_num_reviews = (select totalNumReviews from company where companyID = NEW.companyID) + 1;  
 
+    set total_overall_rating = (select totalOverallRating from company where companyID = NEW.companyID) + NEW.overallRating; 
 
+    set total_criteria1 = (select totalCriteria1 from company where companyID = NEW.companyID) + NEW.criteria1Rating; 
+        set total_criteria2 = (select totalCriteria2 from company where companyID = NEW.companyID) + NEW.criteria2Rating; 
+        set total_criteria3 = (select totalCriteria3 from company where companyID = NEW.companyID) + NEW.criteria3Rating; 
+        set total_criteria4 = (select totalCriteria4 from company where companyID = NEW.companyID) + NEW.criteria4Rating; 
+        set total_criteria5 = (select totalCriteria5 from company where companyID = NEW.companyID) + NEW.criteria5Rating; 
+        set total_criteria6 = (select totalCriteria6 from company where companyID = NEW.companyID) + NEW.criteria6Rating; 
 
-
-
+    update company set 
+      totalNumReviews = total_num_reviews, 
+            totalOverallRating = total_overall_rating, 
+            totalCriteria1 = total_criteria1, 
+            totalCriteria2 = total_criteria2, 
+            totalCriteria3 = total_criteria3, 
+            totalCriteria4 = total_criteria4, 
+            totalCriteria5 = total_criteria5, 
+            totalCriteria6 = total_criteria6
+        where companyID = NEW.companyID;
+   END$$
+delimiter ;

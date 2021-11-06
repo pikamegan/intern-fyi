@@ -81,16 +81,7 @@ insert into company(
     `companyWebsite`,
     `industry`,
     `imageLink`,
-    `location`,
-    `numberOfClicks`,
-    `totalNumReviews`,
-    `overallRating`,
-    `averageCriteria1`,
-    `averageCriteria2`,
-    `averageCriteria3`,
-    `averageCriteria4`,
-    `averageCriteria5`,
-    `averageCriteria6`
+    `location`
   )
 values (
     'Google Asia Pacific, Singapore',
@@ -99,16 +90,7 @@ values (
     'https://careers.google.com/locations/sing/',
     'Internet',
     '../IMG/google_staff.svg',
-    'Alexandra Road',
-    43,
-    5,
-    4.9,
-    4.1,
-    4.2,
-    4.8,
-    4.1,
-    4.0,
-    4.0
+    'Alexandra Road' 
   ),
   (
     'Amazon, Singapore',
@@ -117,16 +99,7 @@ values (
     'https://www.amazon.jobs/en-gb/location/singapore-singapore',
     'Internet',
     '../IMG/amazon.jpg',
-    '5B Toh Guan Rd E, Singapore 608829',
-    78,
-    5,
-    3.9,
-    3.1,
-    3.2,
-    3.8,
-    3.1,
-    3.0,
-    3.0
+    '5B Toh Guan Rd E, Singapore 608829'
   ),
   (
     'Facebook APAC HQ',
@@ -135,16 +108,7 @@ values (
     'https://www.facebook.com/careers/v2/locations/singapore/?p[offices][0]=Singapore&offices[0]=Singapore',
     'Internet',
     '../IMG/facebook.jfif',
-    '-',
-    24,
-    5,
-    2.5,
-    2.9,
-    2.1,
-    2.2,
-    2.8,
-    2.1,
-    2.0
+    '-'
   ),
   (
     'Microsoft',
@@ -153,16 +117,7 @@ values (
     'https://careers.microsoft.com/professionals/us/en/l-singapore',
     'Technology',
     '../IMG/microsoft.jfif',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'HP',
@@ -171,16 +126,7 @@ values (
     'https://www.hp.com/sg-en/home.html',
     'Technology',
     '../IMG/HPstaff.svg',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'Dell',
@@ -189,16 +135,7 @@ values (
     'https://www.dell.com/en-sg',
     'Technology',
     '../IMG/dell.jfif',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'Apple',
@@ -207,16 +144,7 @@ values (
     'https://www.apple.com/careers/sg/',
     'Electronics',
     '../IMG/apple.jpg',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'Dyson',
@@ -225,16 +153,7 @@ values (
     'https://www.dyson.com.sg/',
     'Electronics',
     '../IMG/dyson.jfif',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'DBS Bank',
@@ -243,16 +162,7 @@ values (
     'https://www.dbs.com/careers/default.page',
     'Banking',
     '../IMG/DBS.jpg',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'UOB',
@@ -261,16 +171,7 @@ values (
     'https://www.uobgroup.com/uobgroup/index.page',
     'Banking',
     '../IMG/uob.jfif',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'OCBC Bank',
@@ -279,16 +180,7 @@ values (
     'https://www.ocbc.com/',
     'Banking',
     '../IMG/ocbc.jfif',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'Standard Chartered Bank',
@@ -297,16 +189,7 @@ values (
     'https://www.sc.com/en/',
     'Banking',
     '../IMG/StandardCharteredBank.jpg',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'Schneider Electric Singapore',
@@ -315,16 +198,7 @@ values (
     'https://www.se.com/sg/en/',
     'Energy',
     '../IMG/SchneiderElectric.jfif',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'Shell Singapore',
@@ -333,16 +207,7 @@ values (
     'https://www.shell.com.sg/',
     'Energy',
     '../IMG/shell.jfif',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'Food Panda',
@@ -351,16 +216,7 @@ values (
     'https://www.foodpanda.com/',
     'Others',
     '../IMG/foodpandaoffice.svg',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'DHL',
@@ -369,16 +225,7 @@ values (
     'https://dhlexpress.com.sg/',
     'Others',
     '../IMG/DHLbuilding.svg',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'Procter & Gamble',
@@ -387,16 +234,7 @@ values (
     'https://www.pgcareers.com/singapore',
     'Others',
     '../IMG/procterAndGamble.jfif',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'Singapore Management University',
@@ -405,16 +243,7 @@ values (
     'https://www.smu.edu.sg/',
     'Others',
     '../IMG/smu.jfif',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'Disney',
@@ -423,16 +252,7 @@ values (
     'https://www.disney.sg/',
     'Others',
     '../IMG/disney.jfif',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   ),
   (
     'Lazada Singapore',
@@ -441,16 +261,7 @@ values (
     'https://www.lazada.sg/',
     'Others',
     '../IMG/lazada.jfif',
-    '-',
-    0,
-    0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    '-'
   );
 
 --
