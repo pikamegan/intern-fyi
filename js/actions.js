@@ -1,4 +1,4 @@
-function signOut(){
+function signOut() {
     window.location = "../processDbRequest/model/signout.php"
 }
 
@@ -505,27 +505,27 @@ function getCompanyIdFromURL() {
 const navigationBar = Vue.createApp({
     data() {
         return {
-            userObj: 'dsfa',
+            userObj: '',
             userUrl: ''
         }
     },
-    created() {
-        let userEmail = document.getElementById("userEmail").value;
-        let userPicture = '';
-        // console.log(userEmail);
+    // created() {
+    //     let userEmail = document.getElementById("userEmail").value;
+    //     let userPicture = '';
+    //     // console.log(userEmail);
 
-        axios
-            .get('../model/getUserImg.php?email=' + userEmail)
-            .then((response) => {
-                console.log(response.data.profilePictureUrl);
-                this.userUrl = response.data.profilePictureUrl;
-                //return userPicture
-            })
-            .catch((error) => {
-                // process error object
-                console.log(error.message);
-            });
-    }
+    //     axios
+    //         .get('../model/getUserImg.php?email=' + userEmail)
+    //         .then((response) => {
+    //             console.log(response.data.profilePictureUrl);
+    //             this.userUrl = response.data.profilePictureUrl;
+    //             //return userPicture
+    //         })
+    //         .catch((error) => {
+    //             // process error object
+    //             console.log(error.message);
+    //         });
+    // }
 })
 
 //Components
@@ -684,20 +684,21 @@ navigationBar.component('navigation-bar-big-logout', {
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
             </button>
         </div>
-        <button class="btn btn-secondary my-2 mx-4" id="loginBtn" onclick="gotoSignInPage()">
-            Login
-        </button>
-        <button class="btn btn-primary me-2" id="signUpBtn" onclick="gotoSignUpPage()">
-            Signup
-        </button>
-
+        <div>
+            <button class="btn btn-secondary my-2 mx-4" id="loginBtn" onclick="gotoSignInPage()">
+                Login
+            </button>
+            <button class="btn btn-primary me-2" id="signUpBtn" onclick="gotoSignUpPage()">
+                Signup
+            </button>
         </div>
+    </div>
     </div>
     </nav>
     <!-- end of navigation bar -->`
 })
 
-navigationBar.mount('.navbarTemplate')
+navigationBar.mount('.navbarTemplate');
 
 
 function showSpeechBubble(e) {
