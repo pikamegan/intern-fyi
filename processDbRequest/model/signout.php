@@ -20,7 +20,7 @@ session_destroy(); //destroy sessions. Remove info from the disk.
         //redirect to home after signing out
         let alertMsg = `Signed out successfully! Bye Bye`;
         alert(alertMsg)
-        window.location.assign('../../HTML/home.html')
+        window.location.assign('../../HTML/home.php')
     </script>
 </body>
 </html>

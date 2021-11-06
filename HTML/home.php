@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-$email = '';
 
 ?>
 
@@ -80,8 +79,9 @@ $email = '';
 <body>
     <?php
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-        $_SESSION['email'] = $email;
-        echo "<input id = 'userEmail' style='display: none;' value='$email'></div>";
+        $email = $_SESSION['email'];
+        echo "<input v-model='userEmail' id = 'userEmail' style='display: none;' value='$email' onchange='findUserImg'></div>";
+        echo "<h1>$email</h1>";
     }
     ?>
     <div class ="navbarTemplate">
@@ -105,7 +105,7 @@ $email = '';
                     </div>";
                 } else {
                     echo "<h1>NOT loginned</h1>";
-                    echo $_SESSION['loggedin'];
+                    // echo $_SESSION['loggedin'];
                     echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
                 }
             ?>
