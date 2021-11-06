@@ -510,7 +510,29 @@ const navigationBar = Vue.createApp({
 
 
             return false; // means user is logouted (shows login)
-            
+
+        },
+        profileImg(userEmail) {
+            let urlGetUser = '../processDbRequest/model/getUser.php'
+            let userPicture = '';
+
+            axios
+                .get(urlGetUser, {
+                    params: {
+                        email: userEmail,
+                    }
+                })
+                .then((response) => {
+                    const myJSON = JSON.stringify(response.data);
+                    console.log(response.data.profilePictureUrl);
+                    userPicture = response.data.profilePictureUrl;
+                })
+                .catch((error) => {
+                    // process error object
+                    console.log(error.message);
+                });
+
+            return userPicture
         }
     },
 })
@@ -604,7 +626,7 @@ navigationBar.component('navigation-bar-big-login', {
     methods: {
         toSearchPage() {
             window.location = encodeURI("../HTML/search.html" + "?sname=" + this.searchQuery)
-        }
+        },
     },
     props: ['imgsrc'],
     template: `<nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">

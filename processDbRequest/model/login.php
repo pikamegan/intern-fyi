@@ -1,7 +1,7 @@
 <?php
 require_once 'common.php';
 
-$succesLogin = false;
+$successLogin = false;
 
 if (isset($_POST['email']) && isset($_POST['pw'])) {
     $email = $_POST['email'];
@@ -13,18 +13,18 @@ if (isset($_POST['email']) && isset($_POST['pw'])) {
     if (isset($userObj)) {
         $_SESSION['email'] = $email;
         $_SESSION['pw'] = $pw;
-        $succesLogin = true;
+        $successLogin = true;
         // $postJSON = json_encode("true");
         // echo $postJSON;
     } else {
-        // $postJSON = json_encode("false");
-        // echo $postJSON;
+        $postJSON = json_encode("false");
+        echo $postJSON;
         // header("Location: ../../HTML/home.html?login=failed");
         // exit();
     }
 } else {
-    // $postJSON = json_encode("false");
-    // echo $postJSON;
+    $postJSON = json_encode("false");
+    echo $postJSON;
     // header("Location: ../../HTML/login.html?login=PlsEnterAllFields");
     // exit();
 }
@@ -58,16 +58,19 @@ if (isset($_POST['email']) && isset($_POST['pw'])) {
 
     <link rel="stylesheet" href="../../CSS/style.css">
     <script src="../../js/actions.js" defer></script>
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <title>Help and FAQ</title>
     <title></title>
     </head>
     <body>
     <h1></h1>
     <!-- below is working -->
-    <div class ="navbarTemplate"> 
+    <div class ="navbarTemplate">
         <div id="smallNavBar">
             <?php
-                if ($succesLogin) {
+                if ($successLogin) {
                     echo "<navigation-bar-small-login></navigation-bar-small-login>";
                 } else {
                     echo "<navigation-bar-small-logout v-else></navigation-bar-small-logout>";
@@ -76,14 +79,39 @@ if (isset($_POST['email']) && isset($_POST['pw'])) {
         </div>
         <div id="bigNavBar">
             <?php
-                if ($succesLogin) {
-                    echo "<navigation-bar-big-login imgsrc = ''></navigation-bar-big-login>";
-                } else {
-                    echo "<navigation-bar-big-logout v-else></navigation-bar-big-logout>";
-                }
+            if ($successLogin) {
+                echo "<navigation-bar-big-login :imgsrc = 'profileImg($email)'></navigation-bar-big-login>";
+            } else {
+                echo "<navigation-bar-big-logout v-else></navigation-bar-big-logout>";
+            }
             ?>
         </div>
     </div>
 
+    <script>
+        let urlGetUser = './getUser.php'
+        let userEmail = 'esther.2020@scis.smu.edu.sg'
+        let userPicture = '';
+        
+
+        axios
+            .get(urlGetUser, {
+                params: {
+                    email: userEmail,
+                }
+            })
+            .then((response) => {
+                const myJSON = JSON.stringify(response.data);
+                console.log(response.data.profilePictureUrl);
+                userPicture = response.data.profilePictureUrl;
+            })
+            .catch((error) => {
+                // process error object
+                console.log(error.message);
+            });
+
+        console.log(userPicture);
+    </script>
+    
 </body>
 </html>
