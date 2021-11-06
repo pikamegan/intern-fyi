@@ -504,47 +504,12 @@ function getCompanyIdFromURL() {
 const navigationBar = Vue.createApp({
     data() {
         return {
-            userObj: '',
-            userUrl: '',
-            userEmail: ''
         }
     },
     methods: {
-        findUserImg() {
-            let userEmail = document.getElementById("userEmail").value;
-            console.log(userEmail);
-            if (userEmail !== null) {
-                axios
-                    .get('../model/getUserImg.php?email=' + userEmail)
-                    .then((response) => {
-                        console.log(response.data.profilePictureUrl);
-                        this.userUrl = response.data.profilePictureUrl;
-                        //return userPicture
-                    })
-                    .catch((error) => {
-                        // process error object
-                        console.log(error.message);
-                    });
-            }
-        }
+
     },
     created() {
-        // let userEmail = document.getElementById("userEmail").value;
-        // console.log(userEmail);
-        // if (userEmail !== null){
-        //     axios
-        //         .get('../model/getUserImg.php?email=' + userEmail)
-        //         .then((response) => {
-        //             console.log(response.data.profilePictureUrl);
-        //             this.userUrl = response.data.profilePictureUrl;
-        //             //return userPicture
-        //         })
-        //         .catch((error) => {
-        //             // process error object
-        //             console.log(error.message);
-        //         });
-        // }
-
     }
 })
 

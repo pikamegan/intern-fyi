@@ -16,6 +16,14 @@ if (isset($_POST['email']) && isset($_POST['pw'])) {
         $_SESSION['email'] = $email;
         $_SESSION['pw'] = $pw;
         $_SESSION['loggedin'] = true;
+
+        $dao = new userDAO();
+        $userObj = $dao->getUserByEmail($email); // Get an Indexed Array of user objects
+        
+        var_dump($_SESSION['piclink']);
+        $_SESSION['piclink'] =  $userObj->getProfilePictureUrl();
+    
+
         header("Location: ../../HTML/home.php?login=success");
         exit();
     } else {
@@ -30,4 +38,3 @@ if (isset($_POST['email']) && isset($_POST['pw'])) {
     header("Location: ../../HTML/login.html?login=PlsEnterAllFields");
     exit();
 }
-?>

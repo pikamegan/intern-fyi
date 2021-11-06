@@ -1,9 +1,3 @@
-<?php
-
-session_start();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,19 +69,11 @@ session_start();
         }
     </style>
 </head>
-
 <body>
-    <?php
-    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-        $email = $_SESSION['email'];
-        echo "<input v-model='userEmail' id = 'userEmail' style='display: none;' value='$email' onchange='findUserImg'></div>";
-        echo "<h1>$email</h1>";
-    }
-    ?>
-
     <div class ="navbarTemplate">
         <div id="smallNavBar">
             <?php
+                session_start();
             
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     echo "<navigation-bar-small-login></navigation-bar-small-login>";
@@ -99,20 +85,17 @@ session_start();
         <div id="bigNavBar">
             <?php
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                    echo "<h1>loginned</h1>";
+                    $url = $_SESSION['piclink'];
                     echo "<navigation-bar-big-login>
-                    <div>
-                    <img class='img-fluid m-0' :src= 'userUrl' style='width: 50px; height: 50px;'>
-                    </div>";
+                    <img class='img-fluid m-0' src= '$url' style='width: 50px; height: 50px;'>
+                    </navigation-bar-big-login>";
                 } else {
-                    echo "<h1>NOT loginned</h1>";
-                    // echo $_SESSION['loggedin'];
                     echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
                 }
             ?>
         </div>
     </div>
-
+    
     <div class="container">
 
         <div class="row mt-2">
