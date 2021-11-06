@@ -35,7 +35,8 @@
 // }
 //map functions end==========================
 
-const apiKey = 'AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA';
+// uncomment for testing / deploying
+// const apiKey = 'AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA';
 const appSearch = Vue.createApp({
     data() {
         return {
@@ -454,7 +455,7 @@ appSearch.component('company-row', {
                     {{company.companyRatings.averageCriteria5}}
                     <img src="../img/star.svg" style="height: 20px; width: 20px;"><br>
 
-                    <img src="../img/flatheirachy_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
+                    <img src="../img/flathierarchy_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
                     <div class="d-none d-xxl-inline">
                         Flat Hierarchy:
                     </div>
