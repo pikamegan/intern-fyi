@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+$email = '';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,32 +27,6 @@
     <!-- vue -->
     <script src="https://unpkg.com/vue@next"></script>
     <script src="../js/actions.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            var maxLength = 100;
-            $(".show-read-more").each(function () {
-                var myStr = $(this).text();
-                if ($.trim(myStr).length > maxLength) {
-                    var newStr = myStr.substring(0, maxLength);
-                    var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
-                    $(this).empty().html(newStr);
-                    $(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
-                    $(this).append('<span class="more-text">' + removedStr + '</span>');
-                }
-            });
-            $(".read-more").click(function () {
-                $(this).siblings(".more-text").contents().unwrap();
-                $(this).remove();
-            });
-
-            /***************************************************************************************
-                *    CITING
-                *    Author: Tutorial Republic
-                *    Availability: https://www.tutorialrepublic.com/faq/show-read-more-link-if-the-text-exceeds-a-certain-length-using-jquery.php
-                ***************************************************************************************/
-        });
-    </script>
     <title>Intern FYI</title>
     <style>
         .show-read-more .more-text {
@@ -98,20 +79,36 @@
 </head>
 
 <body>
-
-    <!-- copy this part -->
-    <div class="navbarTemplate">
+<?php
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+        $_SESSION['email'] = $email;
+        echo "<input id = 'userEmail' style='display: none;' value='$email'></div>";
+    }
+    ?>
+    <div class ="navbarTemplate">
         <div id="smallNavBar">
-            <navigation-bar-small-login v-if="isLogined()"></navigation-bar-small-login>
-            <navigation-bar-small-logout v-else></navigation-bar-small-logout>
+            {{userUrl}}
+            <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                    echo "<navigation-bar-small-login></navigation-bar-small-login>";
+                } else {
+                    echo "<navigation-bar-small-logout></navigation-bar-small-logout>";
+                }
+            ?>
         </div>
-
         <div id="bigNavBar">
-            <navigation-bar-big-login v-if="isLogined()"></navigation-bar-big-login>
-            <navigation-bar-big-logout v-else></navigation-bar-big-logout>
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                echo "<navigation-bar-big-login>
+                <div>
+                <img class='img-fluid m-0' :src= 'userUrl' style='width: 50px; height: 50px;'>
+                </div>";
+            } else {
+                echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
+            }
+        ?>
         </div>
     </div>
-    <!-- copy this part -->
 
     <div class="container">
 
@@ -121,7 +118,7 @@
                 <!-- <img style="height:600px; z-index: -1;" class="preventSelect" src="../img/climbingBoy_cropped.svg"> -->
             </div>
             <div class="col">
-                <div class="continer">
+                <div class="container">
                     <div class="row mb-1">
                         <div class="col">
                             <h3 style="text-align: center" class="text-uppercase fw-bolder homeHeader">
@@ -186,11 +183,6 @@
         </div>
         <!-- WIP -->
         <div class="row shadow mb-5 pt-3">
-
-
-
-
-
 
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
                 <div class="mx-auto pay"
@@ -363,10 +355,6 @@
         <intern-footer home="" abt="../HTML/about.html" career="../HTML/career.html" help="../HTML/help.html"
             feedback="../HTML/feedback.html"></intern-footer>
     </div>
-
-    <!-- company cards -->
-    <script src="../js/appHome.js"></script>
-
 </body>
 
 </html>

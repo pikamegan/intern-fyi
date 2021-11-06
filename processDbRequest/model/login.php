@@ -1,7 +1,7 @@
 <?php
 require_once 'common.php';
 
-$successLogin = false;
+$_SESSION['loggedin'] = false;
 
 if (isset($_POST['email']) && isset($_POST['pw'])) {
     $email = $_POST['email'];
@@ -13,7 +13,7 @@ if (isset($_POST['email']) && isset($_POST['pw'])) {
     if (isset($userObj)) {
         $_SESSION['email'] = $email;
         $_SESSION['pw'] = $pw;
-        $successLogin = true;
+        $_SESSION['loggedin'] = true;
         // $postJSON = json_encode("true");
         // echo $postJSON;
     } else {
@@ -61,16 +61,23 @@ if (isset($_POST['email']) && isset($_POST['pw'])) {
     <!-- axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <title>Help and FAQ</title>
+    <title>Login</title>
     <title></title>
     </head>
     <body>
     <h1></h1>
     <!-- below is working -->
+    <?php
+    
+    if ($_SESSION['loggedin']) {
+        echo "<input id = 'userEmail' style='display: none;' value='$email'></div>";
+    }
+    ?>
     <div class ="navbarTemplate">
         <div id="smallNavBar">
+            {{userUrl}}
             <?php
-                if ($successLogin) {
+                if ($_SESSION['loggedin']) {
                     echo "<navigation-bar-small-login></navigation-bar-small-login>";
                 } else {
                     echo "<navigation-bar-small-logout v-else></navigation-bar-small-logout>";
@@ -79,8 +86,11 @@ if (isset($_POST['email']) && isset($_POST['pw'])) {
         </div>
         <div id="bigNavBar">
             <?php
-            if ($successLogin) {
-                echo "<navigation-bar-big-login :imgsrc = 'profileImg($email)'></navigation-bar-big-login>";
+            if ($_SESSION['loggedin']) {
+                echo "<navigation-bar-big-login>
+                <div>
+                <img class='img-fluid m-0' :src= 'userUrl' style='width: 50px; height: 50px;' onmouseover = 'openLogoutPopOut()'>
+                </div>";
             } else {
                 echo "<navigation-bar-big-logout v-else></navigation-bar-big-logout>";
             }
@@ -88,30 +98,6 @@ if (isset($_POST['email']) && isset($_POST['pw'])) {
         </div>
     </div>
 
-    <script>
-        let urlGetUser = './getUser.php'
-        let userEmail = 'esther.2020@scis.smu.edu.sg'
-        let userPicture = '';
-        
-
-        axios
-            .get(urlGetUser, {
-                params: {
-                    email: userEmail,
-                }
-            })
-            .then((response) => {
-                const myJSON = JSON.stringify(response.data);
-                console.log(response.data.profilePictureUrl);
-                userPicture = response.data.profilePictureUrl;
-            })
-            .catch((error) => {
-                // process error object
-                console.log(error.message);
-            });
-
-        console.log(userPicture);
-    </script>
     
 </body>
 </html>

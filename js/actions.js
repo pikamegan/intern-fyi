@@ -1,3 +1,7 @@
+function signOut(){
+    window.location = "../processDbRequest/model/signout.php"
+}
+
 function gotoSignUpPage() {
     window.location = "../HTML/signup.html"
 }
@@ -497,44 +501,31 @@ function getCompanyIdFromURL() {
 }
 
 // Vue instance
+
 const navigationBar = Vue.createApp({
     data() {
         return {
-            userObj: 'dsfa'
+            userObj: 'dsfa',
+            userUrl: ''
         }
     },
-    methods: {
-        isLogined() {
+    created() {
+        let userEmail = document.getElementById("userEmail").value;
+        let userPicture = '';
+        // console.log(userEmail);
 
-            //return true; // means user is loggined in (shows write a review)
-
-
-            return false; // means user is logouted (shows login)
-
-        },
-        profileImg(userEmail) {
-            let urlGetUser = '../processDbRequest/model/getUser.php'
-            let userPicture = '';
-
-            axios
-                .get(urlGetUser, {
-                    params: {
-                        email: userEmail,
-                    }
-                })
-                .then((response) => {
-                    const myJSON = JSON.stringify(response.data);
-                    console.log(response.data.profilePictureUrl);
-                    userPicture = response.data.profilePictureUrl;
-                })
-                .catch((error) => {
-                    // process error object
-                    console.log(error.message);
-                });
-
-            return userPicture
-        }
-    },
+        axios
+            .get('../model/getUserImg.php?email=' + userEmail)
+            .then((response) => {
+                console.log(response.data.profilePictureUrl);
+                this.userUrl = response.data.profilePictureUrl;
+                //return userPicture
+            })
+            .catch((error) => {
+                // process error object
+                console.log(error.message);
+            });
+    }
 })
 
 //Components
@@ -628,7 +619,6 @@ navigationBar.component('navigation-bar-big-login', {
             window.location = encodeURI("../HTML/search.html" + "?sname=" + this.searchQuery)
         },
     },
-    props: ['imgsrc'],
     template: `<nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
     <div class="container-fluid">
         <a class="navbar-brand" href="../HTML/home.html">
@@ -651,8 +641,11 @@ navigationBar.component('navigation-bar-big-login', {
         <button class="btn btn-primary my-2 mx-4 p-1" style="width:170px;" id="reviewBtn" onclick="gotoWriteAReview()">
             Write review
         </button>
-        <button class="btn border-secondary rounded-circle me-2" id="userBtn" onclick="gotoMyProfile()">
-            <img class="img-fluid" :src= "imgsrc" style="width: 50px; height: 50px;">
+        <button class="btn btn-secondary my-2 mx-4" onclick="signOut()">
+            Logout
+        </button>
+        <button class="btn rounded-circle" id="userBtn" onclick="gotoMyProfile()">
+            <slot></slot>
         </button>
         </div>
     </div>
