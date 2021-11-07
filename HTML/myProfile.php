@@ -62,32 +62,32 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <h1 class="pageTitle my-5">Your Profile</h1>
     <?php
 
-        require_once '../processDbRequest/model/common.php';
-        $firstName = "";
-        $lastName = "";
-        $genderID = "";
-        $country = "";
-        $school = "";
-        $schoolEmail = "";
-        $profilePictureUrl = "";
-        $reviewsNo = "";
+require_once '../processDbRequest/model/common.php';
+$firstName = "";
+$lastName = "";
+$genderID = "";
+$country = "";
+$school = "";
+$schoolEmail = "";
+$profilePictureUrl = "";
+$reviewsNo = "";
 
-        if (isset($_SESSION['email'])) {
-            $dao = new userDAO();
-            $userObj = $dao->getUserByEmail($_SESSION['email']); 
-            $firstName = $userObj->getFirstName();
-            $lastName = $userObj->getLastName();
-            $genderID = $userObj->getGenderID();
-            $country = $userObj->getCountry();
-            $school = $userObj->getSchool();
-            $schoolEmail = $userObj->getSchoolEmail();
-            $profilePictureUrl = $userObj->getProfilePictureUrl();
-            $reviewsNo = $userObj->getReviewsNo();
-            
-        }
+if (isset($_SESSION['email'])) {
+    $dao = new userDAO();
+    $userObj = $dao->getUserByEmail($_SESSION['email']);
+    $firstName = $userObj->getFirstName();
+    $lastName = $userObj->getLastName();
+    $genderID = $userObj->getGenderID();
+    $country = $userObj->getCountry();
+    $school = $userObj->getSchool();
+    $schoolEmail = $userObj->getSchoolEmail();
+    $profilePictureUrl = $userObj->getProfilePictureUrl();
+    $reviewsNo = $userObj->getReviewsNo();
+
+}
 
 ?>
-    <div class="container-fluid m-5 profile">
+    <div class="container m-5 profile">
         <div class="row">
             <div class="col col-sm-12 col-lg-6">
                 <div class="row personProfile shadow rounded rounded-3 container mb-3" style="width: 100%;">
@@ -100,40 +100,81 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         <span style="position:absolute;right:0;top:-15px"></span>
                         <div class="m-5">
                             <?php
-                            
-                            if ($firstName !== "" && $lastName !== "") {
-                                echo "<h3 class='text-start my-5'>$firstName $lastName</h3>";
-                            }
-                            
-                            ?>
-                            <p>Gender:
-                                <?php
-                                    if ($genderID !== "" and $genderID =="M") {
-                                        echo "<span id='profileGender'>Male</span>";
-                                    }elseif ($genderID !== "" and $genderID =="F") {
-                                        echo "<span id='profileGender'>Female</span>";
-                                    }
-                                ?>
 
+if ($firstName !== "" && $lastName !== "") {
+    echo "<h3 class='text-start my-5'>$firstName $lastName</h3>";
+}
+
+?>
+
+                            <p>Email:
+                                <?php
+if ($schoolEmail !== "") {
+    echo "<span class = 'underline' id='profileEmailAddress'>$schoolEmail</span>";
+}
+?>
                             </p>
-                            <p>Email: <span id="profileEmailAddress"></span></p>
-                            <p>Password: <span id="profilePW"></span></p>
+                            <p>Password: <span id="profilePW">
+                                <p class = "underline">********
+                                    <span>
+                                    <!-- <img class="text-end" src= "../IMG/changePWpen.svg" style="width: 100px; height: 50px; display: block-inline;" onclick="changePw()"> -->
+                                    </span>
+                                </p>
+                            </span></p>
                         </div>
 
                     </div>
                 </div>
 
-                <div class="row profile">
-                    <div class="mb-xs-3 mx-1 col mb-sm-3 col col-sm-12 col-lg-6 shadow rounded-2 container" style="width: 45%;">
-                        <img src="../IMG/SMU_Campus.jpeg" class="d-block align-content-center m-3" style="width: 90%;"></img> <!-- How to align image horizontally -->
-                        <p class="text-center">Singapore Management University, <br> Singapore</p>
-                    </div>
+            </div>
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-12 text-center ">
+                            
+                            <div class="shadow rounded rounded-3 mb-3 p-5">
+                            <?php
+                                if ($school !== "") {
+                                    echo "<h1 class = 'profileTitles'>University</h1>";
+                                    echo "<p>$school</p>";
+                                } 
+                            ?>
 
-                    <div class="mb-xs-3 mx-1 mb-sm-3 col col-sm-12 col-lg-6 m shadow rounded-2 align-middle text-center" style="width: 45%;">
-                        <h1 class="display-1">3</h1>
-                        <p>Reviews</p>
+                            </div>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="col col-12 text-center">
+                            <div class="shadow rounded rounded-3 mb-3 py-5 p-3" style="display: inline-block; width: 15rem; height: 13rem;">
+                            <p>
+                                <?php
+                                if ($genderID !== "" and $genderID == "M") {
+                                    echo "<h1 class = 'profileTitles'>Gender</h1>";
+                                    echo "<span id='profileGender'>Male</span>";
+                                } elseif ($genderID !== "" and $genderID == "F") {
+                                    echo "<h1 class = 'profileTitles'>Gender</h1>";
+                                    echo "<span id='profileGender'>Female</span>";
+                                }
+                                ?>
+    
+                                </p>
 
+                            </div>
+                            <div class= "shadow rounded rounded-3 mb-3 p-3 py-5 mx-4" style="display: inline-block; width: 15rem; height: 13rem;">
+
+                            <p>
+                            <?php
+                                if ($country !== "") {
+                                    echo "<h1 class = 'profileTitles'>Country</h1>";
+                                    echo "<span id=''>$country</span>";
+                                } 
+                                ?>
+    
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

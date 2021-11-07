@@ -371,7 +371,7 @@ div.cardBold {
 }
 
 
-.errorMsg{
+.errorMsg {
     margin-left: 10px;
 }
 
@@ -470,4 +470,32 @@ div.cardBold {
     z-index: 1;
 }
 
-#more {display: none;}
+#more {
+    display: none;
+}
+
+.profileTitles {
+    position: absolute;
+    width: 433.29px;
+    height: 112.32px;
+    left: 849.85px;
+    top: 365.55px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+    color: #6E7880;
+}
+
+
+.underline {
+
+    text-decoration: underline;
+
+}

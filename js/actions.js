@@ -1,3 +1,7 @@
+function changePw(){
+    window.location = "../processDbRequest/model/signout.php"
+}
+
 function signOut() {
     window.location = "../processDbRequest/model/signout.php"
 }
