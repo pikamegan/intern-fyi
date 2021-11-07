@@ -47,11 +47,11 @@
     </div>
     <!-- copy this part: end -->
 
-    <div class="container mt-4" id="appSearch">
+    <div class="container-fluid mt-4" id="appSearch">
         <div class="row">
             <div class="col-lg-3 shadow mb-5 pt-3" style="border-radius: 10px;">
                 <!-- sticky? -->
-                <div class="container">
+                <div class="container-fluid">
 
                     <div class="row mb-2">
                         <div>

@@ -366,14 +366,14 @@ appSearch.component('company-row', {
 <div class="row">
     <div class="collapsibleSearch shadow" @click='select' @select='changeState'>
         <img :src="company.companyInfo.imageLink" style="height: 100px; width: 100px; float: left; border-radius: 10px">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row justify-content-between">
                 <div class="col searchRowTitle">
                     {{company.companyName}}
                 </div>
                 <div class="col-auto align-items-end">
                     {{company.companyRatings.overallRating}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px;">
+                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;">
                 </div>
             </div>
             <div class="row justify-content-start">
@@ -423,14 +423,14 @@ appSearch.component('company-row', {
                         Good Pay:
                     </div>
                     {{company.companyRatings.averageCriteria1}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px;"><br>
+                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;"><br>
 
                     <img src="../img/skills_companyReview.svg" style="width: 40px; height: 40px; padding: 0px;">
                     <div class="d-none d-xxl-inline">
                         New Skills:
                     </div>
                     {{company.companyRatings.averageCriteria2}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px;">
+                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;">
                 </div>
                 <div class="col">
                     <img src="../img/companyculture_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
@@ -438,14 +438,14 @@ appSearch.component('company-row', {
                         Friendly:
                     </div>
                     {{company.companyRatings.averageCriteria3}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px;"><br>
+                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;"><br>
 
                     <img src="../img/food_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
                     <div class="d-none d-xxl-inline">
                         Food Price:
                     </div>
                     {{company.companyRatings.averageCriteria4}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px;">
+                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;">
                 </div>
                 <div class="col">
                     <img src="../img/mentorship_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
@@ -453,14 +453,14 @@ appSearch.component('company-row', {
                         Mentorship:
                     </div>
                     {{company.companyRatings.averageCriteria5}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px;"><br>
+                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;"><br>
 
                     <img src="../img/flathierarchy_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;">
                     <div class="d-none d-xxl-inline">
                         Flat Hierarchy:
                     </div>
                     {{company.companyRatings.averageCriteria6}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px;"><br>
+                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;"><br>
                 </div>
             </div>
         </div>
@@ -483,7 +483,7 @@ appSearch.component('company-row-list', {
         }
     },
     template:
-        `<div class="container">
+        `<div class="container-fluid">
         <company-row 
         v-for="company in companylist" 
         :company="company" 
