@@ -34,7 +34,7 @@ values
     "Singapore Management University",
     "esther.2020@scis.smu.edu.sg",
     "Esther@123",
-    "https://icon-library.com/images/woman-profile-icon/woman-profile-icon-3.jpg",
+    "../IMG/avatar7.svg",
     321
   ),
   (
@@ -45,7 +45,7 @@ values
     "Singapore Management University",
     "megan.2020@scis.smu.edu.sg",
     "Megan@45",
-    "https://icon-library.com/images/woman-profile-icon/woman-profile-icon-3.jpg",
+    "../IMG/avatar3.svg",
     54
   ),
   (
@@ -56,7 +56,7 @@ values
     "Singapore Management University",
     "patricia.2020@scis.smu.edu.sg",
     "Patricia@67",
-    "https://icon-library.com/images/woman-profile-icon/woman-profile-icon-3.jpg",
+    "../IMG/avatar5.svg",
     76
   ),
   (
@@ -67,7 +67,7 @@ values
     "Singapore Management University",
     "tianyu.2020@scis.smu.edu.sg",
     "Tianyu@90",
-    "https://cdn5.vectorstock.com/i/1000x1000/13/04/male-profile-picture-vector-2041304.jpg",
+    "../IMG/avatar1.svg",
     9
   );
 --
