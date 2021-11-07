@@ -109,19 +109,34 @@ if (isset($_SESSION['email'])) {
                         <div class="m-5">
                             <?php
 
-if ($firstName !== "" && $lastName !== "") {
-    echo "<h3 class='text-start my-5'>$firstName $lastName</h3>";
-}
+                                if ($firstName !== "" && $lastName !== "") {
+                                    echo "<h3 class='text-start my-5'>$firstName $lastName</h3>";
+                                }
 
-?>
+                            ?>
+
+                            <p style='font-weight: bold'>
+                                <?php
+                                    if ($genderID !== "" and $genderID == "M") {;
+                                        echo "<span id='profileGender'>Male</span>";
+                                    } elseif ($genderID !== "" and $genderID == "F") {
+                                        echo "<span id='profileGender'>Female</span>";
+                                    } elseif ($genderID !== "" and $genderID == "O") {
+                                        echo "<span id='profileGender'>Other</span>";
+                                    }
+                                ?>
+
+                            </p>
 
                             <p>Email:
                                 <?php
-if ($schoolEmail !== "") {
-    echo "<span class = 'underline' id='profileEmailAddress'>$schoolEmail</span>";
-}
-?>
+                                    if ($schoolEmail !== "") {
+                                        echo "<span class = 'underline' id='profileEmailAddress'>$schoolEmail</span>";
+                                    }
+                                ?>
+
                             </p>
+
                             <p>Password: <span id="profilePW">
                                 <p class = "underline">********
                                     <span>
@@ -161,22 +176,6 @@ if ($schoolEmail !== "") {
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col col-12 text-center">
-                            <div class="shadow rounded rounded-3 mb-3 py-5 p-3" style="display: inline-block; width: 15rem; height: 13rem;">
-                            <p>
-                                <?php
-                                if ($genderID !== "" and $genderID == "M") {
-                                    echo "<h1 class = 'profileTitles'>Gender</h1>";
-                                    echo "<span id='profileGender'>Male</span>";
-                                } elseif ($genderID !== "" and $genderID == "F") {
-                                    echo "<h1 class = 'profileTitles'>Gender</h1>";
-                                    echo "<span id='profileGender'>Female</span>";
-                                }
-                                ?>
-    
-                                </p>
-
-                            </div>
                             <div class= "shadow rounded rounded-3 mb-3 p-3 py-5 mx-4" style="display: inline-block; width: 15rem; height: 13rem;">
 
                             <p>
