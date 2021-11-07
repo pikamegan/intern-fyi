@@ -9,7 +9,7 @@ class ConnectionManager
         // $password = 'root'; // for Mac
         $password = '';
         $dbname = 'wad2g5t2intern';
-        $port = '3309';
+        $port = '3306';
 
         // Create connection
         $pdoObject = new PDO(

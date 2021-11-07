@@ -143,8 +143,17 @@ if ($schoolEmail !== "") {
                             <div class="shadow rounded rounded-3 mb-3 p-5">
                             <?php
                                 if ($school !== "") {
-                                    echo "<h1 class = 'profileTitles'>University</h1>";
-                                    echo "<p>$school</p>";
+                                    echo "<div class='row'>
+                                            <div class='col'> 
+                                                <img src='../IMG/smu.jfif' style='width: 100%'></img>
+                                            </div>
+
+                                            <div class='col'>
+                                                <h1 class = 'profileTitles'>University</h1>
+                                                <p>$school</p>
+                                            </div>
+                                    </div>"; 
+
                                 } 
                             ?>
 
@@ -173,6 +182,7 @@ if ($schoolEmail !== "") {
                             <p>
                             <?php
                                 if ($country !== "") {
+                                    // Add country image 
                                     echo "<h1 class = 'profileTitles'>Country</h1>";
                                     echo "<span id=''>$country</span>";
                                 } 
