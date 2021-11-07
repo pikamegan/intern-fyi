@@ -21,7 +21,7 @@ function gotoMyProfile() {
 }
 
 function gotoSearch() {
-    window.location = "../HTML/search.html"
+    window.location = "../HTML/search.php"
 }
 
 function openForm() {
@@ -522,7 +522,7 @@ navigationBar.component('navigation-bar-small-login', {
     },
     methods: {
         toSearchPage() {
-            window.location = encodeURI("../HTML/search.html" + "?sname=" + this.searchQuery)
+            window.location = encodeURI("../HTML/search.php" + "?sname=" + this.searchQuery)
         }
     },
     template: `<!-- SMALL navigation bar for width smaller or = to 767  (USER LOGINed)-->
@@ -561,7 +561,7 @@ navigationBar.component('navigation-bar-small-logout', {
     },
     methods: {
         toSearchPage() {
-            window.location = encodeURI("../HTML/search.html" + "?sname=" + this.searchQuery)
+            window.location = encodeURI("../HTML/search.php" + "?sname=" + this.searchQuery)
         }
     },
     template: `<!-- SMALL navigation bar for width smaller or = to 767  (USER LOGOUTed)-->
@@ -601,7 +601,7 @@ navigationBar.component('navigation-bar-big-login', {
     },
     methods: {
         toSearchPage() {
-            window.location = encodeURI("../HTML/search.html" + "?sname=" + this.searchQuery)
+            window.location = encodeURI("../HTML/search.php" + "?sname=" + this.searchQuery)
         },
     },
     template: `<nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Navbar">
@@ -645,7 +645,7 @@ navigationBar.component('navigation-bar-big-logout', {
     },
     methods: {
         toSearchPage() {
-            window.location = encodeURI("../HTML/search.html" + "?sname=" + this.searchQuery)
+            window.location = encodeURI("../HTML/search.php" + "?sname=" + this.searchQuery)
         }
     },
     template: `<!-- Big Nav Bar width > 767 and Logout -->

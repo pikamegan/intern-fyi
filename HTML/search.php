@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/style.css">
     <!-- vue -->
     <script src="https://unpkg.com/vue@next"></script>
@@ -20,19 +19,33 @@
 </head>
 
 <body>
-    <!-- copy this part -->
+    <!-- copy this part: start-->
     <div class="navbarTemplate">
         <div id="smallNavBar">
-            <navigation-bar-small-login></navigation-bar-small-login>
-            <navigation-bar-small-logout></navigation-bar-small-logout>
-        </div>
+            <?php
+            session_start();
 
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                echo "<navigation-bar-small-login></navigation-bar-small-login>";
+            } else {
+                echo "<navigation-bar-small-logout></navigation-bar-small-logout>";
+            }
+            ?>
+        </div>
         <div id="bigNavBar">
-            <navigation-bar-big-login></navigation-bar-big-login>
-            <navigation-bar-big-logout></navigation-bar-big-logout>
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                $url = $_SESSION['piclink'];
+                echo "<navigation-bar-big-login>
+                        <img class='img-fluid m-0' src= '$url' style='width: 60px; height: 60px;'>
+                        </navigation-bar-big-login>";
+            } else {
+                echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
+            }
+            ?>
         </div>
     </div>
-    <!-- copy this part -->
+    <!-- copy this part: end -->
 
     <div class="container mt-4" id="appSearch">
         <div class="row">
@@ -139,8 +152,7 @@
         async defer></script> -->
 
     <div class="footerComp">
-        <intern-footer home="../index.html" abt="about.html" career="career.html" help="help.html"
-            feedback="feedback.html" @gotohome="goHome"></intern-footer>
+        <intern-footer home="../index.html" abt="about.html" career="career.html" help="help.html" feedback="feedback.html" @gotohome="goHome"></intern-footer>
     </div>
 
 
@@ -176,9 +188,7 @@
         // const vm = appMap.mount('#searchVue');
     </script> -->
     <!-- JavaScript for CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 
 </html>
