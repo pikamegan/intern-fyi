@@ -94,7 +94,15 @@ if (isset($_SESSION['email'])) {
                     <span style="position:absolute;right:0;top:-15px"><i class="bi bi-pencil fill-secondary"></i></span>
                     <div class="col col-sm-12 col-md-12 col-lg-6 text-center align-middle">
                         <!-- How to vertically align image? -->
-                        <img src="../IMG/avatar3.svg" style="width: 75%; height: 75%; border-radius: 50%;" class="m-3">
+                        <?php
+                        
+                        if (isset($_SESSION['piclink'])) {
+                            $pic = $_SESSION['piclink'];
+                            echo "<img src='$pic' style='width: 75%; height: 75%; border-radius: 50%;' class='m-3'>";
+                        }
+
+                        ?>
+            
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         <span style="position:absolute;right:0;top:-15px"></span>

@@ -20,7 +20,7 @@ if (isset($_POST['email']) && isset($_POST['pw'])) {
         $dao = new userDAO();
         $userObj = $dao->getUserByEmail($email); // Get an Indexed Array of user objects
         
-        var_dump($_SESSION['piclink']);
+        // var_dump($_SESSION['piclink']);
         $_SESSION['piclink'] =  $userObj->getProfilePictureUrl();
     
         $_SESSION['error'] = "";
