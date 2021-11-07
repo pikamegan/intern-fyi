@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/style.css">
 
+    <!-- vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+
     <title>Log In</title>
 
 </head>

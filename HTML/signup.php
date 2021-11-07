@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../CSS/footer.css">
     <!-- vue -->
     <script src="https://unpkg.com/vue@next"></script>
-    <!-- <script src="../js/actions.js" defer></script> -->
+    <script src="../js/actions.js" defer></script>
     <title>Sign Up</title>
 </head>
 
