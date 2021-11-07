@@ -183,8 +183,19 @@ if ($schoolEmail !== "") {
                             <?php
                                 if ($country !== "") {
                                     // Add country image 
-                                    echo "<h1 class = 'profileTitles'>Country</h1>";
-                                    echo "<span id=''>$country</span>";
+
+                                    echo "<div class='row'>
+                                            <div class='col'> 
+                                                <img src='../IMG/Sg.png' style='width: 100%'></img>
+                                            </div>
+
+                                            <div class='col' width='100%'> 
+                                                <h1 class = 'profileTitles'>Country</h1>
+                                                <span id=''>$country</span>
+                                            </div>
+
+                                        </div>"; 
+
                                 } 
                                 ?>
     
