@@ -74,6 +74,11 @@
             </div>
             <!-- Submit -->
             <button id="loginBtn" class="btn btn-primary" type="submit">Log in</button>
+                <?php
+                    if (isset($_SESSION['error'])) {
+                        echo $_SESSION['error'];
+                    }
+                ?>
         </div>
     </form>
 

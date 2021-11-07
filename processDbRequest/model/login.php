@@ -23,13 +23,14 @@ if (isset($_POST['email']) && isset($_POST['pw'])) {
         var_dump($_SESSION['piclink']);
         $_SESSION['piclink'] =  $userObj->getProfilePictureUrl();
     
-
+        $_SESSION['error'] = "";
         header("Location: ../../HTML/home.php");
         exit();
     } else {
         $postJSON = json_encode("false");
-        echo $postJSON;
-        header("Location: ../../HTML/login.html");
+        $_SESSION['error'] = "<p class='text-danger m-1 text-center' style='font-size: small; display: block;'>Invalid username password combination</p>";
+
+        header("Location: ../../HTML/login.php");
         exit();
     }
 } else {

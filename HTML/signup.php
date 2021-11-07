@@ -24,26 +24,26 @@
     <div class="navbarTemplate">
         <div id="smallNavBar">
             <?php
-            session_start();
+session_start();
 
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                echo "<navigation-bar-small-login></navigation-bar-small-login>";
-            } else {
-                echo "<navigation-bar-small-logout></navigation-bar-small-logout>";
-            }
-            ?>
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    echo "<navigation-bar-small-login></navigation-bar-small-login>";
+} else {
+    echo "<navigation-bar-small-logout></navigation-bar-small-logout>";
+}
+?>
         </div>
         <div id="bigNavBar">
             <?php
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                $url = $_SESSION['piclink'];
-                echo "<navigation-bar-big-login>
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    $url = $_SESSION['piclink'];
+    echo "<navigation-bar-big-login>
                     <img class='img-fluid m-0' src= '$url' style='width: 60px; height: 60px;'>
                     </navigation-bar-big-login>";
-            } else {
-                echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
-            }
-            ?>
+} else {
+    echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
+}
+?>
         </div>
     </div>
     <!-- copy this part: end -->
@@ -57,18 +57,19 @@
         <div class="inBodyDiv">
             <div id="signupName" class="form-row signupRow">
                 <div class="col col-12 mb-3">
-                    <label class="sr-only" for="signupFirstName">First name</label>
+                <label for="signupFirstName" class="form-label">First name<span style="color:red">*</span></label>
                     <input id="signupFirstName" name="fname" class="form-control signupField" type="text" placeholder="First name" required autofocus="">
                     <p class="text-center text-danger m-1" style="display: none;" id="firstnameError">Please enter your first name</p>
                 </div>
 
                 <div class="col col-12 mb-3">
-                    <label class="sr-only " for="signupLastName">Last name</label>
+                <label for="signupLastName" class="form-label">Last name<span style="color:red">*</span></label>
                     <input id="signupLastName" name="lname" class="form-control signupField" type="text" placeholder="Last name" required autofocus="">
                     <p class="text-center text-danger m-1" style="display: none;" id="lastnameError">Please enter your last name</p>
                 </div>
 
                 <div class="col col-12 avatar">
+                <label for="signupGender" class="form-label">Gender<span style="color:red">*</span></label>
                     <label class="sr-only " for="signupGender">Gender</label>
                     <div id="signupGender" class="dropdown">
                         <select name="gender" id="genders" class="form-control" v-model="gender" @click="changeAvatar" required>
@@ -85,13 +86,13 @@
 
             <div id="signupSchool" class="form-row signupRow">
                 <div class="col col-12 mb-3">
-                    <label class="sr-only " for="signupSchoolName">School name</label>
+                    <label for="signupSchoolName" class="form-label">School name<span style="color:red">*</span></label>
                     <input id="signupSchoolName" name="school" class="form-control signupField" type="text" placeholder="School" required autofocus="">
                     <p class="text-center text-danger m-1" style="display: none;" id="schoolError">Please enter your school</p>
                 </div>
-                
-                <div class="col col-12 mb-3">
-                    <label class="sr-only " for="schoolEmail">School Email</label>
+
+                <div class="col col-12 mb-1">
+                <label for="schoolEmail" class="form-label">School Email<span style="color:red">*</span></label>
                     <input id="schoolEmail" name="schoolEmail" class="form-control signupField" type="email" placeholder="School email" required autocomplete="email">
                     <p class="text-center text-danger m-1" style="display: none;" id="schoolnameError">Please your school email</p>
                 </div>
@@ -99,7 +100,7 @@
 
             <div id="signupPw1" class="form-row signupRow">
                 <div class="col">
-                    <label class="sr-only" for="signupPw1Input">Password</label>
+                <label for="signupPw1Input" class="form-label">Password<span style="color:red">*</span></label>
                     <input name="pw1" id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password" required autofocus="" oninput="checkPasswordRequirement()">
                     <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
                     <p class="text-center text-danger m-1" style="display: none;" id="pwOneError">Please enter your password</p>
@@ -127,10 +128,18 @@
 
             <div id="signupPw2" class="form-row signupRow">
                 <div class="col">
-                    <label class="sr-only " for="signupPw2Input">Confirm password</label>
+                <label for="signupPw2Input" class="form-label">Confirm password<span style="color:red">*</span></label>
                     <input name="pw" id="signupPw2Input" class="form-control signupField" type="password" placeholder="Confirm password" oninput="isPasswordMatch()" required autofocus="">
                     <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw2Input,signupPw2Toggle)"></i>
                     <p class="text-center text-danger m-1" style="display: none;" id="pwCError">Please confirm your password</p>
+                    <?php
+                
+                if (isset($_SESSION["errorPW"])) {
+                    echo $_SESSION["errorPW"];
+                }
+                
+                ?>
+
                 </div>
             </div>
             <!-- Remove password-desc-required class when requirement is met & the reverse -->
@@ -153,7 +162,7 @@
                     <small>By signing up, you agree to our <strong>Terms</strong>, <strong>Data Policy</strong> and
                         <strong>Cookies Policy</strong>.</small>
                 </p>
-
+                
             </div>
         </div>
     </form>
@@ -243,7 +252,7 @@
                 errorMsgFailure("error1", errorMsg1);
             }
 
-            // 2. Uppercase 
+            // 2. Uppercase
             if (hasUpperC(userPWInput)) {
                 errorMsgSuccess("error2", errorMsg2);
             } else {
@@ -272,7 +281,7 @@
                 errorMsgFailure("error5", errorMsg5);
             }
 
-            // 6. Name 
+            // 6. Name
             if (hasProfileName(userPWInput, fName + '.' + lName)) {
                 errorMsgSuccess("error6", errorMsg6);
             } else {
