@@ -75,6 +75,67 @@ function validate_form() {
 }
 
 
+function validateRegistrationForm() {
+
+    let fname = document.forms['register_form'].fname.value
+    let lname = document.forms['register_form'].lname.value
+    let gender = document.forms['register_form'].gender.value
+    let school = document.forms['register_form'].school.value
+    let schoolEmail = document.forms['register_form'].schoolEmail.value
+    let pw1 = document.forms['register_form'].pw1.value
+    let pw2 = document.forms['register_form'].pw.value
+
+    let fnameMsg = document.getElementById("firstnameError")
+    if (fname.length == 0) {
+        fnameMsg.style.display = "block"
+    } else {
+        fnameMsg.style.display = "none"
+    }
+
+    let lnameMsg = document.getElementById("lastnameError")
+    if (lname.length == 0) {
+        lnameMsg.style.display = "block"
+    } else {
+        lnameMsg.style.display = "none"
+    }
+
+    let genderMsg = document.getElementById("genderError")
+    if (gender == "Gender") {
+        // console.log(gender.length);
+        genderMsg.style.display = "block"
+    } else {
+        genderMsg.style.display = "none"
+    }
+
+    let schoolMsg = document.getElementById("schoolError")
+    if (school.length == 0) {
+        schoolMsg.style.display = "block"
+    } else {
+        schoolMsg.style.display = "none"
+    }
+
+    let schoolEmailMsg = document.getElementById("schoolnameError")
+    if (schoolEmail.length == 0) {
+        schoolEmailMsg.style.display = "block"
+    } else {
+        schoolEmailMsg.style.display = "none"
+    }
+
+    let pwFirstMsg = document.getElementById("pwOneError")
+    if (pw1.length == 0) {
+        pwFirstMsg.style.display = "block"
+    } else {
+        pwFirstMsg.style.display = "none"
+    }
+
+    let pwMsg = document.getElementById("pwCError")
+    if (pw2.length == 0) {
+        pwMsg.style.display = "block"
+    } else {
+        pwMsg.style.display = "none"
+    }
+}
+
 function showCriteria() {
     getAllCompanies()
 

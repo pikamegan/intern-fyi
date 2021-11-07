@@ -47,7 +47,7 @@
         </div>
     </div>
     <!-- copy this part: end -->
-    <form class="form-signin" action="../processDbRequest/model/addUser.php" method="POST">
+    <form name="register_form" class="form-signin" action="../processDbRequest/model/addUser.php" method="POST">
         <!-- Form header -->
         <div class="inHeadDiv">
             <div class="display-3 inHead">Sign up</div>
@@ -59,12 +59,13 @@
                 <div class="col col-12 mb-3">
                     <label class="sr-only" for="signupFirstName">First name</label>
                     <input id="signupFirstName" name="fname" class="form-control signupField" type="text" placeholder="First name" required autofocus="">
+                    <p class="text-center text-danger m-1" style="display: none;" id="firstnameError">Please enter your first name</p>
                 </div>
 
                 <div class="col col-12 mb-3">
                     <label class="sr-only " for="signupLastName">Last name</label>
                     <input id="signupLastName" name="lname" class="form-control signupField" type="text" placeholder="Last name" required autofocus="">
-
+                    <p class="text-center text-danger m-1" style="display: none;" id="lastnameError">Please enter your last name</p>
                 </div>
 
                 <div class="col col-12 avatar">
@@ -76,6 +77,7 @@
                             <option value="F">Female</option>
                         </select>
                     </div>
+                    <p class="text-center text-danger m-1" style="display: none;" id="genderError">Please select your gender</p>
                     <input type="hidden" name="avatarURL" :value="avatarImgURL" />
                 </div>
 
@@ -85,19 +87,22 @@
                 <div class="col col-12 mb-3">
                     <label class="sr-only " for="signupSchoolName">School name</label>
                     <input id="signupSchoolName" name="school" class="form-control signupField" type="text" placeholder="School" required autofocus="">
+                    <p class="text-center text-danger m-1" style="display: none;" id="schoolError">Please enter your school</p>
                 </div>
+                
                 <div class="col col-12 mb-3">
                     <label class="sr-only " for="schoolEmail">School Email</label>
                     <input id="schoolEmail" name="schoolEmail" class="form-control signupField" type="email" placeholder="School email" required autocomplete="email">
-
+                    <p class="text-center text-danger m-1" style="display: none;" id="schoolnameError">Please your school email</p>
                 </div>
             </div>
 
             <div id="signupPw1" class="form-row signupRow">
                 <div class="col">
                     <label class="sr-only" for="signupPw1Input">Password</label>
-                    <input id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password" required autofocus="" oninput="checkPasswordRequirement()">
+                    <input name="pw1" id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password" required autofocus="" oninput="checkPasswordRequirement()">
                     <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
+                    <p class="text-center text-danger m-1" style="display: none;" id="pwOneError">Please enter your password</p>
                 </div>
             </div>
 
@@ -125,6 +130,7 @@
                     <label class="sr-only " for="signupPw2Input">Confirm password</label>
                     <input name="pw" id="signupPw2Input" class="form-control signupField" type="password" placeholder="Confirm password" oninput="isPasswordMatch()" required autofocus="">
                     <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw2Input,signupPw2Toggle)"></i>
+                    <p class="text-center text-danger m-1" style="display: none;" id="pwCError">Please confirm your password</p>
                 </div>
             </div>
             <!-- Remove password-desc-required class when requirement is met & the reverse -->
@@ -142,7 +148,7 @@
 
             <!-- Submit -->
             <div class="form-row">
-                <button id="signupBtn" class="btn btn-primary d-block" type="submit">Sign up</button>
+                <button id="signupBtn" class="btn btn-primary d-block" type="submit" onclick="validateRegistrationForm()">Sign up</button>
                 <p id="signupDisclaimer">
                     <small>By signing up, you agree to our <strong>Terms</strong>, <strong>Data Policy</strong> and
                         <strong>Cookies Policy</strong>.</small>
@@ -159,8 +165,6 @@
     <div class="footerComp">
         <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php" @gotohome="goHome"></intern-footer>
     </div>
-
-
 
     <!-- jQuery first, Popper.js, Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -219,7 +223,6 @@
             let errorMsg3 = "At least one lowercase letter";
             let errorMsg4 = "At least one number";
             let errorMsg5 = "At least one non-alphanumeric character (~`!@#$%^%&*-+?)";
-            let errorMsg6 = "Password cannot contain first or last name";
 
             // 0. Empty input
             if (userPWInput.length <= 0) {
