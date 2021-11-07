@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Bootstrap Font Icon CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../CSS/style.css">
@@ -21,6 +20,33 @@
 </head>
 
 <body>
+    <!-- copy this part: start-->
+    <div class="navbarTemplate">
+        <div id="smallNavBar">
+            <?php
+            session_start();
+
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                echo "<navigation-bar-small-login></navigation-bar-small-login>";
+            } else {
+                echo "<navigation-bar-small-logout></navigation-bar-small-logout>";
+            }
+            ?>
+        </div>
+        <div id="bigNavBar">
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                $url = $_SESSION['piclink'];
+                echo "<navigation-bar-big-login>
+                    <img class='img-fluid m-0' src= '$url' style='width: 60px; height: 60px;'>
+                    </navigation-bar-big-login>";
+            } else {
+                echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
+            }
+            ?>
+        </div>
+    </div>
+    <!-- copy this part: end -->
     <form class="form-signin" action="../processDbRequest/model/addUser.php" method="POST">
         <!-- Form header -->
         <div class="inHeadDiv">
@@ -32,22 +58,19 @@
             <div id="signupName" class="form-row signupRow">
                 <div class="col col-6">
                     <label class="sr-only" for="signupFirstName">First name</label>
-                    <input id="signupFirstName" name="fname" class="form-control signupField" type="text"
-                        placeholder="First name" required autofocus="">
+                    <input id="signupFirstName" name="fname" class="form-control signupField" type="text" placeholder="First name" required autofocus="">
                 </div>
 
                 <div class="col col-3">
                     <label class="sr-only " for="signupLastName">Last name</label>
-                    <input id="signupLastName" name="lname" class="form-control signupField" type="text"
-                        placeholder="Last name" required autofocus="">
+                    <input id="signupLastName" name="lname" class="form-control signupField" type="text" placeholder="Last name" required autofocus="">
 
                 </div>
 
                 <div class="col col-3 avatar">
                     <label class="sr-only " for="signupGender">Gender</label>
                     <div id="signupGender" class="dropdown">
-                        <select name="gender" id="genders" class="form-control" v-model="gender" @click="changeAvatar"
-                            required>
+                        <select name="gender" id="genders" class="form-control" v-model="gender" @click="changeAvatar" required>
                             <option value="Gender" selected>Gender</option>
                             <option value="M">Male</option>
                             <option value="F">Female</option>
@@ -61,13 +84,11 @@
             <div id="signupSchool" class="form-row signupRow">
                 <div class="col">
                     <label class="sr-only " for="signupSchoolName">School name</label>
-                    <input id="signupSchoolName" name="school" class="form-control signupField" type="text"
-                        placeholder="School" required autofocus="">
+                    <input id="signupSchoolName" name="school" class="form-control signupField" type="text" placeholder="School" required autofocus="">
                 </div>
                 <div class="col">
                     <label class="sr-only " for="schoolEmail">School Email</label>
-                    <input id="schoolEmail" name="schoolEmail" class="form-control signupField" type="email"
-                        placeholder="School email" required autocomplete="email">
+                    <input id="schoolEmail" name="schoolEmail" class="form-control signupField" type="email" placeholder="School email" required autocomplete="email">
 
                 </div>
             </div>
@@ -75,10 +96,8 @@
             <div id="signupPw1" class="form-row signupRow">
                 <div class="col">
                     <label class="sr-only" for="signupPw1Input">Password</label>
-                    <input id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password"
-                        required autofocus="" oninput="checkPasswordRequirement()">
-                    <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle"
-                        onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
+                    <input id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password" required autofocus="" oninput="checkPasswordRequirement()">
+                    <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
                 </div>
             </div>
 
@@ -104,10 +123,8 @@
             <div id="signupPw2" class="form-row signupRow">
                 <div class="col">
                     <label class="sr-only " for="signupPw2Input">Confirm password</label>
-                    <input name="pw" id="signupPw2Input" class="form-control signupField" type="password"
-                        placeholder="Confirm password" oninput="isPasswordMatch()" required autofocus="">
-                    <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle"
-                        onclick="pwToggle(signupPw2Input,signupPw2Toggle)"></i>
+                    <input name="pw" id="signupPw2Input" class="form-control signupField" type="password" placeholder="Confirm password" oninput="isPasswordMatch()" required autofocus="">
+                    <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw2Input,signupPw2Toggle)"></i>
                 </div>
             </div>
             <!-- Remove password-desc-required class when requirement is met & the reverse -->
@@ -135,32 +152,27 @@
         </div>
     </form>
 
-    <p id="signupToLogin">Already have an account? <a href="./login.html">Log in</a></p>
+    <p id="signupToLogin">Already have an account? <a href="./login.php">Log in</a></p>
 
 
 
     <div class="footerComp">
-        <intern-footer home="../index.html" abt="about.html" career="career.html" help="help.html"
-            feedback="feedback.html" @gotohome="goHome"></intern-footer>
+        <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php" @gotohome="goHome"></intern-footer>
     </div>
 
 
 
     <!-- jQuery first, Popper.js, Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
 
     <!-- Changing between password input types-->
     <script>
-
         const avatar = Vue.createApp({
             data() {
                 return {
@@ -174,8 +186,7 @@
 
                     if (this.gender === "M") {
                         this.avatarImgURL = "../IMG/avatar1.svg"
-                    }
-                    else if (this.gender === "F") {
+                    } else if (this.gender === "F") {
                         this.avatarImgURL = "../IMG/avatar3.svg"
                     }
                 }
@@ -348,7 +359,6 @@
             }
 
         }
-
     </script>
 
 

@@ -7,13 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <!-- Bootstrap Bundle with Popper -->
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
     <script src="../js/actions.js" defer></script>
     <!-- vue -->
@@ -26,19 +23,33 @@
 </head>
 
 <body onscroll="scrollFunction()" onload="loadCompanyPage()">
-    <!-- copy this part -->
+    <!-- copy this part: start-->
     <div class="navbarTemplate">
         <div id="smallNavBar">
-            <navigation-bar-small-login></navigation-bar-small-login>
-            <navigation-bar-small-logout></navigation-bar-small-logout>
-        </div>
+            <?php
+            session_start();
 
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                echo "<navigation-bar-small-login></navigation-bar-small-login>";
+            } else {
+                echo "<navigation-bar-small-logout></navigation-bar-small-logout>";
+            }
+            ?>
+        </div>
         <div id="bigNavBar">
-            <navigation-bar-big-login></navigation-bar-big-login>
-            <navigation-bar-big-logout></navigation-bar-big-logout>
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                $url = $_SESSION['piclink'];
+                echo "<navigation-bar-big-login>
+                    <img class='img-fluid m-0' src= '$url' style='width: 60px; height: 60px;'>
+                    </navigation-bar-big-login>";
+            } else {
+                echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
+            }
+            ?>
         </div>
     </div>
-    <!-- copy this part -->
+    <!-- copy this part: end -->
 
     <button id="scrollTop" onclick="scrollToTop()"><img src="../IMG/next_right.svg" alt="scroll to top"></button>
 
@@ -51,8 +62,7 @@
 
                 <div class="d-flex bd-highlight">
                     <div class="p-2 flex-grow-1 bd-highlight companyName">Company Name</div> <!-- changed with JS -->
-                    <div class="p-2 bd-highlight"><a href="" id="linkedinLink"><img src="../IMG/linkedin.svg"
-                                alt="LinkedIn logo"></a></div>
+                    <div class="p-2 bd-highlight"><a href="" id="linkedinLink"><img src="../IMG/linkedin.svg" alt="LinkedIn logo"></a></div>
                 </div>
 
                 <div class="d-flex bd-highlight text-muted">
@@ -67,25 +77,20 @@
                 </p>
 
                 <div class="d-flex bd-highlight pt-2 mt-3 mb-2">
-                    <div class="p-2 bd-highlight flex-grow-1" id="companyReviewNum"><img src="../IMG/review_icon.svg"
-                            alt="Review icon"></div>
-                    <div class="p-2 bd-highlight"><a href="" id="companyWebsite"
-                            class="text-decoration-none text-muted">See job openings ></a>
+                    <div class="p-2 bd-highlight flex-grow-1" id="companyReviewNum"><img src="../IMG/review_icon.svg" alt="Review icon"></div>
+                    <div class="p-2 bd-highlight"><a href="" id="companyWebsite" class="text-decoration-none text-muted">See job openings ></a>
                     </div>
                 </div>
             </div>
 
             <!-- Criteria card -->
             <div class="col-10 col-sm-10 col-md-6 col-lg-6 aboutCompany">
-                <h3 class="py-2 text-center" id="companyRating">Overall Rating: <img src="../IMG/star.svg" alt="star"
-                        class="d-inline-block"></h3>
-                <div
-                    class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 mt-4 mb-3 d-flex justify-content-around">
+                <h3 class="py-2 text-center" id="companyRating">Overall Rating: <img src="../IMG/star.svg" alt="star" class="d-inline-block"></h3>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 mt-4 mb-3 d-flex justify-content-around">
 
                     <!-- Criteria 1 -->
                     <div class="col mt-1 mb-3">
-                        <div class="hoverCard pay px-0 py-3 mb-2"
-                            style="border-radius: 10px; text-align: center; position: relative;">
+                        <div class="hoverCard pay px-0 py-3 mb-2" style="border-radius: 10px; text-align: center; position: relative;">
                             <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
                                 <img src="../img/help.svg" class="preventSelect">
                                 <span class="criteriaTooltipText">
@@ -98,8 +103,7 @@
 
                             <h6 style="color: white;">Pay</h6>
 
-                            <div class="d-flex align-items-center justify-content-center"
-                                style="background-color:#FBFCF7; margin-top:10px; height:70px;">
+                            <div class="d-flex align-items-center justify-content-center" style="background-color:#FBFCF7; margin-top:10px; height:70px;">
                                 <img src="../IMG/star.svg" alt="star">
                                 <p class="text-center m-0 px-2" id="payRating">5</p>
                             </div>
@@ -108,8 +112,7 @@
 
                     <!-- Criteria 2 -->
                     <div class="col mt-1 mb-3">
-                        <div class="hoverCard skillsLearned px-0 py-3"
-                            style="border-radius: 10px; text-align: center; position: relative;">
+                        <div class="hoverCard skillsLearned px-0 py-3" style="border-radius: 10px; text-align: center; position: relative;">
                             <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
                                 <img src="../img/help.svg" class="preventSelect">
                                 <span class="criteriaTooltipText">
@@ -123,8 +126,7 @@
 
                             <h6 style="color: white;">Skills Learned</h6>
 
-                            <div class="d-flex align-items-center justify-content-center"
-                                style="background-color:#FBFCF7; margin-top:10px; height:70px;">
+                            <div class="d-flex align-items-center justify-content-center" style="background-color:#FBFCF7; margin-top:10px; height:70px;">
                                 <img src="../IMG/star.svg" alt="star">
                                 <p class="text-center m-0 px-2" id="skillsRating">5</p>
                             </div>
@@ -133,8 +135,7 @@
 
                     <!-- Criteria 3 -->
                     <div class="col mt-1 mb-3">
-                        <div class="hoverCard companyCulture px-0 py-3"
-                            style="border-radius: 10px; text-align: center; position: relative;">
+                        <div class="hoverCard companyCulture px-0 py-3" style="border-radius: 10px; text-align: center; position: relative;">
                             <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
                                 <img src="../img/help.svg" class="preventSelect">
                                 <span class="criteriaTooltipText">
@@ -143,14 +144,12 @@
                             </div>
 
                             <div>
-                                <img src="../img/CompanyCultureRatingCategoryIcon.svg"
-                                    class="preventSelect positionCard">
+                                <img src="../img/CompanyCultureRatingCategoryIcon.svg" class="preventSelect positionCard">
                             </div>
 
                             <h6 style="color: white;">Company Culture</h6>
 
-                            <div class="d-flex align-items-center justify-content-center"
-                                style="background-color:#FBFCF7; margin-top:10px; height:70px;">
+                            <div class="d-flex align-items-center justify-content-center" style="background-color:#FBFCF7; margin-top:10px; height:70px;">
                                 <img src="../IMG/star.svg" alt="star">
                                 <p class="text-center m-0 px-2" id="cultureRating">5</p>
                             </div>
@@ -159,8 +158,7 @@
 
                     <!-- Criteria 4 -->
                     <div class="col mt-1 mb-3">
-                        <div class=" hoverCard food px-0 py-3"
-                            style="border-radius: 10px; text-align: center; position: relative;">
+                        <div class=" hoverCard food px-0 py-3" style="border-radius: 10px; text-align: center; position: relative;">
                             <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
                                 <img src="../img/help.svg" class="preventSelect">
                                 <span class="criteriaTooltipText">
@@ -174,8 +172,7 @@
 
                             <h6 style="color: white;">Food</h6>
 
-                            <div class="d-flex align-items-center justify-content-center"
-                                style="background-color:#FBFCF7; margin-top:10px; height:70px;">
+                            <div class="d-flex align-items-center justify-content-center" style="background-color:#FBFCF7; margin-top:10px; height:70px;">
                                 <img src="../IMG/star.svg" alt="star">
                                 <p class="text-center m-0 px-2" id="foodRating">5</p>
                             </div>
@@ -184,8 +181,7 @@
 
                     <!-- Criteria 5 -->
                     <div class="col mt-1 mb-3">
-                        <div class="hoverCard mentorship px-0 py-3"
-                            style="border-radius: 10px; text-align: center; position: relative;">
+                        <div class="hoverCard mentorship px-0 py-3" style="border-radius: 10px; text-align: center; position: relative;">
                             <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
                                 <img src="../img/help.svg" class="preventSelect">
                                 <span class="criteriaTooltipText">
@@ -199,8 +195,7 @@
 
                             <h6 style="color: white;">Mentorship</h6>
 
-                            <div class="d-flex align-items-center justify-content-center"
-                                style="background-color:#FBFCF7; margin-top:10px; height:70px;">
+                            <div class="d-flex align-items-center justify-content-center" style="background-color:#FBFCF7; margin-top:10px; height:70px;">
                                 <img src="../IMG/star.svg" alt="star">
                                 <p class="text-center m-0 px-2" id="mentorRating">5</p>
                             </div>
@@ -209,8 +204,7 @@
 
                     <!-- Criteria 6 -->
                     <div class="col mt-1 mb-3">
-                        <div class="hoverCard flatHierarchy px-0 py-3"
-                            style="border-radius: 10px; text-align: center; position: relative;">
+                        <div class="hoverCard flatHierarchy px-0 py-3" style="border-radius: 10px; text-align: center; position: relative;">
                             <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
                                 <img src="../img/help.svg" class="preventSelect">
                                 <span class="criteriaTooltipText">
@@ -219,14 +213,12 @@
                             </div>
 
                             <div>
-                                <img src="../img/FlatHeirarchyRatingCategoryIcon.svg"
-                                    class="preventSelect positionCard">
+                                <img src="../img/FlatHeirarchyRatingCategoryIcon.svg" class="preventSelect positionCard">
                             </div>
 
                             <h6 style="color: white;">Flat Hierarchy</h6>
 
-                            <div class="d-flex align-items-center justify-content-center"
-                                style="background-color:#FBFCF7; margin-top:10px; height:70px;">
+                            <div class="d-flex align-items-center justify-content-center" style="background-color:#FBFCF7; margin-top:10px; height:70px;">
                                 <img src="../IMG/star.svg" alt="star">
                                 <p class="text-center m-0 px-2" id="hierarchyRating">5</p>
                             </div>
@@ -265,8 +257,7 @@
     </div>
 
     <div class="footerComp">
-        <intern-footer home="../index.html" abt="about.html" career="career.html" help="help.html"
-            feedback="feedback.html" @gotohome="goHome"></intern-footer>
+        <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php" @gotohome="goHome"></intern-footer>
     </div>
 
 

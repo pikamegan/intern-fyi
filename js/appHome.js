@@ -54,7 +54,7 @@ const app = Vue.createApp({
                     reviewNum: company.companyRatings.totalNumReviews,
                     overallRating: company.companyRatings.overallRating,
                     imgUrl: company.companyInfo.imageLink,
-                    companyPage: encodeURI("../HTML/company.html?cid=" + company.companyID + "&cname=" + company.companyName)
+                    companyPage: encodeURI("../HTML/company.php?cid=" + company.companyID + "&cname=" + company.companyName)
                 };
                 return relevantInfo;
             }

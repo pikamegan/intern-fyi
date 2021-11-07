@@ -7,13 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <!-- Bootstrap Bundle with Popper -->
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../CSS/style.css">
     <script src="https://unpkg.com/vue@next"></script>
@@ -23,20 +20,34 @@
 </head>
 
 <body onload="showCriteria()" class="onPopup">
-    <!-- copy this part -->
+    <!-- copy this part: start-->
     <div class="navbarTemplate">
         <div id="smallNavBar">
-            <navigation-bar-small-login></navigation-bar-small-login>
-            <navigation-bar-small-logout></navigation-bar-small-logout>
-        </div>
+            <?php
+            session_start();
 
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                echo "<navigation-bar-small-login></navigation-bar-small-login>";
+            } else {
+                echo "<navigation-bar-small-logout></navigation-bar-small-logout>";
+            }
+            ?>
+        </div>
         <div id="bigNavBar">
-            <navigation-bar-big-login></navigation-bar-big-login>
-            <navigation-bar-big-logout></navigation-bar-big-logout>
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                $url = $_SESSION['piclink'];
+                echo "<navigation-bar-big-login>
+                    <img class='img-fluid m-0' src= '$url' style='width: 60px; height: 60px;'>
+                    </navigation-bar-big-login>";
+            } else {
+                echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
+            }
+            ?>
         </div>
     </div>
-    <!-- copy this part -->
-    
+    <!-- copy this part: end -->
+
     <h1 class="pageTitle mt-5">Write a Company Review</h1>
 
     <div class="container appHome">
@@ -48,13 +59,12 @@
                     <!-- remove role="form" to test -->
                     <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 40px;">
                         <div class="bd-highlight">
-                            <img src="../IMG/deletebutton.svg" onclick="resetDraft('clearReview')" alt="Clear draft"
-                                class="img-fluid pointer" style="width: 50px; height: 50px;">
+                            <img src="../IMG/deletebutton.svg" onclick="resetDraft('clearReview')" alt="Clear draft" class="img-fluid pointer" style="width: 50px; height: 50px;">
                         </div>
                     </div>
                     <div class="row justify-content-start mb-5">
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-3">
-                            
+
                             <label for="company" class="form-label">Company<span style="color:red">*</span></label>
                             <select id="company" name="companyid" class="form-select pointer" aria-describedby="companyid" required>
                                 <!-- filled in with js -->
@@ -78,20 +88,13 @@
 
                                 <div class="p-2 bd-highlight d-flex flex-grow-1 justify-content-around">
 
-                                    <img src="../IMG/1bad.svg" alt="sad face"
-                                        style="width: 40px; height: 40px;">
-                                    <label class="inlineLabel"><input type="radio" name="overallrating"
-                                            class="inlineRadio pointer" value="1" required>1</label>
-                                    <label class="inlineLabel"><input type="radio" name="overallrating"
-                                            class="inlineRadio pointer" value="2" required>2</label>
-                                    <label class="inlineLabel"><input type="radio" name="overallrating"
-                                            class="inlineRadio pointer" value="3" required>3</label>
-                                    <label class="inlineLabel"><input type="radio" name="overallrating"
-                                            class="inlineRadio pointer"  value="4" required>4</label>
-                                    <label class="inlineLabel"><input type="radio" name="overallrating"
-                                            class="inlineRadio pointer" value="5" required>5</label>
-                                    <img src="../IMG/5happy.svg" alt="happy face"
-                                        style="width: 40px; height: 40px;">
+                                    <img src="../IMG/1bad.svg" alt="sad face" style="width: 40px; height: 40px;">
+                                    <label class="inlineLabel"><input type="radio" name="overallrating" class="inlineRadio pointer" value="1" required>1</label>
+                                    <label class="inlineLabel"><input type="radio" name="overallrating" class="inlineRadio pointer" value="2" required>2</label>
+                                    <label class="inlineLabel"><input type="radio" name="overallrating" class="inlineRadio pointer" value="3" required>3</label>
+                                    <label class="inlineLabel"><input type="radio" name="overallrating" class="inlineRadio pointer" value="4" required>4</label>
+                                    <label class="inlineLabel"><input type="radio" name="overallrating" class="inlineRadio pointer" value="5" required>5</label>
+                                    <img src="../IMG/5happy.svg" alt="happy face" style="width: 40px; height: 40px;">
 
                                 </div>
                             </div>
@@ -101,12 +104,12 @@
 
 
                     <label for="button" class="form-label mt-5">Category Rating (1 Low, 5 Very High)</label>
-                    <div class="accordion" id="accordionExample"></div> 
+                    <div class="accordion" id="accordionExample"></div>
 
                     <div class="row mt-5">
                         <div class="mb-3">
                             <label for="comment" class="form-label">Review</label>
-                            <textarea name= "reviewdesc" class="form-control" aria-label="comment" style="height:300px;" placeholder="Minimum 10 characters" required></textarea>
+                            <textarea name="reviewdesc" class="form-control" aria-label="comment" style="height:300px;" placeholder="Minimum 10 characters" required></textarea>
                             <p class="text-center text-danger m-1" style="display: none;" id="reviewMsg">Please enter at least 10 characters</p>
                         </div>
                     </div>
@@ -124,8 +127,7 @@
         <div class="row justify-content-center">
             <div class="col-6">
                 <div class="card warningPopup">
-                    <div class="card-header text-end"><img src="../IMG/X_close.svg" alt="close" class="w-10 pointer"
-                            onclick="closePopup('clearReview')"></div>
+                    <div class="card-header text-end"><img src="../IMG/X_close.svg" alt="close" class="w-10 pointer" onclick="closePopup('clearReview')"></div>
                     <div class="card-body text-white text-center">
                         <h5 class="card-title">Review Cancellation</h5>
                         <p class="card-text">Are you sure you want to clear this draft?</p>
@@ -140,13 +142,10 @@
     </div>
 
     <div class="footerComp">
-        <intern-footer home="../index.html" abt="about.html" career="career.html" help="help.html"
-            feedback="feedback.html" @gotohome="goHome"></intern-footer>
+        <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php" @gotohome="goHome"></intern-footer>
     </div>
     <!-- JavaScript for CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
     <script src="../js/actions.js"></script>
     <script src="../js/appHome.js"></script>

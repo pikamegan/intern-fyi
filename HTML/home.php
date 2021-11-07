@@ -132,7 +132,7 @@
                     </div>
                     <div class="row mb-5">
                         <div class="text-center col">
-                            <button class="btn btn-primary" onclick="location.href='../HTML/WriteAReview.html';">Write a
+                            <button class="btn btn-primary" onclick="location.href='WriteAReview.php';">Write a
                                 Review Now</button>
                         </div>
                     </div>
@@ -146,11 +146,11 @@
             </div>
         </div>
         <div class="row mb-5 shadow">
-            <div class="col-md-3 col-6 my-3 text-center" onclick="location.href='../HTML/search.php';">
+            <div class="col-md-3 col-6 my-3 text-center" onclick="location.href='search.php';">
                 <img src="../img/search.svg" class="preventSelect p-2">
                 <p class="indexText">Find the right<br>Internship</p>
             </div>
-            <div class="col-md-3 col-6 my-3 text-center" onclick="location.href='../HTML/WriteAReview.html';">
+            <div class="col-md-3 col-6 my-3 text-center" onclick="location.href='WriteAReview.php';">
                 <img src="../img/chat.svg" class="preventSelect p-2">
                 <p class="indexText">Review<br>Companies</p>
             </div>

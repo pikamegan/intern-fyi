@@ -3,11 +3,11 @@ function signOut() {
 }
 
 function gotoSignUpPage() {
-    window.location = "../HTML/signup.html"
+    window.location = "../HTML/signup.php"
 }
 
 function gotoSignInPage() {
-    window.location = "../HTML/login.html"
+    window.location = "../HTML/login.php"
 }
 
 
@@ -17,7 +17,7 @@ function gotoHomePage() {
 
 
 function gotoMyProfile() {
-    window.location = "../HTML/myProfile.html"
+    window.location = "../HTML/myProfile.php"
 }
 
 function gotoSearch() {
@@ -342,7 +342,7 @@ function loadCompanyPage() {
             hierarchyRating.innerHTML = hierarchyRatingStr
 
             let writeReviewBtn = document.getElementById("writeReviewBtn")
-            writeReviewBtn.href = encodeURI("./WriteAReview.html?cid=" + idStr + "&cname=" + nameStr)
+            writeReviewBtn.href = encodeURI("./WriteAReview.php?cid=" + idStr + "&cname=" + nameStr)
 
             getAllReviews(idStr)
 
@@ -546,8 +546,8 @@ navigationBar.component('navigation-bar-small-login', {
     </div>
     <div class="collapse navbar-collapse text-center" id="navbarCollapse">
         <a href="">Logout</a><br>
-        <a href="../HTML/myProfile.html">My Profile</a><br>
-        <a href="../HTML/WriteAReview.html">Write a Review &#9998;</a><br>
+        <a href="../HTML/myProfile.php">My Profile</a><br>
+        <a href="../HTML/WriteAReview.php">Write a Review &#9998;</a><br>
     </div>
     </nav>
     <!-- end of small navigation bar -->`
@@ -585,9 +585,9 @@ navigationBar.component('navigation-bar-small-logout', {
             </div>
         </div>
         <div class="collapse navbar-collapse text-center" id="navbarCollapse">
-            <a href="./signup.html">Register</a><br>
-            <a href="./login.html">Login</a><br>
-            <a href="./WriteAReview.html">Write a Review &#9998;</a><br>
+            <a href="./signup.php">Register</a><br>
+            <a href="./login.php">Login</a><br>
+            <a href="./WriteAReview.php">Write a Review &#9998;</a><br>
         </div>
     </nav>
     <!-- end of small navigation bar -->`

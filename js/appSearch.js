@@ -313,8 +313,8 @@ appSearch.component('company-row', {
             myMaxHeight: null,
             maxScrollHeight: '', //to be done
             isSelected: false,
-            companyPage: encodeURI("./company.html?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
-            writeReviewPage: encodeURI("./WriteAReview.html?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
+            companyPage: encodeURI("./company.php?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
+            writeReviewPage: encodeURI("./WriteAReview.php?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
         };
     },
     props: ['company', 'selectedCompanyID'],

@@ -112,7 +112,7 @@
                                 <p class="card-text">Your feedback has been submitted!</p>
                             </div>
                         </div>
-                        <a href="../index.html"><button type="button" class="btn successBtn mx-2 mb-1">Back to Home</button></a>
+                        <a href="home.php"><button type="button" class="btn successBtn mx-2 mb-1">Back to Home</button></a>
                     </div>
                 </div>
             </div>
