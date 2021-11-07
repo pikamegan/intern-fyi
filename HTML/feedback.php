@@ -68,10 +68,11 @@
                                 <label for="type" class="form-label">Type of Feedback<span style="color:red">*</span></label>
                                 <select id="type" name="type" class="form-select" aria-describedby="feedbackHelp" required>
                                     <option value="complaint">Complaint</option>
-                                    <option value="bug">Website Bug/Malfunction</option>
-                                    <option value="compliment" selected>Compliment</option>
+                                    <option value="compliment">Compliment</option>
                                     <option value="suggestion">General Suggestion</option>
                                     <option value="feature">New Feature Suggestion</option>
+                                    <option value="question" selected>Question</option>
+                                    <option value="bug">Website Bug/Malfunction</option>
                                 </select>
                                 <div id="feedbackHelp" class="form-text">If more than one option applies to your
                                     feedback, select the most relevant option</div>
