@@ -68,21 +68,9 @@
 
                 <!-- Password -->
                 <label class="sr-only" for="loginPw">Password</label>
-                <input name="pw" id="loginPw" class="form-control loginField" type="email" placeholder="Password" required="" autofocus="">
+                <input name="pw" id="loginPw" class="form-control loginField" type="password" placeholder="Password" required="" autofocus="">
                 <i id="loginPwToggle" class="bi bi-eye-fill pwToggle"></i>
 
-            </div>
-
-            <!-- Extras -->
-            <div class="row loginBodyExtras">
-                <!-- Remember me-->
-                <div class="col checkbox mb-3 loginBodyExtra">
-                    <input id="loginRemCheck" type="checkbox" value="rememberCheck">
-                    <label for="loginRemCheck">Remember me</label>
-                </div>
-                <!-- <div class="col" id="ResetPw">
-                    <a id="resetPwLink" href="resetPw.html" class="loginBodyExtra">Forgot password?</a>
-                </div> -->
             </div>
             <!-- Submit -->
             <button id="loginBtn" class="btn btn-primary" type="submit">Log in</button>

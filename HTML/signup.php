@@ -56,18 +56,18 @@
 
         <div class="inBodyDiv">
             <div id="signupName" class="form-row signupRow">
-                <div class="col col-6">
+                <div class="col col-12 mb-3">
                     <label class="sr-only" for="signupFirstName">First name</label>
                     <input id="signupFirstName" name="fname" class="form-control signupField" type="text" placeholder="First name" required autofocus="">
                 </div>
 
-                <div class="col col-3">
+                <div class="col col-12 mb-3">
                     <label class="sr-only " for="signupLastName">Last name</label>
                     <input id="signupLastName" name="lname" class="form-control signupField" type="text" placeholder="Last name" required autofocus="">
 
                 </div>
 
-                <div class="col col-3 avatar">
+                <div class="col col-12 avatar">
                     <label class="sr-only " for="signupGender">Gender</label>
                     <div id="signupGender" class="dropdown">
                         <select name="gender" id="genders" class="form-control" v-model="gender" @click="changeAvatar" required>
@@ -82,11 +82,11 @@
             </div>
 
             <div id="signupSchool" class="form-row signupRow">
-                <div class="col">
+                <div class="col col-12 mb-3">
                     <label class="sr-only " for="signupSchoolName">School name</label>
                     <input id="signupSchoolName" name="school" class="form-control signupField" type="text" placeholder="School" required autofocus="">
                 </div>
-                <div class="col">
+                <div class="col col-12 mb-3">
                     <label class="sr-only " for="schoolEmail">School Email</label>
                     <input id="schoolEmail" name="schoolEmail" class="form-control signupField" type="email" placeholder="School email" required autocomplete="email">
 
