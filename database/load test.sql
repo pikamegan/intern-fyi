@@ -7,8 +7,7 @@ INSERT INTO
   gender(`genderID`, `genderName`)
 values
   ("M", "Male"),
-  ("F", "Female"),
-  ("O", "Others");
+  ("F", "Female");
 
 --
 -- Data for table `intern`
@@ -51,7 +50,7 @@ values
   (
     "Patricia",
     "Loi",
-    "O",
+    "F",
     "Singapore",
     "Singapore Management University",
     "patricia.2020@scis.smu.edu.sg",

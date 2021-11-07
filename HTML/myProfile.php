@@ -33,31 +33,60 @@
     <div class="navbarTemplate">
         <div id="smallNavBar">
             <?php
-            session_start();
+session_start();
 
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                echo "<navigation-bar-small-login></navigation-bar-small-login>";
-            } else {
-                echo "<navigation-bar-small-logout></navigation-bar-small-logout>";
-            }
-            ?>
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    echo "<navigation-bar-small-login></navigation-bar-small-login>";
+} else {
+    header("Location: ./home.php");
+    exit();
+}
+?>
         </div>
         <div id="bigNavBar">
             <?php
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                $url = $_SESSION['piclink'];
-                echo "<navigation-bar-big-login>
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    $url = $_SESSION['piclink'];
+    echo "<navigation-bar-big-login>
                     <img class='img-fluid m-0' src= '$url' style='width: 60px; height: 60px;'>
                     </navigation-bar-big-login>";
-            } else {
-                echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
-            }
-            ?>
+} else {
+    header("Location: ./home.php");
+    exit();
+}
+?>
         </div>
     </div>
     <!-- copy this part: end -->
 
     <h1 class="pageTitle my-5">Your Profile</h1>
+    <?php
+
+        require_once '../processDbRequest/model/common.php';
+        $firstName = "";
+        $lastName = "";
+        $genderID = "";
+        $country = "";
+        $school = "";
+        $schoolEmail = "";
+        $profilePictureUrl = "";
+        $reviewsNo = "";
+
+        if (isset($_SESSION['email'])) {
+            $dao = new userDAO();
+            $userObj = $dao->getUserByEmail($_SESSION['email']); 
+            $firstName = $userObj->getFirstName();
+            $lastName = $userObj->getLastName();
+            $genderID = $userObj->getGenderID();
+            $country = $userObj->getCountry();
+            $school = $userObj->getSchool();
+            $schoolEmail = $userObj->getSchoolEmail();
+            $profilePictureUrl = $userObj->getProfilePictureUrl();
+            $reviewsNo = $userObj->getReviewsNo();
+            
+        }
+
+?>
     <div class="container-fluid m-5 profile">
         <div class="row">
             <div class="col col-sm-12 col-lg-6">
@@ -70,8 +99,23 @@
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         <span style="position:absolute;right:0;top:-15px"></span>
                         <div class="m-5">
-                            <h3 class="text-start my-5">Name</h3> <!-- How to make this centered when small? -->
-                            <p>Gender: <span id="profileGender"></span></p>
+                            <?php
+                            
+                            if ($firstName !== "" && $lastName !== "") {
+                                echo "<h3 class='text-start my-5'>$firstName $lastName</h3>";
+                            }
+                            
+                            ?>
+                            <p>Gender:
+                                <?php
+                                    if ($genderID !== "" and $genderID =="M") {
+                                        echo "<span id='profileGender'>Male</span>";
+                                    }elseif ($genderID !== "" and $genderID =="F") {
+                                        echo "<span id='profileGender'>Female</span>";
+                                    }
+                                ?>
+
+                            </p>
                             <p>Email: <span id="profileEmailAddress"></span></p>
                             <p>Password: <span id="profilePW"></span></p>
                         </div>
