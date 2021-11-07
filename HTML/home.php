@@ -146,7 +146,7 @@
             </div>
         </div>
         <div class="row mb-5 shadow">
-            <div class="col-md-3 col-6 my-3 text-center" onclick="location.href='../HTML/search.html';">
+            <div class="col-md-3 col-6 my-3 text-center" onclick="location.href='../HTML/search.php';">
                 <img src="../img/search.svg" class="preventSelect p-2">
                 <p class="indexText">Find the right<br>Internship</p>
             </div>
@@ -340,8 +340,7 @@
     <!-- <company-card :companyinfo="homeCompanyCardsRelavantInfo(rand1company())"></company-card> -->
 
     <div class="footerComp" style="margin-top: 50px;">
-        <intern-footer home="" abt="../HTML/about.html" career="../HTML/career.html" help="../HTML/help.html"
-            feedback="../HTML/feedback.html"></intern-footer>
+        <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php"></intern-footer>
     </div>
 </body>
 

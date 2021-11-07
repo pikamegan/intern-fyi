@@ -7,15 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
@@ -31,20 +28,34 @@
 </head>
 
 <body>
-    <!-- copy this part -->
+    <!-- copy this part: start-->
     <div class="navbarTemplate">
         <div id="smallNavBar">
-            <navigation-bar-small-login></navigation-bar-small-login>
-            <navigation-bar-small-logout></navigation-bar-small-logout>
-        </div>
+            <?php
+            session_start();
 
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                echo "<navigation-bar-small-login></navigation-bar-small-login>";
+            } else {
+                echo "<navigation-bar-small-logout></navigation-bar-small-logout>";
+            }
+            ?>
+        </div>
         <div id="bigNavBar">
-            <navigation-bar-big-login></navigation-bar-big-login>
-            <navigation-bar-big-logout></navigation-bar-big-logout>
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                $url = $_SESSION['piclink'];
+                echo "<navigation-bar-big-login>
+                    <img class='img-fluid m-0' src= '$url' style='width: 60px; height: 60px;'>
+                    </navigation-bar-big-login>";
+            } else {
+                echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
+            }
+            ?>
         </div>
     </div>
-    <!-- copy this part -->
-    
+    <!-- copy this part: end -->
+
     <h1 class="pageTitle mt-5">Careers</h1>
     <div class="container mt-5 m-auto center">
         <h1 class="secondaryTitle ms-lg-4">Why work with us</h1>
@@ -102,25 +113,22 @@
             <div class="col mb-4">
                 <h3 class="text-center secondaryTitle">Paid Company Travel</h3>
                 <p class="text-center w-50 m-auto">
-                    Every year our staffs go on a company sponsored trip. Last year we went to Switzerland.   Try navigating through Switzerland by pressing left and right keys.
-                    </p>
+                    Every year our staffs go on a company sponsored trip. Last year we went to Switzerland. Try navigating through Switzerland by pressing left and right keys.
+                </p>
                 <div class="text-center">
-                    <button id="guy" @click="changeCharacterImg($event)" type="button" class="btn btn-light m-1"><img
-                            src="../IMG/boyIcon.svg" style="width: 50px; height: 50px;"></button>
+                    <button id="guy" @click="changeCharacterImg($event)" type="button" class="btn btn-light m-1"><img src="../IMG/boyIcon.svg" style="width: 50px; height: 50px;"></button>
 
-                    <button id="girl" @click="changeCharacterImg($event)" type="button" class="btn btn-light m-1"><img
-                            src="../IMG/girlIcon.svg" style="width: 50px; height: 50px;"></button>
+                    <button id="girl" @click="changeCharacterImg($event)" type="button" class="btn btn-light m-1"><img src="../IMG/girlIcon.svg" style="width: 50px; height: 50px;"></button>
                 </div>
                 <div style="position:relative;">
-                    <img class="img-fluid secondImage" id="personImg" :src="imgOfCharacterSrc"
-                        style="height: '50'; width: '50';">
+                    <img class="img-fluid secondImage" id="personImg" :src="imgOfCharacterSrc" style="height: '50'; width: '50';">
                     <img class="img-fluid mx-auto d-block mb-4 firstImage" src="../IMG/theFarm.svg">
                 </div>
             </div>
         </div>
     </div>
     <div class="footerComp">
-        <intern-footer home = "../index.html" abt = "about.html" career="career.html" help= "help.html"  feedback="feedback.html" @gotohome="goHome"></intern-footer>
+        <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php" @gotohome="goHome"></intern-footer>
     </div>
 
     <script>
@@ -148,9 +156,8 @@
             if (buttonPressed == "ArrowRight") {
                 rightKeyPressed()
                 // console.log("pressed"); working
-            }
-            else if (buttonPressed == "ArrowLeft") {
-                leftKeyPressed()  
+            } else if (buttonPressed == "ArrowLeft") {
+                leftKeyPressed()
             }
         });
 
@@ -161,7 +168,7 @@
             var element = document.getElementById("personImg");
             if (element.style.left > "25%") {
                 element.style.left = parseInt(element.style.left) - 5 + '%';
-                console.log(element.style.left );
+                console.log(element.style.left);
             }
         }
 
@@ -169,16 +176,16 @@
             var element = document.getElementById("personImg");
             if (element.style.left < "70%") {
                 element.style.left = parseInt(element.style.left) + 5 + '%';
-                console.log(element.style.left );
+                console.log(element.style.left);
             }
 
         }
 
         /***************************************************************************************
-            *    CITING
-            *    Author: StackOverFlow
-            *    Availability: https://stackoverflow.com/questions/21790295/move-an-image-with-the-arrow-keys-using-javascript
-            ***************************************************************************************/
+         *    CITING
+         *    Author: StackOverFlow
+         *    Availability: https://stackoverflow.com/questions/21790295/move-an-image-with-the-arrow-keys-using-javascript
+         ***************************************************************************************/
     </script>
 
 </body>

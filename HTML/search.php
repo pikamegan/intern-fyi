@@ -152,7 +152,7 @@
         async defer></script> -->
 
     <div class="footerComp">
-        <intern-footer home="../index.html" abt="about.html" career="career.html" help="help.html" feedback="feedback.html" @gotohome="goHome"></intern-footer>
+        <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php" @gotohome="goHome"></intern-footer>
     </div>
 
 
