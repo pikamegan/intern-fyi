@@ -164,7 +164,7 @@ if (isset($_SESSION['email'])) {
                                             </div>
 
                                             <div class='col'>
-                                                <h1 class = 'profileTitles'>University</h1>
+                                                <h1>University</h1>
                                                 <p>$school</p>
                                             </div>
                                     </div>"; 
@@ -189,7 +189,7 @@ if (isset($_SESSION['email'])) {
                                             </div>
 
                                             <div class='col' width='100%'> 
-                                                <h1 class = 'profileTitles'>Country</h1>
+                                                <h1>Country</h1>
                                                 <span id=''>$country</span>
                                             </div>
 
