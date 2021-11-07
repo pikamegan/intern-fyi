@@ -259,27 +259,34 @@ function clearReview() {
 }
 
 
-function submitFeedback() {
-    let submit = document.getElementById("submitFeedback")
-    submit.style.display = "block"
-
-    disableForm()
-}
-
-function disableForm() {
-    let body = document.getElementsByTagName("body")[0]
-    body.style.overflow = "hidden"
-
-    let inputs = document.getElementsByClassName("form-control")
-    for (input of inputs) {
-        input.disabled = true
+function validateFeedback() {
+    let name = document.forms['feedback_form'].name.value
+    let nameMsg = document.getElementById("nameMsg")
+    if (name.length == 0) {
+        nameMsg.style.display = "block"
+        nameMsg.scrollIntoView({block: "center"})
+    } else {
+        nameMsg.style.display = "none"
     }
-    let selectBtn = document.getElementsByClassName("form-select")
-    selectBtn[0].disabled = true
 
-    let submitBtn = document.getElementById("submitBtn")
-    submitBtn.disabled = true
+    let email = document.forms['feedback_form'].email.value
+    let emailMsg = document.getElementById("emailMsg")
+    if (email.length == 0) {
+        emailMsg.style.display = "block"
+        emailMsg.scrollIntoView({block: "center"})
+    } else {
+        emailMsg.style.display = "none"
+    }
+
+    let feedback = document.forms['feedback_form'].feedback.value
+    let feedbackMsg = document.getElementById("feedbackMsg")
+    if (feedback.length < 11) {
+        feedbackMsg.style.display = "block"
+    } else {
+        feedbackMsg.style.display = "none"
+    }
 }
+
 
 function enableForm() {
     let submit = document.getElementById("submitFeedback")
