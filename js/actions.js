@@ -473,9 +473,10 @@ function getAllReviews(companyId) {
 
 
             for (let i = posts.length - 1; i >= 0; i--) {
-
+        
                 let reviewdesc = posts[i].reviewDescription
                 let jobTitle = posts[i].jobTitle
+
 
                 let overallRating = posts[i].overallRating
                 let criteria1 = posts[i].criteria1
@@ -513,8 +514,6 @@ function getAllReviews(companyId) {
                     dayStr = 'day'
                 }
 
-                let randomImg = Math.floor(Math.random() * 8) + 1
-
                 reviewStr += `
 
                 <div class="card text-center mb-5">
@@ -523,7 +522,7 @@ function getAllReviews(companyId) {
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-start mb-3">
-                            <img src="../IMG/avatar${randomImg}.svg" alt="User profile image" style="width: 48px; height: 48px;">
+                            <img src="" alt="User profile image" style="width: 48px; height: 48px;" id="userImg${i}">
                             <strong>${jobTitle}</strong>
                         </h5>
                         <div class="card-subtitle mb-2 ps-1 text-muted text-start d-flex justify-content-around flex-wrap">
@@ -541,6 +540,21 @@ function getAllReviews(companyId) {
                     </div>
                 </div>
                 `
+                let url = `../processDbRequest/model/getUserImg.php`
+                axios.get(url, {
+                    params: {
+                        email: posts[i].schoolEmail,
+                    }
+                })
+                    .then(response => {
+                        this.review = response.data
+                        let imgStr = this.review.profilePictureUrl
+                        let imgUrl = document.getElementById(`userImg${i}`)
+                        imgUrl.src = imgStr
+                    })
+                    .catch(error => {
+                        this.errorMessage = error.message
+                    });
 
                 let reviewsBox = document.getElementById("reviewsBox")
                 reviewsBox.innerHTML = reviewStr
@@ -548,12 +562,13 @@ function getAllReviews(companyId) {
         })
         .catch(error => {
             console.log(error)
-            let noReviewStr = `No reviews yet. Write one now!`
+            let noReviewStr = `Reviews cannot be shown at this time. Come back later!`
 
             let reviewsBox = document.getElementById("reviewsBox")
             reviewsBox.innerHTML = noReviewStr
         })
 }
+
 
 function getCompanyIdFromURL() {
     let link = decodeURI(window.location.href)

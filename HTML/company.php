@@ -20,9 +20,17 @@
 
     <link rel="stylesheet" href="../CSS/style.css">
     <title>Company Name</title> <!-- to be changed with JS -->
+
+    <script>
+        if (window.location.href.search("cid=") == -1) {
+            window.location.assign('?cid=1')
+        }
+    </script>
 </head>
 
 <body onscroll="scrollFunction()" onload="loadCompanyPage()">
+
+
     <!-- copy this part: start-->
     <div class="navbarTemplate">
         <div id="smallNavBar">
