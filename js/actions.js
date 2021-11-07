@@ -20,6 +20,10 @@ function gotoMyProfile() {
     window.location = "../HTML/myProfile.php"
 }
 
+function gotoWriteAReview() {
+    window.location = "../HTML/WriteAReview.php"
+}
+
 function gotoSearch() {
     window.location = "../HTML/search.php"
 }
@@ -585,9 +589,9 @@ navigationBar.component('navigation-bar-small-logout', {
             </div>
         </div>
         <div class="collapse navbar-collapse text-center" id="navbarCollapse">
-            <a href="./signup.php">Register</a><br>
-            <a href="./login.php">Login</a><br>
-            <a href="./WriteAReview.php">Write a Review &#9998;</a><br>
+            <a href="../HTML/signup.php">Register</a><br>
+            <a href="../HTML/login.php">Login</a><br>
+            <a href="../HTML/WriteAReview.php">Write a Review &#9998;</a><br>
         </div>
     </nav>
     <!-- end of small navigation bar -->`
