@@ -153,24 +153,24 @@ if (isset($_SESSION['email'])) {
             <div class="col">
                 <div class="container">
                     <div class="row">
-                        <div class="col col-12 text-center ">
+                        <div class="col col-12 text-center">
                             
                             <div class="shadow rounded rounded-3 mb-3 p-5">
-                            <?php
-                                if ($school !== "") {
-                                    echo "<div class='row'>
-                                            <div class='col'> 
-                                                <img src='../IMG/smu.jfif' style='width: 100%'></img>
-                                            </div>
+                                <?php
+                                    if ($school !== "") {
+                                        echo "<div class='row'>
+                                                <div class='col col-12 col-md-6'> 
+                                                    <img src='../IMG/smu.jfif' style='width: 100%'></img>
+                                                </div>
 
-                                            <div class='col'>
-                                                <h1>University</h1>
-                                                <p>$school</p>
-                                            </div>
-                                    </div>"; 
+                                                <div class='col col-12 col-md-6'>
+                                                    <h1>University</h1>
+                                                    <p>$school</p>
+                                                </div>
+                                        </div>"; 
 
-                                } 
-                            ?>
+                                    } 
+                                ?>
 
                             </div>
                         </div>
