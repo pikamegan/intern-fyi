@@ -72,7 +72,14 @@
                                 <!-- filled in with js -->
                             </select>
                             <!-- hidden fields -->
-                            <input type="hidden" id="hiddenEmail" name="schoolemail" value="patricia.2020@scis.smu.edu.sg">
+                            <?php
+                            
+                            if (isset($_SESSION['email'])) {
+                                $email = $_SESSION['email'];
+                                echo "<input type='hidden' id='hiddenEmail' name='schoolemail' value='$email'>";
+                            }
+                            ?>
+                            
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                             <label for="role" class="form-label">Role/Title<span style="color:red">*</span></label>
