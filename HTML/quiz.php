@@ -33,31 +33,83 @@
     <div class="navbarTemplate">
         <div id="smallNavBar">
             <?php
-            session_start();
+session_start();
 
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                echo "<navigation-bar-small-login></navigation-bar-small-login>";
-            } else {
-                echo "<navigation-bar-small-logout></navigation-bar-small-logout>";
-            }
-            ?>
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    echo "<navigation-bar-small-login></navigation-bar-small-login>";
+} else {
+    echo "<navigation-bar-small-logout></navigation-bar-small-logout>";
+}
+?>
         </div>
         <div id="bigNavBar">
             <?php
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                $url = $_SESSION['piclink'];
-                echo "<navigation-bar-big-login>
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    $url = $_SESSION['piclink'];
+    echo "<navigation-bar-big-login>
                     <img class='img-fluid m-0' src= '$url' style='width: 60px; height: 60px;'>
                     </navigation-bar-big-login>";
-            } else {
-                echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
-            }
-            ?>
+} else {
+    echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
+}
+?>
         </div>
     </div>
     <!-- copy this part: end -->
 
     <h1 class="pageTitle mt-5">Quiz</h1>
+    <div class = "quiz">
+        <div class = "container shadow p-3 mb-5 rounded">
+            <div class="m-5">
+                <div v-for="heart in hearts" :key="fruit" class="d-inline">
+                    <span><img src= "../IMG/heartQuiz.png" style="width: 40px; height: 40px; display: inline;" class ="text-end mx-1 mb-3 float-end" ></span>
+                </div>
+                <br><br>
+                <div v-bind:class="{ 'bg-success': isCorrect, 'bg-danger': isWrong, 'bgPurple': isQuestion}">
+                    <span class="badge" width="80%">
+
+                    </span>
+                    <br>
+                </div>
+                <div class = "m-5">
+                    <h1 id= "questionQuiz" v-bind:class="{ 'text-success': isCorrect, 'text-danger': isWrong, 'textPurple': isQuestion}">{{questions[currentQ - 1]}}</h1>
+                </div>
+                <div v-for="fruit in fruits" :key="fruit">
+                    <input type="radio" name="fruit.name" v-model="fruit.value">
+                </div>
+                <img src= "../IMG/correctEmoji_quiz.png" style="width: 57px; height: 57px;">
+                <img src= "../IMG/wrongEmoji_quiz.png" style="width: 50px; height: 50px;">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quiz = Vue.createApp({
+                    data() {
+                        return {
+                            // add properties here
+                            currentQ: 1,
+                            questionAnswer: {
+                                q1 :["optionA", "optionB","optionC","optionD"], q2:["optionA", "optionB","optionC","optionD"], q3:["optionA", "optionB","optionC","optionD"], q3:["optionA", "optionB","optionC","optionD"]
+                            },
+                            questions: ["What....? Chen fill in","When...? Chen fill in","When...? Chen fill in","When...? Chen fill in"],
+                            hearts: 3,
+                            isCorrect: false,
+                            isWrong: false,
+                            isQuestion: true
+                        }
+                    },
+                    methods: {
+                        calculateScore() {
+                            // add code here
+                        }
+                    }
+                })
+                const quizPage = quiz.mount('.quiz')
+    </script>
+    <div class="footerComp">
+        <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php" @gotohome="goHome"></intern-footer>
+    </div>
 
     </body>
 </html>
