@@ -49,13 +49,13 @@
     <div class="p-5 mb-4" style="background-color: #EAF5FF;">
         <div class="container-fluid py-5">
             <div class="row">
-                <div class="col col-4 col-lg-4">
-                    <h1 class="pageTitle mt-5 mx-5" style="text-align:left">How can we help you?</h1>
+                <div class="col col-12 col-lg-4">
+                    <h1 class="pageTitle mt-5" style="text-align:left">How can we help you?</h1>
                 </div>
-                <div class="col col-8 col-lg-8">
-                    <div class="input-group mt-5 py-3 justify-content-left" style="border-bottom: 2px solid #4E6AF0;">
-                        <img src="../IMG/search.svg"></img>
-                        <input type="text" placeholder="Describe your issue" class="border-0 display-5 searchFAQ">
+                <div class="col col-12 col-lg-8">
+                    <div class="d-flex bd-highlight mt-5 py-3 justify-content-left" style="border-bottom: 2px solid #4E6AF0;">
+                        <img src="../IMG/search.svg" class="d-none d-sm-block pe-1"></img>
+                        <h2 class="mt-3 ps-2" style="text-align:left">Can't find what you're looking for? <a href="feedback.php" class="text-decoration-none">Ask us here</a></h2>
                     </div>
                 </div>
             </div>
