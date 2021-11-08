@@ -120,6 +120,9 @@ session_start();
                     echo $_SESSION["errorPW"];
                 }
                 
+                if (isset($_SESSION['errorUser'])) {
+                    echo $_SESSION['errorUser'];
+                }
                 ?>
 
                 </div>
