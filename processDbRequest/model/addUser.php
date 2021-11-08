@@ -7,6 +7,7 @@ require_once "./userDAO.php";
 $status = false;
 // var_dump($_POST);
 $_SESSION["errorPW"] = "";
+$_SESSION['errorUser'] = '';
 
 if (isset($_POST['fname']) && isset($_POST['lname'])  && isset($_POST['gender'])  && isset($_POST['school'])  && isset($_POST['schoolEmail']) && isset($_POST['pw'])  && isset($_POST['avatarURL'])&& isset($_POST['pw1'])) {
     $firstName = $_POST['fname'];

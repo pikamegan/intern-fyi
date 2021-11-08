@@ -736,17 +736,19 @@ navigationBar.component('navigation-bar-big-login', {
         </button>
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="input-group my-2">
+        <div class="input-group my-2 mx-1">
             <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded" placeholder="Search for Company or Industry"
-            aria-label="Search" aria-describedby="search-addon" />
+            aria-label="Search" aria-describedby="search-addon" 
+            style="height:39px;"
+            />
             <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
             </button>
         </div>
-        <button class="btn btn-primary my-2 mx-1 p-1" style="width:170px;" id="reviewBtn" onclick="gotoWriteAReview()">
+        <button class="btn btn-primary my-2 mx-1" style="height:39px; width: 200px;" id="reviewBtn" onclick="gotoWriteAReview()">
             Write review
         </button>
-        <button class="btn btn-secondary my-2 mx-1" style="width:170px;" onclick="signOut()">
+        <button class="btn btn-secondary my-2 mx-1" style="height:39px;" onclick="signOut()">
             Logout
         </button>
         <button class="btn rounded-circle" id="userBtn" onclick="gotoMyProfile()">
