@@ -591,6 +591,23 @@ function getCompanyIdFromURL() {
     return cleanLink
 }
 
+function loadFAQ() {
+    let questions = {
+        'Reviews': 
+            {'Are the reviews on this site reliable?': '', 
+            'How do I write a review?': '',
+            'Who can see my reviews?': ''},
+        'Company Profile': 
+            {'': '', 
+            'Can I remove my company from the site?': '',
+            'I do not see the company I want to review, how can I add a company to the site?': ''},
+        'Policies': 
+            {'Why did my review get deleted?': '', 
+            'Why is my account suspended?': '',
+            '': ''}
+    }
+}
+
 // Vue instance
 const navigationBar = Vue.createApp({
     data() {

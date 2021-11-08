@@ -18,7 +18,7 @@
     <title>Help and FAQ</title>
 </head>
 
-<body>
+<body onload="loadFAQ()">
     <!-- copy this part: start-->
     <div class="navbarTemplate">
         <div id="smallNavBar">
@@ -46,6 +46,7 @@
         </div>
     </div>
     <!-- copy this part: end -->
+
     <div class="p-5 mb-4" style="background-color: #EAF5FF;">
         <div class="container-fluid py-5">
             <div class="row">
@@ -61,18 +62,40 @@
             </div>
         </div>
     </div>
+
     <div class="container">
-        <div class="row row-cols-3">
+        <div class="row row-cols-3 justify-content-center">
             <div class="mx-auto mb-2 col-xs-12 col-sm-12 col-md-4 m-sm-4 shadow-lg ms-lg-4 whiteBox">
                 <h2 class="pt-4 mx-2 text-start fw-bold" style="color: #4E6AF0;">Reviews</h2>
                 <ul class="list-group list-group-flush">
-                    <a href="#" class="list-group-item list-group-item-action ">Question 1</a>
+                    <p class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Are the reviews on this site reliable?</p>
                     <a href="#" class="list-group-item list-group-item-action">Question 2</a>
                     <a href="#" class="list-group-item list-group-item-action">Question 3</a>
                     <a href="help/reviews.html" class="list-group-item list-group-item-action text-muted">View all
                         questions</a>
                 </ul>
             </div>
+
+            <div class="modal fade modal-dialog-scrollable" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">All the reviews on this site reliable?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Yes! The site admins check through the reviews after they are uploaded to ensure that there are no inappropriate or irrelevant comments made about a company. We do not condone any form of misinformation or slander.
+                        If you see any review that does not seem to meet community guidelines, do feel free to get in touch with us by sending us an email at intern.fyi.contact@gmail.com. However, if you see a review that rates a company badly,
+                        keep in mind that these reflect the subjective experience of the intern.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok, got it!</button>
+                        <a href="feedback.php"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">I want more information</button></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="mx-auto mb-2 col-xs-12 col-sm-12 col-md-4 m-sm-4 shadow-lg ms-lg-4 whiteBox">
                 <h2 class="pt-4 mx-2 text-start fw-bold" style="color: #4E6AF0;">Company Profile</h2>
                 <ul class="list-group list-group-flush">

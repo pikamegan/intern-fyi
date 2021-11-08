@@ -16,6 +16,12 @@
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+    <script>
+        if (window.location.href.search("cid=") == -1) {
+            window.location.assign('?cid=1')
+        }
+    </script>
+
     <title>Write a Company Review</title>
 </head>
 
