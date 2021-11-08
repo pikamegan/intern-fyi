@@ -125,7 +125,7 @@ height: 811px;">
                     },
                     methods: {
                         calculateScore() {
-                            //if correct isCorrect = true, rest is false
+                            
                         },
                         nextQuestion(){
                             this.isQuestion = true
