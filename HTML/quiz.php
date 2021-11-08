@@ -60,9 +60,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <h1 class="pageTitle mt-5">Quiz</h1>
     <div class = "quiz">
         <div class = "container shadow p-3 mb-5 rounded" style="width: 1249px;
-height: 928px;">
+height: 811px;">
             <div class="m-5">
-                <div v-for="heart in hearts" :key="fruit" class="d-inline">
+                <div v-for="heart in hearts" :key="heart" class="d-inline">
                     <span><img src= "../IMG/heartQuiz.png" style="width: 40px; height: 40px; display: inline;" class ="text-end mx-1 mb-3 float-end" ></span>
                 </div>
                 <br><br>
@@ -75,8 +75,8 @@ height: 928px;">
                     <div class = "m-5" >
                         <h1 id= "questionQuiz" class="textPurple text-start">{{questions[currentQ - 1]}}</h1>
                     </div>
-                    <div v-for="(option, index) in questionAnswer['q'+ currentQ]" :key="option">
-                        <p><span class = "fw-bolder fs-3">{{optionAlpha[index]}}</span>&nbsp&nbsp&nbsp<a class="text-decoration-underline">{{option}}</a></p>
+                    <div class = "m-5" v-for="(option, index) in questionOption['q'+ currentQ]" :key="option">
+                        <p><span class = "fw-bolder fs-3">{{optionAlpha[index]}}</span>&nbsp&nbsp&nbsp&nbsp<a value = "option" @click = "calculateScore($this)" class="text-decoration-underline fs-4">{{option}}</a></p>
                     </div>
                 </div>
                 <div v-if="isWrong">
@@ -84,15 +84,23 @@ height: 928px;">
                         Wrong! <img src= "../IMG/wrongEmoji_quiz.png" style="width: 50px; height: 50px;">
                     </h1>
                     <h4 class="text-center">The Correct Answer is: <span></span></h4>
-                    
+                    <div class="text-center mb-5"  style="font-size: 100px;">
+                        {{optionAlpha[qAnswer[currentQ-1]]}}
+                        
+                        <br>
+                        <h4 class="mb-5">{{questionOption['q'+ currentQ][qAnswer[currentQ-1]]}}</h4>
+                    </div>
+                    <div class="mt-5"><br><br><br><br>
+                        <a class="text-decoration-underline fs-4 mt-5 text-end" @click="nextQuestion">
+                            <img src= "../IMG/nextQuiz.svg" style="width: 100px; height: 100px;">
+                        </a>
+                    </div>
                 </div>
                 <div v-if="isCorrect">
                     <h1 class="text-success fw-bolder m-5"> 
                         Nice Job! <img src= "../IMG/correctEmoji_quiz.png" style="width: 57px; height: 57px;">
                     </h1>
                 </div>
-                
-
             </div>
         </div>
     </div>
@@ -103,20 +111,27 @@ height: 928px;">
                         return {
                             // add properties here
                             currentQ: 1,
-                            questionAnswer: {
-                                q1 :["optionAs", "optionBs","optionCs","optionDs"], q2:["optionA", "optionB","optionC","optionD"], q3:["optionA", "optionB","optionC","optionD"], q3:["optionA", "optionB","optionC","optionD"]
+                            questionOption: {
+                                q1 :["optionAs", "optionBs","optionCs","optionDs"], q2:["optionA2", "optionB2","optionC2","optionD2"], q3:["optionA3", "optionB3","optionC3","optionD3"], q3:["optionA4", "optionB4","optionC4","optionD4"]
                             },
                             questions: ["What....? Chen fill in","When...? Chen fill in","When...? Chen fill in","When...? Chen fill in"],
                             hearts: 3,
-                            isCorrect: true,
-                            isWrong: false,
+                            isCorrect: false,
+                            isWrong: true,
                             isQuestion: false,
-                            optionAlpha: ["A","B","C","D"]
+                            optionAlpha: ["A","B","C","D"],
+                            qAnswer: [1,1,1,1] // 0 is A, 1 is B, 2 is C, 3 is D
                         }
                     },
                     methods: {
                         calculateScore() {
-                            // add code here
+                            //if correct isCorrect = true, rest is false
+                        },
+                        nextQuestion(){
+                            this.isQuestion = true
+                            this.isCorrect = false,
+                            this.isWrong = false,
+                            this.currentQ += 1
                         }
                     }
                 })
