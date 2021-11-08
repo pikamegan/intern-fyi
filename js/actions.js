@@ -515,10 +515,13 @@ function getAllReviews(companyId) {
 
                 let timeDifference = date.getTime() - date2compare.getTime()
                 let dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24))
-                var dayStr = "days"
+                var dayStr = `${dayDifference} days ago`
 
                 if (dayDifference == 1) {
-                    dayStr = 'day'
+                    dayStr = `${dayDifference} day ago`
+                }
+                else if (dayDifference == 0) {
+                    dayStr = `Today`
                 }
 
                 reviewStr += `
@@ -543,7 +546,7 @@ function getAllReviews(companyId) {
                         <p class="card-text text-start ps-1">${reviewdesc}</p>
                     </div>
                     <div class="card-footer text-muted">
-                        ${dayDifference} ${dayStr} ago
+                        ${dayStr}
                     </div>
                 </div>
                 `
@@ -594,17 +597,26 @@ function getCompanyIdFromURL() {
 function loadFAQ() {
     let questions = {
         'Reviews': 
-            {'Are the reviews on this site reliable?': '', 
-            'How do I write a review?': '',
-            'Who can see my reviews?': ''},
+            {'Are the reviews on this site reliable?': 'Yes! The site admins check through the reviews after they are uploaded to ensure that there are no inappropriate or irrelevant comments made about a company. We do not condone any form of misinformation or slander. If you see any review that does not seem to meet community guidelines, do feel free to get in touch with us by clicking the "Contact Us" button. However, if you see a review that rates a company badly, keep in mind that these reflect the subjective experience of the intern, and are not necessarily true for every intern at that company.', 
+
+            'How do I write a review?': 'You can go directly to the "Write a Review" button in the navigation bar at the top of your screen. You can also go to the company page and click the "Write a Review" button, or click the "Write a Review" button in the search results for the company you want to review.',
+
+            'Who can see my reviews?': 'All visitors to the website will be able to see your review, whether or not they have an account with us. However, your profile details will be kept private (only your real profile picture will be shown with your review. Other details such as your name and email will be kept hidden from other users unless you choose to reveal it in the content of your review.'
+        },
+
         'Company Profile': 
-            {'': '', 
+            {'How do I know if the information on a company profile is accurate?': '', 
             'Can I remove my company from the site?': '',
-            'I do not see the company I want to review, how can I add a company to the site?': ''},
+            'I do not see the company I want to review, how can I add a company to the site?': ''
+        },
+
         'Policies': 
-            {'Why did my review get deleted?': '', 
-            'Why is my account suspended?': '',
-            '': ''}
+            {'Why did my review get deleted?': 'A user or us admin may have found your review inappropriate and thus deleted it. You can click the contact us button, and we will look over the review again.', 
+
+            'Why is my account suspended?': 'Our system may have detected unusual activity from your account, forcing us to temporarily suspend your account. If you believe this is an error, please let us know by clicking the contact us button.',
+
+            'How many reviews can I write a day?': 'You can write as many reviews as you want, but if we detect that you are spamming our servers or writing false reviews, we will be forced to suspend your account.'
+        }
     }
 }
 

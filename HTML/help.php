@@ -84,13 +84,11 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        Yes! The site admins check through the reviews after they are uploaded to ensure that there are no inappropriate or irrelevant comments made about a company. We do not condone any form of misinformation or slander.
-                        If you see any review that does not seem to meet community guidelines, do feel free to get in touch with us by sending us an email at intern.fyi.contact@gmail.com. However, if you see a review that rates a company badly,
-                        keep in mind that these reflect the subjective experience of the intern.
+                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok, got it!</button>
-                        <a href="feedback.php"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">I want more information</button></a>
+                        <a href="feedback.php"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Contact Us</button></a>
                     </div>
                     </div>
                 </div>
