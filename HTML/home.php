@@ -131,19 +131,21 @@
                     </div>
                     <div class="row mb-5">
                         <div class="text-center col">
-                            <button class="btn btn-primary" onclick="location.href='WriteAReview.php';">Write a
+                        <button class="btn btn-primary mx-2 mb-2" onclick="location.href='quiz.php';">Play the Career Quiz!</button>
+                            <button class="btn btn-primary mb-2" onclick="location.href='WriteAReview.php';">Write a
                                 Review Now</button>
                         </div>
                     </div>
-                    <div class="row mb-1">
+                    <div class="row mb-1 mt-5">
                         <div class="col">
-                            <h3 class="homeHeader">How Intern.FYI Works for You</h3>
+                            
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
+        <h3 class="homeHeader fw-bold text-center">How Intern.FYI Works for You</h3>
         <div class="row mb-5 shadow">
             <div class="col-md-3 col-6 my-3 text-center" onclick="location.href='search.php';">
                 <img src="../img/search.svg" class="preventSelect p-2">
