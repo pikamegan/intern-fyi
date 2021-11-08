@@ -92,7 +92,7 @@ if (isset($_SESSION['email'])) {
             <div class="col col-sm-12 col-lg-6">
                 <div class="row personProfile shadow rounded rounded-3 container mb-3" style="width: 100%;">
                     <span style="position:absolute;right:0;top:-15px"><i class="bi bi-pencil fill-secondary"></i></span>
-                    <div class="col col-sm-12 col-md-12 col-lg-6 text-center align-middle">
+                    <div class="col col-sm-12 col-md-6 col-lg-6 text-center align-middle">
                         <!-- How to vertically align image? -->
                         <?php
                         
@@ -104,7 +104,7 @@ if (isset($_SESSION['email'])) {
                         ?>
             
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
                         <span style="position:absolute;right:0;top:-15px"></span>
                         <div class="m-5">
                             <?php
@@ -152,22 +152,17 @@ if (isset($_SESSION['email'])) {
             </div>
             <div class="col">
                 <div class="container">
+
+                    <!-- University --> 
                     <div class="row">
                         <div class="col col-12 text-center">
-                            
                             <div class="shadow rounded rounded-3 mb-3 p-5">
                                 <?php
                                     if ($school !== "") {
-                                        echo "<div class='row'>
-                                                <div class='col col-12 col-md-6'> 
-                                                    <img src='../IMG/smu.jfif' style='width: 100%'></img>
-                                                </div>
-
-                                                <div class='col col-12 col-md-6'>
-                                                    <h1>University</h1>
-                                                    <p>$school</p>
-                                                </div>
-                                        </div>"; 
+                                        echo "
+                                            <h1>University</h1>
+                                            <p>$school</p>
+                                        "; 
 
                                     } 
                                 ?>
@@ -175,31 +170,24 @@ if (isset($_SESSION['email'])) {
                             </div>
                         </div>
                     </div>
+
+                    <!-- Country -->
                     <div class="row">
-                            <div class= "shadow rounded rounded-3 mb-3 p-3 py-5 mx-4" style="display: inline-block; width: 15rem; height: 13rem;">
+                        <div class="col col-12 text-center">                            
+                            <div class="shadow rounded rounded-3 mb-3 p-5">
 
-                            <p>
-                            <?php
-                                if ($country !== "") {
-                                    // Add country image 
+                                <?php
+                                        if ($country !== "") {
 
-                                    echo "<div class='row'>
-                                            <div class='col'> 
-                                                <img src='../IMG/Sg.png' style='width: 100%'></img>
-                                            </div>
-
-                                            <div class='col' width='100%'> 
+                                            echo "
                                                 <h1>Country</h1>
-                                                <span id=''>$country</span>
-                                            </div>
+                                                <p>$country</p>
+                                            "; 
 
-                                        </div>"; 
+                                        } 
+                                    ?>
 
-                                } 
-                                ?>
-    
-                                </p>
-
+                                </div>
                             </div>
                         </div>
                     </div>
