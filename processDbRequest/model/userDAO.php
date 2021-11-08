@@ -71,10 +71,10 @@ class userDAO
         $url = '';
         if ($genderID == "M") {
             $randomNum = rand(0,count($imgGirl)-1);
-            $url = $imgGirl[$randomNum];
+            $url = $imgMale[$randomNum];
         }else{
             $randomNum = rand(0,count($imgMale)-1);
-            $url = $imgMale[$randomNum];
+            $url = $imgGirl[$randomNum];
         }
 
         $sql = "INSERT INTO `intern`(`firstName`, `lastName`, `genderID`, `country`, `school`, `schoolEmail`, `password`, `profilePictureUrl`, `reviewsNo`) VALUES (:firstName,:lastName,:genderID, 'Singapore' ,:school,:schoolEmail,:password,:profilePictureUrl,0)";
