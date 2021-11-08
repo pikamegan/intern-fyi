@@ -70,10 +70,10 @@ class userDAO
 
         $url = '';
         if ($genderID == "M") {
-            $randomNum = rand(0,count($imgGirl)-1);
+            $randomNum = rand(0,count($imgMale)-1);
             $url = $imgMale[$randomNum];
         }else{
-            $randomNum = rand(0,count($imgMale)-1);
+            $randomNum = rand(0,count($imgGirl)-1);
             $url = $imgGirl[$randomNum];
         }
 
