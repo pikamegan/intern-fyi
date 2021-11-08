@@ -606,8 +606,10 @@ function loadFAQ() {
 
         'Company Profile': 
             {'How do I know if the information on a company profile is accurate?': 'We take the information directly from the company website, but some information may be outdated without us realising. If you notice such a case, please let us know, and we will fix it.', 
+
             'Can I remove my company from the site?': 'We do not plan to remove companies as this site is for interns to share their honest experiences with all potential interns.',
-            'I do not see the company I want to review, how can I add a company to the site?': ''
+
+            'I do not see the company I want to review, how can I add a company to the site?': 'As a user, you are unable to add companies. We are continually expanding our database of companies on the site. However if you have a specific company in mind, you can click the "Contact Us" button to make your request.'
         },
 
         'Policies': 
@@ -618,6 +620,42 @@ function loadFAQ() {
             'How many reviews can I write a day?': 'You can write as many reviews as you want, but if we detect that you are spamming our servers or writing false reviews, we will be forced to suspend your account.'
         }
     }
+
+    let questionBox = document.getElementById("questionBox")
+    let questionStr = ``
+
+    var idNum = 0
+    for (question in questions) {
+        questionStr += `<div class="mx-auto mb-4 col-xs-12 col-sm-12 col-md-4 m-sm-4 shadow-lg ms-lg-4 whiteBox">
+        <h2 class="pt-4 pb-1 mx-3 text-start fw-bold" style="color: #4E6AF0;">${question}</h2>
+        <ul class="list-group list-group-flush">`
+        for (q in questions[question]) {
+            questionStr += `<p class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modal${idNum}">${q}</p>
+            <div class="modal fade modal-dialog-scrollable" id="modal${idNum}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">${q}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ${questions[question][q]}
+                </div>
+                <div class="modal-footer">
+                    <a href="feedback.php"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Contact Us</button></a>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok, got it!</button>
+                </div>
+                </div>
+            </div>
+        </div>`
+        idNum++
+        }
+
+        questionStr += `</ul></div>`
+
+    }
+
+    questionBox.innerHTML += questionStr
 }
 
 // Vue instance
