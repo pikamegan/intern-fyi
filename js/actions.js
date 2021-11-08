@@ -514,7 +514,7 @@ function getAllReviews(companyId) {
                 const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()]
 
                 let timeDifference = date.getTime() - date2compare.getTime()
-                let dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24))
+                let dayDifference = Math.floor(timeDifference / (1000 * 3600 * 24))
                 var dayStr = `${dayDifference} days ago`
 
                 if (dayDifference == 1) {
@@ -605,13 +605,13 @@ function loadFAQ() {
         },
 
         'Company Profile': 
-            {'How do I know if the information on a company profile is accurate?': '', 
-            'Can I remove my company from the site?': '',
+            {'How do I know if the information on a company profile is accurate?': 'We take the information directly from the company website, but some information may be outdated without us realising. If you notice such a case, please let us know, and we will fix it.', 
+            'Can I remove my company from the site?': 'We do not plan to remove companies as this site is for interns to share their honest experiences with all potential interns.',
             'I do not see the company I want to review, how can I add a company to the site?': ''
         },
 
         'Policies': 
-            {'Why did my review get deleted?': 'A user or us admin may have found your review inappropriate and thus deleted it. You can click the contact us button, and we will look over the review again.', 
+            {'Why did my review get deleted?': 'A user or site admin may have found your review inappropriate and thus deleted it. You can click the contact us button, and we will look over the review again.', 
 
             'Why is my account suspended?': 'Our system may have detected unusual activity from your account, forcing us to temporarily suspend your account. If you believe this is an error, please let us know by clicking the contact us button.',
 
