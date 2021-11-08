@@ -23,13 +23,17 @@
 </head>
 
 <body>
+    <!-- <a class="navbar-brand m-4" href="../index.html">
+        <img src="" style="height:40px;">
+    </a> -->
+
     <!-- copy this part: start-->
     <div class="navbarTemplate">
         <div id="smallNavBar">
             <?php
-            session_start();
+session_start();
 
-            ?>
+?>
         </div>
     </div>
     <!-- copy this part: end -->
@@ -58,10 +62,10 @@
             <!-- Submit -->
             <button id="loginBtn" class="btn btn-primary" type="submit">Log in</button>
                 <?php
-                    if (isset($_SESSION['error'])) {
-                        echo $_SESSION['error'];
-                    }
-                ?>
+if (isset($_SESSION['error'])) {
+    echo $_SESSION['error'];
+}
+?>
         </div>
     </form>
 
