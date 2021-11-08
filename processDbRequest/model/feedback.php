@@ -6,7 +6,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['type']) && 
     $type = $_POST['type'];
     $feedback = $_POST['feedback'];
 
-    $msg = 'From: ' . $name . '\nEmail: ' . $email . '\nType: ' . $type . '\nFeedback: ' . $feedback;
+    $msg = "From: " . $name . "\n Email: " . $email . "\n Type: " . $type . "\n Feedback: " . $feedback;
 
     $headers = 'From: $email';
     $sent = mail('intern.fyi.contact@gmail.com', 'Feedback Form Submission', $msg, $headers);
