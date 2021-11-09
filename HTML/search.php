@@ -141,6 +141,11 @@
                     <img class="my-5" src="../img/noCompanyFound.svg">
                     <div>
                         Oops, no company found!
+                        <div>
+                            <a href="search.php" class="">
+                                Search all instead
+                            </a>
+                        </div>
                     </div>
                 </div>
 
