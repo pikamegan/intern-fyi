@@ -89,7 +89,7 @@ if (isset($_SESSION['email'])) {
 ?>
     <div class="container-fluid m-3 profile">
         <div class="row">
-            <div class="col col-12 col-lg-6">
+            <div class="col col-12 col-lg-6" style='display: flex; justify-content: center;'>
                 <div class="row personProfile shadow rounded rounded-3 container mb-3" style="width: 100%;">
                     <span style="position:absolute;right:0;top:-15px"><i class="bi bi-pencil fill-secondary"></i></span>
                     <div class="col col-12 col-lg-6">
@@ -103,7 +103,7 @@ if (isset($_SESSION['email'])) {
 
                             <div style='display: table; height: 100%; width: 100%; table-layout: auto'> 
                                 <div style='display: table-cell; width: 100%; vertical-align: middle; text-align: center;'>
-                                    <img src='$pic' style='object-fit: cover; width: 75%; height: 75%; border-radius: 50%;' class='m-3'>
+                                    <img src='$pic' style='object-fit: cover; width: 75%; height: 75%; border-radius: 50%;' class='p-3 m-3'>
                                 </div>
                             </div>"; 
                         }
@@ -157,7 +157,7 @@ if (isset($_SESSION['email'])) {
                 </div>
 
             </div>
-            <div class="col col col-12 col-lg-6 ">
+            <div class="col col col-12 col-lg-6" style='display: flex; justify-content: center;'>
                 <div class="container m-0">
 
                     <!-- University --> 
