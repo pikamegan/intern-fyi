@@ -18,7 +18,7 @@
     <title>Help and FAQ</title>
 </head>
 
-<body>
+<body onload="loadFAQ()">
     <!-- copy this part: start-->
     <div class="navbarTemplate">
         <div id="smallNavBar">
@@ -46,6 +46,7 @@
         </div>
     </div>
     <!-- copy this part: end -->
+
     <div class="p-5 mb-4" style="background-color: #EAF5FF;">
         <div class="container-fluid py-5">
             <div class="row">
@@ -61,40 +62,12 @@
             </div>
         </div>
     </div>
+
     <div class="container">
-        <div class="row row-cols-3">
-            <div class="mx-auto mb-2 col-xs-12 col-sm-12 col-md-4 m-sm-4 shadow-lg ms-lg-4 whiteBox">
-                <h2 class="pt-4 mx-2 text-start fw-bold" style="color: #4E6AF0;">Reviews</h2>
-                <ul class="list-group list-group-flush">
-                    <a href="#" class="list-group-item list-group-item-action ">Question 1</a>
-                    <a href="#" class="list-group-item list-group-item-action">Question 2</a>
-                    <a href="#" class="list-group-item list-group-item-action">Question 3</a>
-                    <a href="help/reviews.html" class="list-group-item list-group-item-action text-muted">View all
-                        questions</a>
-                </ul>
-            </div>
-            <div class="mx-auto mb-2 col-xs-12 col-sm-12 col-md-4 m-sm-4 shadow-lg ms-lg-4 whiteBox">
-                <h2 class="pt-4 mx-2 text-start fw-bold" style="color: #4E6AF0;">Company Profile</h2>
-                <ul class="list-group list-group-flush">
-                    <a href="#" class="list-group-item list-group-item-action">Question 1</a>
-                    <a href="#" class="list-group-item list-group-item-action">Question 2</a>
-                    <a href="#" class="list-group-item list-group-item-action">Question 3</a>
-                    <a href="help/company.html" class="list-group-item list-group-item-action text-muted">View all
-                        questions</a>
-                </ul>
-            </div>
-            <div class="mx-auto mb-2 col-xs-12 col-sm-12 col-md-4 m-sm-4 shadow-lg ms-lg-4 whiteBox">
-                <h2 class="pt-4 mx-2 text-start fw-bold" style="color: #4E6AF0;">Policies</h2>
-                <ul class="list-group list-group-flush">
-                    <a href="#" class="list-group-item list-group-item-action ">Question 1</a>
-                    <a href="#" class="list-group-item list-group-item-action">Question 2</a>
-                    <a href="#" class="list-group-item list-group-item-action">Question 3</a>
-                    <a href="help/policy.html" class="list-group-item list-group-item-action text-muted">View all
-                        questions</a>
-                </ul>
-            </div>
+        <div class="row row-cols-3 justify-content-center" id="questionBox">
         </div>
     </div>
+
     <div class="footerComp">
         <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php" @gotohome="goHome"></intern-footer>
     </div>

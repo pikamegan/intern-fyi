@@ -499,3 +499,15 @@ div.cardBold {
     text-decoration: underline;
 
 }
+
+.bgPurple{
+    background: #A259FF;
+}
+
+.textPurple{
+    color: #A259FF;
+}
+
+#questionQuiz{
+    font-weight: bold;
+}

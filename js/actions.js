@@ -514,11 +514,14 @@ function getAllReviews(companyId) {
                 const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()]
 
                 let timeDifference = date.getTime() - date2compare.getTime()
-                let dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24))
-                var dayStr = "days"
+                let dayDifference = Math.floor(timeDifference / (1000 * 3600 * 24))
+                var dayStr = `${dayDifference} days ago`
 
                 if (dayDifference == 1) {
-                    dayStr = 'day'
+                    dayStr = `${dayDifference} day ago`
+                }
+                else if (dayDifference == 0) {
+                    dayStr = `Today`
                 }
 
                 reviewStr += `
@@ -543,7 +546,7 @@ function getAllReviews(companyId) {
                         <p class="card-text text-start ps-1">${reviewdesc}</p>
                     </div>
                     <div class="card-footer text-muted">
-                        ${dayDifference} ${dayStr} ago
+                        ${dayStr}
                     </div>
                 </div>
                 `
@@ -589,6 +592,70 @@ function getCompanyIdFromURL() {
     }
     cleanLink = cleanLink.replace("#", "")
     return cleanLink
+}
+
+function loadFAQ() {
+    let questions = {
+        'Reviews': 
+            {'Are the reviews on this site reliable?': 'Yes! The site admins check through the reviews after they are uploaded to ensure that there are no inappropriate or irrelevant comments made about a company. We do not condone any form of misinformation or slander. If you see any review that does not seem to meet community guidelines, do feel free to get in touch with us by clicking the "Contact Us" button. However, if you see a review that rates a company badly, keep in mind that these reflect the subjective experience of the intern, and are not necessarily true for every intern at that company.', 
+
+            'How do I write a review?': 'You can go directly to the "Write a Review" button in the navigation bar at the top of your screen. You can also go to the company page and click the "Write a Review" button, or click the "Write a Review" button in the search results for the company you want to review.',
+
+            'Who can see my reviews?': 'All visitors to the website will be able to see your review, whether or not they have an account with us. However, your profile details will be kept private (only your real profile picture will be shown with your review. Other details such as your name and email will be kept hidden from other users unless you choose to reveal it in the content of your review.'
+        },
+
+        'Company Profile': 
+            {'How do I know if the information on a company profile is accurate?': 'We take the information directly from the company website, but some information may be outdated without us realising. If you notice such a case, please let us know, and we will fix it.', 
+
+            'Can I remove my company from the site?': 'We do not plan to remove companies as this site is for interns to share their honest experiences with all potential interns.',
+
+            'I do not see the company I want to review, how can I add a company to the site?': 'As a user, you are unable to add companies. We are continually expanding our database of companies on the site. However if you have a specific company in mind, you can click the "Contact Us" button to make your request.'
+        },
+
+        'Policies': 
+            {'Why did my review get deleted?': 'A user or site admin may have found your review inappropriate and thus deleted it. You can click the contact us button, and we will look over the review again.', 
+
+            'Why is my account suspended?': 'Our system may have detected unusual activity from your account, forcing us to temporarily suspend your account. If you believe this is an error, please let us know by clicking the contact us button.',
+
+            'How many reviews can I write a day?': 'You can write as many reviews as you want, but if we detect that you are spamming our servers or writing false reviews, we will be forced to suspend your account.'
+        }
+    }
+
+    let questionBox = document.getElementById("questionBox")
+    let questionStr = ``
+
+    var idNum = 0
+    for (question in questions) {
+        questionStr += `<div class="mx-auto mb-4 col-xs-12 col-sm-12 col-md-4 m-sm-4 shadow-lg ms-lg-4 whiteBox">
+        <h2 class="pt-4 pb-1 mx-3 text-start fw-bold" style="color: #4E6AF0;">${question}</h2>
+        <ul class="list-group list-group-flush">`
+        for (q in questions[question]) {
+            questionStr += `<p class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modal${idNum}">${q}</p>
+            <div class="modal fade modal-dialog-scrollable" id="modal${idNum}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">${q}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ${questions[question][q]}
+                </div>
+                <div class="modal-footer">
+                    <a href="feedback.php"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Contact Us</button></a>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok, got it!</button>
+                </div>
+                </div>
+            </div>
+        </div>`
+        idNum++
+        }
+
+        questionStr += `</ul></div>`
+
+    }
+
+    questionBox.innerHTML += questionStr
 }
 
 // Vue instance
@@ -707,17 +774,19 @@ navigationBar.component('navigation-bar-big-login', {
         </button>
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="input-group my-2">
+        <div class="input-group my-2 mx-1">
             <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded" placeholder="Search for Company or Industry"
-            aria-label="Search" aria-describedby="search-addon" />
+            aria-label="Search" aria-describedby="search-addon" 
+            style="height:39px;"
+            />
             <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
             <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
             </button>
         </div>
-        <button class="btn btn-primary my-2 mx-1 p-1" style="width:170px;" id="reviewBtn" onclick="gotoWriteAReview()">
+        <button class="btn btn-primary my-2 mx-1" style="height:39px; width: 200px;" id="reviewBtn" onclick="gotoWriteAReview()">
             Write review
         </button>
-        <button class="btn btn-secondary my-2 mx-1" style="width:170px;" onclick="signOut()">
+        <button class="btn btn-secondary my-2 mx-1" style="height:39px;" onclick="signOut()">
             Logout
         </button>
         <button class="btn rounded-circle" id="userBtn" onclick="gotoMyProfile()">

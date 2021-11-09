@@ -14,11 +14,6 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-    -->
     <link rel="stylesheet" href="../CSS/style.css">
     <!-- vue -->
     <script src="https://unpkg.com/vue@next"></script>
@@ -63,22 +58,19 @@
             <div class="mx-auto mb-2 col-xs-12 col-sm-12 col-md-4 m-sm-4 shadow-lg ms-lg-4 whiteBox">
                 <div class="text-center smallBox mt-5 mb-3 smallPurpleBox smallBox">Good Pay</div>
                 <p class="mx-2 text-start fw-bold">Competitive Pay</p>
-                <p class="mx-2 text-start fw-lighter m-0">Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                <p class="mx-2 text-start fw-lighter m-0">We offer the best pay in the industry! We will never underpay or undercut you. Because we value your skills.
                 </p>
             </div>
             <div class="mx-auto mb-2 col-xs-12 col-sm-12 col-md-4 m-sm-4 bigGreyBox ms-lg-4">
                 <div class="text-center mx-2 smallBox mt-5 mb-3 smallOrangeBox smallBox">Friendly Office</div>
                 <p class="mx-2 text-start fw-bold">Nice People</p>
-                <p class="mx-2 text-start fw-lighter m-0">Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                <p class="mx-2 text-start fw-lighter m-0">Our company believes in creating an inclusive environment. Any toxic employees are immediately fired. We believe in low hierarchy and positive vibes. 
                 </p>
             </div>
             <div class="mx-auto mb-2 col-xs-12 col-sm-12 col-md-4 m-sm-4 bigGreyBox ms-lg-4">
                 <div class="text-center mx-2 smallBox mt-5 mb-3 smallGreenBox smallBox">Free Food</div>
                 <p class="mx-2 text-start fw-bold">Corporate Cafeteria</p>
-                <p class="mx-2 text-start fw-lighter m-0">Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                <p class="mx-2 text-start fw-lighter m-0">We believes in providing free food and drinks for our hard working employees.
                 </p>
             </div>
         </div>
@@ -95,13 +87,8 @@
                     <p class="text-start mt-lg-5 ms-sm-1 blueTitle">
                         Our Office
                     </p>
-                    <h3 class="text-start secondaryTitle ">Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry.</h3>
-                    <p class="text-start mb-sm-3">Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type
-                        and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                    <h3 class="text-start secondaryTitle ">We have a great office!</h3>
+                    <p class="text-start mb-sm-3">Our staffs are friendly and our office is comfortable. Where else is a better place to work. We provide free food. 40 days child care leave. And we have an office gym and swimming pool.</p>
                     <br>
                 </div>
             </div>
