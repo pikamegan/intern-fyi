@@ -138,7 +138,7 @@ if (isset($_SESSION['email'])) {
                             <p>Email:
                                 <?php
                                     if ($schoolEmail !== "") {
-                                        echo "<p class = 'underline' id='profileEmailAddress'>$schoolEmail</p>";
+                                        echo "<p class='underline' id='profileEmailAddress' style='overflow-wrap: break-word;'>$schoolEmail</p>";
                                     }
                                 ?>
 
