@@ -88,10 +88,9 @@ if (isset($_SESSION['email'])) {
 
 ?>
     <div class="container-fluid profile">
-        <div class="row row-eq-height" stype='flex-wrap: wrap;'>
-            <div class="col col-12 col-lg-6" style='display: flex; justify-content: center;'>
-                <div class="row personProfile shadow rounded rounded-3 container mb-3" style="width: 100%;">
-                    <span style="position:absolute;right:0;top:-15px"><i class="bi bi-pencil fill-secondary"></i></span>
+        <div class="row row-eq-height" style='flex-wrap: wrap;'>
+            <div class="col" style='width: 100%; display: flex; justify-content: center;'>
+                <div class="row personProfile shadow rounded rounded-3 mb-3" style="width: 100%; display: flex; justify-content: center;">
                     <div class="col col-12 col-md-6">
                         <!-- How to vertically align image? -->
                         <?php
@@ -157,62 +156,61 @@ if (isset($_SESSION['email'])) {
                 </div>
 
             </div>
+        </div> 
+
+        <div class="row row-eq-height" style='flex-wrap: wrap;'>
             <div class="col col col-12 col-lg-6" style='display: flex; justify-content: center;'>
                 <div class="container m-0 p-0">
+                    <div class="shadow rounded rounded-3 mb-3 p-5 h-100 text-center">
+                        <?php
+                            if ($school !== "") {
+                                echo "
 
-                    <!-- University --> 
-                    <div class="row h-48 mb-4">
-                        <div class="col col-12 text-center h-100">
-                            <div class="shadow rounded rounded-3 mb-3 p-5 h-100 text-center">
-                                <?php
-                                    if ($school !== "") {
-                                        echo "
+                                    <div style='display: table; height: 70%; width: 100%; table-layout: auto'> 
+                                        <div style='display: table-cell; width: 100%; vertical-align: middle;'>
+                                            <h1>University</h1>
+                                        </div>
+                                    </div>
+                                    
+                                    <p style='height: 30%'>$school</p>
+                                "; 
 
-                                            <div style='display: table; height: 70%; width: 100%; table-layout: auto'> 
-                                                <div style='display: table-cell; width: 100%; vertical-align: middle;'>
-                                                    <h1>University</h1>
-                                                </div>
-                                            </div>
-                                            
-                                            <p style='height: 30%'>$school</p>
-                                        "; 
+                            } 
+                        ?>
 
-                                    } 
-                                ?>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Country -->
-                    <div class="row h-48">
-                        <div class="col col-12 text-center">                            
-                            <div class="shadow rounded rounded-3 mb-3 p-5 h-100">
-
-                                <?php
-                                        if ($country !== "") {
-
-                                            echo "
-
-                                                <div style='display: table; height: 70%; width: 100%; table-layout: auto'> 
-                                                    <div style='display: table-cell; width: 100%; vertical-align: middle; text-align: center;'>
-                                                        <h1>Country</h1>
-                                                    </div>
-                                                </div>
-                                                <p style='height: 30%'>$country</p>
-                                            "; 
-
-                                        } 
-                                    ?>
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
 
+
+            <!-- Country -->  
+
+            <div class="col col col-12 col-lg-6" style='display: flex; justify-content: center;'>
+                <div class="container m-0 p-0">                      
+                    <div class="shadow rounded rounded-3 mb-3 p-5 h-100 text-center">
+
+                        <?php
+                                if ($country !== "") {
+
+                                    echo "
+
+                                        <div style='display: table; height: 70%; width: 100%; table-layout: auto'> 
+                                            <div style='display: table-cell; width: 100%; vertical-align: middle; text-align: center;'>
+                                                <h1>Country</h1>
+                                            </div>
+                                        </div>
+                                        <p style='height: 30%'>$country</p>
+                                    "; 
+
+                                } 
+                            ?>
+
+                        </div>
+                    </div>
+            </div>
         </div>
+
+
     </div>
     <div class="footerComp">
         <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php" @gotohome="goHome"></intern-footer>
