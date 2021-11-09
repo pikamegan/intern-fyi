@@ -81,7 +81,7 @@ height: auto;">
                     <div class="text-center m-5">
                         <img onclick="location.href='quiz.php';" class="float-end" src="../IMG/repeatGame.svg" style="width: 50px; height: 50px;">
                         <h1>&nbsp&nbspYou survived!</h1>
-                        <h4 class="mb-3">{{numberCorrect}}/4 Marks</h4>
+                        <h4 class="mb-3">{{numberCorrect}}/ 5 Marks</h4>
                     </div>
                     <div class="text-center m-5" v-if=" numberCorrect == 4 ">
                         <img src="../IMG/allcorrect.png" style="" class="img-fluid" style="width: 500px;">
@@ -149,18 +149,56 @@ height: auto;">
                     // add properties here
                     currentQ: 1,
                     questionOption: {
-                        q1: ["optionAs", "optionBs", "optionCs", "optionDs"],
-                        q2: ["optionA2", "optionB2", "optionC2", "optionD2"],
-                        q3: ["optionA3", "optionB3", "optionC3", "optionD3"],
-                        q4: ["optionA4", "optionB4", "optionC4", "optionD4"]
+                        q1: [
+                                "Hobbies and interests", 
+                                "Contact details", 
+                                "Age", 
+                                "Passive language"
+                            ],
+
+                        q2: [
+                                "Print out extra copies of your resume", 
+                                "Practice interview question", 
+                                "Prepare an outfit", 
+                                "Rely on surface level knowledge of the company"
+                            ],
+
+                        q3: [
+                                "Job shadowing", 
+                                "Panel interview", 
+                                "Technical interview", 
+                                "Competency interview"
+                                ],
+
+                        q4: [
+                                "Be two hours early", 
+                                "Eat", 
+                                "Apologise for not having enough experience", 
+                                "Prepare questions for the interviewer"
+                            ], 
+
+                        q5: [
+                            "Follow up with the hiring manager frequently", 
+                            "Post about the interview on social media ", 
+                            "Send a thank you note to the interviewers", 
+                            "Stop searching for new jobs"
+                        ], 
                     },
-                    questions: ["What....? Chen fill in", "When...? Chen fill in", "When...? Chen fill in", "When...? Chen fill in"],
+
+                    questions: [
+                        "What should you include in your resume?", 
+                        "What should you NOT do to prepare for an interview?", 
+                        "What is NOT a type of interview?", 
+                        "What should you do in an interview?", 
+                        "What should you do after an interview?"
+                    ],
+
                     hearts: 3,
                     isCorrect: false,
                     isWrong: false,
                     isQuestion: true,
                     optionAlpha: ["A", "B", "C", "D"],
-                    qAnswer: [1, 1, 1, 1], // 0 is A, 1 is B, 2 is C, 3 is D
+                    qAnswer: [1, 3, 0, 3, 2], // 0 is A, 1 is B, 2 is C, 3 is D
                     numberCorrect: 0
                 }
             },
