@@ -81,7 +81,8 @@ height: auto;">
                 </div>
                 <div v-if="isQuestion && currentQ > qAnswer.length && hearts > 0">
                     <div class="text-center m-5">
-                        <h1 >You survived!</h1>
+                        <img onclick="location.href='quiz.php';" class= "float-end" src= "../IMG/repeatGame.svg" style="width: 50px; height: 50px;">
+                        <h1 >&nbsp&nbspYou survived!</h1>
                         <h4 class ="mb-3">{{numberCorrect}}/4 Marks</h4>
                     </div>
                     <div class="text-center m-5" v-if=" numberCorrect == 4 ">
@@ -97,7 +98,6 @@ height: auto;">
                         style="width: 500px;">
                     </div>
                 
-
                 </div>
                 <div v-if="isWrong && hearts > 0">
                     <h1 class="text-danger fw-bolder m-5">
@@ -110,7 +110,7 @@ height: auto;">
                         <br>
                         <h4 class="mb-5">{{questionOption['q'+ currentQ][qAnswer[currentQ-1]]}}</h4>
                     </div>
-                    <div class="mt-5"><br><br><br><br>
+                    <div class="mt-5"><br><br>
                         <a class="text-decoration-underline fs-4 mt-5 text-end" @click="nextQuestion">
                             <img src= "../IMG/nextQuiz.svg" style="width: 100px; height: 100px;">
                         </a>
@@ -126,7 +126,7 @@ height: auto;">
                         <br>
                         <h4 class="mb-5">{{questionOption['q'+ currentQ][qAnswer[currentQ-1]]}}</h4>
                     </div>
-                    <div class="mt-5"><br><br><br><br>
+                    <div class="mt-5"><br><br>
                         <a class="text-decoration-underline fs-4 mt-5 text-end" @click="nextQuestion">
                             <img src= "../IMG/nextQuiz.svg" style="width: 100px; height: 100px;">
                         </a>
