@@ -762,7 +762,15 @@ navigationBar.component('navigation-bar-small-login', {
         <a href="../HTML/WriteAReview.php">Write a Review &#9998;</a><br>
     </div>
     </nav>
-    <!-- end of small navigation bar -->`
+    <!-- end of small navigation bar -->`,
+    created() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        let queryName1 = 'sname'
+        if (urlParams.has(queryName1) && urlParams.get(queryName1) != "") {
+            this.searchQuery = urlParams.get(queryName1)
+        }
+    }
 })
 
 navigationBar.component('navigation-bar-small-logout', {
@@ -802,7 +810,15 @@ navigationBar.component('navigation-bar-small-logout', {
             <a href="../HTML/WriteAReview.php">Write a Review &#9998;</a><br>
         </div>
     </nav>
-    <!-- end of small navigation bar -->`
+    <!-- end of small navigation bar -->`,
+    created() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        let queryName1 = 'sname'
+        if (urlParams.has(queryName1) && urlParams.get(queryName1) != "") {
+            this.searchQuery = urlParams.get(queryName1)
+        }
+    }
 })
 
 navigationBar.component('navigation-bar-big-login', {
@@ -848,7 +864,15 @@ navigationBar.component('navigation-bar-big-login', {
         </button>
         </div>
     </div>
-    </nav>`
+    </nav>`,
+    created() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        let queryName1 = 'sname'
+        if (urlParams.has(queryName1) && urlParams.get(queryName1) != "") {
+            this.searchQuery = urlParams.get(queryName1)
+        }
+    }
 })
 
 navigationBar.component('navigation-bar-big-logout', {
@@ -892,7 +916,15 @@ navigationBar.component('navigation-bar-big-logout', {
         </div>
     </div>
     </nav>
-    <!-- end of navigation bar -->`
+    <!-- end of navigation bar -->`,
+    created() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        let queryName1 = 'sname'
+        if (urlParams.has(queryName1) && urlParams.get(queryName1) != "") {
+            this.searchQuery = urlParams.get(queryName1)
+        }
+    }
 })
 
 navigationBar.mount('.navbarTemplate');
