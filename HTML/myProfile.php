@@ -102,9 +102,11 @@ if (isset($_SESSION['email'])) {
 
                             <div style='display: table; height: 100%; width: 100%; table-layout: auto'> 
                                 <div style='display: table-cell; width: 100%; vertical-align: middle; text-align: center;'>
-                                    <img src='$pic' style='object-fit: cover; width: 75%; height: 75%; border-radius: 50%;' class='p-3 m-3'>
+
+                                    <img src='$pic' style='object-fit: cover; width: 70%;' class='p-3 m-3 rounded-circle'>
+
                                 </div>
-                            </div>"; 
+                            </div>";  
                         }
 
                         ?>
