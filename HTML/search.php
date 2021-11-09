@@ -54,7 +54,7 @@
                 <div class="container-fluid">
 
                     <div class='row'>
-                        <div class="col-lg-12 col-sm-4 mb-2">
+                        <div class="col-lg-12 col-md-4 mb-2">
                             <div>
                                 Sort by:
                             </div>
@@ -70,7 +70,7 @@
                             <!-- <button hidden @click="sortCompaniesMethod">sort</button>  -->
                         </div>
 
-                        <div class="col-lg-12 col-sm-4 mb-2">
+                        <div class="col-lg-12 col-md-4 mb-2">
                             <div>
                                 Industry:
                             </div>
@@ -86,7 +86,7 @@
                             <!-- <button @click="filterMethod()">filter</button> -->
                         </div>
 
-                        <div class="col-lg-12 col-sm-4 mb-2">
+                        <div class="col-lg-12 col-md-4 mb-2">
                             <div>
                                 Location:
                             </div>

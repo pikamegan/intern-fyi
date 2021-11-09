@@ -22,11 +22,9 @@ h3 {
     0% {
         transform: scale(1);
     }
-
     50% {
         transform: scale(1.1);
     }
-
     100% {
         transform: scale(1);
     }
@@ -330,7 +328,6 @@ div.cardBold {
     display: inline-block;
 }
 
-
 @media only screen and (max-width: 767px) {
     #bigNavBar {
         display: none;
@@ -357,6 +354,11 @@ div.cardBold {
     border-radius: 10px;
 }
 
+.myRotate {
+    transform: rotate(180deg);
+    transition-duration: 0.2s;
+}
+
 .collapsibleContentSearch {
     max-height: 0;
     overflow: hidden;
@@ -369,7 +371,6 @@ div.cardBold {
     font-size: 17px;
     font-weight: bold;
 }
-
 
 .errorMsg {
     margin-left: 10px;
@@ -452,11 +453,9 @@ div.cardBold {
     margin-left: 6rem;
 }
 
-
 .hide {
     display: none;
 }
-
 
 .firstImage {
     position: relative;
@@ -480,7 +479,6 @@ div.cardBold {
     height: 112.32px;
     left: 849.85px;
     top: 365.55px;
-
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
@@ -493,21 +491,18 @@ div.cardBold {
     color: #6E7880;
 }
 
-
 .underline {
-
     text-decoration: underline;
-
 }
 
-.bgPurple{
+.bgPurple {
     background: #A259FF;
 }
 
-.textPurple{
+.textPurple {
     color: #A259FF;
 }
 
-#questionQuiz{
+#questionQuiz {
     font-weight: bold;
 }

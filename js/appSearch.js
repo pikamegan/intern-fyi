@@ -311,6 +311,7 @@ appSearch.component('company-row', {
     data() {
         return {
             myMaxHeight: null,
+            myRotate: null,
             maxScrollHeight: '', //to be done
             isSelected: false,
             companyPage: encodeURI("./company.php?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
@@ -335,9 +336,11 @@ appSearch.component('company-row', {
         showInfomation() {
             if (this.myMaxHeight) {
                 this.myMaxHeight = null;
+                this.myRotate = null;
             } else {
                 // myMaxHeight = collapsibleContentSearch.scrollHeight + "px"; proably need do dom outside to get the scrollHeight
                 this.myMaxHeight = "80px";
+                this.myRotate = 'myRotate';
                 // this.myMaxHeight = "200px";
             }
         },
@@ -399,6 +402,11 @@ appSearch.component('company-row', {
                     <a :href="companyPage">
                         View Company Profile
                     </a>
+                </div>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col">
+                    <img src="../img/arrow_down.svg" style="height: 30px; width: 30px;float: right;" :class="myRotate">
                 </div>
             </div>
         </div>
