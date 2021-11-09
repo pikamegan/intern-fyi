@@ -87,8 +87,8 @@ if (isset($_SESSION['email'])) {
 }
 
 ?>
-    <div class="container m-3 profile">
-        <div class="row">
+    <div class="container-fluid m-3 profile">
+        <div class="row" >
             <div class="col col-12 col-lg-6 ">
                 <div class="row personProfile shadow rounded rounded-3 container mb-3" style="width: 100%;">
                     <span style="position:absolute;right:0;top:-15px"><i class="bi bi-pencil fill-secondary"></i></span>
@@ -156,12 +156,18 @@ if (isset($_SESSION['email'])) {
                     <!-- University --> 
                     <div class="row h-50">
                         <div class="col col-12 text-center h-100">
-                            <div class="shadow rounded rounded-3 mb-3 p-5 h-100">
+                            <div class="shadow rounded rounded-3 mb-3 p-5 h-100 text-center">
                                 <?php
                                     if ($school !== "") {
                                         echo "
-                                            <h1>University</h1>
-                                            <p>$school</p>
+
+                                            <div style='display: table; height: 70%; width: 100%; table-layout: auto'> 
+                                                <div style='display: table-cell; width: 100%; vertical-align: middle; text-align: center;'>
+                                                    <h1>University</h1>
+                                                </div>
+                                            </div>
+                                            
+                                            <p style='height: 30%'>$school</p>
                                         "; 
 
                                     } 
@@ -180,8 +186,13 @@ if (isset($_SESSION['email'])) {
                                         if ($country !== "") {
 
                                             echo "
-                                                <h1>Country</h1>
-                                                <p>$country</p>
+
+                                                <div style='display: table; height: 70%; width: 100%; table-layout: auto'> 
+                                                    <div style='display: table-cell; width: 100%; vertical-align: middle; text-align: center;'>
+                                                        <h1>Country</h1>
+                                                    </div>
+                                                </div>
+                                                <p style='height: 30%'>$country</p>
                                             "; 
 
                                         } 
