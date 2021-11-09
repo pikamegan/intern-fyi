@@ -82,4 +82,13 @@ class CompanyDAO
         $pdo = null;
         return $searchedCompanies;
     }
+
+    public function addClick($cid) {
+        $conn_manager = new ConnectionManager();
+        $pdo = $conn_manager->getConnection();
+        $sql = "call add_click(:cid)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(":cid", $cid, PDO::PARAM_INT);
+        $stmt->execute();
+    }
 }

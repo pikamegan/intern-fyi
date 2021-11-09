@@ -29,6 +29,12 @@ if (isset($_GET['request'])) {
             $searchedCompanies = $dao->retrieveSearchedCompanies($searchName);
             echo json_encode($searchedCompanies);
         }
+    } elseif ($requestName == 'addClick') {
+        if (isset($_GET['cid'])) {
+            $cid = $_GET['cid'];
+            $dao = new CompanyDAO();
+            $searchedCompanies = $dao->addClick($cid);
+        }
     }
 }
 ?>
