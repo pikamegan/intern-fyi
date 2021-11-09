@@ -149,3 +149,10 @@ CREATE TRIGGER after_review_insert
         where companyID = NEW.companyID;
    END$$
 delimiter ;
+
+delimiter $$
+CREATE procedure add_click(IN cid int)
+  BEGIN
+    update company set numberOfClicks = (select numberOfClicks where companyID = cid) + 1 where companyID = cid;
+  END$$
+delimiter ;

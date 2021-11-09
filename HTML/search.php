@@ -53,59 +53,60 @@
                 <!-- sticky? -->
                 <div class="container-fluid">
 
-                    <div class="row mb-2">
-                        <div>
-                            Sort by:
+                    <div class='row'>
+                        <div class="col-lg-12 col-sm-4 mb-2">
+                            <div>
+                                Sort by:
+                            </div>
+                            <ul v-on:change="sortCompaniesMethod" style="list-style: none;" class="ms-1">
+                                <li v-for="(value, name) in sortCompaniesValues">
+                                    <label>
+                                        <input v-model="sortCompanies" :value="value" type="radio">
+                                        {{name}}
+                                    </label>
+                                </li>
+                            </ul>
+                            <!-- why does removing this button breaks the function??? -->
+                            <!-- <button hidden @click="sortCompaniesMethod">sort</button>  -->
                         </div>
-                        <ul v-on:change="sortCompaniesMethod" style="list-style: none;" class="ms-1">
-                            <li v-for="(value, name) in sortCompaniesValues">
-                                <label>
-                                    <input v-model="sortCompanies" :value="value" type="radio">
-                                    {{name}}
-                                </label>
-                            </li>
-                        </ul>
-                        <!-- why does removing this button breaks the function??? -->
-                        <!-- <button hidden @click="sortCompaniesMethod">sort</button>  -->
-                    </div>
 
-                    <div class="row mb-2">
-                        <div>
-                            Industry:
+                        <div class="col-lg-12 col-sm-4 mb-2">
+                            <div>
+                                Industry:
+                            </div>
+                            <ul v-on:change="filterMethod" style="list-style: none;" class="ms-1">
+                                <li v-for="industry in filterIndustryValues">
+                                    <label>
+                                        <input type="checkbox" v-model="filterIndustry" :value="industry">
+                                        {{industry}}
+                                    </label>
+                                </li>
+                            </ul>
+                            <!-- {{filterIndustry}} -->
+                            <!-- <button @click="filterMethod()">filter</button> -->
                         </div>
-                        <ul v-on:change="filterMethod" style="list-style: none;" class="ms-1">
-                            <li v-for="industry in filterIndustryValues">
-                                <label>
-                                    <input type="checkbox" v-model="filterIndustry" :value="industry">
-                                    {{industry}}
-                                </label>
-                            </li>
-                        </ul>
-                        <!-- {{filterIndustry}} -->
-                        <!-- <button @click="filterMethod()">filter</button> -->
-                    </div>
 
-                    <div class="row mb-2">
-                        <div>
-                            Location:
-                        </div>
-                        <ul style="list-style: none;" class="ms-1">
+                        <div class="col-lg-12 col-sm-4 mb-2">
+                            <div>
+                                Location:
+                            </div>
+                            <ul style="list-style: none;" class="ms-1">
 
-                            <li v-on:change="filterMethod">
-                                <label>
-                                    <input type="checkbox" class="me-1" v-model="isClose" :value="true">Close to me
-                                </label>
-                            </li>
+                                <li v-on:change="filterMethod">
+                                    <label>
+                                        <input type="checkbox" class="me-1" v-model="isClose" :value="true">Close to me
+                                    </label>
+                                </li>
 
-                            <li v-for="value in filterLocationValues" v-on:change="filterMethod">
-                                <label>
-                                    <input type="checkbox" v-model="filterLocation" :value="value">
-                                    {{value}}
-                                </label>
-                            </li>
+                                <li v-for="value in filterLocationValues" v-on:change="filterMethod">
+                                    <label>
+                                        <input type="checkbox" v-model="filterLocation" :value="value">
+                                        {{value}}
+                                    </label>
+                                </li>
 
-                            <!-- {{filterLocation}} -->
-                            <!-- <li>
+                                <!-- {{filterLocation}} -->
+                                <!-- <li>
                                 <label class="map">
                                     <input type="checkbox" class="me-1">
                                     <input id="userZipCode" style="width: 100px; height: 25px; display: inline;"
@@ -117,9 +118,9 @@
                                             onclick="showYourLocation()"></button>
                                 </label>
                             </li> -->
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
-
                     <!-- <div class="row mb-2">
 
                         <div class="mb-4" id="map" style="height: 400px; width: 400px;"></div>
@@ -141,6 +142,11 @@
                     <img class="my-5" src="../img/noCompanyFound.svg">
                     <div>
                         Oops, no company found!
+                        <div>
+                            <a href="search.php" class="">
+                                Search all instead
+                            </a>
+                        </div>
                     </div>
                 </div>
 

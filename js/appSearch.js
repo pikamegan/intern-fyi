@@ -365,7 +365,9 @@ appSearch.component('company-row', {
     template: `
 <div class="row">
     <div class="collapsibleSearch shadow" @click='select' @select='changeState'>
-        <img :src="company.companyInfo.imageLink" style="height: 100px; width: 100px; float: left; border-radius: 10px">
+        <a :href="companyPage">
+            <img :src="company.companyInfo.imageLink" style="height: 100px; width: 100px; float: left; border-radius: 10px">
+        </a>
         <div class="container-fluid">
             <div class="row justify-content-between">
                 <div class="col searchRowTitle">

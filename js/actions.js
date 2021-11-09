@@ -395,6 +395,16 @@ function loadCompanyPage() {
                     foodRatingStr = `${company.companyRatings.averageCriteria4}`
                     mentorRatingStr = `${company.companyRatings.averageCriteria5}`
                     hierarchyRatingStr = `${company.companyRatings.averageCriteria6}`
+
+                    //add click start
+                    let url = `../processDbRequest/processCompanyRequest.php`
+                    axios.get(url, {
+                        params: {
+                            request: 'addClick',
+                            cid: company.companyID
+                        }
+                    })
+                    //add click end
                 }
             }
             for (input of companyName) {
