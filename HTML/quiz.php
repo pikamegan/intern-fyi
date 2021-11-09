@@ -59,8 +59,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
     <h1 class="pageTitle mt-5">Quiz</h1>
     <div class = "quiz">
-        <div class = "container shadow p-3 mb-5 rounded" style="width: 1249px;
-height: 811px;">
+        <div class = "container shadow p-3 mb-5 rounded" style="width: auto;
+height: auto;">
             <div class="m-5">
                 <div v-for="heart in hearts" :key="heart" class="d-inline">
                     <span><img src= "../IMG/heartQuiz.png" style="width: 40px; height: 40px; display: inline;" class ="text-end mx-1 mb-3 float-end" ></span>
@@ -71,22 +71,42 @@ height: 811px;">
                     </span>
                     <br>
                 </div>
-                <div v-if="isQuestion">
+                <div v-if="isQuestion && currentQ <= qAnswer.length">
                     <div class = "m-5" >
                         <h1 id= "questionQuiz" class="textPurple text-start">{{questions[currentQ - 1]}}</h1>
                     </div>
                     <div class = "m-5" v-for="(option, index) in questionOption['q'+ currentQ]" :key="option">
-                        <p><span class = "fw-bolder fs-3">{{optionAlpha[index]}}</span>&nbsp&nbsp&nbsp&nbsp<a value = "option" @click = "calculateScore($this)" class="text-decoration-underline fs-4">{{option}}</a></p>
+                        <p><span class = "fw-bolder fs-3">{{optionAlpha[index]}}</span>&nbsp&nbsp&nbsp&nbsp<a value = "option" @click = "calculateScore(index)" class="text-decoration-underline fs-4">{{option}}</a></p>
                     </div>
                 </div>
-                <div v-if="isWrong">
-                    <h1 class="text-danger fw-bolder m-5"> 
+                <div v-if="isQuestion && currentQ > qAnswer.length && hearts > 0">
+                    <div class="text-center m-5">
+                        <h1 >You survived!</h1>
+                        <h4 class ="mb-3">{{numberCorrect}}/4 Marks</h4>
+                    </div>
+                    <div class="text-center m-5" v-if=" numberCorrect == 4 ">
+                        <img src= "../IMG/allcorrect.png" style="" class= "img-fluid"
+                        style="width: 500px;">
+                    </div>
+                    <div class="text-center m-5" v-if=" numberCorrect == 3 ">
+                        <img src= "../IMG/Gold.png" style="" class= "img-fluid"
+                        style="width: 500px;">
+                    </div>
+                    <div class="text-center m-5" v-if=" numberCorrect == 2 ">
+                        <img src= "../IMG/Silver.png" style="" class= "img-fluid"
+                        style="width: 500px;">
+                    </div>
+                
+
+                </div>
+                <div v-if="isWrong && hearts > 0">
+                    <h1 class="text-danger fw-bolder m-5">
                         Wrong! <img src= "../IMG/wrongEmoji_quiz.png" style="width: 50px; height: 50px;">
                     </h1>
                     <h4 class="text-center">The Correct Answer is: <span></span></h4>
                     <div class="text-center mb-5"  style="font-size: 100px;">
                         {{optionAlpha[qAnswer[currentQ-1]]}}
-                        
+
                         <br>
                         <h4 class="mb-5">{{questionOption['q'+ currentQ][qAnswer[currentQ-1]]}}</h4>
                     </div>
@@ -96,10 +116,32 @@ height: 811px;">
                         </a>
                     </div>
                 </div>
-                <div v-if="isCorrect">
-                    <h1 class="text-success fw-bolder m-5"> 
+                <div v-if="isCorrect && currentQ <= qAnswer.length">
+                    <h1 class="text-center text-success fw-bolder m-5">
                         Nice Job! <img src= "../IMG/correctEmoji_quiz.png" style="width: 57px; height: 57px;">
                     </h1>
+                    <div class="text-center mb-5"  style="font-size: 100px;">
+                        {{optionAlpha[qAnswer[currentQ-1]]}}
+
+                        <br>
+                        <h4 class="mb-5">{{questionOption['q'+ currentQ][qAnswer[currentQ-1]]}}</h4>
+                    </div>
+                    <div class="mt-5"><br><br><br><br>
+                        <a class="text-decoration-underline fs-4 mt-5 text-end" @click="nextQuestion">
+                            <img src= "../IMG/nextQuiz.svg" style="width: 100px; height: 100px;">
+                        </a>
+                    </div>
+                </div>
+                <div v-if="isWrong && hearts <= 0">
+                    <h1 class="text-danger fw-bolder mt-5">
+                            Wrong! <img src= "../IMG/wrongEmoji_quiz.png" style="width: 50px; height: 50px;">
+                            <img onclick="location.href='quiz.php';" class= "float-end" src= "../IMG/repeatGame.svg" style="width: 50px; height: 50px;">
+                            
+                    </h1>
+                    <div class="text-center">
+                        <img class="img-fluid"src= "../IMG/Game-Over.svg" style="width: 600px; height: 600px;">
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -112,25 +154,43 @@ height: 811px;">
                             // add properties here
                             currentQ: 1,
                             questionOption: {
-                                q1 :["optionAs", "optionBs","optionCs","optionDs"], q2:["optionA2", "optionB2","optionC2","optionD2"], q3:["optionA3", "optionB3","optionC3","optionD3"], q3:["optionA4", "optionB4","optionC4","optionD4"]
+                                q1 :["optionAs", "optionBs","optionCs","optionDs"], q2:["optionA2", "optionB2","optionC2","optionD2"], q3:["optionA3", "optionB3","optionC3","optionD3"], q4:["optionA4", "optionB4","optionC4","optionD4"]
                             },
                             questions: ["What....? Chen fill in","When...? Chen fill in","When...? Chen fill in","When...? Chen fill in"],
                             hearts: 3,
                             isCorrect: false,
-                            isWrong: true,
-                            isQuestion: false,
+                            isWrong: false,
+                            isQuestion: true,
                             optionAlpha: ["A","B","C","D"],
-                            qAnswer: [1,1,1,1] // 0 is A, 1 is B, 2 is C, 3 is D
+                            qAnswer: [1,1,1,1], // 0 is A, 1 is B, 2 is C, 3 is D
+                            numberCorrect: 0
                         }
                     },
                     methods: {
-                        calculateScore() {
-                            
+                        calculateScore($chosenAnswer) {
+                            // 0 is A, 1 is B, 2 is C, 3 is D
+                            let answer = this.qAnswer[this.currentQ-1]
+                            console.log(answer);
+
+                            if (answer !== $chosenAnswer) {
+                                //console.log("wrong");
+                                this.isQuestion = false
+                                this.isCorrect = false
+                                this.isWrong = true
+                                this.hearts -= 1
+                            }
+                            else {
+                                //console.log("correct");
+                                this.isQuestion = false
+                                this.isCorrect = true
+                                this.isWrong = false
+                                this.numberCorrect +=1
+                            }
                         },
                         nextQuestion(){
                             this.isQuestion = true
-                            this.isCorrect = false,
-                            this.isWrong = false,
+                            this.isCorrect = false
+                            this.isWrong = false
                             this.currentQ += 1
                         }
                     }
