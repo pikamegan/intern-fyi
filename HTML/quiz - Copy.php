@@ -55,6 +55,106 @@
     </div>
     <!-- copy this part: end -->
 
+    <style>
+        #progressbar {
+            margin-bottom: 30px;
+            overflow: hidden;
+            color: lightgrey
+        }
+
+        #progressbar .active {
+            color: #000000
+        }
+
+        #progressbar li {
+            list-style-type: none;
+            font-size: 12px;
+            width: 20%;
+            float: left;
+            position: relative;
+            z-index: 1;
+        }
+
+        #progressbar #pick-up:before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f0d1"
+
+        }
+
+        #progressbar #food-details:before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f550"
+        }
+
+        #progressbar #type:before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f0c0"
+        }
+
+        #progressbar #availability:before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f784"
+        }
+
+        #progressbar #confirmation:before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f00c"
+        }
+
+        #progressbar li:before {
+            width: 50px;
+            height: 50px;
+            line-height: 45px;
+            display: block;
+            font-size: 18px;
+            color: #ffffff;
+            background: lightgray;
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            padding: 2px
+        }
+
+        #progressbar li:after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: lightgray;
+            position: absolute;
+            left: 0;
+            top: 25px;
+            z-index: -1;
+        }
+
+        #progressbar li.active:before,
+        #progressbar li.active:after {
+            background: skyblue
+        }
+    </style>
+
+    <ul id="progressbar" class='p-0'>
+        <li class="active" id="food-details">
+            <strong>Donation Details</strong>
+        </li>
+        <li class="active" id="pick-up">
+            <strong>Pick Up</strong>
+        </li>
+        <li class="active" id="type">
+            <strong>Donation Type</strong>
+        </li>
+        <li class="active" id="availability">
+            <strong>Availability</strong>
+        </li>
+        <li class="active" id="confirmation">
+            <strong>Confirmation</strong>
+        </li>
+    </ul>
+
+
     <h1 class="pageTitle mt-5">Quiz</h1>
     <div class="quiz">
         <div class="container shadow p-3 mb-5 rounded" style="width: auto;
