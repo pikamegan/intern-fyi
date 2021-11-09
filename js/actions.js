@@ -1,4 +1,4 @@
-function changePw(){
+function changePw() {
     window.location = "../processDbRequest/model/signout.php"
 }
 
@@ -264,7 +264,7 @@ function validateFeedback() {
     let nameMsg = document.getElementById("nameMsg")
     if (name.length == 0) {
         nameMsg.style.display = "block"
-        nameMsg.scrollIntoView({block: "center"})
+        nameMsg.scrollIntoView({ block: "center" })
     } else {
         nameMsg.style.display = "none"
     }
@@ -273,7 +273,7 @@ function validateFeedback() {
     let emailMsg = document.getElementById("emailMsg")
     if (email.length == 0) {
         emailMsg.style.display = "block"
-        emailMsg.scrollIntoView({block: "center"})
+        emailMsg.scrollIntoView({ block: "center" })
     } else {
         emailMsg.style.display = "none"
     }
@@ -387,7 +387,48 @@ function loadCompanyPage() {
                     infoStr = `${company.companyInfo.companyDescription}`
                     var readMore = `${company.companyInfo.companyWebsite}`
                     var linkedinStr = `${company.companyInfo.companyLinkedinLink}`
-                    locationStr = `${company.companyInfo.location}`
+
+                    // locationStr = `${company.companyInfo.location}`
+
+                    //get location start
+                    // uncomment for testing / deploying
+                    // const apiKey = 'AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA';
+                    let addr = company.companyName
+                    let locationPlaceholder = {
+                        locationNeighborhood: '',
+                        country: '',
+                    }
+                    if (typeof apiKey !== 'undefined') {
+                        let geoUrl = encodeURI(
+                            'https://maps.googleapis.com/maps/api/geocode/json?address=' +
+                            addr + " HQ Singapore" +
+                            '&key=' +
+                            apiKey);
+                        axios.get(geoUrl)
+                            .then(response => {
+                                for (obj of response.data.results[0].address_components) {
+                                    if (obj.types[0] == 'neighborhood') {
+                                        locationPlaceholder.locationNeighborhood = obj.short_name
+                                    }
+                                    if (obj.types[0] == 'country') {
+                                        locationPlaceholder.country = obj.short_name
+                                    }
+                                }
+                                if (locationPlaceholder.country == 'SG') {
+                                    companyLocation.innerText = locationPlaceholder.locationNeighborhood
+                                } else {
+                                    companyLocation.innerText = '-'
+                                }
+                            })
+                            .catch(error => {
+                                console.log(error.message)
+                                companyLocation.innerText = '-'
+                            });
+                    } else {
+                        companyLocation.innerText = '-'
+                    }
+                    //get location end
+
                     overallRatingStr = ` ${company.companyRatings.overallRating}`
                     payRatingStr = `${company.companyRatings.averageCriteria1}`
                     skillsRatingStr = `${company.companyRatings.averageCriteria2}`
@@ -416,7 +457,7 @@ function loadCompanyPage() {
             companyLinkedin.href = linkedinStr
 
             companyInfo.innerHTML = infoStr
-            companyLocation.innerHTML = locationStr
+            // companyLocation.innerHTML = locationStr
 
             companyRating.innerHTML += overallRatingStr
 
@@ -490,7 +531,7 @@ function getAllReviews(companyId) {
 
 
             for (let i = posts.length - 1; i >= 0; i--) {
-        
+
                 let reviewdesc = posts[i].reviewDescription
                 let jobTitle = posts[i].jobTitle
 
@@ -606,24 +647,27 @@ function getCompanyIdFromURL() {
 
 function loadFAQ() {
     let questions = {
-        'Reviews': 
-            {'Are the reviews on this site reliable?': 'Yes! The site admins check through the reviews after they are uploaded to ensure that there are no inappropriate or irrelevant comments made about a company. We do not condone any form of misinformation or slander. If you see any review that does not seem to meet community guidelines, do feel free to get in touch with us by clicking the "Contact Us" button. However, if you see a review that rates a company badly, keep in mind that these reflect the subjective experience of the intern, and are not necessarily true for every intern at that company.', 
+        'Reviews':
+        {
+            'Are the reviews on this site reliable?': 'Yes! The site admins check through the reviews after they are uploaded to ensure that there are no inappropriate or irrelevant comments made about a company. We do not condone any form of misinformation or slander. If you see any review that does not seem to meet community guidelines, do feel free to get in touch with us by clicking the "Contact Us" button. However, if you see a review that rates a company badly, keep in mind that these reflect the subjective experience of the intern, and are not necessarily true for every intern at that company.',
 
             'How do I write a review?': 'You can go directly to the "Write a Review" button in the navigation bar at the top of your screen. You can also go to the company page and click the "Write a Review" button, or click the "Write a Review" button in the search results for the company you want to review.',
 
             'Who can see my reviews?': 'All visitors to the website will be able to see your review, whether or not they have an account with us. However, your profile details will be kept private (only your real profile picture will be shown with your review. Other details such as your name and email will be kept hidden from other users unless you choose to reveal it in the content of your review.'
         },
 
-        'Company Profile': 
-            {'How do I know if the information on a company profile is accurate?': 'We take the information directly from the company website, but some information may be outdated without us realising. If you notice such a case, please let us know, and we will fix it.', 
+        'Company Profile':
+        {
+            'How do I know if the information on a company profile is accurate?': 'We take the information directly from the company website, but some information may be outdated without us realising. If you notice such a case, please let us know, and we will fix it.',
 
             'Can I remove my company from the site?': 'We do not plan to remove companies as this site is for interns to share their honest experiences with all potential interns.',
 
             'I do not see the company I want to review, how can I add a company to the site?': 'As a user, you are unable to add companies. We are continually expanding our database of companies on the site. However if you have a specific company in mind, you can click the "Contact Us" button to make your request.'
         },
 
-        'Policies': 
-            {'Why did my review get deleted?': 'A user or site admin may have found your review inappropriate and thus deleted it. You can click the contact us button, and we will look over the review again.', 
+        'Policies':
+        {
+            'Why did my review get deleted?': 'A user or site admin may have found your review inappropriate and thus deleted it. You can click the contact us button, and we will look over the review again.',
 
             'Why is my account suspended?': 'Our system may have detected unusual activity from your account, forcing us to temporarily suspend your account. If you believe this is an error, please let us know by clicking the contact us button.',
 
@@ -658,7 +702,7 @@ function loadFAQ() {
                 </div>
             </div>
         </div>`
-        idNum++
+            idNum++
         }
 
         questionStr += `</ul></div>`
