@@ -421,56 +421,56 @@ appSearch.component('company-row', {
                         clicks 
                     </div><br>
                     
-                    <img src="../img/review.svg" style="width: 25px; height: 25px; padding: 1px;" class='preventSelect'>
+                    <img src="../IMG/review.svg" style="width: 25px; height: 25px; padding: 1px;" class='preventSelect'>
                     {{company.companyRatings.totalNumReviews}}
                     <div class="d-none d-xl-inline">
                         reviews
                     </div>
                 </div>
                 <div class="col">
-                    <img src="../img/pay_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;" class='preventSelect'>
+                    <img src="../IMG/pay_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;" class='preventSelect'>
                     <div class="d-none d-xxl-inline">
                         Good Pay:
                     </div>
                     {{company.companyRatings.averageCriteria1}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'><br>
+                    <img src="../IMG/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'><br>
 
-                    <img src="../img/skills_companyReview.svg" style="width: 40px; height: 40px; padding: 0px;" class='preventSelect'>
+                    <img src="../IMG/skills_companyReview.svg" style="width: 40px; height: 40px; padding: 0px;" class='preventSelect'>
                     <div class="d-none d-xxl-inline">
                         New Skills:
                     </div>
                     {{company.companyRatings.averageCriteria2}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'>
+                    <img src="../IMG/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'>
                 </div>
                 <div class="col">
-                    <img src="../img/companyculture_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;" class='preventSelect'>
+                    <img src="../IMG/companyculture_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;" class='preventSelect'>
                     <div class="d-none d-xxl-inline">
                         Friendly:
                     </div>
                     {{company.companyRatings.averageCriteria3}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'><br>
+                    <img src="../IMG/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'><br>
 
-                    <img src="../img/food_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;" class='preventSelect'>
+                    <img src="../IMG/food_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;" class='preventSelect'>
                     <div class="d-none d-xxl-inline">
                         Food Price:
                     </div>
                     {{company.companyRatings.averageCriteria4}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'>
+                    <img src="../IMG/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'>
                 </div>
                 <div class="col">
-                    <img src="../img/mentorship_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;" class='preventSelect'>
+                    <img src="../IMG/mentorship_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;" class='preventSelect'>
                     <div class="d-none d-xxl-inline">
                         Mentorship:
                     </div>
                     {{company.companyRatings.averageCriteria5}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'><br>
+                    <img src="../IMG/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'><br>
 
-                    <img src="../img/flathierarchy_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;" class='preventSelect'>
+                    <img src="../IMG/flathierarchy_companyreview.svg" style="width: 40px; height: 40px; padding: 0px;" class='preventSelect'>
                     <div class="d-none d-xxl-inline">
                         Flat Hierarchy:
                     </div>
                     {{company.companyRatings.averageCriteria6}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'><br>
+                    <img src="../IMG/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'><br>
                 </div>
             </div>
         </div>

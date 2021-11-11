@@ -139,7 +139,7 @@
                 </div>
 
                 <div v-if="displayCompanies.length == 0" class="text-center">
-                    <img class="my-5" src="../img/noCompanyFound.svg">
+                    <img class="my-5" src="../IMG/noCompanyFound.svg">
                     <div>
                         Oops, no company found!
                         <div>
@@ -169,24 +169,24 @@
             data() {
                 return {
                     // add properties here
-                    currentImgSrc: "../img/AtoZ.svg",
-                    currentFilterImg: "../img/filter.svg"
+                    currentImgSrc: "../IMG/AtoZ.svg",
+                    currentFilterImg: "../IMG/filter.svg"
 
                 }
             },
             methods: {
                 changeLetterSortImg() {
-                    if (this.currentImgSrc === "../img/AtoZ.svg") {
-                        this.currentImgSrc = "../img/ZtoA.svg";
+                    if (this.currentImgSrc === "../IMG/AtoZ.svg") {
+                        this.currentImgSrc = "../IMG/ZtoA.svg";
                     } else {
-                        this.currentImgSrc = "../img/AtoZ.svg";
+                        this.currentImgSrc = "../IMG/AtoZ.svg";
                     }
                 },
                 changeFilterImg() {
-                    if (this.currentFilterImg === "../img/filter.svg") {
-                        this.currentFilterImg = "../img/clearfilter.svg";
+                    if (this.currentFilterImg === "../IMG/filter.svg") {
+                        this.currentFilterImg = "../IMG/clearfilter.svg";
                     } else {
-                        this.currentFilterImg = "../img/filter.svg";
+                        this.currentFilterImg = "../IMG/filter.svg";
                     }
                 }
             }
