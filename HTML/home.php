@@ -148,19 +148,19 @@
         <h3 class="homeHeader fw-bold text-center">How Intern.FYI Works for You</h3>
         <div class="row mb-5 shadow">
             <div class="col-md-3 col-6 my-3 text-center" onclick="location.href='search.php';">
-                <img src="../img/search.svg" class="preventSelect p-2">
+                <img src="../IMG/search.svg" class="preventSelect p-2">
                 <p class="indexText">Find the right<br>Internship</p>
             </div>
             <div class="col-md-3 col-6 my-3 text-center" onclick="location.href='WriteAReview.php';">
-                <img src="../img/chat.svg" class="preventSelect p-2">
+                <img src="../IMG/chat.svg" class="preventSelect p-2">
                 <p class="indexText">Review<br>Companies</p>
             </div>
             <div class="col-md-3 col-6 my-3 text-center">
-                <img src="../img/read.svg" class="preventSelect p-2">
+                <img src="../IMG/read.svg" class="preventSelect p-2">
                 <p class="indexText">Read<br>Reviews</p>
             </div>
             <div class="col-md-3 col-6 my-3 text-center">
-                <img src="../img/eye.svg" class="preventSelect p-2 pt-3 pb-4">
+                <img src="../IMG/eye.svg" class="preventSelect p-2 pt-3 pb-4">
                 <p class="indexText">Compare<br>Companies</p>
             </div>
         </div>
@@ -176,21 +176,13 @@
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
                 <div class="mx-auto pay" style="width: 168px;height: 222px; border-radius: 10px; text-align: center; position: relative;">
                     <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                        <img src="../img/help.svg" class="preventSelect">
+                        <img src="../IMG/help.svg" class="preventSelect">
                         <span class="criteriaTooltipText help">
                             5 stars for good pay, relative to your job role
                         </span>
                     </div>
                     <div>
-                        <img src="../img/PayRatingCategoryIcon.svg" class="preventSelect positionCard">
-                        <!-- 
-                            <img src="../img/PayRatingCategoryIcon.svg" class="preventSelect positionCard">
-                            <img src="../img/SkillEarnedRatingCategoryIcon.svg" class="preventSelect positionCard">
-                            <img src="../img/CompanyCultureRatingCategoryIcon.svg" class="preventSelect positionCard">
-                            <img src="../img/FoodRatingCategoryIcon.svg" class="preventSelect positionCard">
-                            <img src="../img/MentorshipRatingCategoryIcon.svg" class="preventSelect positionCard">
-                            <img src="../img/FlatHeirarchyRatingCategoryIcon.svg" class="preventSelect positionCard"> 
-                        -->
+                        <img src="../IMG/PayRatingCategoryIcon.svg" class="preventSelect positionCard">
                     </div>
 
                     <h6 style="color: white;">Pay</h6>
@@ -205,14 +197,14 @@
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
                 <div class="mx-auto skillsLearned" style="width: 168px;height: 222px; border-radius: 10px; text-align: center; position: relative;">
                     <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                        <img src="../img/help.svg" class="preventSelect">
+                        <img src="../IMG/help.svg" class="preventSelect">
                         <span class="criteriaTooltipText help">
                             5 stars for learning useful work reated skills
                         </span>
                     </div>
 
                     <div>
-                        <img class="preventSelect positionCard" src="../img/SkillEarnedRatingCategoryIcon.svg">
+                        <img class="preventSelect positionCard" src="../IMG/SkillEarnedRatingCategoryIcon.svg">
                     </div>
 
                     <h6 style="color: white;">Skills Learned</h6>
@@ -227,14 +219,14 @@
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
                 <div class="mx-auto companyCulture" style="width: 168px;height: 222px; border-radius: 10px; text-align: center; position: relative;">
                     <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                        <img src="../img/help.svg" class="preventSelect">
+                        <img src="../IMG/help.svg" class="preventSelect">
                         <span class="criteriaTooltipText help">
                             5 stars for friendliness and cohesion
                         </span>
                     </div>
 
                     <div>
-                        <img src="../img/CompanyCultureRatingCategoryIcon.svg" class="preventSelect positionCard">
+                        <img src="../IMG/CompanyCultureRatingCategoryIcon.svg" class="preventSelect positionCard">
                     </div>
 
                     <h6 style="color: white;">Company Culture</h6>

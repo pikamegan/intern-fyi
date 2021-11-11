@@ -100,13 +100,13 @@
                     <div class="col mt-1 mb-3">
                         <div class="hoverCard pay px-0 py-3 mb-2" style="border-radius: 10px; text-align: center; position: relative;">
                             <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                                <img src="../img/help.svg" class="preventSelect">
+                                <img src="../IMG/help.svg" class="preventSelect">
                                 <span class="criteriaTooltipText">
                                     5 stars for good pay, relative to your job role
                                 </span>
                             </div>
                             <div>
-                                <img src="../img/PayRatingCategoryIcon.svg" class="preventSelect positionCard">
+                                <img src="../IMG/PayRatingCategoryIcon.svg" class="preventSelect positionCard">
                             </div>
 
                             <h6 style="color: white;">Pay</h6>
@@ -122,14 +122,14 @@
                     <div class="col mt-1 mb-3">
                         <div class="hoverCard skillsLearned px-0 py-3" style="border-radius: 10px; text-align: center; position: relative;">
                             <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                                <img src="../img/help.svg" class="preventSelect">
+                                <img src="../IMG/help.svg" class="preventSelect">
                                 <span class="criteriaTooltipText">
                                     5 stars for learning useful work-related skills
                                 </span>
                             </div>
 
                             <div>
-                                <img class="preventSelect positionCard" src="../img/SkillEarnedRatingCategoryIcon.svg">
+                                <img class="preventSelect positionCard" src="../IMG/SkillEarnedRatingCategoryIcon.svg">
                             </div>
 
                             <h6 style="color: white;">Skills Learned</h6>
@@ -145,14 +145,14 @@
                     <div class="col mt-1 mb-3">
                         <div class="hoverCard companyCulture px-0 py-3" style="border-radius: 10px; text-align: center; position: relative;">
                             <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                                <img src="../img/help.svg" class="preventSelect">
+                                <img src="../IMG/help.svg" class="preventSelect">
                                 <span class="criteriaTooltipText">
                                     5 stars for friendliness and cohesion
                                 </span>
                             </div>
 
                             <div>
-                                <img src="../img/CompanyCultureRatingCategoryIcon.svg" class="preventSelect positionCard">
+                                <img src="../IMG/CompanyCultureRatingCategoryIcon.svg" class="preventSelect positionCard">
                             </div>
 
                             <h6 style="color: white;">Company Culture</h6>
@@ -168,14 +168,14 @@
                     <div class="col mt-1 mb-3">
                         <div class=" hoverCard food px-0 py-3" style="border-radius: 10px; text-align: center; position: relative;">
                             <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                                <img src="../img/help.svg" class="preventSelect">
+                                <img src="../IMG/help.svg" class="preventSelect">
                                 <span class="criteriaTooltipText">
                                     5 stars for reasonable food prices in the area
                                 </span>
                             </div>
 
                             <div>
-                                <img src="../img/FoodRatingCategoryIcon.svg" class="preventSelect positionCard">
+                                <img src="../IMG/FoodRatingCategoryIcon.svg" class="preventSelect positionCard">
                             </div>
 
                             <h6 style="color: white;">Food</h6>
@@ -191,14 +191,14 @@
                     <div class="col mt-1 mb-3">
                         <div class="hoverCard mentorship px-0 py-3" style="border-radius: 10px; text-align: center; position: relative;">
                             <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                                <img src="../img/help.svg" class="preventSelect">
+                                <img src="../IMG/help.svg" class="preventSelect">
                                 <span class="criteriaTooltipText">
                                     5 stars for good guidance and superiors
                                 </span>
                             </div>
 
                             <div>
-                                <img src="../img/MentorshipRatingCategoryIcon.svg" class="preventSelect positionCard">
+                                <img src="../IMG/MentorshipRatingCategoryIcon.svg" class="preventSelect positionCard">
                             </div>
 
                             <h6 style="color: white;">Mentorship</h6>
@@ -214,14 +214,14 @@
                     <div class="col mt-1 mb-3">
                         <div class="hoverCard flatHierarchy px-0 py-3" style="border-radius: 10px; text-align: center; position: relative;">
                             <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                                <img src="../img/help.svg" class="preventSelect">
+                                <img src="../IMG/help.svg" class="preventSelect">
                                 <span class="criteriaTooltipText">
                                     5 stars for respecting job roles and your internship role
                                 </span>
                             </div>
 
                             <div>
-                                <img src="../img/FlatHeirarchyRatingCategoryIcon.svg" class="preventSelect positionCard">
+                                <img src="../IMG/FlatHeirarchyRatingCategoryIcon.svg" class="preventSelect positionCard">
                             </div>
 
                             <h6 style="color: white;">Flat Hierarchy</h6>
