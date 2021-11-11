@@ -83,13 +83,13 @@ height: auto;">
                         <h1>&nbsp&nbspYou survived!</h1>
                         <h4 class="mb-3">{{numberCorrect}}/ 5 Marks</h4>
                     </div>
-                    <div class="text-center m-5" v-if=" numberCorrect == 4 ">
+                    <div class="text-center m-5" v-if=" numberCorrect == 5 ">
                         <img src="../IMG/allcorrect.png" style="" class="img-fluid" style="width: 500px;">
                     </div>
-                    <div class="text-center m-5" v-if=" numberCorrect == 3 ">
+                    <div class="text-center m-5" v-if=" numberCorrect == 4 ">
                         <img src="../IMG/Gold.png" style="" class="img-fluid" style="width: 500px;">
                     </div>
-                    <div class="text-center m-5" v-if=" numberCorrect == 2 ">
+                    <div class="text-center m-5" v-if=" numberCorrect == 3 ">
                         <img src="../IMG/Silver.png" style="" class="img-fluid" style="width: 500px;">
                     </div>
 

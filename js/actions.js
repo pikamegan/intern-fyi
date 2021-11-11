@@ -173,7 +173,7 @@ function showCriteria() {
             <div class="accordion-body px-5">
                 <div class="row mb-1 align-items-center">
                     <div class="col-12 col-md-6 justify-content-center"><img
-                            src="../img/${criteriaImg[counter - 1]}" alt="${criterion} criteria"
+                            src="../IMG/${criteriaImg[counter - 1]}" alt="${criterion} criteria"
                             class="img-fluid d-none d-sm-block"></div>
                     <div class="col-12 col-md-6 d-flex bd-highlight flex-column mb-3">
     
@@ -748,7 +748,7 @@ navigationBar.component('navigation-bar-small-login', {
         <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
             aria-describedby="search-addon" />
         <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
-            <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
+            <div style="background-image: url(../IMG/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
         </button>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -795,7 +795,7 @@ navigationBar.component('navigation-bar-small-logout', {
                 <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded rounded-2" placeholder="Search..." aria-label="Search"
                 aria-describedby="search-addon" />
                 <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
-                <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;">
+                <div style="background-image: url(../IMG/search-magnifiying-glass.svg);width: 25px;height: 23px;">
                 </div>
                 </button>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -850,7 +850,7 @@ navigationBar.component('navigation-bar-big-login', {
             style="height:39px;"
             />
             <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
-            <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
+            <div style="background-image: url(../IMG/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
             </button>
         </div>
         <button class="btn btn-primary my-2 mx-1" style="height:39px; width: 200px;" id="reviewBtn" onclick="gotoWriteAReview()">
@@ -904,7 +904,7 @@ navigationBar.component('navigation-bar-big-logout', {
                 <input @keyup.enter="toSearchPage" v-model="searchQuery" id = "searchBox" type="search" class="form-control rounded" placeholder="Search for Company or Industry"
                 aria-label="Search" aria-describedby="search-addon" />
                 <button @click="toSearchPage" type="button" class="btn btn-success" id="searchButton">
-                <div style="background-image: url(../img/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
+                <div style="background-image: url(../IMG/search-magnifiying-glass.svg);width: 25px;height: 23px;"></div>
                 </button>
             </div>
             <button class="btn btn-secondary my-2 mx-4" id="loginBtn" onclick="gotoSignInPage()">

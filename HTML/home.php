@@ -264,14 +264,14 @@
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
                 <div class="mx-auto mentorship" style="width: 168px;height: 222px; border-radius: 10px; text-align: center; position: relative;">
                     <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                        <img src="../img/help.svg" class="preventSelect">
+                        <img src="../IMG/help.svg" class="preventSelect">
                         <span class="criteriaTooltipText help">
                             5 stars for good guidance and superiors
                         </span>
                     </div>
 
                     <div>
-                        <img src="../img/MentorshipRatingCategoryIcon.svg" class="preventSelect positionCard">
+                        <img src="../IMG/MentorshipRatingCategoryIcon.svg" class="preventSelect positionCard">
                     </div>
 
                     <h6 style="color: white;">Mentorship</h6>

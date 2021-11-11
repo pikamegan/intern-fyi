@@ -378,7 +378,7 @@ appSearch.component('company-row', {
                 </div>
                 <div class="col-auto align-items-end">
                     {{company.companyRatings.overallRating}}
-                    <img src="../img/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'>
+                    <img src="../IMG/star.svg" style="height: 20px; width: 20px; margin-bottom: 5px;" class='preventSelect'>
                 </div>
             </div>
             <div class="row justify-content-start">
@@ -386,27 +386,27 @@ appSearch.component('company-row', {
                     {{company.location.locationNeighborhood}}
                 </div>
                 <div v-if="company.location.distance != ''" class="col">
-                    <img src="../img/mapMarkIcon_black.svg" style="height: 20px; width: 20px;" class='preventSelect'>
+                    <img src="../IMG/mapMarkIcon_black.svg" style="height: 20px; width: 20px;" class='preventSelect'>
                     {{company.location.distance}} km away from you
                 </div>
             </div>
             <div class="row justify-content-start">
                 <div class="col-xl-3 col-lg-4">
                     <a :href="writeReviewPage">
-                    <img src="../img/pen_write_review.svg" style="height: 20px; width: 20px;" class='preventSelect'>
+                    <img src="../IMG/pen_write_review.svg" style="height: 20px; width: 20px;" class='preventSelect'>
                         Write a Review
                     </a>
                 </div>
                 <div class="col">
                     <a :href="companyPage">
-                    <img src="../img/eyeSeeCompanyReview.svg" style="height: 20px; width: 20px;" class='preventSelect'>
+                    <img src="../IMG/eyeSeeCompanyReview.svg" style="height: 20px; width: 20px;" class='preventSelect'>
                         View Company Profile
                     </a>
                 </div>
             </div>
             <div class="row justify-content-end">
                 <div class="col">
-                    <img src="../img/arrow_down.svg" style="height: 30px; width: 30px;float: right;" :class="myRotate">
+                    <img src="../IMG/arrow_down.svg" style="height: 30px; width: 30px;float: right;" :class="myRotate">
                 </div>
             </div>
         </div>
@@ -415,7 +415,7 @@ appSearch.component('company-row', {
         <div>
             <div class="row">
                 <div class="col-xxl-2 col-xl-3 col-2 align-self-center">
-                    <img src="../img/click.svg" style="width: 25px; height: 25px; padding: 1px;" class='preventSelect'>
+                    <img src="../IMG/click.svg" style="width: 25px; height: 25px; padding: 1px;" class='preventSelect'>
                     {{company.companyRatings.numberOfClicks}}
                     <div class="d-none d-xl-inline">
                         clicks 
