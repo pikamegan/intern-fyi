@@ -101,8 +101,8 @@
 
         <div class="row mt-2">
             <div class="col-3 d-none d-xl-block d-xxl-block">
-                <img style="height:600px; z-index: -1;" class="preventSelect" src="../img/Saly-15.svg">
-                <!-- <img style="height:600px; z-index: -1;" class="preventSelect" src="../img/climbingBoy_cropped.svg"> -->
+                <img style="height:600px; z-index: -1;" class="preventSelect" src="../IMG/Saly-15.svg">
+                <!-- <img style="height:600px; z-index: -1;" class="preventSelect" src="../IMG/climbingBoy_cropped.svg"> -->
             </div>
             <div class="col">
                 <div class="container">
@@ -242,14 +242,14 @@
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
                 <div class="mx-auto food" style="width: 168px;height: 222px; border-radius: 10px; text-align: center; position: relative;">
                     <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                        <img src="../img/help.svg" class="preventSelect">
+                        <img src="../IMG/help.svg" class="preventSelect">
                         <span class="criteriaTooltipText help">
                             5 stars for reasonable food prices in the area
                         </span>
                     </div>
 
                     <div>
-                        <img src="../img/FoodRatingCategoryIcon.svg" class="preventSelect positionCard">
+                        <img src="../IMG/FoodRatingCategoryIcon.svg" class="preventSelect positionCard">
                     </div>
 
                     <h6 style="color: white;">Food</h6>
@@ -286,14 +286,14 @@
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
                 <div class="mx-auto flatHierarchy" style="width: 168px;height: 222px; border-radius: 10px; text-align: center; position: relative;">
                     <div class="criteriaTooltip" style="position: absolute; left: 3px; top: 3px;">
-                        <img class="help" src="../img/help.svg" class="preventSelect">
+                        <img class="help" src="../IMG/help.svg" class="preventSelect">
                         <span class="criteriaTooltipText help">
                             5 stars for respecting job roles and your internship role
                         </span>
                     </div>
 
                     <div>
-                        <img src="../img/FlatHeirarchyRatingCategoryIcon.svg" class="preventSelect positionCard">
+                        <img src="../IMG/FlatHeirarchyRatingCategoryIcon.svg" class="preventSelect positionCard">
                     </div>
 
                     <h6 style="color: white;">Flat Hierarchy</h6>
