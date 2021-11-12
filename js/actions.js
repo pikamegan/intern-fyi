@@ -421,7 +421,7 @@ function loadCompanyPage() {
                                 }
                             })
                             .catch(error => {
-                                console.log(error.message)
+                                // console.log(error.message)
                                 companyLocation.innerText = '-'
                             });
                     } else {
@@ -622,7 +622,7 @@ function getAllReviews(companyId) {
             }
         })
         .catch(error => {
-            console.log(error)
+            // console.log(error)
             let noReviewStr = `Reviews cannot be shown at this time. Come back later!`
 
             let reviewsBox = document.getElementById("reviewsBox")
@@ -955,8 +955,8 @@ const footer = Vue.createApp({
     },
     methods: {
         goHome(url) {
-            console.log('%c went inside! ', 'background: #222; color: #bada55',
-                'into function');
+            // console.log('%c went inside! ', 'background: #222; color: #bada55',
+            //     'into function');
             window.location = url
         }
     },
