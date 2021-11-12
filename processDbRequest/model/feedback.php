@@ -12,7 +12,7 @@ require 'vendor/autoload.php';
 use Mailgun\Mailgun;
 
 // $domain = "sandboxe6a5fd16c3d24bb799cb9608b0533b69.mailgun.org";
-// $API_KEY = $_ENV['MAILGUN_API_KEY'];
+$API_KEY = $_ENV['MAILGUN_API_KEY'];
 // $API_URL = 'https://api:#' . $API_KEY . '@api.mailgun.net/v2/' . $domain;
 
 use Mailgun\HttpClient\HttpClientConfigurator;
@@ -20,7 +20,7 @@ use Mailgun\Hydrator\NoopHydrator;
 
 $configurator = new HttpClientConfigurator();
 $configurator->setEndpoint('http://bin.mailgun.net/115a10f9');
-$configurator->setApiKey('55e53a8481de135f576622c8e77ab83c-30b9cd6d-b4290394');
+$configurator->setApiKey('$API_KEY');
 $configurator->setDebug(true);
 
 $mg = new Mailgun($configurator, new NoopHydrator());
