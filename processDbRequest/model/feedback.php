@@ -16,7 +16,7 @@ $API_URL = 'https://api:#' . $API_KEY . '@api.mailgun.net/v2/<your-mailgun-domai
 
 # Instantiate the client.
 $mgClient = Mailgun::create($API_KEY, $API_URL);
-$domain = "YOUR_DOMAIN_NAME";
+$domain = "intern-fyi.herokuapp.com";
 $params = array(
   'from'    => $name . '<' . $email . '>',
   'to'      => 'intern.fyi.contact@gmail.com',
