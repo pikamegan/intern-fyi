@@ -31,26 +31,26 @@
     <div class="navbarTemplate">
         <div id="smallNavBar">
             <?php
-session_start();
+            session_start();
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    echo "<navigation-bar-small-login></navigation-bar-small-login>";
-} else {
-    echo "<navigation-bar-small-logout></navigation-bar-small-logout>";
-}
-?>
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                echo "<navigation-bar-small-login></navigation-bar-small-login>";
+            } else {
+                echo "<navigation-bar-small-logout></navigation-bar-small-logout>";
+            }
+            ?>
         </div>
         <div id="bigNavBar">
             <?php
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    $url = $_SESSION['piclink'];
-    echo "<navigation-bar-big-login>
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                $url = $_SESSION['piclink'];
+                echo "<navigation-bar-big-login>
                     <img class='img-fluid m-0' src= '$url' style='width: 60px; height: 60px;'>
                     </navigation-bar-big-login>";
-} else {
-    echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
-}
-?>
+            } else {
+                echo "<navigation-bar-big-logout></navigation-bar-big-logout>";
+            }
+            ?>
         </div>
     </div>
     <!-- copy this part: end -->
@@ -73,17 +73,8 @@ height: auto;">
                     <div class="m-5">
                         <h1 id="questionQuiz" class="textPurple text-start">{{questions[currentQ - 1]}}</h1>
                     </div>
-                    <div class="m-5" v-for="(option, index) in questionOption['q'+ currentQ]":key="option">
-                        <div class="container">
-                            <div class = "row">
-                                <div class="col">
-                                    <span class="fw-bolder fs-3">{{optionAlpha[index]}}</span>
-                                </div>
-                                <div class="col">
-                                    <p>&nbsp&nbsp&nbsp&nbsp<a value="option" @click="calculateScore(index)" class="text-decoration-underline fs-4">{{option}}</a></p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="m-5" v-for="(option, index) in questionOption['q'+ currentQ]" :key="option">
+                        <p><span class="fw-bolder fs-3">{{optionAlpha[index]}}</span>&nbsp&nbsp&nbsp&nbsp<a value="option" @click="calculateScore(index)" class="text-decoration-underline fs-4">{{option}}</a></p>
                     </div>
                 </div>
                 <div v-if="isQuestion && currentQ > qAnswer.length && hearts > 0">
@@ -159,46 +150,46 @@ height: auto;">
                     currentQ: 1,
                     questionOption: {
                         q1: [
-                                "Hobbies and interests",
-                                "Contact details",
-                                "Age",
+                                "Hobbies and interests", 
+                                "Contact details", 
+                                "Age", 
                                 "Passive language"
                             ],
 
                         q2: [
-                                "Print out extra copies of your resume",
-                                "Practice interview question",
-                                "Prepare an outfit",
+                                "Print out extra copies of your resume", 
+                                "Practice interview question", 
+                                "Prepare an outfit", 
                                 "Rely on surface level knowledge of the company"
                             ],
 
                         q3: [
-                                "Job shadowing",
-                                "Panel interview",
-                                "Technical interview",
+                                "Job shadowing", 
+                                "Panel interview", 
+                                "Technical interview", 
                                 "Competency interview"
                                 ],
 
                         q4: [
-                                "Be two hours early",
-                                "Eat",
-                                "Apologise for not having enough experience",
+                                "Be two hours early", 
+                                "Eat", 
+                                "Apologise for not having enough experience", 
                                 "Prepare questions for the interviewer"
-                            ],
+                            ], 
 
                         q5: [
-                            "Follow up with the hiring manager frequently",
-                            "Post about the interview on social media ",
-                            "Send a thank you note to the interviewers",
+                            "Follow up with the hiring manager frequently", 
+                            "Post about the interview on social media ", 
+                            "Send a thank you note to the interviewers", 
                             "Stop searching for new jobs"
-                        ],
+                        ], 
                     },
 
                     questions: [
-                        "What should you include in your resume?",
-                        "What should you NOT do to prepare for an interview?",
-                        "What is NOT a type of interview?",
-                        "What should you do in an interview?",
+                        "What should you include in your resume?", 
+                        "What should you NOT do to prepare for an interview?", 
+                        "What is NOT a type of interview?", 
+                        "What should you do in an interview?", 
                         "What should you do after an interview?"
                     ],
 
