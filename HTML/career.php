@@ -155,7 +155,7 @@
             var element = document.getElementById("personImg");
             if (element.style.left > "25%") {
                 element.style.left = parseInt(element.style.left) - 5 + '%';
-                console.log(element.style.left);
+                // console.log(element.style.left);
             }
         }
 
@@ -163,7 +163,7 @@
             var element = document.getElementById("personImg");
             if (element.style.left < "70%") {
                 element.style.left = parseInt(element.style.left) + 5 + '%';
-                console.log(element.style.left);
+                // console.log(element.style.left);
             }
 
         }
