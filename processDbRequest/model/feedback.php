@@ -5,12 +5,24 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['type']) && 
     $email = $_POST['email'];
     $type = $_POST['type'];
     $feedback = $_POST['feedback'];
-
-    $msg = "From: " . $name . "\n Email: " . $email . "\n Type: " . $type . "\n Feedback: " . $feedback;
-
-    $headers = 'From: $email';
-    $sent = mail('intern.fyi.contact@gmail.com', 'Feedback Form Submission', $msg, $headers);
 }
+
+# Include the Autoloader (see "Libraries" for install instructions)
+require 'vendor/autoload.php';
+use Mailgun\Mailgun;
+
+# Instantiate the client.
+$mgClient = Mailgun::create('PRIVATE_API_KEY', 'https://API_HOSTNAME');
+$domain = "YOUR_DOMAIN_NAME";
+$params = array(
+  'from'    => $name . '<' . $email . '>',
+  'to'      => 'intern.fyi.contact@gmail.com',
+  'subject' => $type,
+  'text'    => $feedback
+);
+
+# Make the call to the client.
+$sent = $mgClient->messages()->send($domain, $params);
 
 
 ?>
