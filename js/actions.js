@@ -153,7 +153,7 @@ function showCriteria() {
     }
 
     let criteriaImg = [
-        'pay_companyreview.svg', 'skills_companyreview.svg', 'companyculture_companyreview.svg', 'food_companyreview.svg',
+        '../IMG/pay_companyreview.svg', 'skills_companyreview.svg', 'companyculture_companyreview.svg', 'food_companyreview.svg',
         'mentorship_companyreview.svg', 'flathierarchy_companyreview.svg'
     ]
 
@@ -173,7 +173,7 @@ function showCriteria() {
             <div class="accordion-body px-5">
                 <div class="row mb-1 align-items-center">
                     <div class="col-12 col-md-6 justify-content-center"><img
-                            src="../IMG/${criteriaImg[counter - 1]}" alt="${criterion} criteria"
+                            src="${criteriaImg[counter - 1]}" alt="${criterion} criteria"
                             class="img-fluid d-none d-sm-block"></div>
                     <div class="col-12 col-md-6 d-flex bd-highlight flex-column mb-3">
     
