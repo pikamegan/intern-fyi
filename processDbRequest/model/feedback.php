@@ -24,7 +24,7 @@ $configurator->setApiKey('$API_KEY');
 $configurator->setDebug(true);
 
 $mg = new Mailgun($configurator, new NoopHydrator());
-$mg->messages()->send('example.com', [
+$mg->messages()->send('intern-fyi.herokuapp.com', [
   'from'    => 'meganthong@outlook.com',
   'to'      => 'megan.thong.2020@scis.smu.edu.sg',
   'subject' => 'The PHP SDK is awesome!',
