@@ -153,8 +153,8 @@ function showCriteria() {
     }
 
     let criteriaImg = [
-        'index0', '../IMG/pay_companyreview.svg', 'skills_companyreview.svg', 'companyculture_companyreview.svg', 'food_companyreview.svg',
-        'mentorship_companyreview.svg', 'flathierarchy_companyreview.svg'
+        'index0', '../IMG/pay_companyreview.svg', '../IMG/skills_companyReview.svg', '../IMG/companyculture_companyreview.svg', '../IMG/food_companyreview.svg',
+        '../IMG/mentorship_companyreview.svg', 'f../IMG/lathierarchy_companyreview.svg'
     ]
 
     let criteriaStr = ``
