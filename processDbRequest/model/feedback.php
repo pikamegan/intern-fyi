@@ -11,8 +11,11 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['type']) && 
 require 'vendor/autoload.php';
 use Mailgun\Mailgun;
 
+$API_KEY = $_ENV['MAILGUN_API_KEY'];
+$API_URL = 'https://api:#' . $API_KEY . '@api.mailgun.net/v2/<your-mailgun-domain>';
+
 # Instantiate the client.
-$mgClient = Mailgun::create('PRIVATE_API_KEY', 'https://API_HOSTNAME');
+$mgClient = Mailgun::create($API_KEY, $API_URL);
 $domain = "YOUR_DOMAIN_NAME";
 $params = array(
   'from'    => $name . '<' . $email . '>',
