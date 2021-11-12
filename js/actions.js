@@ -757,7 +757,7 @@ navigationBar.component('navigation-bar-small-login', {
         </div>
     </div>
     <div class="collapse navbar-collapse text-center" id="navbarCollapse">
-        <a href="">Logout</a><br>
+        <a href="../processDbRequest/model/signout.php">Logout</a><br>
         <a href="../HTML/myProfile.php">My Profile</a><br>
         <a href="../HTML/WriteAReview.php">Write a Review &#9998;</a><br>
     </div>
