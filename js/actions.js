@@ -757,9 +757,9 @@ navigationBar.component('navigation-bar-small-login', {
         </div>
     </div>
     <div class="collapse navbar-collapse text-center" id="navbarCollapse">
-        <a href="../processDbRequest/model/signout.php">Logout</a><br>
-        <a href="../HTML/myProfile.php">My Profile</a><br>
-        <a href="../HTML/WriteAReview.php">Write a Review &#9998;</a><br>
+        <a class="fs-5" href="../processDbRequest/model/signout.php">Logout</a><br>
+        <a class="fs-5" href="../HTML/myProfile.php">My Profile</a><br>
+        <a class="fs-5" href="../HTML/WriteAReview.php">Write a Review &#9998;</a><br><br>
     </div>
     </nav>
     <!-- end of small navigation bar -->`,
@@ -805,9 +805,10 @@ navigationBar.component('navigation-bar-small-logout', {
             </div>
         </div>
         <div class="collapse navbar-collapse text-center" id="navbarCollapse">
-            <a href="../HTML/signup.php">Register</a><br>
-            <a href="../HTML/login.php">Login</a><br>
-            <a href="../HTML/WriteAReview.php">Write a Review &#9998;</a><br>
+            <a class="fs-5" href="../HTML/signup.php">Register</a><br>
+            <a class="fs-5" href="../HTML/login.php">Login</a><br>
+            <a class="fs-5" href="../HTML/WriteAReview.php">Write a Review &#9998;</a><br>
+            <br>
         </div>
     </nav>
     <!-- end of small navigation bar -->`,
