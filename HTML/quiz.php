@@ -75,11 +75,13 @@ height: auto;">
                     </div>
                     <div class="m-5" v-for="(option, index) in questionOption['q'+ currentQ]":key="option">
                         <div class="container">
-                            <div class="col">
-                                <span class="fw-bolder fs-3">{{optionAlpha[index]}}</span>
-                            </div>
-                            <div class="col">
-                                <p>&nbsp&nbsp&nbsp&nbsp<a value="option" @click="calculateScore(index)" class="text-decoration-underline fs-4">{{option}}</a></p>
+                            <div class = "row">
+                                <div class="col">
+                                    <span class="fw-bolder fs-3">{{optionAlpha[index]}}</span>
+                                </div>
+                                <div class="col">
+                                    <p>&nbsp&nbsp&nbsp&nbsp<a value="option" @click="calculateScore(index)" class="text-decoration-underline fs-4">{{option}}</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>
