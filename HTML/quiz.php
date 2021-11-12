@@ -206,7 +206,7 @@ height: auto;">
                 calculateScore($chosenAnswer) {
                     // 0 is A, 1 is B, 2 is C, 3 is D
                     let answer = this.qAnswer[this.currentQ - 1]
-                    console.log(answer);
+                    // console.log(answer);
 
                     if (answer !== $chosenAnswer) {
                         //console.log("wrong");
