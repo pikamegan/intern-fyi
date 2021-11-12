@@ -299,7 +299,7 @@ session_start();
 
         function hasUpperC(input) {
             for (let string of input) {
-                if ((string === string.toUpperCase()) && isNaN(string)) {
+                if ((string === string.toUpperCase()) && isAlpha(string)) {
                     // console.log(string);
                     return true;
 
