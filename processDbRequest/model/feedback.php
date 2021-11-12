@@ -11,12 +11,12 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['type']) && 
 require 'vendor/autoload.php';
 use Mailgun\Mailgun;
 
+$domain = "sandboxe6a5fd16c3d24bb799cb9608b0533b69.mailgun.org";
 $API_KEY = $_ENV['MAILGUN_API_KEY'];
-$API_URL = 'https://api:#' . $API_KEY . '@api.mailgun.net/v2/<your-mailgun-domain>';
+$API_URL = 'https://api:#' . $API_KEY . '@api.mailgun.net/v2/' . $domain;
 
 # Instantiate the client.
 $mgClient = Mailgun::create($API_KEY, $API_URL);
-$domain = "intern-fyi.herokuapp.com";
 $params = array(
   'from'    => $name . '<' . $email . '>',
   'to'      => 'intern.fyi.contact@gmail.com',
