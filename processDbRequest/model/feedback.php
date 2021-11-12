@@ -11,21 +11,36 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['type']) && 
 require 'vendor/autoload.php';
 use Mailgun\Mailgun;
 
-$domain = "sandboxe6a5fd16c3d24bb799cb9608b0533b69.mailgun.org";
-$API_KEY = $_ENV['MAILGUN_API_KEY'];
-$API_URL = 'https://api:#' . $API_KEY . '@api.mailgun.net/v2/' . $domain;
+// $domain = "sandboxe6a5fd16c3d24bb799cb9608b0533b69.mailgun.org";
+// $API_KEY = $_ENV['MAILGUN_API_KEY'];
+// $API_URL = 'https://api:#' . $API_KEY . '@api.mailgun.net/v2/' . $domain;
 
+use Mailgun\HttpClient\HttpClientConfigurator;
+use Mailgun\Hydrator\NoopHydrator;
+
+$configurator = new HttpClientConfigurator();
+$configurator->setEndpoint('http://bin.mailgun.net/115a10f9');
+$configurator->setApiKey('55e53a8481de135f576622c8e77ab83c-30b9cd6d-b4290394');
+$configurator->setDebug(true);
+
+$mg = new Mailgun($configurator, new NoopHydrator());
+$mg->messages()->send('example.com', [
+  'from'    => 'meganthong@outlook.com',
+  'to'      => 'megan.thong.2020@scis.smu.edu.sg',
+  'subject' => 'The PHP SDK is awesome!',
+  'text'    => 'It is so simple to send a message.'
+]);
 # Instantiate the client.
-$mgClient = Mailgun::create($API_KEY, $API_URL);
-$params = array(
-  'from'    => $name . '<' . $email . '>',
-  'to'      => 'intern.fyi.contact@gmail.com',
-  'subject' => $type,
-  'text'    => $feedback
-);
+// $mgClient = Mailgun::create($API_KEY, $API_URL);
+// $params = array(
+//   'from'    => $name . '<' . $email . '>',
+//   'to'      => 'intern.fyi.contact@gmail.com',
+//   'subject' => $type,
+//   'text'    => $feedback
+// );
 
 # Make the call to the client.
-$sent = $mgClient->messages()->send($domain, $params);
+// $sent = $mgClient->messages()->send($domain, $params);
 
 
 ?>
