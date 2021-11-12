@@ -411,7 +411,7 @@ appSearch.component('company-row', {
             </div>
         </div>
     </div>
-    <div class="collapsibleContentSearch" :style="{'max-height':myMaxHeight}" :scrollHeight='maxScrollHeight'>
+    <div class="overflow-auto collapsibleContentSearch" :style="{'max-height':myMaxHeight}" :scrollHeight='maxScrollHeight'>
         <div>
             <div class="row">
                 <div class="col-xxl-2 col-xl-3 col-2 align-self-center">
