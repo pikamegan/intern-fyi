@@ -680,7 +680,7 @@ function loadFAQ() {
 
     var idNum = 0
     for (question in questions) {
-        questionStr += `<div class="mx-auto mb-4 col-xs-12 col-sm-12 col-md-4 m-sm-4 shadow-lg ms-lg-4 whiteBox">
+        questionStr += `<div class="overflow-auto mx-auto mb-4 col-xs-12 col-sm-12 col-md-4 m-sm-4 shadow-lg ms-lg-4 whiteBox">
         <h2 class="pt-4 pb-1 mx-3 text-start fw-bold" style="color: #4E6AF0;">${question}</h2>
         <ul class="list-group list-group-flush">`
         for (q in questions[question]) {
