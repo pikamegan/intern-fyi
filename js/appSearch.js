@@ -314,8 +314,10 @@ appSearch.component('company-row', {
             myRotate: 'myRotateOff preventSelect',
             maxScrollHeight: '', //to be done
             isSelected: false,
-            companyPage: encodeURI("./company.php?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
-            writeReviewPage: encodeURI("./WriteAReview.php?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
+            // companyPage: encodeURI("./company.php?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
+            // writeReviewPage: encodeURI("./WriteAReview.php?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
+            companyPage: "./company.php?cid=2&cname=Amazon,% 20Singapore",
+            writeReviewPage: "./WriteAReview.php?cid=2&cname=Amazon,%20Singapore"
         };
     },
     props: ['company', 'selectedCompanyID'],
