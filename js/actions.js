@@ -41,10 +41,15 @@ function closeForm() {
 }
 
 function validate_form() {
+    let submitBtn = document.getElementById("submitBtn")
     let role = document.forms['review_form'].jobtitle.value
     let roleMsg = document.getElementById("roleMsg")
+
+    let error = 0;
+
     if (role.length == 0) {
         roleMsg.style.display = "block"
+        error += 1 ;
     } else {
         roleMsg.style.display = "none"
     }
@@ -53,6 +58,7 @@ function validate_form() {
     let overallMsg = document.getElementById("overallMsg")
     if (overallRadio.length == 0) {
         overallMsg.style.display = "block"
+        error += 1 ;
     } else {
         overallMsg.style.display = "none"
     }
@@ -64,6 +70,7 @@ function validate_form() {
 
         if (thisRadio.value == "") {
             criteriaMsg.style.display = "block"
+            error += 1 ;
         } else {
             criteriaMsg.style.display = "none"
         }
@@ -73,9 +80,17 @@ function validate_form() {
     let reviewMsg = document.getElementById("reviewMsg")
     if (review.length < 11) {
         reviewMsg.style.display = "block"
+        error += 1 ;
     } else {
         reviewMsg.style.display = "none"
     }
+
+    if (error === 0) {
+        btn.disabled = false;
+    } else {
+        btn.disabled = true;
+    }
+
 }
 
 
