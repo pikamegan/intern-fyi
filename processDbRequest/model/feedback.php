@@ -7,40 +7,34 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['type']) && 
     $feedback = $_POST['feedback'];
 }
 
-# Include the Autoloader (see "Libraries" for install instructions)
-require 'vendor/autoload.php';
-use Mailgun\Mailgun;
+  // Setting content-type: text/plain will allow CloudMailin
+  // to store this response if it's an error
+  header("Content-type: text/plain");
 
-// $domain = "sandboxe6a5fd16c3d24bb799cb9608b0533b69.mailgun.org";
-$API_KEY = $_ENV['MAILGUN_API_KEY'];
-// $API_URL = 'https://api:#' . $API_KEY . '@api.mailgun.net/v2/' . $domain;
+  $to = $_POST['envelope']['to'];
+  if ($to == 'e335c1e3d78a583df561@cloudmailin.net'){
+    http_response_code(201);
+    echo("success\n");
+  }else{
+    http_response_code(403);
+    echo("user not allowed here\n");
+  }
 
-use Mailgun\HttpClient\HttpClientConfigurator;
-use Mailgun\Hydrator\NoopHydrator;
+  echo("Envelope:\n");
+  print_r($_POST['envelope']);
 
-$configurator = new HttpClientConfigurator();
-$configurator->setEndpoint('http://bin.mailgun.net/115a10f9');
-$configurator->setApiKey('$API_KEY');
-$configurator->setDebug(true);
+  echo("Headers:\n");
+  print_r($_POST['headers']);
 
-$mg = new Mailgun($configurator, new NoopHydrator());
-$mg->messages()->send('intern-fyi.herokuapp.com', [
-  'from'    => 'meganthong@outlook.com',
-  'to'      => 'megan.thong.2020@scis.smu.edu.sg',
-  'subject' => 'The PHP SDK is awesome!',
-  'text'    => 'It is so simple to send a message.'
-]);
-# Instantiate the client.
-// $mgClient = Mailgun::create($API_KEY, $API_URL);
-// $params = array(
-//   'from'    => $name . '<' . $email . '>',
-//   'to'      => 'intern.fyi.contact@gmail.com',
-//   'subject' => $type,
-//   'text'    => $feedback
-// );
+  echo("Plain:\n");
+  echo($_POST['plain']."\n");
 
-# Make the call to the client.
-// $sent = $mgClient->messages()->send($domain, $params);
+  echo("HTML:\n");
+  echo($_POST['html']."\n");
+
+  echo("Attachments:\n");
+  print_r($_FILES["attachments"]);
+
 
 
 ?>
