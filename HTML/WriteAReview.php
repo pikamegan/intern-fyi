@@ -124,18 +124,13 @@
                     <div class="row mt-5">
                         <div class="mb-3">
                             <label for="comment" class="form-label">Review</label>
-                            <textarea v-model="review" name="reviewdesc" class="form-control" aria-label="comment" style="height:300px;" placeholder="Minimum 10 characters" required></textarea>
+                            <textarea name="reviewdesc" class="form-control" aria-label="comment" style="height:300px;" placeholder="Minimum 10 characters" required></textarea>
                             <p class="text-center text-danger m-1" style="display: none;" id="reviewMsg">Please enter at least 10 characters</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="d-flex justify-content-center">
-                            <div v-if="review.length < 10">
-                                <button id ="submitBtn" disabled class="opacity-50 btn text-white top-50 start-50 customBtn" onclick="validate_form()">Submit Your Review</button>
-                            </div>
-                            <div v-if="review.length >= 10">
-                                <button id ="submitBtn" class="btn text-white top-50 start-50 customBtn" onclick="validate_form()">Submit Your Review</button>
-                            </div>
+                            <button class="btn text-white top-50 start-50 customBtn" onclick="validate_form()">Submit Your Review</button>
                         </div>
                     </div>
                 </form>

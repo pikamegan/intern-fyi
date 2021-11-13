@@ -5,7 +5,6 @@ const app = Vue.createApp({
             errorMessage: null,
             theCompanyDict: {},
             selectedCompany: "google",
-            review: ""
         }
     },
     methods: {
