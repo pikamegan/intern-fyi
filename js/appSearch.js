@@ -313,11 +313,7 @@ appSearch.component('company-row', {
             myMaxHeight: null,
             myRotate: 'myRotateOff preventSelect',
             maxScrollHeight: '', //to be done
-            isSelected: false,
-            // companyPage: encodeURI("./company.php?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
-            // writeReviewPage: encodeURI("./WriteAReview.php?cid=" + this.company.companyID + "&cname=" + this.company.companyName),
-            companyPage: "./company.php?cid=2&cname=Amazon,% 20Singapore",
-            writeReviewPage: "./WriteAReview.php?cid=2&cname=Amazon,%20Singapore"
+            isSelected: false
         };
     },
     props: ['company', 'selectedCompanyID'],
@@ -370,7 +366,7 @@ appSearch.component('company-row', {
     template: `
 <div class="row">
     <div class="collapsibleSearch shadow" @click='select' @select='changeState'>
-        <a :href="companyPage">
+        <a :href="encodeURI('./company.php?cid=' + company.companyID + '&cname=' + company.companyName)">
             <img :src="company.companyInfo.imageLink" style="height: 100px; width: 100px; float: left; border-radius: 10px" class='preventSelect'>
         </a>
         <div class="container-fluid">
@@ -394,13 +390,13 @@ appSearch.component('company-row', {
             </div>
             <div class="row justify-content-start">
                 <div class="col-xl-3 col-lg-4">
-                    <a :href="writeReviewPage">
+                    <a :href="encodeURI('./WriteAReview.php?cid=' + company.companyID + '&cname=' + company.companyName)">
                     <img src="../IMG/pen_write_review.svg" style="height: 20px; width: 20px;" class='preventSelect'>
                         Write a Review
                     </a>
                 </div>
                 <div class="col">
-                    <a :href="companyPage">
+                    <a :href="encodeURI('./company.php?cid=' + company.companyID + '&cname=' + company.companyName)">
                     <img src="../IMG/eyeSeeCompanyReview.svg" style="height: 20px; width: 20px;" class='preventSelect'>
                         View Company Profile
                     </a>
@@ -413,7 +409,7 @@ appSearch.component('company-row', {
             </div>
         </div>
     </div>
-    <div class="overflow-auto collapsibleContentSearch" :style="{'max-height':myMaxHeight}" :scrollHeight='maxScrollHeight'>
+    <div class="collapsibleContentSearch" :style="{'max-height':myMaxHeight}" :scrollHeight='maxScrollHeight'>
         <div>
             <div class="row">
                 <div class="col-xxl-2 col-xl-3 col-2 align-self-center">
