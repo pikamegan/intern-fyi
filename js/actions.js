@@ -392,7 +392,7 @@ function loadCompanyPage() {
 
                     //get location start
                     // uncomment for testing / deploying
-                    // const apiKey = 'AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA';
+                    const apiKey = 'AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA';
                     let addr = company.companyName
                     let locationPlaceholder = {
                         locationNeighborhood: '',

@@ -36,7 +36,7 @@
 //map functions end==========================
 
 // uncomment for testing / deploying
-// const apiKey = 'AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA';
+const apiKey = 'AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA';
 const appSearch = Vue.createApp({
     data() {
         return {
