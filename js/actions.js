@@ -558,7 +558,7 @@ function getAllReviews(companyId) {
             let reviewStr = ``
 
             let companyReviewNum = document.getElementById("companyReviewNum")
-            companyReviewNum.innerHTML += `${posts.length} people reviewed`
+            companyReviewNum.innerHTML += `${posts.length} reviews`
 
             let totalReviewNum = document.getElementById("totalReviewNum")
             totalReviewNum.innerHTML += `(${posts.length})`
