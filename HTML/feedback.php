@@ -84,13 +84,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="mb-3">
                             <label for="feedback" class="form-label">Feedback<span style="color:red">*</span></label>
                             <textarea class="form-control" name="body" placeholder="Do include as many details as possible" id="feedback" aria-label="Feedback here" style="height:300px;" required></textarea>
                             <p class="text-danger m-1" style="font-size: small; display: none;" id="feedbackMsg">Please enter more than 10 characters in your feedback</p>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="d-flex justify-content-center">
                             <button class="btn text-white top-50 start-50 customBtn" id="submitBtn" onclick="validateFeedback()">Submit</button>

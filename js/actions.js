@@ -280,17 +280,16 @@ function validateFeedback() {
         emailMsg.style.display = "none"
     }
 
-    let feedback = document.forms['feedback_form'].feedback.value
-    let feedbackMsg = document.getElementById("feedbackMsg")
-    if (feedback.length < 11) {
-        feedbackMsg.style.display = "block"
-        event.preventDefault()
-    } else {
-        feedbackMsg.style.display = "none"
-        feedbackMsg = feedbackMsg.replace(/\s/g, '%20')
-    }
+    // let feedback = document.forms['feedback_form'].feedback.value
+    // let feedbackMsg = document.getElementById("feedbackMsg")
+    // if (feedback.length < 11) {
+    //     feedbackMsg.style.display = "block"
+    //     event.preventDefault()
+    // } else {
+    //     feedbackMsg.style.display = "none"
+    // }
 
-    if (name.length > 0 && email.length > 0 && feedback.length > 10) {
+    if (name.length > 0 && email.length > 0) {
         // Open mailto links in a new tab
         let feedbackForm = document.getElementById("feedback_form")
         feedbackForm.action = encodeURI(`mailto:intern.fyi.contact@gmail.com`)
