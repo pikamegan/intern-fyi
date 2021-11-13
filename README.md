@@ -14,9 +14,6 @@ You may use these set of login and password:
  PW: Esther@123
 
 
-
-
-
 Thank you.
 
 
