@@ -287,6 +287,7 @@ function validateFeedback() {
         event.preventDefault()
     } else {
         feedbackMsg.style.display = "none"
+        feedbackMsg = feedbackMsg.replace(/\s/g, '%20')
     }
 
     if (name.length > 0 && email.length > 0 && feedback.length > 10) {
