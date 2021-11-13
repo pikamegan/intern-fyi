@@ -314,8 +314,8 @@ if (isset($_SESSION['errorUser'])) {
 
         function hasNonAlpha(input) {
             let nonAlphaList = ["~", "`", "!", "@", "#", "$", "%", "^", "%", "&", "*", "-", "+", "?"]
-            for (let nonAlpha of nonAlphaList) {
-                if (input.indexOf(nonAlpha) !== -1) {
+            for (let str of input) {
+                if (str in nonAlphaList) {
                     return true;
                 }
             }
@@ -330,7 +330,7 @@ if (isset($_SESSION['errorUser'])) {
                 // returns -1 when the name is not in the fname or lname
                 return false;
             } else {
-                console.log(fullName);
+                // console.log(fullName);
                 return true;
             }
 
