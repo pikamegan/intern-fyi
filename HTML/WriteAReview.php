@@ -63,7 +63,6 @@
         <div class="p-sm-5 mb-4 bg-light shadow-lg feedbackBg">
             <div class="container-fluid px-sm-5 py-5">
                 <form action="../processDbRequest/model/add.php" name="review_form" method="POST" id="reviewForm">
-                    <!-- remove role="form" to test -->
                     <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 40px;">
                         <div class="bd-highlight">
                             <img src="../IMG/deletebutton.svg" onclick="resetDraft('clearReview')" alt="Clear draft" class="img-fluid pointer" style="width: 50px; height: 50px;">
