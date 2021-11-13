@@ -22,45 +22,15 @@ if (isset($_POST['companyid']) && isset($_POST['jobtitle']) && isset($_POST['sch
 
     $dao = new reviewDAO();
     $status = $dao->addreview($companyid, $jobtitle, $schoolemail, $reviewdesc, $overallrating, $criteria1, $criteria2, $criteria3, $criteria4, $criteria5, $criteria6);
-    echo $status;
-  }
+}
 
-?>
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../CSS/style.css">
-    <!-- vue -->
-    <script src="https://unpkg.com/vue@next"></script>
-    <title>Review Submission Status</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <?php
 if ($status) {
-    echo "<h1>Insertion was successful</h1>";
-    echo "Click <a href='display.php'>here</a> to return to Main Page";
-    header("Location: ../../HTML/company.php?cid=$companyid");
-    exit;
+  header("Location: ../../HTML/company.php?cid=$companyid");
+  exit;
 } else {
-    echo "<h1>Insertion was NOT successful</h1>";
-    header("Location: ../../HTML/company.php?cid=$companyid");
-    exit;
-
+  header("Location: ../../HTML/company.php?cid=$companyid");
+  exit;
 }
 
 ?>
-</body>
-</html>
+
