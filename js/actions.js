@@ -78,7 +78,7 @@ function validate_form() {
 
     let review = document.forms['review_form'].reviewdesc.value
     let reviewMsg = document.getElementById("reviewMsg")
-    if (review.length < 11) {
+    if (review.length < 10) {
         reviewMsg.style.display = "block"
         error += 1 ;
     } else {
@@ -86,9 +86,11 @@ function validate_form() {
     }
 
     if (error === 0) {
-        btn.disabled = false;
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("opacity-50");
     } else {
-        btn.disabled = true;
+        submitBtn.disabled = true;
+        submitBtn.classList.add("opacity-50");
     }
 
 }
