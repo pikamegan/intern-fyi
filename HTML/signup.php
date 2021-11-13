@@ -201,7 +201,7 @@
             }
         }
 
-        function checkPasswordRequirement(inputField) {
+        function checkPasswordRequirement() {
             let fName = document.getElementById("signupFirstName").value
             let lName = document.getElementById("signupLastName").value
             let userPWInput = document.getElementById("signupPw1Input").value
@@ -218,6 +218,8 @@
             let errorMsg4 = "At least one number";
             let errorMsg5 = "At least one non-alphanumeric character (~`!@#$%^&*-+?)";
 
+            pwSuccess = true;
+
             // 0. Empty input
             if (userPWInput.length <= 0) {
                 document.getElementById("error1").innerHTML = "";
@@ -226,15 +228,15 @@
                 document.getElementById("error4").innerHTML = "";
                 document.getElementById("error5").innerHTML = "";
                 document.getElementById("error6").innerHTML = "";
+                pwSuccess = false;
             }
 
             // 1. Password length
             if (userPWInput.length >= 8) {
                 errorMsgSuccess("error1", errorMsg1);
-
-
             } else {
                 errorMsgFailure("error1", errorMsg1);
+                pwSuccess = false;
             }
 
             // 2. Uppercase
@@ -242,6 +244,7 @@
                 errorMsgSuccess("error2", errorMsg2);
             } else {
                 errorMsgFailure("error2", errorMsg2);
+                pwSuccess = false;
             }
 
             // 3. Lowercase
@@ -249,6 +252,7 @@
                 errorMsgSuccess("error3", errorMsg3);
             } else {
                 errorMsgFailure("error3", errorMsg3);
+                pwSuccess = false;
             }
 
 
@@ -257,6 +261,7 @@
                 errorMsgSuccess("error4", errorMsg4);
             } else {
                 errorMsgFailure("error4", errorMsg4);
+                pwSuccess = false;
             }
 
             // 5. Non-alphanumeric
@@ -264,6 +269,7 @@
                 errorMsgSuccess("error5", errorMsg5);
             } else {
                 errorMsgFailure("error5", errorMsg5);
+                pwSuccess = false;
             }
 
             // 6. Name
@@ -272,7 +278,7 @@
             // } else {
             //     errorMsgFailure("error6", errorMsg6);
             // }
-
+            return pwSuccess;
 
         }
 
@@ -356,6 +362,13 @@
             }
 
         }
+
+        document.getElementById("signupBtn").addEventListener("click", function(event) {
+            if (!checkPasswordRequirement()){
+                //if pw Fails
+                event.preventDefault()
+            }
+        });
     </script>
 
 
