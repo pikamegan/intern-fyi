@@ -122,8 +122,8 @@
                     <div class="row mt-5">
                         <div class="mb-3">
                             <label for="comment" class="form-label">Review</label>
-                            <textarea name="reviewdesc" class="form-control" aria-label="comment" style="height:300px;" placeholder="Minimum 10 characters" required></textarea>
-                            <p class="text-center text-danger m-1" style="display: none;" id="reviewMsg">Please enter at least 10 characters</p>
+                            <textarea name="reviewdesc" class="form-control" aria-label="comment" style="height:300px;" placeholder="A good review needs at least 10 characters, but a great review should have more than 20." required></textarea>
+                            <p class="text-center text-danger m-1" style="display: none;" id="reviewMsg">Please write a review</p>
                         </div>
                     </div>
                     <div class="row">
