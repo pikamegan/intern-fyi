@@ -24,8 +24,8 @@
     <div class="navbarTemplate">
         <div id="smallNavBar">
             <?php
-session_start();
-?>
+            session_start();
+            ?>
         </div>
     </div>
     <!-- copy this part: end -->
@@ -39,19 +39,19 @@ session_start();
         <div class="inBodyDiv">
             <div id="signupName" class="form-row signupRow">
                 <div class="col col-12 mb-3">
-                <label for="signupFirstName" class="form-label">First name<span style="color:red">*</span></label>
+                    <label for="signupFirstName" class="form-label">First name<span style="color:red">*</span></label>
                     <input id="signupFirstName" name="fname" class="form-control signupField" type="text" placeholder="First name" required autofocus="">
                     <p class="text-center text-danger m-1" style="display: none;" id="firstnameError">Please enter your first name</p>
                 </div>
 
                 <div class="col col-12 mb-3">
-                <label for="signupLastName" class="form-label">Last name<span style="color:red">*</span></label>
+                    <label for="signupLastName" class="form-label">Last name<span style="color:red">*</span></label>
                     <input id="signupLastName" name="lname" class="form-control signupField" type="text" placeholder="Last name" required autofocus="">
                     <p class="text-center text-danger m-1" style="display: none;" id="lastnameError">Please enter your last name</p>
                 </div>
 
                 <div class="col col-12 avatar">
-                <label for="signupGender" class="form-label">Gender<span style="color:red">*</span></label>
+                    <label for="signupGender" class="form-label">Gender<span style="color:red">*</span></label>
                     <label class="sr-only " for="signupGender">Gender</label>
                     <div id="signupGender" class="dropdown">
                         <select name="gender" id="genders" class="form-control" v-model="gender" @click="changeAvatar" required>
@@ -74,7 +74,7 @@ session_start();
                 </div>
 
                 <div class="col col-12 mb-1">
-                <label for="schoolEmail" class="form-label">School Email<span style="color:red">*</span></label>
+                    <label for="schoolEmail" class="form-label">School Email<span style="color:red">*</span></label>
                     <input id="schoolEmail" name="schoolEmail" class="form-control signupField" type="email" placeholder="School email" required autocomplete="email">
                     <p class="text-center text-danger m-1" style="display: none;" id="schoolnameError">Please your school email</p>
                 </div>
@@ -82,7 +82,7 @@ session_start();
 
             <div id="signupPw1" class="form-row signupRow">
                 <div class="col">
-                <label for="signupPw1Input" class="form-label">Password<span style="color:red">*</span></label>
+                    <label for="signupPw1Input" class="form-label">Password<span style="color:red">*</span></label>
                     <input name="pw1" id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password" required autofocus="" oninput="checkPasswordRequirement()">
                     <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
                     <p class="text-center text-danger m-1" style="display: none;" id="pwOneError">Please enter your password</p>
@@ -110,20 +110,20 @@ session_start();
 
             <div id="signupPw2" class="form-row signupRow">
                 <div class="col">
-                <label for="signupPw2Input" class="form-label">Confirm password<span style="color:red">*</span></label>
+                    <label for="signupPw2Input" class="form-label">Confirm password<span style="color:red">*</span></label>
                     <input name="pw" id="signupPw2Input" class="form-control signupField" type="password" placeholder="Confirm password" oninput="isPasswordMatch()" required autofocus="">
                     <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw2Input,signupPw2Toggle)"></i>
                     <p class="text-center text-danger m-1" style="display: none;" id="pwCError">Please confirm your password</p>
                     <?php
 
-if (isset($_SESSION["errorPW"])) {
-    echo $_SESSION["errorPW"];
-}
+                    if (isset($_SESSION["errorPW"])) {
+                        echo $_SESSION["errorPW"];
+                    }
 
-if (isset($_SESSION['errorUser'])) {
-    echo $_SESSION['errorUser'];
-}
-?>
+                    if (isset($_SESSION['errorUser'])) {
+                        echo $_SESSION['errorUser'];
+                    }
+                    ?>
 
                 </div>
             </div>
@@ -216,7 +216,7 @@ if (isset($_SESSION['errorUser'])) {
             let errorMsg2 = "At least one uppercase letter";
             let errorMsg3 = "At least one lowercase letter";
             let errorMsg4 = "At least one number";
-            let errorMsg5 = "At least one non-alphanumeric character (~`!@#$%^%&*-+?)";
+            let errorMsg5 = "At least one non-alphanumeric character (~`!@#$%^&*-+?)";
 
             // 0. Empty input
             if (userPWInput.length <= 0) {
@@ -267,11 +267,11 @@ if (isset($_SESSION['errorUser'])) {
             }
 
             // 6. Name
-            if (hasProfileName(userPWInput, fName + '.' + lName)) {
-                errorMsgSuccess("error6", errorMsg6);
-            } else {
-                errorMsgFailure("error6", errorMsg6);
-            }
+            // if (hasProfileName(userPWInput, fName + '.' + lName)) {
+            //     errorMsgSuccess("error6", errorMsg6);
+            // } else {
+            //     errorMsgFailure("error6", errorMsg6);
+            // }
 
 
         }
@@ -286,16 +286,21 @@ if (isset($_SESSION['errorUser'])) {
             document.getElementById(errorID).innerHTML += "<div class='errorMsg d-inline text-danger'>" + errorMsgNo + "</div>"
         }
 
+        function isAlpha(ch) {
+            return /^[A-Z]$/i.test(ch);
+        }
+
         function hasLowerC(input) {
             // console.log(input);
             for (let string of input) {
-                if ((string === string.toLowerCase()) && isNaN(string)) {
+                if ((string === string.toLowerCase()) && isNaN(string) && isAlpha(string)) {
                     return true;
                 }
             }
             return false;
 
         }
+
 
         function hasUpperC(input) {
             for (let string of input) {
@@ -309,11 +314,12 @@ if (isset($_SESSION['errorUser'])) {
         }
 
         function hasNum(input) {
-            return !isNaN(parseFloat(input)) && isFinite(n);
+            // return !isNaN(parseFloat(input)) && isFinite(input);
+            return input.match(/\d+/g);
         }
 
         function hasNonAlpha(input) {
-            let nonAlphaList = ["~", "`", "!", "@", "#", "$", "%", "^", "%", "&", "*", "-", "+", "?"]
+            let nonAlphaList = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "-", "+", "?"]
             for (let nonAlpha of nonAlphaList) {
                 if (input.indexOf(nonAlpha) !== -1) {
                     return true;
@@ -350,7 +356,6 @@ if (isset($_SESSION['errorUser'])) {
             }
 
         }
-
     </script>
 
 
