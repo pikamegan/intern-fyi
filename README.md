@@ -5,8 +5,8 @@ Please visit: https://intern-fyi.herokuapp.com/HTML/home.php
 *No setup is required, you can use the link above on any device.
 
 You may use these set of login and password:
-    ID: john.doe@smu.edu.sg
-    PW: johnDoe@123
+    ID: mokkie@smu.edu.sg
+    PW: iLoveYouProfPleaseGiveUsA+++
 
 Alternatively you can deploy locally:
 
