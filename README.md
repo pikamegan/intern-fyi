@@ -7,7 +7,8 @@ Please visit: https://intern-fyi.herokuapp.com/HTML/home.php
 1. Create an Account by clicking login (remember your password)
 2. Explore the pages
 
+to host the website locally:
 
-
-
-
+1. load database/internFYI.sql, followed by database/load test.sql (requires sql to run stored procedures and triggers)
+2. go to processDbRequest/model/ConnectionManager and modify it <Esther pls insert instructions here>
+3. all files, excluding sql files in /databese, must be hosted for php to run
