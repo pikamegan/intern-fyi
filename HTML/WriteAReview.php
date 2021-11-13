@@ -62,8 +62,7 @@
 
         <div class="p-sm-5 mb-4 bg-light shadow-lg feedbackBg">
             <div class="container-fluid px-sm-5 py-5">
-
-                <form name="review_form" action="POST" id="reviewForm">
+                <form action= '../processDbRequest/model/add.php' name="review_form" action="POST" id="reviewForm">
                     <!-- remove role="form" to test -->
                     <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 40px;">
                         <div class="bd-highlight">
