@@ -309,12 +309,7 @@ if (isset($_SESSION['errorUser'])) {
         }
 
         function hasNum(input) {
-            for (let str of input) {
-                if (isNaN(str) === false) {
-                    return true;
-                }
-            }
-            return false;
+            return !isNaN(parseFloat(input)) && isFinite(n);
         }
 
         function hasNonAlpha(input) {
