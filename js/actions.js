@@ -81,7 +81,6 @@ function validate_form() {
         reviewMsg.style.display = "none"
         let reviewForm = document.getElementById("reviewForm")
         reviewForm.action= "../processDbRequest/model/add.php" 
-        reviewForm.method="POST"
     } else {
         reviewMsg.style.display = "block"
         event.preventDefault()
