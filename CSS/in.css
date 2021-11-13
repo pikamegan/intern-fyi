@@ -9,87 +9,87 @@
     font-family: poppins;
 }
 
-.form-signin{
-    margin-left:25%; 
-    margin-right: 25%;
-    margin-bottom: 3%; 
+.form-signin {
+    max-width: 800px;
+    margin: auto;
+    min-height: 70vh;
 }
 
-.inHead{
-    text-align: center; 
-    color: #4E6AF0; 
-    font-weight: bold; 
-
+.inHead {
+    text-align: center;
+    color: #4E6AF0;
+    font-weight: bold;
     padding-top: 8%;
     padding-bottom: 2%;
 }
 
-.inSubHead{
-    text-align: center; 
+.inSubHead {
+    text-align: center;
 }
 
-.inBodyDiv{
-    margin-left: 5%; 
+.inBodyDiv {
+    margin-left: 5%;
     margin-right: 5%;
     margin-top: 10%;
 }
 
-.pwToggle{
-    position: relative; 
-    float: right; 
-
+.pwToggle {
+    position: relative;
+    float: right;
     margin-top: -30px;
     margin-right: 20px;
-
     z-index: 100;
     cursor: pointer;
-
     color: #5E6282;
 }
 
+
 /* Login */
-.loginField{
+
+.loginField {
     margin-top: 2%;
-    margin-bottom: 2%; 
+    margin-bottom: 2%;
 }
 
-#loginToggle{
+#loginToggle {
     margin-top: -10px;
-
 }
-#resetPw{
+
+#resetPw {
     justify-content: end;
     text-align: right;
 }
 
-#loginBtn{
-    background-color: #1565D8; 
-    width: 100%; 
+#loginBtn {
+    background-color: #1565D8;
+    width: 100%;
 }
+
 
 /* Sign Up */
-.signupRow{
+
+.signupRow {
     margin-bottom: 20px;
 }
-#signinGenderBtn{
+
+#signinGenderBtn {
     width: 100%;
 }
 
-
-#loginMailingLabel{
+#loginMailingLabel {
     color: #5E6282;
 }
 
-#signupBtn{
+#signupBtn {
     width: 100%;
-    margin-bottom: 12px; 
+    margin-bottom: 12px;
 }
 
-#signupDisclaimer{
+#signupDisclaimer {
     color: #5E6282;
 }
 
-#signupToLogin{
-    text-align: center; 
-    margin-bottom: 5%; 
+#signupToLogin {
+    text-align: center;
+    margin-bottom: 5%;
 }
