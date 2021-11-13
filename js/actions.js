@@ -267,14 +267,13 @@ function clearReview() {
     draft.reset()
     let roleMsg = document.getElementById("roleMsg")
     roleMsg.style.display = "none"
-    let overallMsg = document.getElementById("roleMsg")
+    let overallMsg = document.getElementById("overallMsg")
     overallMsg.style.display = "none"
 
-    let reviewMsg = document.getElementById("roleMsg")
+    let reviewMsg = document.getElementById("reviewMsg")
     reviewMsg.style.display = "none"
 
     for (let i = 1; i < 7; i++) {
-        let criteriaRadio = `criteria${i}`
         let criteriaMsg = document.getElementById(`criteria${i}Msg`)
 
         criteriaMsg.style.display = "none"
