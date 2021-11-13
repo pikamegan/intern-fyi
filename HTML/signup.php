@@ -336,7 +336,7 @@
                 // returns -1 when the name is not in the fname or lname
                 return false;
             } else {
-                console.log(fullName);
+                // console.log(fullName);
                 return true;
             }
 
