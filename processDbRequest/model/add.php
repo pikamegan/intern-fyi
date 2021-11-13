@@ -18,13 +18,10 @@ if (isset($_POST['companyid']) && isset($_POST['jobtitle']) && isset($_POST['sch
     $criteria4 = $_POST['criteria4'];
     $criteria5 = $_POST['criteria5'];
     $criteria6 = $_POST['criteria6'];
-    // echo $criteria6;
+    echo $criteria6;
 
     $dao = new reviewDAO();
     $status = $dao->addreview($companyid, $jobtitle, $schoolemail, $reviewdesc, $overallrating, $criteria1, $criteria2, $criteria3, $criteria4, $criteria5, $criteria6);
-
-    header("Location: ../../HTML/company.php?cid=$companyid");
-    exit;
 }
 
 ?>
@@ -52,13 +49,11 @@ if (isset($_POST['companyid']) && isset($_POST['jobtitle']) && isset($_POST['sch
     <h1>Hello, world!</h1>
     <?php
 if ($status) {
-    $companyid = $_POST['companyid'];
     echo "<h1>Insertion was successful</h1>";
     echo "Click <a href='display.php'>here</a> to return to Main Page";
     header("Location: ../../HTML/company.php?cid=$companyid");
     exit;
 } else {
-    $companyid = $_POST['companyid'];
     echo "<h1>Insertion was NOT successful</h1>";
     header("Location: ../../HTML/company.php?cid=$companyid");
     exit;
