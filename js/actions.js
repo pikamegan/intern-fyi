@@ -76,7 +76,7 @@ function validate_form() {
     let reviewMsg = document.getElementById("reviewMsg")
     if (review.length < 11) {
         reviewMsg.style.display = "block"
-    } else {
+    } else if (review.length > 10) {
         reviewMsg.style.display = "none"
         let reviewForm = document.getElementById("reviewForm")
         reviewForm.action= "../processDbRequest/model/add.php" 
