@@ -265,6 +265,21 @@ function clearReview() {
     let draft = document.getElementById("reviewForm")
 
     draft.reset()
+    let roleMsg = document.getElementById("roleMsg")
+    roleMsg.style.display = "none"
+    let overallMsg = document.getElementById("roleMsg")
+    overallMsg.style.display = "none"
+
+    let reviewMsg = document.getElementById("roleMsg")
+    reviewMsg.style.display = "none"
+
+    for (let i = 1; i < 7; i++) {
+        let criteriaRadio = `criteria${i}`
+        let criteriaMsg = document.getElementById(`criteria${i}Msg`)
+
+        criteriaMsg.style.display = "none"
+    }
+
     closePopup("clearReview")
 }
 
@@ -543,7 +558,7 @@ function getAllReviews(companyId) {
             let reviewStr = ``
 
             let companyReviewNum = document.getElementById("companyReviewNum")
-            companyReviewNum.innerHTML += `${posts.length} people reviewed`
+            companyReviewNum.innerHTML += `${posts.length} reviews`
 
             let totalReviewNum = document.getElementById("totalReviewNum")
             totalReviewNum.innerHTML += `(${posts.length})`
