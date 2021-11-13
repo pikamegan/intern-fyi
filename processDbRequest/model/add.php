@@ -22,7 +22,7 @@ if (isset($_POST['companyid']) && isset($_POST['jobtitle']) && isset($_POST['sch
 
     $dao = new reviewDAO();
     $status = $dao->addreview($companyid, $jobtitle, $schoolemail, $reviewdesc, $overallrating, $criteria1, $criteria2, $criteria3, $criteria4, $criteria5, $criteria6);
-
+    echo $status;
     header("Location: ../../HTML/company.php?cid=$companyid");
     exit;
 }
