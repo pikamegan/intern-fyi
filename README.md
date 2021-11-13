@@ -10,8 +10,12 @@ Alternatively you can deploy locally:
 2. Make sure the connection manager.php in processDbRequest/model is referencing the correct port
 
 You may use these set of login and password:
- ID:
- PW: 
+ ID: esther.2020@scis.smu.edu.sg
+ PW: Esther@123
+
+
+
+
 
 Thank you.
 
