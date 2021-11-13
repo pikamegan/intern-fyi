@@ -80,7 +80,6 @@ function validate_form() {
         //reviewForm.action= "../processDbRequest/model/add.php" 
     } else {
         reviewMsg.style.display = "block"
-        event.preventDefault()
     } 
 }
 
