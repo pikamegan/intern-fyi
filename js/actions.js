@@ -77,12 +77,15 @@ function validate_form() {
 
     let review = document.forms['review_form'].reviewdesc.value
     let reviewMsg = document.getElementById("reviewMsg")
-    if (review.length < 11) {
+    if (review.length > 10) {
+        reviewMsg.style.display = "none"
+        let reviewForm = document.getElementById("reviewForm")
+        reviewForm.action= "../processDbRequest/model/add.php" 
+        reviewForm.method="POST"
+    } else {
         reviewMsg.style.display = "block"
         event.preventDefault()
-    } else {
-        reviewMsg.style.display = "none"
-    }
+    } 
 }
 
 
