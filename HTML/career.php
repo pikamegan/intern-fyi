@@ -112,8 +112,8 @@
                     <img class="img-fluid mx-auto d-block mb-4 firstImage" src="../IMG/theFarm.svg">
                 </div>
                 <div class= "m-auto">
-                    <img src= "../IMG/leftKeyBoard.svg" style="width: 100px; height: 100px;">
-                    <img src= "../IMG/rightKeyBoard.svg" style="width: 100px; height: 100px;">
+                    <img  class="rounded float-start" src= "../IMG/leftKeyBoard.svg" style="width: 100px; height: 100px;">
+                    <img  class="rounded float-start" src= "../IMG/rightKeyBoard.svg" style="width: 100px; height: 100px;">
                 </div>
             </div>
         </div>
