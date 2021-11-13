@@ -292,8 +292,7 @@ function validateFeedback() {
     if (name.length > 0 && email.length > 0 && feedback.length > 10) {
         // Open mailto links in a new tab
         let feedbackForm = document.getElementById("feedback_form")
-        feedbackMsg = feedbackMsg.replace("/\s/g", "%20")
-        feedbackForm.action = "mailto:intern.fyi.contact@gmail.com"
+        feedbackForm.action = encodeURI(`mailto:intern.fyi.contact@gmail.com?subject=${subject}&body=${feedbackMsg}`)
     }
 
 }
