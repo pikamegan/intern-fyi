@@ -5,6 +5,7 @@ require_once "./reviewDAO.php";
 
 $status = false;
 var_dump($_POST);
+$companyid = "";
 
 if (isset($_POST['companyid']) && isset($_POST['jobtitle']) && isset($_POST['schoolemail']) && isset($_POST['reviewdesc']) && isset($_POST['overallrating']) && isset($_POST['criteria1']) && isset($_POST['criteria2']) && isset($_POST['criteria3']) && isset($_POST['criteria4']) && isset($_POST['criteria5']) && isset($_POST['criteria6'])) {
     $companyid = $_POST['companyid'];
