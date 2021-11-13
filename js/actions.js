@@ -295,7 +295,6 @@ function validateFeedback() {
         // Open mailto links in a new tab
         let feedbackForm = document.getElementById("feedback_form")
         feedbackForm.action = "mailto:intern.fyi.contact@gmail.com"
-        event.preventDefault()
     }
 
 }
