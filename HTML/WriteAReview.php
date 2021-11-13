@@ -130,7 +130,7 @@
                     </div>
                     <div class="row">
                         <div class="d-flex justify-content-center">
-                            <button class="btn text-white top-50 start-50 customBtn" onclick="validate_form()">Submit Your Review</button>
+                            <button disable class="opacity-50 btn text-white top-50 start-50 customBtn" onclick="validate_form()">Submit Your Review</button>
                         </div>
                     </div>
                 </form>
