@@ -28,6 +28,12 @@ if (isset($_POST['fname']) && isset($_POST['lname'])  && isset($_POST['gender'])
     $dao = new userDAO();
     $userObj = $dao->getUserByEmail($schoolEmail);
 
+    if ($userObj !== null) {
+        $_SESSION['errorUser'] = "<p class='text-danger m-1 text-center' style='font-size: small; display: block;'>User Email Exists or Create</p>";
+        header("Location: ../../HTML/signup.php");
+        exit();
+    }
+
     if ($pw1 === $password && $userObj === null) {
         $dao = new userDAO();
         $_SESSION["errorPW"] = "";
@@ -46,13 +52,6 @@ if (isset($_POST['fname']) && isset($_POST['lname'])  && isset($_POST['gender'])
         header("Location: ../../HTML/home.php");
         exit();
     }
-
-    if ($userObj !== null) {
-        $_SESSION['errorUser'] = "<p class='text-danger m-1 text-center' style='font-size: small; display: block;'>User Email Exists</p>";
-        header("Location: ../../HTML/signup.php");
-        exit();
-    }
-
 }
 
 ?>
