@@ -55,8 +55,8 @@
                     <label class="sr-only " for="signupGender">Gender</label>
                     <div id="signupGender" class="dropdown">
                         <select name="gender" id="genders" class="form-control" v-model="gender" @click="changeAvatar" required>
-                            <option value="Gender" selected>Gender</option>
-                            <option value="M">Male</option>
+                            <!-- <option value="Gender" selected disabled hidden>Gender</option> -->
+                            <option selected value="M">Male</option>
                             <option value="F">Female</option>
                         </select>
                     </div>
@@ -142,7 +142,7 @@
 
             <!-- Submit -->
             <div class="form-row">
-                <button id="signupBtn" class="btn btn-primary d-block" type="submit" onclick="validateRegistrationForm()">Sign up</button>
+                <button id="signupBtn" class="btn btn-primary d-block" type="submit">Sign up</button>
                 <p id="signupDisclaimer">
                     <small>By signing up, you agree to our <strong>Terms</strong>, <strong>Data Policy</strong> and
                         <strong>Cookies Policy</strong>.</small>
@@ -175,7 +175,7 @@
             data() {
                 return {
                     // add properties here
-                    gender: "Gender",
+                    gender: "M",
                     avatarImgURL: "../IMG/avatar1.svg"
                 }
             },
