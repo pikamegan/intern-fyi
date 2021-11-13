@@ -45,6 +45,7 @@ function validate_form() {
     let roleMsg = document.getElementById("roleMsg")
     if (role.length == 0) {
         roleMsg.style.display = "block"
+        role.scrollIntoView({ block: "center" })
         event.preventDefault()
     } else {
         roleMsg.style.display = "none"
@@ -54,6 +55,7 @@ function validate_form() {
     let overallMsg = document.getElementById("overallMsg")
     if (overallRadio.length == 0) {
         overallMsg.style.display = "block"
+        overallRadio.scrollIntoView({ block: "center" })
         event.preventDefault()
     } else {
         overallMsg.style.display = "none"
@@ -66,6 +68,7 @@ function validate_form() {
 
         if (thisRadio.value == "") {
             criteriaMsg.style.display = "block"
+            criteriaRadio.scrollIntoView({ block: "center" })
             event.preventDefault()
         } else {
             criteriaMsg.style.display = "none"
