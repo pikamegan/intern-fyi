@@ -75,7 +75,6 @@ function validate_form() {
         reviewMsg.style.display = "block"
     } else {
         reviewMsg.style.display = "none"
-        event.preventDefault()
     } 
 }
 
