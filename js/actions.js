@@ -80,7 +80,7 @@ function validate_form() {
     if (review.length > 10) {
         reviewMsg.style.display = "none"
         let reviewForm = document.getElementById("reviewForm")
-        reviewForm.action= "../processDbRequest/model/add.php" 
+        //reviewForm.action= "../processDbRequest/model/add.php" 
     } else {
         reviewMsg.style.display = "block"
         event.preventDefault()
