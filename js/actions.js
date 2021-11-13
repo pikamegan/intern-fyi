@@ -265,6 +265,7 @@ function validateFeedback() {
     if (name.length == 0) {
         nameMsg.style.display = "block"
         nameMsg.scrollIntoView({ block: "center" })
+        event.preventDefault()
     } else {
         nameMsg.style.display = "none"
     }
@@ -274,6 +275,7 @@ function validateFeedback() {
     if (email.length == 0) {
         emailMsg.style.display = "block"
         emailMsg.scrollIntoView({ block: "center" })
+        event.preventDefault()
     } else {
         emailMsg.style.display = "none"
     }
@@ -282,9 +284,17 @@ function validateFeedback() {
     let feedbackMsg = document.getElementById("feedbackMsg")
     if (feedback.length < 11) {
         feedbackMsg.style.display = "block"
+        event.preventDefault()
     } else {
         feedbackMsg.style.display = "none"
     }
+
+    if (name.length > 0 && email.length > 0 && feedback.length > 10) {
+        // Open mailto links in a new tab
+        let feedbackForm = document.getElementById("feedback_form")
+        feedbackForm.action = "mailto:intern.fyi.contact@gmail.com"
+    }
+
 }
 
 

@@ -8,31 +8,6 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['type']) && 
 }
 
 
-require('vendor/autoload.php');
-
-$hostname = 'smtp.cloudmta.net';
-$username = getenv('SMTP_USERNAME');
-$password = getenv('SMTP_PW');
-
-$transport = (new Swift_SmtpTransport($hostname, 587, 'tls'))
-  ->setUsername($username)
-  ->setPassword($password);
-
-$mailer = new Swift_Mailer($transport);
-
-$message = (new Swift_Message())
-  ->setSubject($type)
-  ->setFrom([$email])
-  ->setTo(['e335c1e3d78a583df561@cloudmailin.net' => 'User Name']);
-
-$headers = ($message->getHeaders())
-  -> addTextHeader('X-CloudMTA-Class', 'standard');
-
-$message->setBody($feedback);
-$message->addPart('hello from PHP', 'text/plain');
-$mailer->send($message);
-
-
 ?>
 
 <!doctype html>
