@@ -2,12 +2,20 @@ function changePw() {
     window.location = "../processDbRequest/model/signout.php"
 }
 
+function readReview(){
+    window.location = "../HTML/company.php?cid=1"
+}
+
 function signOut() {
     window.location = "../processDbRequest/model/signout.php"
 }
 
 function gotoSignUpPage() {
     window.location = "../HTML/signup.php"
+}
+
+function compareCompany() {
+    window.location = "../HTML/search.php?sname="
 }
 
 function gotoSignInPage() {

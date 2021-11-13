@@ -155,11 +155,11 @@
                 <img src="../IMG/chat.svg" class="preventSelect p-2">
                 <p class="indexText">Review<br>Companies</p>
             </div>
-            <div class="col-md-3 col-6 my-3 text-center">
+            <div class="col-md-3 col-6 my-3 text-center" onclick="readReview()">
                 <img src="../IMG/read.svg" class="preventSelect p-2">
                 <p class="indexText">Read<br>Reviews</p>
             </div>
-            <div class="col-md-3 col-6 my-3 text-center">
+            <div class="col-md-3 col-6 my-3 text-center" onclick="compareCompany()">
                 <img src="../IMG/eye.svg" class="preventSelect p-2 pt-3 pb-4">
                 <p class="indexText">Compare<br>Companies</p>
             </div>
