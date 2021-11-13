@@ -111,8 +111,8 @@
                     <img class="img-fluid secondImage" id="personImg" :src="imgOfCharacterSrc" style="height: '50'; width: '50';">
                     <img class="img-fluid mx-auto d-block mb-4 firstImage" src="../IMG/theFarm.svg">
                 </div>
-                    <img  class="rounded float-start" src= "../IMG/leftKeyBoard.svg" style="width: 100px; height: 100px;">
-                    <img  class="rounded float-start" src= "../IMG/rightKeyBoard.svg" style="width: 100px; height: 100px;">
+                    <img  class="rounded float-start text-center" src= "../IMG/leftKeyBoard.svg" style="width: 100px; height: 100px;">
+                    <img  class="rounded float-start text-center" src= "../IMG/rightKeyBoard.svg" style="width: 100px; height: 100px;">
             </div>
         </div>
     </div>
