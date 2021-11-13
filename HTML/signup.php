@@ -115,15 +115,15 @@ session_start();
                     <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw2Input,signupPw2Toggle)"></i>
                     <p class="text-center text-danger m-1" style="display: none;" id="pwCError">Please confirm your password</p>
                     <?php
-                
-                if (isset($_SESSION["errorPW"])) {
-                    echo $_SESSION["errorPW"];
-                }
-                
-                if (isset($_SESSION['errorUser'])) {
-                    echo $_SESSION['errorUser'];
-                }
-                ?>
+
+if (isset($_SESSION["errorPW"])) {
+    echo $_SESSION["errorPW"];
+}
+
+if (isset($_SESSION['errorUser'])) {
+    echo $_SESSION['errorUser'];
+}
+?>
 
                 </div>
             </div>
@@ -147,7 +147,7 @@ session_start();
                     <small>By signing up, you agree to our <strong>Terms</strong>, <strong>Data Policy</strong> and
                         <strong>Cookies Policy</strong>.</small>
                 </p>
-                
+
             </div>
         </div>
     </form>
@@ -356,6 +356,7 @@ session_start();
             }
 
         }
+
     </script>
 
 
