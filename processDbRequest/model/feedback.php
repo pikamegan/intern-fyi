@@ -21,18 +21,14 @@ $transport = (new Swift_SmtpTransport($hostname, 587, 'tls'))
 $mailer = new Swift_Mailer($transport);
 
 $message = (new Swift_Message())
-  ->setSubject('Hello from PHP SwiftMailer')
-  ->setFrom(['megan.thong.2020@scis.smu.edu.sg'])
-  ->setTo(['megan.thong.2020@scis.smu.edu.sg' => 'User Name']);
+  ->setSubject($type)
+  ->setFrom([$email])
+  ->setTo(['e335c1e3d78a583df561@cloudmailin.net' => 'User Name']);
 
 $headers = ($message->getHeaders())
   -> addTextHeader('X-CloudMTA-Class', 'standard');
 
-$message->setBody(
-  '<body>'.
-  '<h1>hello from php</h1>'.
-  '</body>'
-);
+$message->setBody($feedback);
 $message->addPart('hello from PHP', 'text/plain');
 $mailer->send($message);
 
