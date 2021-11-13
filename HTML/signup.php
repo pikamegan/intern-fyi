@@ -316,7 +316,6 @@ if (isset($_SESSION['errorUser'])) {
             let nonAlphaList = ["~", "`", "!", "@", "#", "$", "%", "^", "%", "&", "*", "-", "+", "?"]
             for (let nonAlpha of nonAlphaList) {
                 if (input.indexOf(nonAlpha) !== -1) {
-                    // console.log(nonAlpha);
                     return true;
                 }
             }
