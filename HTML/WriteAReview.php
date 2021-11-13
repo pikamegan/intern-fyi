@@ -143,7 +143,7 @@
                     <div class="card-header text-end"><img src="../IMG/X_close.svg" alt="close" class="w-10 pointer" onclick="closePopup('clearReview')"></div>
                     <div class="card-body text-white text-center">
                         <h5 class="card-title">Review Cancellation</h5>
-                        <p class="card-text">Are you sure you want to clear this draft?</p>
+                        <p class="card-text">Clear this draft?</p>
                         <button type="button" class="btn clearBtn mx-2 mb-1" onclick="clearReview()">Yes, clear
                             draft</button>
                         <button type="button" class="btn keepBtn mx-2 mb-1" onclick="closePopup('clearReview')">No, keep
