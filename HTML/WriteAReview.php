@@ -138,7 +138,7 @@
 
     <div id="clearReview" class="container">
         <div class="row justify-content-center">
-            <div class="col-6">
+            <div class="col-12 col-md-8 col-lg-6">
                 <div class="card warningPopup">
                     <div class="card-header text-end"><img src="../IMG/X_close.svg" alt="close" class="w-10 pointer" onclick="closePopup('clearReview')"></div>
                     <div class="card-body text-white text-center">
