@@ -2,7 +2,7 @@
 
 Please visit: https://intern-fyi.herokuapp.com/HTML/home.php
 
-*No setup is required, you can try the link above on any device.
+*No setup is required, you can use the link above on any device.
 
 Alternatively you can deploy locally:
 
@@ -14,8 +14,6 @@ You may use these set of login and password:
  ID: esther.2020@scis.smu.edu.sg
  PW: Esther@123
 
-
-
-
+Users who are not logged in are not allowed to write reviews.
 
 Thank you.
