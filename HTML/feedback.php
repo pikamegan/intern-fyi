@@ -51,7 +51,7 @@
     <div class="container">
         <div class="p-5 mb-4 bg-light feedbackBg shadow-lg">
             <div class="container-fluid py-5">
-                <form name="feedback_form" id="feedback_form">
+                <form name="feedback_form" method="GET" id="feedback_form">
                     <div class="row">
                         <div class="col col-12 col-lg-6">
                             <div class="mb-3">
