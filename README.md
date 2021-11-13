@@ -11,9 +11,8 @@ Alternatively you can deploy locally:
 3. all files, excluding sql files in /databese, must be hosted for php to run
 
 You may use these set of login and password:
- ID: esther.2020@scis.smu.edu.sg
- PW: Esther@123
-
+    ID: john.doe@smu.edu.sg
+    PW: johnDoe@123
 
 
 
