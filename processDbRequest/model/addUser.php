@@ -29,7 +29,7 @@ if (isset($_POST['fname']) && isset($_POST['lname'])  && isset($_POST['gender'])
     $userObj = $dao->getUserByEmail($schoolEmail);
 
     if ($userObj !== null) {
-        $_SESSION['errorUser'] = "<p class='text-danger m-1 text-center' style='font-size: small; display: block;'>User Email Exists, please login here <a href='../../HTML/login.php'>Login</a></p>";
+        $_SESSION['errorUser'] = "<p class='text-danger m-1 text-center' style='font-size: small; display: block;'>User Email Exists, please login <a href='../../HTML/login.php'>here</a></p>";
         header("Location: ../../HTML/signup.php");
         exit();
     }
