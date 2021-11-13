@@ -133,7 +133,7 @@
                             <div v-if="review.length < 10">
                                 <button id ="submitBtn" disabled class="opacity-50 btn text-white top-50 start-50 customBtn" onclick="validate_form()">Submit Your Review</button>
                             </div>
-                            <div v-else>
+                            <div v-if="review.length >= 10">
                                 <button id ="submitBtn" class="btn text-white top-50 start-50 customBtn" onclick="validate_form()">Submit Your Review</button>
                             </div>
                         </div>
