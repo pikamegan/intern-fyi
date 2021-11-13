@@ -70,7 +70,7 @@
 
                 <div class="d-flex bd-highlight">
                     <div class="p-2 flex-grow-1 bd-highlight companyName">Company Name</div> <!-- changed with JS -->
-                    <div class="p-2 bd-highlight"><a href="" id="linkedinLink"><img src="../IMG/linkedin.svg" alt="LinkedIn logo"></a></div>
+                    <div class="p-2 bd-highlight"><a href="" target="_blank" id="linkedinLink"><img src="../IMG/linkedin.svg" alt="LinkedIn logo"></a></div>
                 </div>
 
                 <div class="d-flex bd-highlight text-muted">
@@ -86,7 +86,7 @@
 
                 <div class="d-flex bd-highlight pt-2 mt-3 mb-2">
                     <div class="p-2 bd-highlight flex-grow-1" id="companyReviewNum"><img src="../IMG/review_icon.svg" alt="Review icon"></div>
-                    <div class="p-2 bd-highlight"><a href="" id="companyWebsite" class="text-decoration-none text-muted">Job openings ></a>
+                    <div class="p-2 bd-highlight"><a href="" target="_blank" id="companyWebsite" class="text-decoration-none text-muted">Job openings ></a>
                     </div>
                 </div>
             </div>
