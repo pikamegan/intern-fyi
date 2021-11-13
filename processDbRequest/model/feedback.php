@@ -7,34 +7,34 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['type']) && 
     $feedback = $_POST['feedback'];
 }
 
-  // Setting content-type: text/plain will allow CloudMailin
-  // to store this response if it's an error
-  header("Content-type: text/plain");
 
-  $to = $_POST['envelope']['to'];
-  if ($to == 'e335c1e3d78a583df561@cloudmailin.net'){
-    http_response_code(201);
-    echo("success\n");
-  }else{
-    http_response_code(403);
-    echo("user not allowed here\n");
-  }
+require('vendor/autoload.php');
 
-  echo("Envelope:\n");
-  print_r($_POST['envelope']);
+$hostname = 'smtp.cloudmta.net';
+$username = getenv('SMTP_USERNAME');
+$password = getenv('SMTP_PW');
 
-  echo("Headers:\n");
-  print_r($_POST['headers']);
+$transport = (new Swift_SmtpTransport($hostname, 587, 'tls'))
+  ->setUsername($username)
+  ->setPassword($password);
 
-  echo("Plain:\n");
-  echo($_POST['plain']."\n");
+$mailer = new Swift_Mailer($transport);
 
-  echo("HTML:\n");
-  echo($_POST['html']."\n");
+$message = (new Swift_Message())
+  ->setSubject('Hello from PHP SwiftMailer')
+  ->setFrom(['megan.thong.2020@scis.smu.edu.sg'])
+  ->setTo(['megan.thong.2020@scis.smu.edu.sg' => 'User Name']);
 
-  echo("Attachments:\n");
-  print_r($_FILES["attachments"]);
+$headers = ($message->getHeaders())
+  -> addTextHeader('X-CloudMTA-Class', 'standard');
 
+$message->setBody(
+  '<body>'.
+  '<h1>hello from php</h1>'.
+  '</body>'
+);
+$message->addPart('hello from PHP', 'text/plain');
+$mailer->send($message);
 
 
 ?>
@@ -60,7 +60,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['type']) && 
   </head>
   <body>
     <?php
-if ($sent) {
+if ($mailer) {
     echo "<script>alert('Feedback submitted successfully!')
     window.location.assign('../../HTML/feedback.php')
     </script>";
