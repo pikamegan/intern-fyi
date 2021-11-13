@@ -29,6 +29,7 @@
         </div>
     </div>
     <!-- copy this part: end -->
+
     <form name="register_form" class="form-signin" action="../processDbRequest/model/addUser.php" method="POST">
         <!-- Form header -->
         <div class="inHeadDiv">
@@ -131,14 +132,14 @@
             <div id="pwConfirmError"></div>
 
             <!-- Extras -->
-            <div class="form-row signupBodyExtras">
-                <!-- Mailing list -->
-                <div class="col checkbox mb-3 loginBodyExtra mt-1">
+            <!-- <div class="form-row signupBodyExtras"> -->
+            <!-- Mailing list -->
+            <!-- <div class="col checkbox mb-3 loginBodyExtra mt-1">
                     <input id="loginMailingCheck" type="checkbox" value="rememberCheck">
                     <label id="loginMailingLabel" for="loginMailingCheck">I'd like to receive emails on new reviews and
                         companies</label>
                 </div>
-            </div>
+                </div> -->
 
             <!-- Submit -->
             <div class="form-row">
@@ -364,7 +365,7 @@
         }
 
         document.getElementById("signupBtn").addEventListener("click", function(event) {
-            if (!checkPasswordRequirement()){
+            if (!checkPasswordRequirement()) {
                 //if pw Fails
                 event.preventDefault()
             }
