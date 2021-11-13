@@ -21,7 +21,7 @@ if (isset($_POST['companyid']) && isset($_POST['jobtitle']) && isset($_POST['sch
     // echo $criteria6;
 
     $dao = new reviewDAO();
-    $status = $dao->addreview($companyid, $jobtitle, $schoolemail, $reviewdesc, $overallrating, $criteria1, $criteria2, $criteria3, $criteria4, $criteria5, $criteria6);
+    $status = $dao->addReview($companyid, $jobtitle, $schoolemail, $reviewdesc, $overallrating, $criteria1, $criteria2, $criteria3, $criteria4, $criteria5, $criteria6);
 }
 
 if ($status) {
