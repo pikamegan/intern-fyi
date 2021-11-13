@@ -89,7 +89,7 @@
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                             <label for="role" class="form-label">Role/Title<span style="color:red">*</span></label>
-                            <input type="role" name="jobtitle" class="form-control" id="role" required>
+                            <input type="role" name="jobtitle" class="form-control" id="role" onchange="validate_form()" required>
                             <p class="text-danger m-1" style="font-size: small; display: none;" id="roleMsg">Fill in what your job position was at the company</p>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
                     <div class="row mt-5">
                         <div class="mb-3">
                             <label for="comment" class="form-label">Review</label>
-                            <textarea name="reviewdesc" class="form-control" aria-label="comment" style="height:300px;" placeholder="Minimum 10 characters" required></textarea>
+                            <textarea name="reviewdesc" class="form-control" aria-label="comment" style="height:300px;" placeholder="Minimum 10 characters" onchange="validate_form()" required></textarea>
                             <p class="text-center text-danger m-1" style="display: none;" id="reviewMsg">Please enter at least 10 characters</p>
                         </div>
                     </div>
