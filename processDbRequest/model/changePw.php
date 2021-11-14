@@ -61,6 +61,7 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
     header("Location: ../../HTML/updatePw.php");
     exit;
 }
-
+header("Location: ../../HTML/updatePw.php");
+exit;
 
 ?>
