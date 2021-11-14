@@ -17,10 +17,12 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
         }
 
         $status = $userDAO->updatePassword($email, $pw1);
+        var_dump($status);
 
         if ($status){
+            var_dump($status);
             alert("Password successfully changed! Please sign in again :)");
-            
+
             session_start(); #start session
 
             session_unset(); // removes all the variables from the RAM. Array becomes empty.But keeps information
