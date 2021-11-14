@@ -35,31 +35,19 @@
 
         .criteriaTooltip .criteriaTooltipText {
             visibility: hidden;
-            width: 140px;
             background-color: rgba(0, 0, 0, 0.8);
             color: #fff;
             text-align: center;
-            padding: 2px;
-            border-radius: 10px;
 
             position: absolute;
             z-index: 1;
 
-            /* option 1: without anything */
-
-            /* i think option 2 looks the best tbh, maybe yall want to change the color */
-
-            /* option 2: cover the whole card */
             width: 168px;
             height: 222px;
             border-radius: 10px;
             top: -3px;
             left: -3px;
             padding: 10px;
-
-            /* option 3: top of the card */
-            /* bottom: 105%;
-            left: 50%; */
         }
 
         .criteriaTooltip:hover .criteriaTooltipText {
@@ -102,7 +90,6 @@
         <div class="row mt-2">
             <div class="col-3 d-none d-xl-block d-xxl-block">
                 <img style="height:600px; z-index: -1;" class="preventSelect" src="../IMG/Saly-15.svg">
-                <!-- <img style="height:600px; z-index: -1;" class="preventSelect" src="../IMG/climbingBoy_cropped.svg"> -->
             </div>
             <div class="col">
                 <div class="container">
@@ -170,7 +157,6 @@
                 <h4 class="homeHeader">Rank by Category</h4>
             </div>
         </div>
-        <!-- WIP -->
         <div class="row shadow mb-5 pt-3">
 
             <div class="col-xl-2 col-md-4 col-6 px-0 mb-3">
@@ -306,7 +292,6 @@
                 </div>
             </div>
         </div>
-        <!-- WIP -->
 
         <div class="row mb-5">
             <div class="col align-self-start">
@@ -321,10 +306,6 @@
             </div>
         </div>
     </div>
-
-    <!-- rand 1 not working for some reason -->
-    <!-- <company-card :companyinfo="one()"></company-card> -->
-    <!-- <company-card :companyinfo="homeCompanyCardsRelavantInfo(rand1company())"></company-card> -->
 
     <div class="footerComp" style="margin-top: 50px;">
         <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php"></intern-footer>
