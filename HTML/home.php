@@ -123,9 +123,9 @@
                     <div class="row mb-5">
                         <div class="col">
                             <h4 class="indexText">
-                                Thousands of students are searching for internship, internal information, company
+                                Thousands of students are searching for internships, internal information, company
                                 reviews, and
-                                company culture. See what others are looking for on Intern.FYI today.
+                                company cultures. See what others are looking for on Intern.FYI today.
                             </h4>
                         </div>
                     </div>
