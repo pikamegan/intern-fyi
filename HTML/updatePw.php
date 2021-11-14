@@ -55,7 +55,7 @@
     </div>
     <!-- copy this part: end -->
 
-    <h1 class="pageTitle mt-5">Change Your Password</h1>
+    <h1 id="changePw" class="pageTitle mt-5">Change Your Password</h1>
 
     <?php
         if (isset($_SESSION["successChangePW"])) {
@@ -67,16 +67,16 @@
     <div class="container shadow-lg p-3 mb-5 mt-5 rounded">
         <form action= "../processDbRequest/model/changePw.php" method="POST" >
 
-        <div id="signupPw1" class="form-row signupRow">
-                <div class="col">
-                    <label for="signupPw1Input" class="form-label">Password<span style="color:red">*</span></label>
-                    <input name="pwOne" id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password" required autofocus="" oninput="checkPasswordRequirement()">
-                    <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
-                    <p class="text-center text-danger m-1" style="display: none;" id="pwOneError">Please enter your password</p>
-                </div>
-        </div>
-        <!-- Remove password-desc-required class when requirement is met  & add when NOT met -->
-        <div id="pwErrorMsgs">
+            <div id="signupPw1" class="form-row signupRow">
+                    <div class="col">
+                        <label for="signupPw1Input" class="form-label">Password<span style="color:red">*</span></label>
+                        <input name="pwOne" id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password" required autofocus="" oninput="checkPasswordRequirement()">
+                        <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
+                        <p class="text-center text-danger m-1" style="display: none;" id="pwOneError">Please enter your password</p>
+                    </div>
+            </div>
+            <!-- Remove password-desc-required class when requirement is met  & add when NOT met -->
+            <div id="pwErrorMsgs">
                 <div class="passwordrequirements mb-2">
                     <div id="error1"></div>
                     <div id="error2"></div>
@@ -92,6 +92,8 @@
                 ***************************************************************************************/ -->
                 </div>
             </div>
+
+
             <div id="signupPw2" class="form-row signupRow">
                 <div class="col">
                     <label for="signupPw2Input" class="form-label">Confirm password<span style="color:red">*</span></label>
@@ -112,6 +114,7 @@
             <input class="btn btn-primary w-100 p-3 mt-3 form-control" type= "submit" name ="submit" value="Submit">
         </form>
     </div>
+    
     <!-- Changing between password input types-->
     <script>
         function pwToggle(pwInput, pwToggleBtn) {
@@ -125,9 +128,7 @@
         }
 
         function checkPasswordRequirement() {
-            let fName = document.getElementById("signupFirstName").value
-            let lName = document.getElementById("signupLastName").value
-            let userPWInput = document.getElementById("signupPw1Input").value
+            let userPWInput = document.getElementById("pwOne").value
             let criteriaLength = document.getElementById("password-req-length")
             let criteriaUC = document.getElementById("password-req-ucase")
             let criteriaLC = document.getElementById("password-req-lcase")
@@ -266,7 +267,7 @@
 
         }
 
-        document.getElementById("signupBtn").addEventListener("click", function(event) {
+        document.getElementById("changePw").addEventListener("click", function(event) {
             if (!checkPasswordRequirement()) {
                 //if pw Fails
                 event.preventDefault()
