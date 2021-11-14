@@ -64,18 +64,42 @@
 
     <div class="container shadow-lg p-3 mb-5 mt-5 rounded">
         <form action= "../processDbRequest/model/changePw.php" method="POST" >
-            <p>New Password
 
-                <input type="password" class = "w-100 form-control" name="pwOne" id="pwOne">
-                <i id="pwOneToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwOne,pwOneToggle)"></i>
-                <p class="text-center text-danger m-1" style="display: none;" id="pwOneError">Please enter your password</p>
-            </p>
-            <p>Confirm New Password
+        <div id="signupPw1" class="form-row signupRow">
+                <div class="col">
+                    <label for="signupPw1Input" class="form-label">Password<span style="color:red">*</span></label>
+                    <input name="pwOne" id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password" required autofocus="" oninput="checkPasswordRequirement()">
+                    <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
+                    <p class="text-center text-danger m-1" style="display: none;" id="pwOneError">Please enter your password</p>
+                </div>
+        </div>
+        <!-- Remove password-desc-required class when requirement is met  & add when NOT met -->
+        <div id="pwErrorMsgs">
+                <div class="passwordrequirements mb-2">
+                    <div id="error1"></div>
+                    <div id="error2"></div>
+                    <div id="error3"></div>
+                    <div id="error4"></div>
+                    <div id="error5"></div>
+                    <div id="error6"></div>
 
-                <input type="password" class = "w-100 form-control" name="pwTwo">
-                <i id="pwTwoToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwTwo,pwTwoToggle)"></i>
-                <p class="text-center text-danger m-1" style="display: none;" id="pwCError">Please confirm your password</p>
-            </p>
+                    <!-- /***************************************************************************************
+                *    CITING
+                *    Author: SMU
+                *    Availability: https://live.smu.edu.sg/Account/ChangePassword
+                ***************************************************************************************/ -->
+                </div>
+            </div>
+            <div id="signupPw2" class="form-row signupRow">
+                <div class="col">
+                    <label for="signupPw2Input" class="form-label">Confirm password<span style="color:red">*</span></label>
+                    <input name="pwTwo" id="signupPw2Input" class="form-control signupField" type="password" placeholder="Confirm password" oninput="isPasswordMatch()" required autofocus="">
+                    <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw2Input,signupPw2Toggle)"></i>
+                    <p class="text-center text-danger m-1" style="display: none;" id="pwCError">Please confirm your password</p>
+                </div>
+            </div>
+            <!-- Remove password-desc-required class when requirement is met & the reverse -->
+            <div id="pwConfirmError"></div>
 
             <?php
                 if (isset($_SESSION["changePWError"])) {
@@ -84,53 +108,10 @@
             ?>
 
             <input class="btn btn-primary w-100 p-3 mt-3 form-control" type= "submit" name ="submit" value="Submit">
-
         </form>
     </div>
-
     <!-- Changing between password input types-->
     <script>
-        const avatar = Vue.createApp({
-            data() {
-                return {
-                    // add properties here
-                    gender: "M",
-                    avatarImgURL: "../IMG/avatar1.svg",
-                    imgGirl: ['../IMG/avatar7.svg', '../IMG/avatar3.svg', '../IMG/avatar5.svg', '../IMG/avatar6.svg', '../IMG/avatar9_female.svg', '../IMG/avatar10_female.svg', '../IMG/avatar15_female.svg', "../IMG/avatar20_female.svg", "../IMG/avatar21_female.svg", "../IMG/avatar22_female.svg"],
-                    imgMale: ['../IMG/avatar1.svg', '../IMG/avatar2.svg', '../IMG/avatar4.svg', '../IMG/avatar8.svg', '../IMG/avatar11_male.svg', '../IMG/avatar12_male.svg', '../IMG/avatar13_male.svg', '../IMG/avatar14_male.svg', "../IMG/avatar16_male.svg", "../IMG/avatar17_male.svg", "../IMG/avatar18_male.svg", "../IMG/avatar19_male.svg"]
-                }
-            },
-            methods: {
-                changeGender() {
-                    if (this.gender === "M") {
-                        this.avatarImgURL = this.imgMale[0]
-                    } else if (this.gender === "F") {
-                        this.avatarImgURL = this.imgGirl[0]
-                    }
-                },
-                changeAvatar() {
-                    if (this.gender === "M") {
-                        this.imgMale.push(this.imgMale.splice(0, 1)[0]);
-                        this.avatarImgURL = this.imgMale[0]
-                    } else if (this.gender === "F") {
-                        this.imgGirl.push(this.imgGirl.splice(0, 1)[0]);
-                        this.avatarImgURL = this.imgGirl[0]
-                    }
-                },
-                changeAvatarBack() {
-                    if (this.gender === "M") {
-                        this.imgMale.unshift(this.imgMale.splice(this.imgMale.length - 1, 1)[0])
-                        this.avatarImgURL = this.imgMale[0]
-                    } else if (this.gender === "F") {
-                        this.imgGirl.unshift(this.imgGirl.splice(this.imgGirl.length - 1, 1)[0])
-                        this.avatarImgURL = this.imgGirl[0]
-                    }
-                }
-            }
-        })
-
-        const signupVM = avatar.mount('.avatar')
-
         function pwToggle(pwInput, pwToggleBtn) {
             if (pwInput.type === "password") {
                 pwInput.type = "text";
@@ -272,20 +253,6 @@
                 }
             }
             return false;
-        }
-
-        // Does not work, change conditional
-        function hasProfileName(input, fullName) {
-            const nameArray = fullName.split('.');
-
-            if (input.indexOf(nameArray[0]) == -1 && input.indexOf(nameArray[1]) == -1) {
-                // returns -1 when the name is not in the fname or lname
-                return false;
-            } else {
-                // console.log(fullName);
-                return true;
-            }
-
         }
 
         function isPasswordMatch() {
