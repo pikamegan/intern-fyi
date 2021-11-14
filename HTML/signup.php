@@ -75,7 +75,7 @@
                     <input type="hidden" name="avatarURL" :value="avatarImgURL">
                 </div>
             </div>
-
+            
             <div id="signupSchool" class="form-row signupRow">
                 <div class="col col-12 mb-3">
                     <label for="signupSchoolName" class="form-label">School name<span style="color:red">*</span></label>
