@@ -66,11 +66,11 @@
         <form action= "../processDbRequest/model/changePw.php" method="POST" >
             <p>New Password
 
-                <input type="password" class = "w-100" name="pwOne">
+                <input type="password" class = "w-100 form-control" name="pwOne">
             </p>
             <p>Confirm New Password
 
-                <input type="password" class = "w-100" name="pwTwo">
+                <input type="password" class = "w-100 form-control" name="pwTwo">
             </p>
 
             <?php
