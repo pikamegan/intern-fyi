@@ -21,8 +21,8 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
         $noErrors = false;
     }
 
-    if(strlen($pw1) < 8 or  strlen($pw2) < 8) {
-        $_SESSION["errorPWmismatch"] = " <p class='text-center text-danger m-1' style='display: none;' id='overallMsg'>Password length must be as least 8 characters</p>";
+    if(strlen($pw1) < 8 || strlen($pw2) < 8) {
+        $_SESSION["errorLength"] = " <p class='text-center text-danger m-1' style='display: none;' id='overallMsg'>Password length must be as least 8 characters</p>";
         $noErrors = false;
     }
 
@@ -44,16 +44,16 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
             exit;
     
         } else {
-            array_push($errorList, "Sorry, we are unable to change your password at this moment");
-            $_SESSION["errorList"] = $errorList;
+            // array_push($errorList, "Sorry, we are unable to change your password at this moment");
+            // $_SESSION["errorList"] = $errorList;
             header("Location: ../../HTML/updatePw.php");
             exit;
         }
     }
 
 } else {
-    array_push($errorList, "Please Check You've Entered Or Confirmed Your Password!");
-    $_SESSION["errorList"] = $errorList;
+    // array_push($errorList, "Please Check You've Entered Or Confirmed Your Password!");
+    // $_SESSION["errorList"] = $errorList;
     header("Location: ../../HTML/updatePw.php");
     exit;
 }
