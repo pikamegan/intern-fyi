@@ -198,7 +198,7 @@
             }
 
             if(!pwSuccess){
-                anyErrors = false; 
+                anyErrors = true; 
             }
      
 
