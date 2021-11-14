@@ -65,7 +65,7 @@
     ?>
 
     <div class="container shadow-lg p-3 mb-5 mt-5 rounded">
-        <form action= "../processDbRequest/model/changePw.php" method="POST" >
+        <form action= "../processDbRequest/model/changePw.php" method="POST"  onsubmit="return checkPasswordRequirement()">
 
             <div id="changePw1" class="form-row signupRow">
                     <div class="col">

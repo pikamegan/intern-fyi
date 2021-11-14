@@ -19,7 +19,7 @@
 
 
     <link rel="stylesheet" href="../CSS/style.css">
-    <title>Company Name</title> <!-- to be changed with JS -->
+    <title>Company</title>
 
     <script>
         if (window.location.href.search("cid=") == -1) {
