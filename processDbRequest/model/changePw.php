@@ -5,6 +5,7 @@ require_once 'common.php';
 
 $userDAO = new userDAO();
 $_SESSION["changePWError"] = "";
+$_SESSION["successChangePW"] = "";
 
 if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
     $pw1 = $_POST['pwOne'];
@@ -19,8 +20,13 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
         $status = $userDAO->updatePassword($email, $pw1);
 
         if ($status){
-
-            header("Location: ../../HTML/myProfile.php");
+            $_SESSION["successChangePW"] = "<div class='card-body text-center'>
+            <img src='../IMG/successInSpeechBubble.svg' alt='success image' class=''>
+            <p class = 'text-success'>Password Successfully changed
+            </p>
+            <a href='myProfile.php'><button type='button' class='btn successBtn mx-2 mb-1'>Back to Profile Page</button></a>
+            </div>";
+            header("Location: ../../HTML/updatePw.php");
             exit;
         
         } else{
