@@ -143,7 +143,6 @@
             let errorMsg5 = "At least one non-alphanumeric character (~`!@#$%^&*-+?)";
 
             pwSuccess = true;
-            let anyErrors = false; 
 
             // 0. Empty input
             if (userPWInput.length <= 0) {
@@ -196,13 +195,9 @@
                 errorMsgFailure("error5", errorMsg5);
                 pwSuccess = false;
             }
-
-            if(!pwSuccess){
-                anyErrors = true; 
-            }
      
 
-            return anyErrors;
+            return pwSuccess;
 
         }
 
