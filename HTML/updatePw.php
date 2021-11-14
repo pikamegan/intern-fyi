@@ -142,7 +142,7 @@
             let errorMsg4 = "At least one number";
             let errorMsg5 = "At least one non-alphanumeric character (~`!@#$%^&*-+?)";
 
-            pwSuccess = true;
+            let pwSuccess = true;
 
             // 0. Empty input
             if (userPWInput.length <= 0) {
@@ -268,11 +268,13 @@
         }
 
         document.getElementById("changePw").addEventListener("click", function(event) {
-            if (!checkPasswordRequirement()) {
+            if (checkPasswordRequirement() == false; ) {
                 //if pw Fails
                 event.preventDefault()
             }
         });
+
+
     </script>
 
 
