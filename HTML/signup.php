@@ -69,11 +69,11 @@
                 </div>
                 <!-- move this?========================================================== -->
                 <div class="col col-12 mb-3" style="width: 200px; height: 200px;">
-                    <label for="signupGender" class="form-label">Choose Avatar<span style="color:red">*</span></label>
-                    <img src= "../IMG/avatarLeft.svg" style="width: 100px; height: 100px;">
-                    <img class="img-fluid m-0 cycle-avatar-image form-control clickHereBlue" @click="changeAvatar" :src="avatarImgURL">
+                    <label for="signupGender" class="form-label">Choose Avatar<span style="color:red">*</span></label><br>
+                    <img src="../IMG/avatarLeft.svg" style="width: 100px; height: 100px;" @click='changeAvatarBack'>
+                    <img class="img-fluid m-0 cycle-avatar-image form-control clickHereBlue" @click="changeAvatar" :src="avatarImgURL" style=" display:inline-block">
                     <input type="hidden" name="avatarURL" :value="avatarImgURL">
-                    <img src= "../IMG/avatarRight.svg" style="width: 100px; height: 100px;">
+                    <img src="../IMG/avatarRight.svg" style="width: 100px; height: 100px; display:inline-block" @click="changeAvatar">
                 </div>
             </div>
 
@@ -206,6 +206,15 @@
                         this.avatarImgURL = this.imgMale[0]
                     } else if (this.gender === "F") {
                         this.imgGirl.push(this.imgGirl.splice(0, 1)[0]);
+                        this.avatarImgURL = this.imgGirl[0]
+                    }
+                },
+                changeAvatarBack() {
+                    if (this.gender === "M") {
+                        this.imgMale.unshift(this.imgMale.splice(this.imgMale.length - 1, 1)[0])
+                        this.avatarImgURL = this.imgMale[0]
+                    } else if (this.gender === "F") {
+                        this.imgGirl.unshift(this.imgGirl.splice(this.imgGirl.length - 1, 1)[0])
                         this.avatarImgURL = this.imgGirl[0]
                     }
                 }
