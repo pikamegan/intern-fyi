@@ -1,6 +1,5 @@
-# WAD-grpproject
+# internFYI
 
-internFYI
 a WAD2 project
 by:
 eunjin.kim.2020@scis.smu.edu.sg
