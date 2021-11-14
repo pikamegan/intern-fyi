@@ -9,7 +9,7 @@ by G5T2:
 
 ## Heroku Deployment
 
-Please visit: https://intern-fyi.herokuapp.com/HTML/home.php
+Please visit: https://intern-fyi.herokuapp.com
 
 *No setup is required, you can use the link above on any device.
 
