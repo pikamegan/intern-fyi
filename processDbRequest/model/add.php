@@ -1,5 +1,9 @@
 <?php
 
+function validate_rating($input) {
+  return is_numeric($input) && $input <= 5 && $input >= 1;
+}
+
 require_once 'common.php';
 require_once "./reviewDAO.php";
 
@@ -18,11 +22,13 @@ if (isset($_POST['companyid']) && isset($_POST['jobtitle']) && isset($_POST['sch
     $criteria4 = $_POST['criteria4'];
     $criteria5 = $_POST['criteria5'];
     $criteria6 = $_POST['criteria6'];
-    // echo $criteria6;
+  // echo $criteria6;
 
-    $dao = new reviewDAO();
-    $status = $dao->addreview($companyid, $jobtitle, $schoolemail, $reviewdesc, $overallrating, $criteria1, $criteria2, $criteria3, $criteria4, $criteria5, $criteria6);
-    var_dump($status);
+    if (validate_rating($overallrating) && validate_rating($criteria1) && validate_rating($criteria2) && validate_rating($criteria3) && validate_rating($criteria4) && validate_rating($criteria5) && validate_rating($criteria6)) {
+      $dao = new reviewDAO();
+      $status = $dao->addreview($companyid, $jobtitle, $schoolemail, $reviewdesc, $overallrating, $criteria1, $criteria2, $criteria3, $criteria4, $criteria5, $criteria6);
+      var_dump($status);
+    }
 }
 
 if ($status) {
@@ -32,6 +38,3 @@ if ($status) {
   header("Location: ../../HTML/company.php?cid=$companyid");
   exit;
 }
-
-?>
-
