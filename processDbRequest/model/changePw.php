@@ -21,7 +21,6 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
 
         if ($status){
             var_dump($status);
-            alert("Password successfully changed! Please sign in again :)");
 
             session_start(); #start session
 
