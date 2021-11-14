@@ -34,7 +34,7 @@
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 echo "<navigation-bar-small-login></navigation-bar-small-login>";
             } else {
-                window.location.assign('./home.php');
+                header("Location: ./home.php");
                 exit();
             }
             ?>
@@ -47,7 +47,7 @@
                     <img class='img-fluid m-0' src= '$url' style='width: 60px; height: 60px;'>
                     </navigation-bar-big-login>";
             } else {
-                window.location.assign('./home.php');
+                header("Location: ./home.php");
                 exit();
             }
             ?>
@@ -96,6 +96,10 @@
 
             <input class="btn btn-primary w-100 p-3 mt-3 form-control" type= "submit" name ="submit" value="Submit">
         </form>
+    </div>
+
+    <div class="footerComp" style="margin-top: 50px;">
+        <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php"></intern-footer>
     </div>
     
     <!-- Changing between password input types-->
