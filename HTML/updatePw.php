@@ -70,7 +70,7 @@
             <div id="changePw1" class="form-row signupRow">
                     <div class="col">
                         <label for="pwOne" class="form-label">Password<span style="color:red">*</span></label>
-                        <input name="pw1" id="pwOne" class="form-control signupField" type="password" placeholder="Password" required autofocus="" oninput="checkPasswordRequirement()">
+                        <input name="pwOne" id="pwOne" class="form-control signupField" type="password" placeholder="Password" required autofocus="" oninput="checkPasswordRequirement()">
                         <i id="pwOneToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwOne,pwOneToggle)"></i>
                         <p class="text-center text-danger m-1" style="display: none;" id="pwOneError">Please enter your password</p>
                     </div>
@@ -97,7 +97,7 @@
             <div id="changePw2" class="form-row signupRow">
                 <div class="col">
                     <label for="pwTwo" class="form-label">Confirm password<span style="color:red">*</span></label>
-                    <input name="pw2" id="pwTwo" class="form-control signupField" type="password" placeholder="Confirm password" oninput="isPasswordMatch()" required autofocus="">
+                    <input name="pwTwo" id="pwTwo" class="form-control signupField" type="password" placeholder="Confirm password" oninput="isPasswordMatch()" required autofocus="">
                     <i id="pwTwoToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwTwo, pwTwoToggle)"></i>
                     <p class="text-center text-danger m-1" style="display: none;" id="pwCError">Please confirm your password</p>
                 </div>
