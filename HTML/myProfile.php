@@ -217,20 +217,6 @@ if (isset($_SESSION['email'])) {
     <div class="footerComp">
         <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php" @gotohome="goHome"></intern-footer>
     </div>
-    <script>
-        Vue.createApp({
-            data() {
-                return {
-                    name: ''
-                }
-            },
-            created() { // created is a hook that executes as soon as Vue instance is created
-
-            }
-        }).mount('.profile')
-    </script>
-
-
 </body>
 
 </html>
