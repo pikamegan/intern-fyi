@@ -85,21 +85,24 @@
                     <i id="pwTwoToggle" class="bi bi-eye-fill pwToggle"></i>
                 </div>
             </div>
-
+            <div>
             <?php
 
-            if (isset($_SESSION["errorLength"])) {
-                $errorLen = $_SESSION["errorLength"];
-                echo "$errorLen";
-                
-            }
+                if (isset($_SESSION["errorLength"])) {
+                    $errorLen = $_SESSION["errorLength"];
+                    echo "$errorLen";
+                    
+                }
 
-            if (isset($_SESSION["errorPWmismatch"])) {
-                $errorMismatch = $_SESSION["errorPWmismatch"];
-                echo "$errorMismatch";
-            }
+                if (isset($_SESSION["errorPWmismatch"])) {
+                    $errorMismatch = $_SESSION["errorPWmismatch"];
+                    echo "$errorMismatch";
+                }
 
             ?>
+            </div>
+
+            
 
             <input class="btn btn-primary w-100 p-3 mt-3 form-control" type="submit" name="submit" value="Submit">
         </form>
