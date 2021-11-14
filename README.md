@@ -11,7 +11,7 @@ by G5T2:
 
 Please visit: https://intern-fyi.herokuapp.com
 
-*No setup is required, you can use the link above on any device.
+*No setup is required, you can use the link above on any device. Link is also available from the environment of https://github.com/pikamegan/intern-fyi
 
 You may use this existing account, with login and password as follows: <br>
     Email: mokkie@smu.edu.sg <br>
