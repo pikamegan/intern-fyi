@@ -32,13 +32,9 @@ const app = Vue.createApp({
             return arr;
         },
         createCompanyDictionary(data) {
-            // window.console.log(this.allCompanies);
             let companyDict = {};
             for (const company of data) {
-
                 let companyNameArray = company.companyName.split(" ")
-                // console.log(company.companyID);
-                // console.log(company.companyName);
                 companyDict[companyNameArray[0]] = company.companyID;
             }
             this.theCompanyDict = companyDict;
@@ -56,18 +52,7 @@ const app = Vue.createApp({
                 };
                 return relevantInfo;
             }
-        },
-        // one() {
-        //     if (this.allCompanies != null) {
-        //         return this.homeCompanyCardsRelavantInfo(this.rand1company);
-        //     }
-        // },// i really cant figure out why one() and rand1company() gives error in console...
-        // rand1company() { 
-        //     if (this.allCompanies != null) {
-        //         return this.rand4companies[0];
-        //     }
-        // }
-
+        }
     },
 
     created() {
@@ -94,10 +79,6 @@ const app = Vue.createApp({
                 return rand4companies;
             }
         },
-
-
-
-
     }
 })
 

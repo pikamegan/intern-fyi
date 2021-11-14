@@ -50,9 +50,7 @@
     <div class="container-fluid mt-4" id="appSearch">
         <div class="row">
             <div class="col-lg-3 shadow mb-5 pt-3" style="border-radius: 10px;">
-                <!-- sticky? -->
                 <div class="container-fluid">
-
                     <div class='row'>
                         <div class="col-lg-12 col-md-4 mb-2">
                             <div>
@@ -66,8 +64,6 @@
                                     </label>
                                 </li>
                             </ul>
-                            <!-- why does removing this button breaks the function??? -->
-                            <!-- <button hidden @click="sortCompaniesMethod">sort</button>  -->
                         </div>
 
                         <div class="col-lg-12 col-md-4 mb-2">
@@ -82,8 +78,6 @@
                                     </label>
                                 </li>
                             </ul>
-                            <!-- {{filterIndustry}} -->
-                            <!-- <button @click="filterMethod()">filter</button> -->
                         </div>
 
                         <div class="col-lg-12 col-md-4 mb-2">
@@ -104,36 +98,13 @@
                                         {{value}}
                                     </label>
                                 </li>
-
-                                <!-- {{filterLocation}} -->
-                                <!-- <li>
-                                <label class="map">
-                                    <input type="checkbox" class="me-1">
-                                    <input id="userZipCode" style="width: 100px; height: 25px; display: inline;"
-                                        type="text" class="form-control" class="m-0 p-0" placeholder="Zip Code"
-                                        maxlength="6" onclick="showYourLocation()">
-                                    <button class="btn btn-primary m-0 p-0"
-                                        style="width: 25px; height: 25px; display: inline;"><img
-                                            src='../IMG/search-magnifiying-glass.svg' class="m-0 p-0"
-                                            onclick="showYourLocation()"></button>
-                                </label>
-                            </li> -->
                             </ul>
                         </div>
                     </div>
-                    <!-- <div class="row mb-2">
-
-                        <div class="mb-4" id="map" style="height: 400px; width: 400px;"></div>
-
-                    </div> -->
-
-                    <!-- <button @click="$emit('showAll')">showAll</button> -->
-
                 </div>
             </div>
 
             <div class="col mb-5">
-                <!-- <img src= "../IMG/foodpandaoffice.svg" style="width: 100px; height: 100px;"> -->
                 <div v-if="displayCompanies.length > 0">
                     <company-row-list :companylist="displayCompanies"></company-row-list>
                 </div>
@@ -154,45 +125,12 @@
         </div>
     </div>
 
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&callback=initMap"
-        async defer></script> -->
-
     <div class="footerComp">
         <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php" @gotohome="goHome"></intern-footer>
     </div>
-
-
+    
     <script src="../js/appSearch.js"></script>
 
-    <!-- <script>
-        const appMap = Vue.createApp({
-            data() {
-                return {
-                    // add properties here
-                    currentImgSrc: "../IMG/AtoZ.svg",
-                    currentFilterImg: "../IMG/filter.svg"
-
-                }
-            },
-            methods: {
-                changeLetterSortImg() {
-                    if (this.currentImgSrc === "../IMG/AtoZ.svg") {
-                        this.currentImgSrc = "../IMG/ZtoA.svg";
-                    } else {
-                        this.currentImgSrc = "../IMG/AtoZ.svg";
-                    }
-                },
-                changeFilterImg() {
-                    if (this.currentFilterImg === "../IMG/filter.svg") {
-                        this.currentFilterImg = "../IMG/clearfilter.svg";
-                    } else {
-                        this.currentFilterImg = "../IMG/filter.svg";
-                    }
-                }
-            }
-        })
-        // const vm = appMap.mount('#searchVue');
-    </script> -->
     <!-- JavaScript for CSS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
