@@ -36,11 +36,11 @@
             <div class="display-3 inHead">Sign up</div>
             <h4 class="inSubHead">to post internship reviews.</h4>
         </div>
-        <div class="text-center">
+        <!-- <div class="text-center">
             <a href="./companySignUp.php" class="text-center mt-2 fs-5 text">
                 <u>Click here if you are a company</u>
             </a>
-        </div>
+        </div> -->
 
         <div class="inBodyDiv avatar">
             <div id="signupName" class="form-row signupRow">
@@ -70,7 +70,7 @@
                 <!-- move this?========================================================== -->
                 <div class="col col-12 mb-3">
                     <label for="signupGender" class="form-label">Choose Avatar<span style="color:red">*</span></label>
-                    <img class="img-fluid m-0 cycle-avatar-image" @click="changeAvatar" :src="avatarImgURL">
+                    <img class="img-fluid m-0 cycle-avatar-image form-control" @click="changeAvatar" :src="avatarImgURL">
                     <input type="hidden" name="avatarURL" :value="avatarImgURL">
                 </div>
 
