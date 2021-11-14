@@ -72,8 +72,8 @@
                     <label for="signupGender" class="form-label">Choose Avatar<span style="color:red">*</span></label>
                     <img src= "../IMG/avatarLeft.svg" style="width: 100px; height: 100px;">
                     <img class="img-fluid m-0 cycle-avatar-image form-control clickHereBlue" @click="changeAvatar" :src="avatarImgURL">
-                    <input type="hidden" name="avatarURL" :value="avatarImgURL">
                     <img src= "../IMG/avatarRight.svg" style="width: 100px; height: 100px;">
+                    <input type="hidden" name="avatarURL" :value="avatarImgURL">
                 </div>
             </div>
 

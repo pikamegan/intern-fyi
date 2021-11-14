@@ -22,7 +22,7 @@
 
 <body>
     <h1>Hello, world!</h1>
-    <div class="container shadow-lg p-3 mb-5 mt-5 rounded">
+    <!-- <div class="container shadow-lg p-3 mb-5 mt-5 rounded">
         <form action="../processDbRequest/model/changePw.php" method="POST">
             <p>Company Name
 
@@ -93,22 +93,43 @@
             <p class="mx-2 text-start fw-lighter m-0">We believes in providing free food and drinks for our hard working employees.
             </p>
         </div>
-    </div>
+    </div> -->
+
     <div class="col col-12 mb-3" style="width: 200px; height: 200px;">
+
         <label for="signupGender" class="form-label">Choose Avatar<span style="color:red">*</span></label>
-        <img class="img-fluid m-0 cycle-avatar-image form-control" @click="changeAvatar" src="../IMG/avatar16_male.svg" style="width: 150px; height: 150x">
-        <input type="hidden" name="avatarURL" :value="avatarImgURL">
-        <img src= "../IMG/avatar17_male.svg" style="width: 100px; height: 100px;">
-        <img src= "../IMG/avatar18_male.svg" style="width: 100px; height: 100px;">
-        <img src= "../IMG/avatar19_male.svg" style="width: 100px; height: 100px;">
-        <img src= "../IMG/avatar20_female.svg" style="width: 100px; height: 100px;">
-        <img src= "../IMG/avatar21_female.svg" style="width: 100px; height: 100px;">
-        <img src= "../IMG/avatar22_female.svg" style="width: 100px; height: 100px;">
-        <img src= "../IMG/ColorBlueCursor.svg" style="width: 100px; height: 100px;">
-        <img src= "../IMG/avatarLeft.svg" style="width: 100px; height: 100px;">
-        <img src= "../IMG/avatarRight.svg" style="width: 100px; height: 100px;">
+
+        <div id="banner">
+            <div class="inline-block">
+                <img src="../IMG/avatarLeft.svg" style="width: 50px; height: 50px;">
+            </div>
+
+            <div class="inline-block">
+                <img class="img-fluid m-0 cycle-avatar-image form-control clickHereBlue" @click="changeAvatar"
+                    src="../IMG/avatar21_female.svg">
+            </div>
+
+            <div class="inline-block">
+                <img src="../IMG/avatarRight.svg" style="width: 50px; height: 50px;">
+            </div>
+            <input type="hidden" name="avatarURL" :value="avatarImgURL">
+        </div>
+
     </div>
 
+    <div class="col col-12 mb-3" style="width: 200px; height: 200px;">
+        <div class="row">
+            <div class="column">
+                <img src="img_snow.jpg" alt="Snow" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="img_forest.jpg" alt="Forest" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="img_mountains.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
