@@ -82,7 +82,7 @@
                 <div class="col">
                     <label for="pwTwo" class="form-label">Confirm password<span style="color:red">*</span></label>
                     <input name="pwTwo" id="pwTwo" class="form-control signupField" type="password" placeholder="Confirm password" required autofocus="">
-                    <i id="pwTwoToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwTwo,pwTwoToggle)></i>
+                    <i id="pwTwoToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwTwo,pwTwoToggle)"></i>
                 </div>
             </div>
             <div>
