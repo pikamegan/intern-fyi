@@ -27,10 +27,10 @@ Note that composer was installed (hence the presence of composer.json and compos
 ## Local Deployment 
 Alternatively you can deploy locally:
 
-1. load database/internFYI.sql, followed by database/load test.sql (requires sql to run stored procedures and triggers)
-2. Make sure the connection manager.php in processDbRequest/model is referencing the correct host, port, and password (for Mac)
-3. all files, excluding sql files in /database, must be hosted for php to run
-
+1. Download files, and make sure it is in the correct folder in WAMP/MAMP to be run on localhost
+2. load database/internFYI.sql into phpmyadmin, followed by database/load test.sql (requires sql to run stored procedures and triggers)
+3. Make sure the ConnectionManager.php in processDbRequest/model is referencing the correct host, port, and password (for Mac)
+4. all files, excluding sql files in /database, must be hosted for php to run
 
 Users who are not logged in are not allowed to write reviews.
 
