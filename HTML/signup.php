@@ -69,7 +69,7 @@
                 </div>
                 <!-- move this?========================================================== -->
                 <div class="col col-12 mb-3" style="width: 200px; height: 200px;">
-                    <label for="signupGender" class="form-label">Choose Avatar<span style="color:red">*</span></label>
+                    <label for="signupGender" class="form-label">Choose Avatar<span style="color:red">*</span></label><br>
                     <img src= "../IMG/avatarLeft.svg" style="width: 50px; height: 50px;" class = "float-start">
                     <img class="img-fluid m-0 cycle-avatar-image form-control clickHereBlue" @click="changeAvatar" :src="avatarImgURL">
                     <img src= "../IMG/avatarRight.svg" style="width: 50px; height: 50px;" class = "float-end">

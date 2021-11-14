@@ -95,41 +95,15 @@
         </div>
     </div> -->
 
-    <div class="col col-12 mb-3" style="width: 200px; height: 200px;">
-
-        <label for="signupGender" class="form-label">Choose Avatar<span style="color:red">*</span></label>
-
-        <div id="banner">
-            <div class="inline-block">
-                <img src="../IMG/avatarLeft.svg" style="width: 50px; height: 50px;">
-            </div>
-
-            <div class="inline-block">
-                <img class="img-fluid m-0 cycle-avatar-image form-control clickHereBlue" @click="changeAvatar"
-                    src="../IMG/avatar21_female.svg">
-            </div>
-
-            <div class="inline-block">
-                <img src="../IMG/avatarRight.svg" style="width: 50px; height: 50px;">
-            </div>
-            <input type="hidden" name="avatarURL" :value="avatarImgURL">
-        </div>
-
-    </div>
 
     <div class="col col-12 mb-3" style="width: 200px; height: 200px;">
-        <div class="row">
-            <div class="column">
-                <img src="../IMG/avatarLeft.svg" alt="Snow" style="width:100%" class="inline-block">
-            </div>
-            <div class="column">
-                <img src="../IMG/avatar21_female.svg" alt="Forest" style="width:100%" class="inline-block">
-            </div>
-            <div class="column">
-                <img src="../IMG/avatarRight.svg" alt="Mountains" style="width:100%" class="inline-block">
-            </div>
-        </div>
+        <label for="signupGender" class="form-label">Choose Avatar<span style="color:red">*</span></label><br>
+        <img src= "../IMG/avatarLeft.svg" style="width: 50px; height: 50px; display: inline-block;" class = "float-start">
+        <img class="img-fluid m-0 cycle-avatar-image form-control clickHereBlue" @click="changeAvatar" :src="avatarImgURL" style="display: inline-block;">
+        <img src= "../IMG/avatarRight.svg" style="width: 50px; height: 50px; display: inline-block;" class = "float-end">
+        <input type="hidden" name="avatarURL" :value="avatarImgURL">
     </div>
+
 </body>
 
 </html>
