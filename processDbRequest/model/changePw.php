@@ -4,7 +4,7 @@ session_start();
 require_once 'common.php';
 
 $userDAO = new userDAO();
-$_SESSION["PWdunmatch"] = "";
+$_SESSION["changePWError"] = "";
 
 if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
     $pw1 = $_POST['pwOne'];
@@ -17,28 +17,20 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
         }
 
         $status = $userDAO->updatePassword($email, $pw1);
-        var_dump($status);
 
         if ($status){
-            var_dump($status);
 
-            session_start(); #start session
-
-            session_unset(); // removes all the variables from the RAM. Array becomes empty.But keeps information
-
-            session_destroy(); //destroy sessions. Remove info from the disk.
-
-            header("Location: ../../HTML/home.php");
+            header("Location: ../../HTML/myProfile.php");
             exit;
         
         } else{
-            alert("Error in changing password");
+            $_SESSION["changePWError"] = "<p class='text-danger m-1 text-center' style='font-size: small; display: block;'>Sorry, we are unable to change your password at this moment</p>";
             header("Location: ../../HTML/updatePw.php");
             exit;
         }
         
     }else{
-        $_SESSION["PWdunmatch"] = "<p class='text-danger m-1 text-center' style='font-size: small; display: block;'>Please ensure your passwords match</p>";
+        $_SESSION["changePWError"] = "<p class='text-danger m-1 text-center' style='font-size: small; display: block;'>Please ensure your passwords match</p>";
         header("Location: ../../HTML/updatePw.php");
         exit;
     }

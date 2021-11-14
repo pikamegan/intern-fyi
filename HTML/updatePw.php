@@ -66,11 +66,9 @@
             </p>
 
             <?php
-
-                    if (isset($_SESSION["PWdunmatch"])) {
-                        echo $_SESSION["PWdunmatch"];
-                    }
-
+                if (isset($_SESSION["changePWError"])) {
+                    echo $_SESSION["changePWError"];
+                }
             ?>
 
             <input class="btn btn-primary w-100 p-3 mt-3 form-control" type= "submit" name ="submit" value="Submit">
