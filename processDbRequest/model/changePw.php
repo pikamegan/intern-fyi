@@ -11,7 +11,7 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
     $pw1 = $_POST['pwOne'];
     $pw2 = $_POST['pwTwo'];
     $email = '';
-    if ($pw1 === $pw2) {
+    if ($pw1 === $pw2 && strlen($pw2) >= 8) {
 
         if (isset($_SESSION['email'])) {
             $email = $_SESSION['email'];
@@ -36,7 +36,7 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
         }
         
     }else{
-        $_SESSION["changePWError"] = "<p class='text-danger m-1 text-center' style='font-size: small; display: block;'>Please ensure your passwords match</p>";
+        $_SESSION["changePWError"] = "<p class='text-danger m-1 text-center' style='font-size: small; display: block;'>Please ensure your passwords matches and length is more than 8 characters</p>";
         header("Location: ../../HTML/updatePw.php");
         exit;
     }
