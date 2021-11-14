@@ -23,20 +23,11 @@
 </head>
 
 <body>
-    <!-- <a class="navbar-brand m-4" href="../index.html">
-        <img src="" style="height:40px;">
-    </a> -->
 
-    <!-- copy this part: start-->
-    <div class="navbarTemplate">
-        <div id="smallNavBar">
-            <?php
-session_start();
+    <?php
+    session_start();
+    ?>
 
-?>
-        </div>
-    </div>
-    <!-- copy this part: end -->
     <form class="form-signin" action="../processDbRequest/model/login.php" method="POST">
         <!-- Form header -->
         <div class="inHeadDiv">
@@ -61,11 +52,11 @@ session_start();
             </div>
             <!-- Submit -->
             <button id="loginBtn" class="btn btn-primary" type="submit">Log in</button>
-                <?php
-if (isset($_SESSION['error'])) {
-    echo $_SESSION['error'];
-}
-?>
+            <?php
+            if (isset($_SESSION['error'])) {
+                echo $_SESSION['error'];
+            }
+            ?>
         </div>
     </form>
 

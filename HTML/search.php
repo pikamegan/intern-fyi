@@ -15,7 +15,7 @@
     <script src="../js/actions.js" defer></script>
     <!-- axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <title>Intern FYI</title>
+    <title>Search</title>
 </head>
 
 <body>
