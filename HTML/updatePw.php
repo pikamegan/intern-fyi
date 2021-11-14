@@ -70,7 +70,7 @@
                     <div class="col">
                         <label for="pwOne" class="form-label">Password<span style="color:red">*</span></label>
                         <input name="pwOne" id="pwOne" class="form-control signupField" type="password" placeholder="Password" required autofocus="">
-                        <i id="pwOneToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwOne,pwOneToggle)"></i>
+                        <i id="pwOneToggle" class="bi bi-eye-fill pwToggle"></i>
                     </div>
             </div>
 
@@ -78,7 +78,7 @@
                 <div class="col">
                     <label for="pwTwo" class="form-label">Confirm password<span style="color:red">*</span></label>
                     <input name="pwTwo" id="pwTwo" class="form-control signupField" type="password" placeholder="Confirm password" required autofocus="">
-                    <i id="pwTwoToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwTwo, pwTwoToggle)"></i>
+                    <i id="pwTwoToggle" class="bi bi-eye-fill pwToggle"></i>
                 </div>
             </div>
 
@@ -104,17 +104,7 @@
     
     <!-- Changing between password input types-->
     <script>
-        function pwToggle(pwInput, pwToggleBtn) {
-            if (pwInput.type === "password") {
-                pwInput.type = "text";
-                $(pwToggleBtn).toggleClass("bi-eye-fill bi-eye-slash-fill");
-            } else {
-                pwInput.type = "password";
-                $(pwToggleBtn).toggleClass("bi-eye-slash-fill bi-eye-fill");
-            }
-        }
-
-
+    
     </script>
 
 
