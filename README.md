@@ -2,10 +2,10 @@
 
 a WAD2 project
 by G5T2: 
-eunjin.kim.2020@scis.smu.edu.sg
-megan.thong.2020@scis.smu.edu.sg
-patricialoi.2020@scis.smu.edu.sg
-tianyu.chen.2020@scis.smu.edu.sg
+- eunjin.kim.2020@scis.smu.edu.sg
+- megan.thong.2020@scis.smu.edu.sg
+- patricialoi.2020@scis.smu.edu.sg
+- tianyu.chen.2020@scis.smu.edu.sg
 
 ## Heroku Deployment
 
