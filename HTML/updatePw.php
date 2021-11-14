@@ -88,13 +88,16 @@
 
             <?php
 
-            // if (isset($_SESSION["errorList"])) {
+            if (isset($_SESSION["errorLength"])) {
+                $errorLen = $_SESSION["errorLength"];
+                echo "$errorLen";
+                
+            }
 
-            //     foreach ($_SESSION["errorList"] as $value) {
-            //         echo "<p class='text-danger m-1' style='font-size: small; display: none;' id='roleMsg'>$value</p>";
-            //     }
-            //     // $_SESSION["errorList"] = "";
-            // }
+            if (isset($_SESSION["errorPWmismatch"])) {
+                $errorMismatch = $_SESSION["errorPWmismatch"];
+                echo "$errorMismatch";
+            }
 
             ?>
 

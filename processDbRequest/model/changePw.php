@@ -6,36 +6,31 @@ require_once 'common.php';
 $userDAO = new userDAO();
 // $_SESSION["changePWError"] = "";
 $_SESSION["successChangePW"] = "";
-$errorList = array();
-$_SESSION["errorList"] = "";
+$_SESSION["errorLength"] = "";
+$_SESSION["errorPWmismatch"] = "";
+
+$noErrors = true;
 
 if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
     $pw1 = $_POST['pwOne'];
     $pw2 = $_POST['pwTwo'];
     $email = '';
 
-    if($pw1 === $pw2) {
-        if (strlen($pw1) <= 8) {
-            array_push($errorList, 'Your Password Must Contain At Least 8 Characters!');
-        } elseif (!preg_match("#[0-9]+#", $pw1)) {
-            array_push($errorList, "Your Password Must Contain At Least 1 Number!");
-        } elseif (!preg_match("#[A-Z]+#", $pw1)) {
-            array_push($errorList, "Your Password Must Contain At Least 1 Capital Letter!");
-        } elseif (!preg_match("#[a-z]+#", $pw1)) {
-            array_push($errorList, "Your Password Must Contain At Least 1 Lowercase Letter!");
-        } else {
-            array_push($errorList, "Please Check You've Entered Or Confirmed Your Password!");
-        }
-    }else{
-        array_push($errorList, "Please ensure your passwords matches");
+    if($pw1 !== $pw2) {
+        $_SESSION["errorPWmismatch"] = " <p class='text-center text-danger m-1' style='display: none;' id='overallMsg'>Password Mismatch!</p>";
+        $gotError = false;
     }
 
+    if(strlen($pw1) < 8 or  strlen($pw2) < 8) {
+        $_SESSION["errorPWmismatch"] = " <p class='text-center text-danger m-1' style='display: none;' id='overallMsg'>Password length must be as least 8 characters</p>";
+        $gotError = false;
+    }
 
     if (isset($_SESSION['email'])) {
         $email = $_SESSION['email'];
     }
 
-    if (sizeof($errorList) === 0) {
+    if ($noErrors) {
         $status = $userDAO->updatePassword($email, $pw1);
     
         if ($status) {
@@ -54,10 +49,6 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
             header("Location: ../../HTML/updatePw.php");
             exit;
         }
-    }else{
-        $_SESSION["errorList"] = $errorList;
-        header("Location: ../../HTML/updatePw.php");
-        exit;
     }
 
 } else {
