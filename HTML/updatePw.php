@@ -53,7 +53,7 @@
     </div>
     <!-- copy this part: end -->
 
-    <h1 class="pageTitle mt-5">Chang Your Password</h1>
+    <h1 class="pageTitle mt-5">Change Your Password</h1>
     <div class="container shadow-lg p-3 mb-5 mt-5 rounded">
         <form action= "../processDbRequest/model/changePw.php" method="POST" >
             <p>New Password
