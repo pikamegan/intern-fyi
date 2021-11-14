@@ -1,20 +1,20 @@
 # internFYI
 
 a WAD2 project
-by:
-eunjin.kim.2020@scis.smu.edu.sg
-megan.thong.2020@scis.smu.edu.sg
-patricialoi.2020@scis.smu.edu.sg
-tianyu.chen.2020@scis.smu.edu.sg
+by G5T2: 
+- eunjin.kim.2020@scis.smu.edu.sg
+- megan.thong.2020@scis.smu.edu.sg
+- patricialoi.2020@scis.smu.edu.sg
+- tianyu.chen.2020@scis.smu.edu.sg
 
 ## Heroku Deployment
 
-Please visit: https://intern-fyi.herokuapp.com/HTML/home.php
+Please visit: https://intern-fyi.herokuapp.com
 
 *No setup is required, you can use the link above on any device.
 
-You may use this existing account, with login and password as follows:
-    Email: mokkie@smu.edu.sg
+You may use this existing account, with login and password as follows: <br>
+    Email: mokkie@smu.edu.sg <br>
     Password: <3YouProfPleaseGiveUsA+++
 
 

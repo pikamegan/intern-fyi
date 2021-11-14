@@ -397,7 +397,7 @@
         document.getElementById("signupBtn").addEventListener("click", function(event) {
             if (!checkPasswordRequirement()) {
                 //if pw Fails
-                event.preventDefault();
+                event.preventDefault()
             }
         });
     </script>

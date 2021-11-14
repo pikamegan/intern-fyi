@@ -65,7 +65,7 @@
     ?>
 
     <div class="container shadow-lg p-3 mb-5 mt-5 rounded">
-        <form action= "../processDbRequest/model/changePw.php" method="POST" >
+        <form action= "../processDbRequest/model/changePw.php" method="POST"  onsubmit="return checkPasswordRequirement()">
 
             <div id="changePw1" class="form-row signupRow">
                     <div class="col">
@@ -142,7 +142,7 @@
             let errorMsg4 = "At least one number";
             let errorMsg5 = "At least one non-alphanumeric character (~`!@#$%^&*-+?)";
 
-            let pwSuccess = true;
+            pwSuccess = true;
 
             // 0. Empty input
             if (userPWInput.length <= 0) {
@@ -268,7 +268,7 @@
         }
 
         document.getElementById("changePw").addEventListener("click", function(event) {
-            if (checkPasswordRequirement() == false; ) {
+            if (checkPasswordRequirement()) {
                 //if pw Fails
                 event.preventDefault()
             }
