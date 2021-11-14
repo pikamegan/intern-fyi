@@ -72,44 +72,16 @@
                         <label for="pwOne" class="form-label">Password<span style="color:red">*</span></label>
                         <input name="pwOne" id="pwOne" class="form-control signupField" type="password" placeholder="Password" required autofocus="" oninput="checkPasswordRequirement()">
                         <i id="pwOneToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwOne,pwOneToggle)"></i>
-                        <p class="text-center text-danger m-1" style="display: none;" id="pwOneError">Please enter your password</p>
                     </div>
             </div>
-            <!-- Remove password-desc-required class when requirement is met  & add when NOT met -->
-            <div id="pwErrorMsgs">
-                <div class="passwordrequirements mb-2">
-                    <div id="error1"></div>
-                    <div id="error2"></div>
-                    <div id="error3"></div>
-                    <div id="error4"></div>
-                    <div id="error5"></div>
-                    <div id="error6"></div>
-
-                    <!-- /***************************************************************************************
-                *    CITING
-                *    Author: SMU
-                *    Availability: https://live.smu.edu.sg/Account/ChangePassword
-                ***************************************************************************************/ -->
-                </div>
-            </div>
-
 
             <div id="changePw2" class="form-row signupRow">
                 <div class="col">
                     <label for="pwTwo" class="form-label">Confirm password<span style="color:red">*</span></label>
                     <input name="pwTwo" id="pwTwo" class="form-control signupField" type="password" placeholder="Confirm password" oninput="isPasswordMatch()" required autofocus="">
                     <i id="pwTwoToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwTwo, pwTwoToggle)"></i>
-                    <p class="text-center text-danger m-1" style="display: none;" id="pwCError">Please confirm your password</p>
                 </div>
             </div>
-            <!-- Remove password-desc-required class when requirement is met & the reverse -->
-            <div id="pwConfirmError"></div>
-
-            <?php
-                if (isset($_SESSION["changePWError"])) {
-                    echo $_SESSION["changePWError"];
-                }
-            ?>
 
             <input class="btn btn-primary w-100 p-3 mt-3 form-control" type= "submit" name ="submit" value="Submit">
         </form>
@@ -127,152 +99,6 @@
             }
         }
 
-        function checkPasswordRequirement() {
-            let userPWInput = document.getElementById("pwOne").value
-            let criteriaLength = document.getElementById("password-req-length")
-            let criteriaUC = document.getElementById("password-req-ucase")
-            let criteriaLC = document.getElementById("password-req-lcase")
-            let criteriaNum = document.getElementById("password-req-numerals")
-            let criteriaNonAlpha = document.getElementById("password-req-nonalpha")
-            let criteriaNoProfileName = document.getElementById("password-req-displayname")
-
-            let errorMsg1 = "8 or more characters";
-            let errorMsg2 = "At least one uppercase letter";
-            let errorMsg3 = "At least one lowercase letter";
-            let errorMsg4 = "At least one number";
-            let errorMsg5 = "At least one non-alphanumeric character (~`!@#$%^&*-+?)";
-
-            pwSuccess = true;
-
-            // 0. Empty input
-            if (userPWInput.length <= 0) {
-                document.getElementById("error1").innerHTML = "";
-                document.getElementById("error2").innerHTML = "";
-                document.getElementById("error3").innerHTML = "";
-                document.getElementById("error4").innerHTML = "";
-                document.getElementById("error5").innerHTML = "";
-                document.getElementById("error6").innerHTML = "";
-                pwSuccess = false;
-            }
-
-            // 1. Password length
-            if (userPWInput.length >= 8) {
-                errorMsgSuccess("error1", errorMsg1);
-            } else {
-                errorMsgFailure("error1", errorMsg1);
-                pwSuccess = false;
-            }
-
-            // 2. Uppercase
-            if (hasUpperC(userPWInput)) {
-                errorMsgSuccess("error2", errorMsg2);
-            } else {
-                errorMsgFailure("error2", errorMsg2);
-                pwSuccess = false;
-            }
-
-            // 3. Lowercase
-            if (hasLowerC(userPWInput)) {
-                errorMsgSuccess("error3", errorMsg3);
-            } else {
-                errorMsgFailure("error3", errorMsg3);
-                pwSuccess = false;
-            }
-
-
-            // 4. Number
-            if (hasNum(userPWInput)) {
-                errorMsgSuccess("error4", errorMsg4);
-            } else {
-                errorMsgFailure("error4", errorMsg4);
-                pwSuccess = false;
-            }
-
-            // 5. Non-alphanumeric
-            if (hasNonAlpha(userPWInput)) {
-                errorMsgSuccess("error5", errorMsg5);
-            } else {
-                errorMsgFailure("error5", errorMsg5);
-                pwSuccess = false;
-            }
-     
-
-            return pwSuccess;
-
-        }
-
-        function errorMsgSuccess(errorID, errorMsgNo) {
-            document.getElementById(errorID).innerHTML = "<i class='bi bi-check text-success'></i>";
-            document.getElementById(errorID).innerHTML += "<div class='errorMsg d-inline text-success'>" + errorMsgNo + "</div>";
-        }
-
-        function errorMsgFailure(errorID, errorMsgNo) {
-            document.getElementById(errorID).innerHTML = "<i class='bi bi-x fa fa-xxl text-danger'</i>";
-            document.getElementById(errorID).innerHTML += "<div class='errorMsg d-inline text-danger'>" + errorMsgNo + "</div>"
-        }
-
-        function isAlpha(ch) {
-            return /^[A-Z]$/i.test(ch);
-        }
-
-        function hasLowerC(input) {
-            // console.log(input);
-            for (let string of input) {
-                if ((string === string.toLowerCase()) && isNaN(string) && isAlpha(string)) {
-                    return true;
-                }
-            }
-            return false;
-
-        }
-
-
-        function hasUpperC(input) {
-            for (let string of input) {
-                if ((string === string.toUpperCase()) && isAlpha(string)) {
-                    // console.log(string);
-                    return true;
-
-                }
-            }
-            return false;
-        }
-
-        function hasNum(input) {
-            // return !isNaN(parseFloat(input)) && isFinite(input);
-            return input.match(/\d+/g);
-        }
-
-        function hasNonAlpha(input) {
-            let nonAlphaList = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "-", "+", "?"]
-            for (let nonAlpha of nonAlphaList) {
-                if (input.indexOf(nonAlpha) !== -1) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        function isPasswordMatch() {
-            let userPWInput = document.getElementById("pwOne").value;
-            let userPWInput2 = document.getElementById("pwTwo").value;
-            let criteriaPasswordMatch = document.getElementById("confirm-password-same");
-            let pwConfirmMsg = "Passwords match";
-
-            if (userPWInput === userPWInput2) {
-                errorMsgSuccess("pwConfirmError", pwConfirmMsg);
-            } else {
-                errorMsgFailure("pwConfirmError", pwConfirmMsg);
-
-            }
-
-        }
-
-        // document.getElementById("changePw").addEventListener("click", function(event) {
-        //     if (checkPasswordRequirement()) {
-        //         //if pw Fails
-        //         event.preventDefault()
-        //     }
         // });
 
 
