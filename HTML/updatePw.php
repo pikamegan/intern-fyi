@@ -13,7 +13,9 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../CSS/in.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <!-- vue -->
     <script src="https://unpkg.com/vue@next"></script>
@@ -193,12 +195,6 @@
                 pwSuccess = false;
             }
 
-            // 6. Name
-            // if (hasProfileName(userPWInput, fName + '.' + lName)) {
-            //     errorMsgSuccess("error6", errorMsg6);
-            // } else {
-            //     errorMsgFailure("error6", errorMsg6);
-            // }
             return pwSuccess;
 
         }
