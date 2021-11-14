@@ -34,7 +34,7 @@
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 echo "<navigation-bar-small-login></navigation-bar-small-login>";
             } else {
-                window.location.assign('./home.php');
+                header("Location: ./home.php");
                 exit();
             }
             ?>
@@ -47,7 +47,7 @@
                     <img class='img-fluid m-0' src= '$url' style='width: 60px; height: 60px;'>
                     </navigation-bar-big-login>";
             } else {
-                window.location.assign('./home.php');
+                header("Location: ./home.php");
                 exit();
             }
             ?>
