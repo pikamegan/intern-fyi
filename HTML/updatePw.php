@@ -58,6 +58,7 @@
     <?php
         if (isset($_SESSION["successChangePW"])) {
             echo $_SESSION["successChangePW"];
+            $_SESSION["successChangePW"] = "";
         }
     ?>
 
