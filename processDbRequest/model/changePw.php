@@ -20,7 +20,14 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
 
         if ($status){
             alert("Password successfully changed! Please sign in again :)");
-            header("Location: ./signout.php");
+            
+            session_start(); #start session
+
+            session_unset(); // removes all the variables from the RAM. Array becomes empty.But keeps information
+
+            session_destroy(); //destroy sessions. Remove info from the disk.
+
+            header("Location: ../../HTML/home.php");
             exit;
         
         } else{
