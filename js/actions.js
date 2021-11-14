@@ -86,68 +86,6 @@ function validate_form() {
     } 
 }
 
-
-// function validateRegistrationForm() {
-
-//     let fname = document.forms['register_form'].fname.value
-//     let lname = document.forms['register_form'].lname.value
-//     let gender = document.forms['register_form'].gender.value
-//     let school = document.forms['register_form'].school.value
-//     let schoolEmail = document.forms['register_form'].schoolEmail.value
-//     let pw1 = document.forms['register_form'].pw1.value
-//     let pw2 = document.forms['register_form'].pw.value
-
-//     let fnameMsg = document.getElementById("firstnameError")
-//     if (fname.length == 0) {
-//         fnameMsg.style.display = "block"
-//     } else {
-//         fnameMsg.style.display = "none"
-//     }
-
-//     let lnameMsg = document.getElementById("lastnameError")
-//     if (lname.length == 0) {
-//         lnameMsg.style.display = "block"
-//     } else {
-//         lnameMsg.style.display = "none"
-//     }
-
-//     let genderMsg = document.getElementById("genderError")
-//     if (gender == "Gender") {
-//         // console.log(gender.length);
-//         genderMsg.style.display = "block"
-//     } else {
-//         genderMsg.style.display = "none"
-//     }
-
-//     let schoolMsg = document.getElementById("schoolError")
-//     if (school.length == 0) {
-//         schoolMsg.style.display = "block"
-//     } else {
-//         schoolMsg.style.display = "none"
-//     }
-
-//     let schoolEmailMsg = document.getElementById("schoolnameError")
-//     if (schoolEmail.length == 0) {
-//         schoolEmailMsg.style.display = "block"
-//     } else {
-//         schoolEmailMsg.style.display = "none"
-//     }
-
-//     let pwFirstMsg = document.getElementById("pwOneError")
-//     if (pw1.length == 0) {
-//         pwFirstMsg.style.display = "block"
-//     } else {
-//         pwFirstMsg.style.display = "none"
-//     }
-
-//     let pwMsg = document.getElementById("pwCError")
-//     if (pw2.length == 0) {
-//         pwMsg.style.display = "block"
-//     } else {
-//         pwMsg.style.display = "none"
-//     }
-// }
-
 function showCriteria() {
     getAllCompanies()
 
@@ -453,7 +391,6 @@ function loadCompanyPage() {
                                 }
                             })
                             .catch(error => {
-                                // console.log(error.message)
                                 companyLocation.innerText = '-'
                             });
                     } else {
@@ -489,7 +426,6 @@ function loadCompanyPage() {
             companyLinkedin.href = linkedinStr
 
             companyInfo.innerHTML = infoStr
-            // companyLocation.innerHTML = locationStr
 
             companyRating.innerHTML += overallRatingStr
 
@@ -654,9 +590,7 @@ function getAllReviews(companyId) {
             }
         })
         .catch(error => {
-            // console.log(error)
             let noReviewStr = `Reviews cannot be shown at this time. Come back later!`
-
             let reviewsBox = document.getElementById("reviewsBox")
             reviewsBox.innerHTML = noReviewStr
         })
@@ -965,18 +899,12 @@ navigationBar.mount('.navbarTemplate');
 
 function showSpeechBubble(e) {
     let id = e.id + "SpeechBox"
-    // console.log(id);
     let speechBubble = document.getElementById(id)
-
     if (speechBubble.classList.contains("hide")) {
-
         speechBubble.classList.remove("hide");
-
-
     } else {
         speechBubble.classList.add("hide");
     }
-
 }
 
 
@@ -988,8 +916,6 @@ const footer = Vue.createApp({
     },
     methods: {
         goHome(url) {
-            // console.log('%c went inside! ', 'background: #222; color: #bada55',
-            //     'into function');
             window.location = url
         }
     },
