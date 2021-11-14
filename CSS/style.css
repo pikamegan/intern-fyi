@@ -315,6 +315,10 @@ div.cardBold {
     cursor: url(myBall.cur), auto;
 }
 
+.crayonCursor{
+    cursor: url(../IMG/cursor-crayon-blue.svg), auto;
+}
+
 .wait {
     cursor: wait;
 }
