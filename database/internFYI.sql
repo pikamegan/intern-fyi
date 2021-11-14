@@ -49,7 +49,7 @@ CREATE TABLE `company` (
   `industry` varchar(50),
   `imageLink` varchar(255),
   `location` varchar(255),
-  -- google map api needs longitude and latitude, may need to store an attribute for each, or generate them dynamically 
+  -- location column not used in website
 
   `numberOfClicks` int DEFAULT 0,
   `totalNumReviews` int DEFAULT 0,
@@ -97,6 +97,7 @@ CREATE TABLE `review` (
 --
 -- Table structure for table `vote`
 --
+-- Vote not implemented in website
 DROP TABLE IF EXISTS `vote`;
 CREATE TABLE `vote` (
   `companyID` mediumint NOT NULL, 
@@ -150,6 +151,7 @@ CREATE TRIGGER after_review_insert
    END$$
 delimiter ;
 
+--add to click count by 1
 delimiter $$
 CREATE procedure add_click(IN cid int)
   BEGIN
