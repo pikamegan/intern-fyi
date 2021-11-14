@@ -253,8 +253,16 @@ div.cardBold {
     padding: 10px;
 }
 
+.cycle-avatar-image {
+    border-radius: 1000px;
+    width: 60px;
+    height: 60px;
+    border: rgba(0, 0, 0, 0) solid 5px;
+}
+
 .cycle-avatar-image:hover {
     cursor: pointer;
+    border: #2634ff solid 5px;
 }
 
 .criteriaTooltip:hover .criteriaTooltipText {
@@ -319,7 +327,7 @@ div.cardBold {
     cursor: url(myBall.cur), auto;
 }
 
-.crayonCursor{
+.crayonCursor {
     cursor: url(../IMG/cursor-crayon-blue.svg), auto;
 }
 
