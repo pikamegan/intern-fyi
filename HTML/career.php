@@ -61,13 +61,13 @@
                 <p class="mx-2 text-start fw-lighter m-0">We offer the best pay in the industry! We will never underpay or undercut you. Because we value your skills.
                 </p>
             </div>
-            <div class="mx-auto mb-2 col-xs-12 col-sm-12 col-md-4 m-sm-4 bigGreyBox ms-lg-4">
+            <div class="mx-auto mb-2 col-xs-12 col-sm-12 col-md-4 m-sm-4 ms-lg-4">
                 <div class="text-center mx-2 smallBox mt-5 mb-3 smallOrangeBox smallBox">Friendly Office</div>
                 <p class="mx-2 text-start fw-bold">Nice People</p>
                 <p class="mx-2 text-start fw-lighter m-0">Our company believes in creating an inclusive environment. Any toxic employees are immediately fired. We believe in low hierarchy and positive vibes. 
                 </p>
             </div>
-            <div class="mx-auto mb-2 col-xs-12 col-sm-12 col-md-4 m-sm-4 bigGreyBox ms-lg-4">
+            <div class="mx-auto mb-2 col-xs-12 col-sm-12 col-md-4 m-sm-4 ms-lg-4">
                 <div class="text-center mx-2 smallBox mt-5 mb-3 smallGreenBox smallBox">Free Food</div>
                 <p class="mx-2 text-start fw-bold">Corporate Cafeteria</p>
                 <p class="mx-2 text-start fw-lighter m-0">We believes in providing free food and drinks for our hard working employees.
