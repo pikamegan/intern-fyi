@@ -53,7 +53,6 @@ const appSearch = Vue.createApp({
         },
         sortCompaniesMethod() {
             if (this.displayCompanies.length > 0) {
-                // console.log("sort");
                 sortBy = this.sortCompanies;
                 if (this.displayCompanies != null) {
                     this.displayCompanies.sort((a, b) => {
@@ -81,8 +80,6 @@ const appSearch = Vue.createApp({
         },
         getSearchedCompanies() {
             let url = `../processDbRequest/processCompanyRequest.php`;
-            // url = `../processDbRequest/tmpOutputProcessCompanyRequest.php`;
-            // use the one above when connecting to connect to real db with php
             axios.get(url, {
                 params: {
                     request: 'search',
@@ -129,7 +126,6 @@ const appSearch = Vue.createApp({
             return "Others"
         },
 
-        //for map related stuff
         getLocationAndDistance(companyObj) {
             let addr = companyObj.companyName
             let locationPlaceholder = {
@@ -209,7 +205,6 @@ const appSearch = Vue.createApp({
 
         filterMethod() {
             if (this.allCompanies.length > 0) {
-                // console.log("filter");
                 this.displayCompanies = [];
                 for (index in this.allCompanies) { // default all true
                     company = this.allCompanies[index];
@@ -252,19 +247,6 @@ const appSearch = Vue.createApp({
         }
         this.filterIndustry = JSON.parse(JSON.stringify(this.filterIndustryValues))
         this.filterLocation = JSON.parse(JSON.stringify(this.filterLocationValues))
-    },
-    computed: {
-        //     companyNames() {
-        //         if (this.allCompanies != null) {
-        //             companyNames = [];
-        //             for (index in this.allCompanies) {
-        //                 companyName = this.allCompanies[index].companyName;
-        //                 companyNames.push(companyName);
-        //             }
-        //             return companyNames;
-        //         }
-        //     },
-
     }
 })
 
@@ -273,7 +255,6 @@ appSearch.component('company-row', {
         return {
             myMaxHeight: null,
             myRotate: 'myRotateOff preventSelect',
-            maxScrollHeight: '', //to be done
             isSelected: false
         };
     },
@@ -297,10 +278,8 @@ appSearch.component('company-row', {
                 this.myMaxHeight = null;
                 this.myRotate = 'myRotateOff preventSelect';
             } else {
-                // myMaxHeight = collapsibleContentSearch.scrollHeight + "px"; proably need do dom outside to get the scrollHeight
                 this.myMaxHeight = "80px";
                 this.myRotate = 'myRotate preventSelect';
-                // this.myMaxHeight = "200px";
             }
         },
         select() {
@@ -309,20 +288,8 @@ appSearch.component('company-row', {
             } else {
                 this.$emit('select', this.company.companyID);
             }
-        },
-        // showAll() {
-        //     console.log("clicked")
-        //     if (this.isSelected == false){
-        //         changeState()
-        //     }
-        // }
+        }
     },
-
-    created() {
-        // this.getLocationAndDistance()
-        // console.log(this.company)
-    },
-
 
     template: `
 <div class="row">
@@ -370,7 +337,7 @@ appSearch.component('company-row', {
             </div>
         </div>
     </div>
-    <div class="collapsibleContentSearch" :style="{'max-height':myMaxHeight}" :scrollHeight='maxScrollHeight'>
+    <div class="collapsibleContentSearch" :style="{'max-height':myMaxHeight}">
         <div>
             <div class="row">
                 <div class="col-xxl-2 col-xl-3 col-2 align-self-center">
