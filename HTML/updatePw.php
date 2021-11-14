@@ -86,6 +86,10 @@
             <input class="btn btn-primary w-100 p-3 mt-3 form-control" type= "submit" name ="submit" value="Submit">
         </form>
     </div>
+
+    <div class="footerComp" style="margin-top: 50px;">
+        <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php"></intern-footer>
+    </div>
     
     <!-- Changing between password input types-->
     <script>
