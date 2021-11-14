@@ -1,40 +1,3 @@
-//map functions start==========================
-// var userLat = -34.397;
-// var userLong = 150.644;
-// function showYourLocation() {
-//     let zipCode = document.getElementById("userZipCode").value
-//     console.log(zipCode);
-//     const url = `https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA&components=postal_code:${zipCode}`;
-//     axios
-//         .get(url)
-//         .then((response) => {
-//             // process response.data object
-//             // console.log(response.data);
-//             const myJSON = JSON.stringify(response.data);
-//             // console.log(myJSON);
-//             userLong = response.data.results[0].geometry.location.lng
-//             userLat = response.data.results[0].geometry.location.lat
-//             // console.log(userLat);
-//             initMap()
-//         })
-//         .catch((error) => {
-//             // process error object
-//             // console.log(error.message);
-//             //document.getElementById("displayString").innerText = "Something went wrong";
-//         });
-
-// }
-
-// var map;
-// console.log(userLat);
-// function initMap() {
-//     map = new google.maps.Map(document.getElementById('map'), {
-//         center: { lat: userLat, lng: userLong },
-//         zoom: 15
-//     });
-// }
-//map functions end==========================
-
 // uncomment for testing / deploying
 const apiKey = 'AIzaSyCzFIE4IcUd35I_HeFWhbmEFZpNnx4SogA';
 const appSearch = Vue.createApp({
@@ -101,8 +64,6 @@ const appSearch = Vue.createApp({
         },
         getAllCompanies() {
             let url = `../processDbRequest/processCompanyRequest.php`;
-            // url = `../processDbRequest/tmpOutputProcessCompanyRequest.php`;
-            // use the one above when connecting to connect to real db with php
             axios.get(url, {
                 params: {
                     request: 'getAllCompanies',

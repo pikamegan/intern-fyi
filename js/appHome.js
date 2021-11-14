@@ -10,8 +10,6 @@ const app = Vue.createApp({
     methods: {
         getAllCompanies() {
             let url = `../processDbRequest/processCompanyRequest.php`;
-            // url = `../processDbRequest/tmpOutputProcessCompanyRequest.php`;
-            // use the one above when connecting to connect to real db with php
             axios.get(url, {
                 params: {
                     request: 'getAllCompanies',
