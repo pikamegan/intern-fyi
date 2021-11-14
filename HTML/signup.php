@@ -186,8 +186,8 @@
                     // add properties here
                     gender: "M",
                     avatarImgURL: "../IMG/avatar1.svg",
-                    imgGirl: ['../IMG/avatar7.svg', '../IMG/avatar3.svg', '../IMG/avatar5.svg', '../IMG/avatar6.svg', '../IMG/avatar9_female.svg', '../IMG/avatar10_female.svg', '../IMG/avatar15_female.svg'],
-                    imgMale: ['../IMG/avatar1.svg', '../IMG/avatar2.svg', '../IMG/avatar4.svg', '../IMG/avatar8.svg', '../IMG/avatar11_male.svg', '../IMG/avatar12_male.svg', '../IMG/avatar13_male.svg', '../IMG/avatar14_male.svg']
+                    imgGirl: ['../IMG/avatar7.svg', '../IMG/avatar3.svg', '../IMG/avatar5.svg', '../IMG/avatar6.svg', '../IMG/avatar9_female.svg', '../IMG/avatar10_female.svg', '../IMG/avatar15_female.svg', "../IMG/avatar20_female.svg", "../IMG/avatar21_female.svg", "../IMG/avatar22_female.svg"],
+                    imgMale: ['../IMG/avatar1.svg', '../IMG/avatar2.svg', '../IMG/avatar4.svg', '../IMG/avatar8.svg', '../IMG/avatar11_male.svg', '../IMG/avatar12_male.svg', '../IMG/avatar13_male.svg', '../IMG/avatar14_male.svg', "../IMG/avatar16_male.svg", "../IMG/avatar17_male.svg", "../IMG/avatar18_male.svg", "../IMG/avatar19_male.svg"]
                 }
             },
             methods: {
