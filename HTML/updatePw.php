@@ -268,9 +268,9 @@
         }
 
         document.getElementById("changePw").addEventListener("click", function(event) {
-            if (checkPasswordRequirement() == false) {
+            if (checkPasswordRequirement()) {
                 //if pw Fails
-                event.preventDefault();
+                event.preventDefault()
             }
         });
 
