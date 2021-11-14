@@ -89,7 +89,7 @@
                     foreach ($_SESSION["errorList"] as $value) {
                         echo "<p class='text-danger m-1' style='font-size: small; display: none;' id='roleMsg'>$value</p>";
                     }
-                    $_SESSION["errorList"] = "";
+                    // $_SESSION["errorList"] = "";
                 }
             
             ?>
