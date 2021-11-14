@@ -11,6 +11,7 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
     $pw2 = $_POST['pwTwo'];
     $email = '';
     if ($pw1 === $pw2) {
+        var_dump($_POST);
 
         if (isset($_SESSION['email'])) {
             $email = $_SESSION['email'];
