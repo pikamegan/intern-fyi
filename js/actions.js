@@ -79,7 +79,7 @@ function validate_form() {
 
     let review = document.forms['review_form'].reviewdesc.value
     let reviewMsg = document.getElementById("reviewMsg")
-    if (review.length < 11) {
+    if (review.length == 0) {
         reviewMsg.style.display = "block"
     } else {
         reviewMsg.style.display = "none"
