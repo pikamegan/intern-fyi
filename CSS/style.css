@@ -331,6 +331,10 @@ div.cardBold {
     cursor: url(../IMG/cursor-crayon-blue.svg), auto;
 }
 
+.clickHereBlue{
+    cursor: url(../IMG/ColorBlueCursor.svg), auto;
+}
+
 .wait {
     cursor: wait;
 }
