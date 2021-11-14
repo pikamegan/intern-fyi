@@ -36,8 +36,12 @@
             <div class="display-3 inHead">Sign up</div>
             <h4 class="inSubHead">to post internship reviews.</h4>
         </div>
-        <a href="./companySignUp.php" class = "mt-2 fs-5 text">For Corporate Sign Up</a>
-
+        <div class = "text-center">
+            <a href="./companySignUp.php" class = "text-center mt-2 fs-5 text">
+                <u>Click here if you are a company</u>
+            </a>
+        </div>
+        
         <div class="inBodyDiv">
             <div id="signupName" class="form-row signupRow">
                 <div class="col col-12 mb-3">
