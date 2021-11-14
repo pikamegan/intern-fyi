@@ -11,7 +11,26 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
     $pw1 = $_POST['pwOne'];
     $pw2 = $_POST['pwTwo'];
     $email = '';
-    if ($pw1 === $pw2 && strlen($pw2) >= 8) {
+    if ($pw1 === $pw2 && !empty($_POST["pwOne"])) {
+
+        
+        $password = test_input($_POST["password"]);
+        $cpassword = test_input($_POST["cpassword"]);
+        if (strlen($_POST["password"]) <= 8) {
+            $passwordErr = "Your Password Must Contain At Least 8 Characters!";
+        }
+        elseif(!preg_match("#[0-9]+#",$password)) {
+            $passwordErr = "Your Password Must Contain At Least 1 Number!";
+        }
+        elseif(!preg_match("#[A-Z]+#",$password)) {
+            $passwordErr = "Your Password Must Contain At Least 1 Capital Letter!";
+        }
+        elseif(!preg_match("#[a-z]+#",$password)) {
+            $passwordErr = "Your Password Must Contain At Least 1 Lowercase Letter!";
+        } else {
+            $cpasswordErr = "Please Check You've Entered Or Confirmed Your Password!";
+        }
+        
 
         if (isset($_SESSION['email'])) {
             $email = $_SESSION['email'];
