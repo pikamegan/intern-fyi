@@ -92,12 +92,15 @@
                 if (isset($_SESSION["errorLength"])) {
                     $errorLen = $_SESSION["errorLength"];
                     echo "$errorLen";
+                    $_SESSION["errorLength"] = "";
+
                     
                 }
 
                 if (isset($_SESSION["errorPWmismatch"])) {
                     $errorMismatch = $_SESSION["errorPWmismatch"];
                     echo "$errorMismatch";
+                    $_SESSION["errorPWmismatch"]="";
                 }
 
             ?>
