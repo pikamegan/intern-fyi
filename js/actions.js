@@ -1012,7 +1012,7 @@ footer.component('intern-footer', {
             <h2 style="text-align:left;" v-on:click="$emit('gotohome', home)" >Intern.FYI</h2>
             <p>
               Intern at better companies. <br>
-              And have a better experience.
+              Have a better experience.
             </p>
           </div>
 
