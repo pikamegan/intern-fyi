@@ -73,7 +73,6 @@
                     <img class="img-fluid m-0 cycle-avatar-image form-control" @click="changeAvatar" :src="avatarImgURL">
                     <input type="hidden" name="avatarURL" :value="avatarImgURL">
                 </div>
-
             </div>
 
             <div id="signupSchool" class="form-row signupRow">
