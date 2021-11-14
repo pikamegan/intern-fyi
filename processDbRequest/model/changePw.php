@@ -17,7 +17,7 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
         }
 
         if ($userDAO->updatePassword($email, $pw1)){
-            window.location.assign('signout.php');
+            window.location.assign('./signout.php');
             exit();
         
         } 
