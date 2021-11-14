@@ -253,6 +253,10 @@ div.cardBold {
     padding: 10px;
 }
 
+.cycle-avatar-image:hover {
+    cursor: pointer;
+}
+
 .criteriaTooltip:hover .criteriaTooltipText {
     visibility: visible;
 }

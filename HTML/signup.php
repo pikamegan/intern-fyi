@@ -36,13 +36,13 @@
             <div class="display-3 inHead">Sign up</div>
             <h4 class="inSubHead">to post internship reviews.</h4>
         </div>
-        <div class = "text-center">
-            <a href="./companySignUp.php" class = "text-center mt-2 fs-5 text">
+        <div class="text-center">
+            <a href="./companySignUp.php" class="text-center mt-2 fs-5 text">
                 <u>Click here if you are a company</u>
             </a>
         </div>
-        
-        <div class="inBodyDiv">
+
+        <div class="inBodyDiv avatar">
             <div id="signupName" class="form-row signupRow">
                 <div class="col col-12 mb-3">
                     <label for="signupFirstName" class="form-label">First name<span style="color:red">*</span></label>
@@ -56,18 +56,22 @@
                     <p class="text-center text-danger m-1" style="display: none;" id="lastnameError">Please enter your last name</p>
                 </div>
 
-                <div class="col col-12 avatar">
+                <div class="col col-12 mb-3">
                     <label for="signupGender" class="form-label">Gender<span style="color:red">*</span></label>
                     <label class="sr-only " for="signupGender">Gender</label>
                     <div id="signupGender" class="dropdown">
-                        <select name="gender" id="genders" class="form-control" v-model="gender" @click="changeAvatar" required>
+                        <select name="gender" id="genders" class="form-control" v-model="gender" v-on:change="changeGender" required>
                             <!-- <option value="Gender" selected disabled hidden>Gender</option> -->
                             <option selected value="M">Male</option>
                             <option value="F">Female</option>
                         </select>
                     </div>
-                    <p class="text-center text-danger m-1" style="display: none;" id="genderError">Please select your gender</p>
-                    <input type="hidden" name="avatarURL" :value="avatarImgURL" />
+                </div>
+                <!-- move this?========================================================== -->
+                <div class="col col-12 mb-3">
+                    <label for="signupGender" class="form-label">Choose Avatar<span style="color:red">*</span></label>
+                    <img class="img-fluid m-0 cycle-avatar-image" @click="changeAvatar" :src="avatarImgURL" style="width: 60px; height: 60px">
+                    <input type="hidden" name="avatarURL" :value="avatarImgURL">
                 </div>
 
             </div>
@@ -182,20 +186,32 @@
                 return {
                     // add properties here
                     gender: "M",
-                    avatarImgURL: "../IMG/avatar1.svg"
+                    avatarImgURL: "../IMG/avatar1.svg",
+                    imgGirl: ['../IMG/avatar7.svg', '../IMG/avatar3.svg', '../IMG/avatar5.svg', '../IMG/avatar6.svg', '../IMG/avatar9_female.svg', '../IMG/avatar10_female.svg', '../IMG/avatar15_female.svg'],
+                    imgMale: ['../IMG/avatar1.svg', '../IMG/avatar2.svg', '../IMG/avatar4.svg', '../IMG/avatar8.svg', '../IMG/avatar11_male.svg', '../IMG/avatar12_male.svg', '../IMG/avatar13_male.svg', '../IMG/avatar14_male.svg']
                 }
             },
             methods: {
-                changeAvatar() {
-
+                changeGender() {
                     if (this.gender === "M") {
-                        this.avatarImgURL = "../IMG/avatar1.svg"
+                        this.avatarImgURL = this.imgMale[0]
                     } else if (this.gender === "F") {
-                        this.avatarImgURL = "../IMG/avatar3.svg"
+                        this.avatarImgURL = this.imgGirl[0]
+                    }
+                },
+                changeAvatar() {
+                    if (this.gender === "M") {
+                        this.imgMale.push(this.imgMale.splice(0, 1)[0]);
+                        this.avatarImgURL = this.imgMale[0]
+                    } else if (this.gender === "F") {
+                        this.imgGirl.push(this.imgGirl.splice(0, 1)[0]);
+                        this.avatarImgURL = this.imgGirl[0]
                     }
                 }
             }
-        }).mount('.avatar')
+        })
+
+        const signupVM = avatar.mount('.avatar')
 
         function pwToggle(pwInput, pwToggleBtn) {
             if (pwInput.type === "password") {
