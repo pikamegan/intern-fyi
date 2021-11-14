@@ -1,5 +1,7 @@
 # WAD-grpproject
 
+## Heroku Deployment
+
 Please visit: https://intern-fyi.herokuapp.com/HTML/home.php
 
 *No setup is required, you can use the link above on any device.
@@ -9,7 +11,8 @@ You may use these set of login and password:
     PW: <3YouProfPleaseGiveUsA+++
     
 Note that composer was installed (hence the presence of composer.json and composer.lock files in the directory). This was due to requirements for deploying on heroku. Our application uses the php buildpack from Heroku.
-
+---
+## Local Deployment 
 Alternatively you can deploy locally:
 
 1. load database/internFYI.sql, followed by database/load test.sql (requires sql to run stored procedures and triggers)
