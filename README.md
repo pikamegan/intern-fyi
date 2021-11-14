@@ -19,7 +19,7 @@ Alternatively you can deploy locally:
 
 1. load database/internFYI.sql, followed by database/load test.sql (requires sql to run stored procedures and triggers)
 2. Make sure the connection manager.php in processDbRequest/model is referencing the correct host, port, and password (for Mac)
-3. all files, excluding sql files in /databese, must be hosted for php to run
+3. all files, excluding sql files in /database, must be hosted for php to run
 
 
 Users who are not logged in are not allowed to write reviews.
