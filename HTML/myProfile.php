@@ -148,7 +148,7 @@ if (isset($_SESSION['email'])) {
                             <p>Password: <span id="profilePW">
                                 <p class = "underline">********
                                     <span>
-                                    <img class="text-end" src= "../IMG/changePWpen.svg" style="width: 100px; height: 50px; display: block-inline;" onclick="changePw()">
+                                    <img class="text-end" src= "../IMG/changePWpen.svg" style="width: 100px; height: 50px; display: block-inline;" onclick="location.href='updatePw.php';">
                                     </span>
                                 </p>
                             </span></p>
