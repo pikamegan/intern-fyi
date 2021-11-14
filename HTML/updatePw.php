@@ -22,6 +22,10 @@
     <script src="../js/actions.js" defer></script>
     <title>Change Your Password</title>
 
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+
 </head>
 
 <body>
@@ -58,20 +62,20 @@
     <h1 id="changePw" class="pageTitle mt-5">Change Your Password</h1>
 
     <?php
-        if (isset($_SESSION["successChangePW"])) {
-            echo $_SESSION["successChangePW"];
-            $_SESSION["successChangePW"] = "";
-        }
+    if (isset($_SESSION["successChangePW"])) {
+        echo $_SESSION["successChangePW"];
+        $_SESSION["successChangePW"] = "";
+    }
     ?>
 
     <div class="container shadow-lg p-3 mb-5 mt-5 rounded">
-        <form action= "../processDbRequest/model/changePw.php" method="POST">
+        <form action="../processDbRequest/model/changePw.php" method="POST">
             <div id="changePw1" class="form-row signupRow">
-                    <div class="col">
-                        <label for="pwOne" class="form-label">Password<span style="color:red">*</span></label>
-                        <input name="pwOne" id="pwOne" class="form-control signupField" type="password" placeholder="Password" required autofocus="">
-                        <i id="pwOneToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwOne,pwOneToggle)"></i>
-                    </div>
+                <div class="col">
+                    <label for="pwOne" class="form-label">Password<span style="color:red">*</span></label>
+                    <input name="pwOne" id="pwOne" class="form-control signupField" type="password" placeholder="Password" required autofocus="">
+                    <i id="pwOneToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwOne,pwOneToggle)"></i>
+                </div>
             </div>
 
             <div id="changePw2" class="form-row signupRow">
@@ -83,25 +87,25 @@
             </div>
 
             <?php
-            
-                if (isset($_SESSION["errorList"])) {
-                    
-                    foreach ($_SESSION["errorList"] as $value) {
-                        echo "<p class='text-danger m-1' style='font-size: small; display: none;' id='roleMsg'>$value</p>";
-                    }
-                    // $_SESSION["errorList"] = "";
-                }
-            
+
+            // if (isset($_SESSION["errorList"])) {
+
+            //     foreach ($_SESSION["errorList"] as $value) {
+            //         echo "<p class='text-danger m-1' style='font-size: small; display: none;' id='roleMsg'>$value</p>";
+            //     }
+            //     // $_SESSION["errorList"] = "";
+            // }
+
             ?>
 
-            <input class="btn btn-primary w-100 p-3 mt-3 form-control" type= "submit" name ="submit" value="Submit">
+            <input class="btn btn-primary w-100 p-3 mt-3 form-control" type="submit" name="submit" value="Submit">
         </form>
     </div>
 
     <div class="footerComp" style="margin-top: 50px;">
         <intern-footer home="home.php" abt="about.php" career="career.php" help="help.php" feedback="feedback.php"></intern-footer>
     </div>
-    
+
     <!-- Changing between password input types-->
     <script>
         function pwToggle(pwInput, pwToggleBtn) {
@@ -113,8 +117,6 @@
                 $(pwToggleBtn).toggleClass("bi-eye-slash-fill bi-eye-fill");
             }
         }
-
-
     </script>
 
 
