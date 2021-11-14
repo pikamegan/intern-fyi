@@ -261,7 +261,7 @@ div.cardBold {
 }
 
 .cycle-avatar-image:hover {
-    cursor: pointer;
+    cursor: url(../IMG/ColorBlueCursor.svg), auto;
     border: #2634ff solid 5px;
 }
 
