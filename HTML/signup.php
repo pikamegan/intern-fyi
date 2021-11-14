@@ -70,7 +70,7 @@
                 <!-- move this?========================================================== -->
                 <div class="col col-12 mb-3">
                     <label for="signupGender" class="form-label">Choose Avatar<span style="color:red">*</span></label>
-                    <img class="img-fluid m-0 cycle-avatar-image" @click="changeAvatar" :src="avatarImgURL" style="width: 60px; height: 60px">
+                    <img class="img-fluid m-0 cycle-avatar-image form-control" @click="changeAvatar" :src="avatarImgURL" style="width: 60px; height: 60px">
                     <input type="hidden" name="avatarURL" :value="avatarImgURL">
                 </div>
 
