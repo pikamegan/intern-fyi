@@ -67,11 +67,11 @@
     <div class="container shadow-lg p-3 mb-5 mt-5 rounded">
         <form action= "../processDbRequest/model/changePw.php" method="POST" >
 
-            <div id="signupPw1" class="form-row signupRow">
+            <div id="changePw1" class="form-row signupRow">
                     <div class="col">
-                        <label for="signupPw1Input" class="form-label">Password<span style="color:red">*</span></label>
-                        <input name="pwOne" id="signupPw1Input" class="form-control signupField" type="password" placeholder="Password" required autofocus="" oninput="checkPasswordRequirement()">
-                        <i id="signupPw1Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw1Input,signupPw1Toggle)"></i>
+                        <label for="pwOne" class="form-label">Password<span style="color:red">*</span></label>
+                        <input name="pw1" id="pwOne" class="form-control signupField" type="password" placeholder="Password" required autofocus="" oninput="checkPasswordRequirement()">
+                        <i id="pwOneToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwOne,pwOneToggle)"></i>
                         <p class="text-center text-danger m-1" style="display: none;" id="pwOneError">Please enter your password</p>
                     </div>
             </div>
@@ -94,11 +94,11 @@
             </div>
 
 
-            <div id="signupPw2" class="form-row signupRow">
+            <div id="changePw2" class="form-row signupRow">
                 <div class="col">
-                    <label for="signupPw2Input" class="form-label">Confirm password<span style="color:red">*</span></label>
-                    <input name="pwTwo" id="signupPw2Input" class="form-control signupField" type="password" placeholder="Confirm password" oninput="isPasswordMatch()" required autofocus="">
-                    <i id="signupPw2Toggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(signupPw2Input,signupPw2Toggle)"></i>
+                    <label for="pwTwo" class="form-label">Confirm password<span style="color:red">*</span></label>
+                    <input name="pw2" id="pwTwo" class="form-control signupField" type="password" placeholder="Confirm password" oninput="isPasswordMatch()" required autofocus="">
+                    <i id="pwTwoToggle" class="bi bi-eye-fill pwToggle" onclick="pwToggle(pwTwo, pwTwoToggle)"></i>
                     <p class="text-center text-danger m-1" style="display: none;" id="pwCError">Please confirm your password</p>
                 </div>
             </div>
@@ -253,8 +253,8 @@
         }
 
         function isPasswordMatch() {
-            let userPWInput = document.getElementById("signupPw1Input").value;
-            let userPWInput2 = document.getElementById("signupPw2Input").value;
+            let userPWInput = document.getElementById("pwOne").value;
+            let userPWInput2 = document.getElementById("pwTwo").value;
             let criteriaPasswordMatch = document.getElementById("confirm-password-same");
             let pwConfirmMsg = "Passwords match";
 
