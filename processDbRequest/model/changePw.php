@@ -18,12 +18,12 @@ if (isset($_POST['pwOne']) && isset($_POST['pwTwo'])) {
 
     if($pw1 !== $pw2) {
         $_SESSION["errorPWmismatch"] = " <p class='text-center text-danger m-1' style='display: none;' id='overallMsg'>Password Mismatch!</p>";
-        $gotError = false;
+        $noErrors = false;
     }
 
     if(strlen($pw1) < 8 or  strlen($pw2) < 8) {
         $_SESSION["errorPWmismatch"] = " <p class='text-center text-danger m-1' style='display: none;' id='overallMsg'>Password length must be as least 8 characters</p>";
-        $gotError = false;
+        $noErrors = false;
     }
 
     if (isset($_SESSION['email'])) {
