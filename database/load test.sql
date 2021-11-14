@@ -68,7 +68,18 @@ values
     "Tianyu@90",
     "../IMG/avatar1.svg",
     9
-  );
+  ),
+  (
+    "Heng Ngee",
+    "Mok",
+    "M",
+    "Singapore",
+    "Singapore Management University",
+    "mokkie@smu.edu.sg",
+    "<3YouProfPleaseGiveUsA+++",
+    "../IMG/avatar4.svg",
+    0
+);
 --
 -- Data for table `company`
 --
