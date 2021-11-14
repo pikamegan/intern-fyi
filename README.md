@@ -11,7 +11,9 @@ You may use these set of login and password:
     PW: <3YouProfPleaseGiveUsA+++
     
 Note that composer was installed (hence the presence of composer.json and composer.lock files in the directory). This was due to requirements for deploying on heroku. Our application uses the php buildpack from Heroku.
+
 ---
+
 ## Local Deployment 
 Alternatively you can deploy locally:
 
