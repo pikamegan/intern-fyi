@@ -1,6 +1,6 @@
-<?php $apiKey = getenv('MAPS_API'); >
+<?php $apiKey = getenv('MAPS_API'); ?>
 
-const apiKey =  '<?php echo $apiKey; >';
+const apiKey =  '<?php echo $apiKey; ?>';
 
 const appSearch = Vue.createApp({
     data() {
