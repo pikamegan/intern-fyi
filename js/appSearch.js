@@ -1,5 +1,7 @@
-// uncomment for testing / deploying
-const apiKey =  process.env.MAPS_API;
+<?php $apiKey = getenv('MAPS_API'); >
+
+const apiKey =  '<?php echo $apiKey; >';
+
 const appSearch = Vue.createApp({
     data() {
         return {
