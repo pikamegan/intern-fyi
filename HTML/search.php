@@ -12,6 +12,8 @@
     <script src="https://unpkg.com/vue@next"></script>
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script type='text/javascript' src='../js/config.js'></script>
     <script src="../js/actions.js" defer></script>
     <!-- axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
